@@ -85,33 +85,21 @@
         <div  class="col-md-4 order-md-3 col-sm-12 order-sm-3 col-12 order-3">
             <div class="filters">
                <h3> <i class="fas fa-filter"></i> Filtros</h3>
+               <button class="btn btn-outline-dark btn-block" id="flt-original">Original</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-sepia">Sepia</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-negative">Negativo</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-greyScale">Escala de grises</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-binarie">Binarización</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-blur">Blur</button>
                 
-                <button class="btn btn-outline-dark btn-block" id="flt-saturation"
-                  >Saturacion<input
-                    type="range"
-                    min="1"
-                    max="3"
-                    value="1.2"
-                    step="0.01"
-                    id="saturation-value"
-                  />
+                <button class="btn btn-outline-dark btn-block" id="flt-saturation">Saturacion
+                  <input type="range"min="1"max="3"id="saturation-value"/>
                 </button>
-                <button class="btn btn-outline-dark btn-block" id="flt-brillo"
-                  >Brillo
-                  <input
-                    type="range"
-                    min="1"
-                    max="3"
-                    value="1.2"
-                    step="0.01"
-                    id="brightness-value"
-                  />
-                </button>
+                <div class="btn-group btn-block" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-dark" id="lessBright">-</button>
+                    <button type="button" class="btn btn-outline-dark">Brillo</button>
+                    <button type="button" class="btn btn-outline-dark" id="moreBright">+</button>
+                  </div>
               </div>
         </div>
     </div>

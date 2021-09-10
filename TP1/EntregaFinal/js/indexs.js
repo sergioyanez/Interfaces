@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function(){
         let g ;
         let b ;
         let a = 255;
-
+  
+        let btn = document.getElementById("flt-original");
+            btn.addEventListener('click', originalImage)
         let btn1 = document.getElementById("flt-sepia");
             btn1.addEventListener('click', sepiaFilter)
         let btn2 = document.getElementById("flt-negative");
@@ -17,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function(){
             btn3.addEventListener('click', greyScale)
         let btn4 = document.getElementById("flt-binarie");
             btn4.addEventListener('click', binarizationFilter)
+        let btn5 = document.getElementById("lessBright");
+            btn5.addEventListener('click',lessBright)
+        let btn6 = document.getElementById("moreBright");
+            btn6.addEventListener('click',moreBright)
 
         let canvas = document.getElementById("myCanvas");
         let ctx = canvas.getContext("2d"); 
@@ -29,6 +35,42 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         function myDrawImageMethod(image){
           ctx.drawImage(image1,0,0,width, height);
+        }
+
+        function originalImage(){
+          image1.src = "images/leon.jpg";
+          image1.onload = () =>{
+            myDrawImageMethod(image1);
+          }
+          function myDrawImageMethod(image){
+            ctx.drawImage(image1,0,0,width, height);
+          }
+        }
+
+        function moreBright(){         
+          imageData = ctx.getImageData(0,0, width, height);       
+          for (let x = 0; x < width; x++) {
+                  for (let y = 0; y < height; y++) {                                              
+                    r = getRed(imageData,x,y);        
+                    g = getGreen(imageData,x,y);
+                    b = getBlue(imageData,x,y); 
+                    setPixelMoreBright(imageData,x,y,r,g,b,a)
+                  }        
+                }
+                ctx.putImageData(imageData,0,0);
+        }
+
+        function lessBright(){
+          imageData = ctx.getImageData(0,0, width, height); 
+          for (let x = 0; x < width; x++) {
+            for (let y = 0; y < height; y++) {                                              
+              r = getRed(imageData,x,y);        
+              g = getGreen(imageData,x,y);
+              b = getBlue(imageData,x,y); 
+              setPixeLessBright(imageData,x,y,r,g,b,a)
+            }        
+          }
+          ctx.putImageData(imageData,0,0);
         }
   
         function sepiaFilter(){
@@ -129,6 +171,26 @@ document.addEventListener("DOMContentLoaded", function(){
         image.data[index +2] = b;
         image.data[index +3] = a;  
       }
+
+      function setPixelMoreBright(imageData, x, y, r, g, b, a){
+        let index = (x+y*imageData.width) * 4;   
+    
+        imageData.data[index + 3]=a;      
+        imageData.data[index + 0] = r + 10;
+        imageData.data[index + 1] = g + 10;
+        imageData.data[index + 2] = b + 10;
+        
+    }
+
+    function setPixeLessBright(imageData, x, y, r, g, b, a){
+      let index = (x+y*imageData.width) * 4;   
+    
+      imageData.data[index + 3]=a;      
+      imageData.data[index + 0] = r - 10;
+      imageData.data[index + 1] = g - 10;
+      imageData.data[index + 2] = b - 10;
+      
+  }
   
       function getRed(image,x,y){
         let index =(x+y*image.width)*4;
