@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
   btn7.addEventListener("click", cleanCanvas);
   let btn8 = document.getElementById("addImage");
   btn8.addEventListener("change", addImageCanvas);
-
+  let btn9 = document.getElementById("download");
+  btn9 = addEventListener('click', downloadCanvas)
+ 
   function addImageCanvas(e) {
     cleanCanvas();
     let urlImagen = e.target.files[0];
@@ -47,6 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function cleanCanvas() {
     ctx.clearRect(0, 0, width, height);
+  }
+
+  function downloadCanvas(){
+   
+    let dnld = document.getElementById("download");
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    dnld.setAttribute("href", image);
+
   }
 
   function moreBright() {
