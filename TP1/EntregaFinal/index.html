@@ -56,15 +56,14 @@
                         </button>
                     </div>
                     <div>
-                        <button id="btnLimpiar" class="btn btn-outline-success btn-block" role="button">
+                        <button id="btnClean" class="btn btn-outline-success btn-block" role="button">
                             <i class="fas fa-broom"></i> Limpiar Canvas
                         </button>
                     </div>
-                    <div>
-                        <button class="btn btn-outline-primary btn-block" id="addImage">
-                            Cargar Imagen
-                        </button>            
-                    </div>
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Selecciona una Imagen</label>
+                        <input class="btn btn-outline-danger btn-block" id="addImage" type="file">
+                      </div>
                     <div>
                         <button class="btn btn-outline-danger btn-block" id="download">
                             Descargar
@@ -85,7 +84,6 @@
         <div  class="col-md-4 order-md-3 col-sm-12 order-sm-3 col-12 order-3">
             <div class="filters">
                <h3> <i class="fas fa-filter"></i> Filtros</h3>
-               <button class="btn btn-outline-dark btn-block" id="flt-original">Original</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-sepia">Sepia</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-negative">Negativo</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-greyScale">Escala de grises</button>
