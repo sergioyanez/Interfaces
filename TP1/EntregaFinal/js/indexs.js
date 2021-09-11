@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let g;
   let b;
   let a = 255;
+  let dibujar  = false;
+  
+
   cleanCanvas();
   // Botones de filtros
   let btn1 = document.getElementById("flt-sepia");
@@ -25,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn6 = document.getElementById("moreBright");
   btn6.addEventListener("click", moreBright);
 
-  // Botones de herramientas
+  // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
   btn7.addEventListener("click", cleanCanvas);
   let btn8 = document.getElementById("addImage");
@@ -33,13 +36,51 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn9 = document.getElementById("download");
   btn9.addEventListener("click", downloadImageCanvas);
 
+  //Botones de Barra de herramientas paint
+
+  let btn10= document.getElementById("btnPencil");
+  btn10.addEventListener("click",pencilOn);
+
+  function MousePos(canvas, e) {    //devuelve la posición del mouse
+    let ClientRect = canvas.getBoundingClientRect();
+         return { 
+         x: Math.round(e.clientX - ClientRect.left),
+         y: Math.round(e.clientY - ClientRect.top)
+    }
+  }
+
+
+function pencilOn(){
+  ctx.strokeStyle = "green";
+  ctx.lineCap = "round";
+  canvas.addEventListener("mousedown", start);
+  canvas.addEventListener("mouseup", finish);
+  canvas.addEventListener("mouseout", finish);
+  canvas.addEventListener("mousemove", draw);
+
+}
+function start(e){
+  dibujar = true;
+}
+
+function finish(){
+  dibujar = false;
+  ctx.beginPath();  //comienza una nueva ruta
+}
+function draw(){
+  if (dibujar) {
+    let m = MousePos(canvas,e);
+    ctx.lineTo(m.x, m.y);
+    ctx.stroke();
+  }
+}
+
+
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
     let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     dnld.setAttribute("href", image);
-    
-
-  }
+   }
   
   
   function addImageCanvas(e) {
