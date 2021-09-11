@@ -112,6 +112,14 @@ function draw(){
     ctx.putImageData(imageData, 0, 0);
   }
 
+  function downloadCanvas(){
+   
+    let dnld = document.getElementById("download");
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    dnld.setAttribute("href", image);
+
+  }
+
   function moreBright() {
     imageData = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
