@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   let canvas = document.getElementById("myCanvas");
   let ctx = canvas.getContext("2d");
+  let rect=canvas.getBoundingClientRect(); // devuelve left y top con respecto a la pantalla donde está el canvas
+  let x = 0, y = 0, dibujar = false;
   let width = canvas.width;
   let height = canvas.height;
   let imageData;
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let g;
   let b;
   let a = 255;
-  let dibujar  = false;
+  let borrar = false;
   
 
   cleanCanvas();
@@ -39,41 +41,49 @@ document.addEventListener("DOMContentLoaded", function () {
   //Botones de Barra de herramientas paint
 
   let btn10= document.getElementById("btnPencil");
-  btn10.addEventListener("click",pencilOn);
+ btn10.addEventListener("click",function(e){
 
-  function MousePos(canvas, e) {    //devuelve la posición del mouse
-    let ClientRect = canvas.getBoundingClientRect();
-         return { 
-         x: Math.round(e.clientX - ClientRect.left),
-         y: Math.round(e.clientY - ClientRect.top)
+  canvas.addEventListener("mousedown", function(e){
+    x=e.clientX - rect.left;   //posicion en x donde hizo clic - posicion con respecto al canvas
+    y=e.clientY - rect.top;
+    dibujar=true;
+
+  });
+  canvas.addEventListener("mousemove", function(e){
+   if(dibujar===true){
+     draw(x,y,e.clientX - rect.left,e.clientY - rect.top); //paso el punto inicial y donde estoy en este momento
+     x = e.clientX - rect.left;  //nuevo punto inicial se vuelve el punto final
+     y = e.clientY - rect.top;
+   }
+  });
+ 
+  canvas.addEventListener("mouseup", function(e){
+    if(dibujar===true){
+     draw(x,y,e.clientX - rect.left,e.clientY - rect.top);
+     x=0;      //reinicio variables
+     y=0;
+     dibujar=false;
     }
+  });
+
+  function draw(x1,y1,x2,y2){
+    ctx.beginPath();   //comienzo una nueva ruta
+    ctx.lineCap = "round";
+    ctx.strokeStyle = document.getElementById("setColor").value;
+    ctx.lineWidth=document.getElementById("setGrosor").value;
+    ctx.moveTo(x1,y1);   //muevo el lápiz a las coordenadas iniciales
+    ctx.lineTo(x2,y2);   //dibujo la linea
+    ctx.stroke();    
+    ctx.closePath();
   }
+ });
+  
+   
+
+//  canvas.addEventListener("mouseout", finish);
+ 
 
 
-function pencilOn(){
-  ctx.strokeStyle = "green";
-  ctx.lineCap = "round";
-  canvas.addEventListener("mousedown", start);
-  canvas.addEventListener("mouseup", finish);
-  canvas.addEventListener("mouseout", finish);
-  canvas.addEventListener("mousemove", draw);
-
-}
-function start(e){
-  dibujar = true;
-}
-
-function finish(){
-  dibujar = false;
-  ctx.beginPath();  //comienza una nueva ruta
-}
-function draw(){
-  if (dibujar) {
-    let m = MousePos(canvas,e);
-    ctx.lineTo(m.x, m.y);
-    ctx.stroke();
-  }
-}
 
 
   function downloadImageCanvas(){
