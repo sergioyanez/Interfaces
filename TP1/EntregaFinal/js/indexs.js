@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let g;
   let b;
   let a = 255;
+  cleanCanvas();
   // Botones de filtros
   let btn1 = document.getElementById("flt-sepia");
   btn1.addEventListener("click", sepiaFilter);
@@ -57,7 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function cleanCanvas() {
-    ctx.clearRect(0, 0, width, height);
+   // ctx.clearRect(0, 0, width, height);
+   imageData = ctx.getImageData(0, 0, width, height);
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = 255;
+        g = 255;
+        b = 255;
+        setPixel(imageData, x, y, r, g, b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
   }
 
   function moreBright() {
