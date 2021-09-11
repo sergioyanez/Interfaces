@@ -30,8 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn8 = document.getElementById("addImage");
   btn8.addEventListener("change", addImageCanvas);
   let btn9 = document.getElementById("download");
-  btn9 = addEventListener('click', downloadCanvas)
- 
+  btn9.addEventListener("click", downloadImageCanvas);
+
+  function downloadImageCanvas(){
+    let dnld = document.getElementById("imgDownload");
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    dnld.setAttribute("href", image);
+    
+
+  }
+  
+  
   function addImageCanvas(e) {
     cleanCanvas();
     let urlImagen = e.target.files[0];
