@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let r1,r2,g1,g2,b1,b2;
   let borrar = false;
   let valueSat=0;
-  let copia;
-  
+  let copia,atras;
+    
 
   cleanCanvas();
   // Botones de filtros
@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btn9.addEventListener("click", downloadImageCanvas);
   let btn17 = document.getElementById("flt-origin");
   btn17.addEventListener("click",original);
+  let btn18 = document.getElementById("deshacer");
+  btn18.addEventListener("click",deshace);
 
   //Botones de Barra de herramientas paint
 
@@ -60,15 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
  let btn16=document.getElementById("moreSaturation");
  btn16.addEventListener("click",masSaturar);
 
- function original(){
-   console.log("original");
-  // cleanCanvas();
-   ctx.putImageData(copia, 0, 0);
-   console.log(copia);
+ function deshace(){
+  ctx.putImageData(atras, 0, 0);
  }
  
- 
- 
+ function original(){
+  if (copia != null){
+    ctx.putImageData(copia, 0, 0);
+  }
+  
+ }
+  
  function desSaturar(){
     valueSat = -0.1;
     saturar();
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function saturar(){
   
   imageData = ctx.getImageData(0, 0, width, height);
+ 
   for (let x = 0; x < imageData.width; x++) {
           for (let y = 0; y < imageData.height; y++) {
                   let hsl = rgbToHsl(imageData, x, y);
@@ -139,17 +144,16 @@ function hslToRgb(h, s, l) {
   }
   return [ r * 255, g * 255, b * 255 ];
 }
- 
- 
- 
+  
  function pencilON(){
+  atras = ctx.getImageData(0, 0, width, height);
    pencil();
  }
  function eraser(){
+  atras = ctx.getImageData(0, 0, width, height);
    borrar = true;
    pencil();
  }
-
  
  function pencil(){
 
@@ -196,10 +200,6 @@ function hslToRgb(h, s, l) {
  };
   
    
-
-//  canvas.addEventListener("mouseout", finish);
- 
-
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
     let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -237,6 +237,7 @@ function hslToRgb(h, s, l) {
 
         ctx.drawImage(image, 0, 0, imgWidth, imgHeight);
         copia = ctx.getImageData(0, 0, width, height);
+        atras = copia;
       };
     };
     reader.readAsDataURL(urlImagen);
@@ -244,8 +245,9 @@ function hslToRgb(h, s, l) {
   }
 
   function cleanCanvas() {
-   // ctx.clearRect(0, 0, width, height);
+   
    imageData = ctx.getImageData(0, 0, width, height);
+   atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = 255;
@@ -257,16 +259,10 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  // function downloadCanvas(){
-   
-  //   let dnld = document.getElementById("download");
-  //   let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  //   dnld.setAttribute("href", image);
-
-  // }
-
+  
   function moreBright() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -280,6 +276,8 @@ function hslToRgb(h, s, l) {
 
   function lessBright() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+  
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -293,6 +291,8 @@ function hslToRgb(h, s, l) {
 
   function sepiaFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r =
@@ -324,6 +324,8 @@ function hslToRgb(h, s, l) {
 
   function negativeFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+  
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -337,6 +339,8 @@ function hslToRgb(h, s, l) {
 
   function greyScale() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+    
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -352,6 +356,7 @@ function hslToRgb(h, s, l) {
   function binarizationFilter() {
     let pixel;
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         pixel =
@@ -367,6 +372,7 @@ function hslToRgb(h, s, l) {
       }
     }
     ctx.putImageData(imageData, 0, 0);
+    
   }
 
   function generateAverageGray(r, g, b) {
@@ -376,6 +382,7 @@ function hslToRgb(h, s, l) {
 
   function blurFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = (getRed(imageData, x, y)+getRed(imageData, x-1, y)+getRed(imageData, x+1, y)+getRed(imageData, x-1, y+1)+getRed(imageData, x-1, y-1)+getRed(imageData, x, y+1)+getRed(imageData, x, y-1)+getRed(imageData, x+1, y+1)+getRed(imageData, x+1, y-1))/9;
