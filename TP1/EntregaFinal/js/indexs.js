@@ -109,7 +109,26 @@ document.addEventListener("DOMContentLoaded", function () {
     reader.onload = function (e) {
       image.src = e.target.result;
       image.onload = function () {
-        ctx.drawImage(image, 0, 0, width, height);
+
+        let imgWidth = image.width;
+        let imgHeight = image.height;
+        
+        if(imgWidth < imgHeight){ // ajusta,para mantener el aspecto de la imagen original, si la imagen tiene más alto que ancho
+            let proportion = (height * 100) / imgHeight;
+            imgWidth = imgWidth * (proportion/100);
+            imgHeight = imgHeight * (proportion/100);
+        } else if (imgWidth > imgHeight){  // ajusta,para mantener el aspecto de la imagen original, si la imagen tiene más ancho que alto
+            let proportion = (width * 100) / imgWidth;
+            imgWidth = imgWidth * (proportion/100);
+            imgHeight = imgHeight * (proportion/100);
+        } else { // ajusta,para mantener el aspecto de la imagen original, si la imagen tiene mismo alto que ancho
+            let proportionWidth = (width * 100) / imgWidth;
+            let proportionHeight = (height * 100) / imgHeight;
+            imgWidth = imgWidth * (proportionWidth/100);
+            imgHeight = imgHeight * (proportionHeight/100);
+        }
+
+        ctx.drawImage(image, 0, 0, imgWidth, imgHeight);
       };
     };
     reader.readAsDataURL(urlImagen);
