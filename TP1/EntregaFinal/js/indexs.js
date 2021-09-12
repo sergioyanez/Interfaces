@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let a = 255;
   let r1,r2,g1,g2,b1,b2;
   let borrar = false;
+  let valueSat=0;
   
 
   cleanCanvas();
@@ -51,6 +52,83 @@ document.addEventListener("DOMContentLoaded", function () {
  btn10.addEventListener("click", pencilON);
  let btn14= document.getElementById("btnGoma");
  btn14.addEventListener("click", eraser);
+ let btn15=document.getElementById("lessSaturation");
+ btn15.addEventListener("click",desSaturar);
+ let btn16=document.getElementById("moreSaturation");
+ btn16.addEventListener("click",masSaturar);
+
+ function desSaturar(){
+    valueSat = -0.1;
+    saturar();
+ }
+ function masSaturar(){
+  valueSat = 0.1;
+  saturar();
+}
+
+
+
+function saturar(){
+  
+  imageData = ctx.getImageData(0, 0, width, height);
+  for (let x = 0; x < imageData.width; x++) {
+          for (let y = 0; y < imageData.height; y++) {
+                  let hsl = rgbToHsl(imageData, x, y);
+                  hsl[1] = hsl[1] + valueSat;
+                  let rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+                  setPixel(imageData, x, y, rgb[0], rgb[1], rgb[2], 255);
+          }
+  }
+  ctx.putImageData(imageData, 0, 0);
+}
+//transforma los valores rgb a hsl
+function rgbToHsl(imageData, x, y) {
+  let index = (x + y * imageData.width) * 4;
+  let r = imageData.data[index+0];
+  let g = imageData.data[index+1];
+  let b = imageData.data[index+2];
+  r /= 255, g /= 255, b /= 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+  if (max == min) {
+          h = s = 0; 
+  } else {
+          var d = max - min;
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+          switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+          }
+          h /= 6;
+  }
+  return [ h, s, l ];
+}
+
+//transforma los valores hsl a rgb
+function hslToRgb(h, s, l) {
+  var r, g, b;
+  if (s == 0) {
+          r = g = b = l; 
+  } else {
+          function hue2rgb(p, q, t) {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+          }
+          var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+          var p = 2 * l - q;
+          r = hue2rgb(p, q, h + 1/3);
+          g = hue2rgb(p, q, h);
+          b = hue2rgb(p, q, h - 1/3);
+  }
+  return [ r * 255, g * 255, b * 255 ];
+}
+ 
+ 
  
  function pencilON(){
    pencil();
@@ -109,9 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //  canvas.addEventListener("mouseout", finish);
  
-
-
-
 
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
