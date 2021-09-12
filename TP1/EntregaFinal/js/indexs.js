@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btn5.addEventListener("click", lessBright);
   let btn6 = document.getElementById("moreBright");
   btn6.addEventListener("click", moreBright);
-  let btn10 = document.getElementById("flt-blur");
-  btn10.addEventListener("click", blurFilter);
+  let btn11 = document.getElementById("flt-blur");
+  btn11.addEventListener("click", blurFilter);
 
   // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
