@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let g;
   let b;
   let a = 255;
+  let r1,r2,g1,g2,b1,b2;
   let borrar = false;
   
 
@@ -31,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
   btn6.addEventListener("click", moreBright);
   let btn11 = document.getElementById("flt-blur");
   btn11.addEventListener("click", blurFilter);
+  let btn12 = document.getElementById("flt-sobel-horizontal");
+  btn12.addEventListener("click", sobelHorizontalFilter);
+  let btn13 = document.getElementById("flt-sobel-vertical");
+  btn13.addEventListener("click", sobelVerticalFilter);
 
   // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
@@ -248,11 +253,41 @@ document.addEventListener("DOMContentLoaded", function () {
         r = (getRed(imageData, x, y)+getRed(imageData, x-1, y)+getRed(imageData, x+1, y)+getRed(imageData, x-1, y+1)+getRed(imageData, x-1, y-1)+getRed(imageData, x, y+1)+getRed(imageData, x, y-1)+getRed(imageData, x+1, y+1)+getRed(imageData, x+1, y-1))/9;
         g = (getGreen(imageData, x, y)+getGreen(imageData, x-1, y)+getGreen(imageData, x+1, y)+getGreen(imageData, x-1, y+1)+getGreen(imageData, x-1, y-1)+getGreen(imageData, x, y+1)+getGreen(imageData, x, y-1)+getGreen(imageData, x+1, y+1)+getGreen(imageData, x+1, y-1))/9;
         b =  (getBlue(imageData, x, y)+getBlue(imageData, x-1, y)+getBlue(imageData, x+1, y)+getBlue(imageData, x-1, y+1)+getBlue(imageData, x-1, y-1)+getBlue(imageData, x, y+1)+getBlue(imageData, x, y-1)+getBlue(imageData, x+1, y+1)+getBlue(imageData, x+1, y-1))/9;
+   
         setPixel(imageData, x, y, r,g,b, a);
       }
     }
     ctx.putImageData(imageData, 0, 0);
   }
+
+  function sobelHorizontalFilter(){
+    imageData = ctx.getImageData(0, 0, width, height);
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
+        g =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
+        b = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
+      setPixel(imageData, x, y, r,g,b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+  function sobelVerticalFilter(){
+    imageData = ctx.getImageData(0, 0, width, height);
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
+        g =getGreen(imageData, x-1, y+1)*(1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(2)+getGreen(imageData, x, y-1)*(-2)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(-1);
+        b = getBlue(imageData, x-1, y+1)*(1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(2)+getBlue(imageData, x, y-1)*(-2)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(-1);
+        setPixel(imageData, x, y, r,g,b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
+  
+
+
   function setPixel(image, x, y, r, g, b, a) {
     let index = (x + y * image.width) * 4;
     image.data[index] = r;
