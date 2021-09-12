@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btn5.addEventListener("click", lessBright);
   let btn6 = document.getElementById("moreBright");
   btn6.addEventListener("click", moreBright);
+  let btn10 = document.getElementById("flt-blur");
+  btn10.addEventListener("click", blurFilter);
 
   // Botones de herramientas
   let btn7 = document.getElementById("btnClean");
@@ -177,6 +179,18 @@ document.addEventListener("DOMContentLoaded", function () {
     return gray;
   }
 
+  function blurFilter() {
+    imageData = ctx.getImageData(0, 0, width, height);
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = (getRed(imageData, x, y)+getRed(imageData, x-1, y)+getRed(imageData, x+1, y)+getRed(imageData, x-1, y+1)+getRed(imageData, x-1, y-1)+getRed(imageData, x, y+1)+getRed(imageData, x, y-1)+getRed(imageData, x+1, y+1)+getRed(imageData, x+1, y-1))/9;
+        g = (getGreen(imageData, x, y)+getGreen(imageData, x-1, y)+getGreen(imageData, x+1, y)+getGreen(imageData, x-1, y+1)+getGreen(imageData, x-1, y-1)+getGreen(imageData, x, y+1)+getGreen(imageData, x, y-1)+getGreen(imageData, x+1, y+1)+getGreen(imageData, x+1, y-1))/9;
+        b =  (getBlue(imageData, x, y)+getBlue(imageData, x-1, y)+getBlue(imageData, x+1, y)+getBlue(imageData, x-1, y+1)+getBlue(imageData, x-1, y-1)+getBlue(imageData, x, y+1)+getBlue(imageData, x, y-1)+getBlue(imageData, x+1, y+1)+getBlue(imageData, x+1, y-1))/9;
+        setPixel(imageData, x, y, r,g,b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
   function setPixel(image, x, y, r, g, b, a) {
     let index = (x + y * image.width) * 4;
     image.data[index] = r;

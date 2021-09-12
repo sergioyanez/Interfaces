@@ -36,7 +36,12 @@
             <div class="col-auto">
                 <div class="col mt-1">
                     <div>
-                        <button id="btnLapiz" class="btn btn-outline-dark btn-block" role="button">
+                        <label for="formFileSm" class="form-label">Color</label>
+                        <input type="color" id="setColor" value="#000000"> 
+                        <label for="formFileSm" class="form-label">Grosor</label>
+                        <input type="range" min="1" max="50" value="10" id="setGrosor"> 
+
+                        <button id="btnPencil" class="btn btn-outline-dark btn-block" role="button">
                             <i class="fas fa-pencil-alt text-success"></i> Lapiz
                         </button>
                     </div>
@@ -65,9 +70,10 @@
                         <input class="btn btn-outline-danger btn-block" id="addImage" type="file">
                       </div>
                     <div>
-                        <a id= "imgDownload" download="image.png" href="" download><button class="btn btn-outline-danger btn-block" id="download">
-                            Descargar
-                        </button> </a>
+                       
+                        <a id= "imgDownload" download="image.png" href="" download>
+                            <button class="btn btn-outline-danger btn-block" id="download">
+                            Descargar</button> </a>
                           
                                 
                     </div>
@@ -92,7 +98,7 @@
                 <button class="btn btn-outline-dark btn-block" id="flt-greyScale">Escala de grises</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-binarie">Binarización</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-blur">Blur</button>
-                
+                <button class="btn btn-outline-dark btn-block" id="flt-sobel">Sobel</button>
                 <button class="btn btn-outline-dark btn-block" id="flt-saturation">Saturacion
                   <input type="range"min="1"max="3"id="saturation-value"/>
                 </button>
