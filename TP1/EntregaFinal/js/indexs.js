@@ -48,7 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
   //Botones de Barra de herramientas paint
 
   let btn10= document.getElementById("btnPencil");
- btn10.addEventListener("click",function(e){
+ btn10.addEventListener("click", pencilON);
+ let btn14= document.getElementById("btnGoma");
+ btn14.addEventListener("click", eraser);
+ 
+ function pencilON(){
+   pencil();
+ }
+ function eraser(){
+   borrar = true;
+   pencil();
+ }
+
+ 
+ function pencil(){
 
   canvas.addEventListener("mousedown", function(e){
     x=e.clientX - rect.left;   //posicion en x donde hizo clic - posicion con respecto al canvas
@@ -70,20 +83,27 @@ document.addEventListener("DOMContentLoaded", function () {
      x=0;      //reinicio variables
      y=0;
      dibujar=false;
+     borrar=false;
     }
   });
 
   function draw(x1,y1,x2,y2){
     ctx.beginPath();   //comienzo una nueva ruta
     ctx.lineCap = "round";
-    ctx.strokeStyle = document.getElementById("setColor").value;
+    if(borrar === true){
+      ctx.strokeStyle="#FFFFFF";
+
+    }else{
+      ctx.strokeStyle = document.getElementById("setColor").value;
+    }
+    
     ctx.lineWidth=document.getElementById("setGrosor").value;
     ctx.moveTo(x1,y1);   //muevo el lápiz a las coordenadas iniciales
     ctx.lineTo(x2,y2);   //dibujo la linea
     ctx.stroke();    
     ctx.closePath();
   }
- });
+ };
   
    
 
