@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   let canvas = document.getElementById("myCanvas");
   let ctx = canvas.getContext("2d");
+  let rect=canvas.getBoundingClientRect(); // devuelve left y top con respecto a la pantalla donde está el canvas
+  let x = 0, y = 0, dibujar = false;
   let width = canvas.width;
   let height = canvas.height;
   let imageData;
@@ -10,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let g;
   let b;
   let a = 255;
+  let borrar = false;
+  
+
+  cleanCanvas();
   // Botones de filtros
   let btn1 = document.getElementById("flt-sepia");
   btn1.addEventListener("click", sepiaFilter);
@@ -26,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn10 = document.getElementById("flt-blur");
   btn10.addEventListener("click", blurFilter);
 
-  // Botones de herramientas
+  // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
   btn7.addEventListener("click", cleanCanvas);
   let btn8 = document.getElementById("addImage");
@@ -34,13 +40,59 @@ document.addEventListener("DOMContentLoaded", function () {
   let btn9 = document.getElementById("download");
   btn9.addEventListener("click", downloadImageCanvas);
 
+  //Botones de Barra de herramientas paint
+
+  let btn10= document.getElementById("btnPencil");
+ btn10.addEventListener("click",function(e){
+
+  canvas.addEventListener("mousedown", function(e){
+    x=e.clientX - rect.left;   //posicion en x donde hizo clic - posicion con respecto al canvas
+    y=e.clientY - rect.top;
+    dibujar=true;
+
+  });
+  canvas.addEventListener("mousemove", function(e){
+   if(dibujar===true){
+     draw(x,y,e.clientX - rect.left,e.clientY - rect.top); //paso el punto inicial y donde estoy en este momento
+     x = e.clientX - rect.left;  //nuevo punto inicial se vuelve el punto final
+     y = e.clientY - rect.top;
+   }
+  });
+ 
+  canvas.addEventListener("mouseup", function(e){
+    if(dibujar===true){
+     draw(x,y,e.clientX - rect.left,e.clientY - rect.top);
+     x=0;      //reinicio variables
+     y=0;
+     dibujar=false;
+    }
+  });
+
+  function draw(x1,y1,x2,y2){
+    ctx.beginPath();   //comienzo una nueva ruta
+    ctx.lineCap = "round";
+    ctx.strokeStyle = document.getElementById("setColor").value;
+    ctx.lineWidth=document.getElementById("setGrosor").value;
+    ctx.moveTo(x1,y1);   //muevo el lápiz a las coordenadas iniciales
+    ctx.lineTo(x2,y2);   //dibujo la linea
+    ctx.stroke();    
+    ctx.closePath();
+  }
+ });
+  
+   
+
+//  canvas.addEventListener("mouseout", finish);
+ 
+
+
+
+
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
     let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     dnld.setAttribute("href", image);
-    
-
-  }
+   }
   
   
   function addImageCanvas(e) {
@@ -59,7 +111,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function cleanCanvas() {
-    ctx.clearRect(0, 0, width, height);
+   // ctx.clearRect(0, 0, width, height);
+   imageData = ctx.getImageData(0, 0, width, height);
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = 255;
+        g = 255;
+        b = 255;
+        setPixel(imageData, x, y, r, g, b, a);
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
   }
 
   function downloadCanvas(){
