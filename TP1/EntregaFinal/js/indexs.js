@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let r1,r2,g1,g2,b1,b2;
   let borrar = false;
   let valueSat=0;
+  let copia;
   
 
   cleanCanvas();
@@ -45,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btn8.addEventListener("change", addImageCanvas);
   let btn9 = document.getElementById("download");
   btn9.addEventListener("click", downloadImageCanvas);
+  let btn17 = document.getElementById("flt-origin");
+  btn17.addEventListener("click",original);
 
   //Botones de Barra de herramientas paint
 
@@ -57,6 +60,15 @@ document.addEventListener("DOMContentLoaded", function () {
  let btn16=document.getElementById("moreSaturation");
  btn16.addEventListener("click",masSaturar);
 
+ function original(){
+   console.log("original");
+  // cleanCanvas();
+   ctx.putImageData(copia, 0, 0);
+   console.log(copia);
+ }
+ 
+ 
+ 
  function desSaturar(){
     valueSat = -0.1;
     saturar();
@@ -224,9 +236,11 @@ function hslToRgb(h, s, l) {
         }
 
         ctx.drawImage(image, 0, 0, imgWidth, imgHeight);
+        copia = ctx.getImageData(0, 0, width, height);
       };
     };
     reader.readAsDataURL(urlImagen);
+    
   }
 
   function cleanCanvas() {
@@ -243,13 +257,13 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  function downloadCanvas(){
+  // function downloadCanvas(){
    
-    let dnld = document.getElementById("download");
-    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    dnld.setAttribute("href", image);
+  //   let dnld = document.getElementById("download");
+  //   let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  //   dnld.setAttribute("href", image);
 
-  }
+  // }
 
   function moreBright() {
     imageData = ctx.getImageData(0, 0, width, height);
