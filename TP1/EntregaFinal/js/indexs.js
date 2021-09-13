@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
   btn12.addEventListener("click", sobelFilter);
   let btn13 = document.getElementById("flt-sobel-horizontal");
   btn13.addEventListener("click", sobelHorizontalFilter);
-  let btn14 = document.getElementById("flt-sobel-vertical");
-  btn14.addEventListener("click", sobelVerticalFilter);
+  let btn19 = document.getElementById("flt-sobel-vertical");
+  btn19.addEventListener("click", sobelVerticalFilter);
 
   // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
@@ -399,7 +399,8 @@ function hslToRgb(h, s, l) {
 
   function sobelFilter(){
     imageData = ctx.getImageData(0, 0, width, height);
-    imageData2 = ctx.getImageData(0, 0, width, height);    
+    imageData2 = ctx.getImageData(0, 0, width, height); 
+    atras = ctx.getImageData(0, 0, width, height);   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r2 = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
@@ -421,6 +422,7 @@ function hslToRgb(h, s, l) {
   function sobelHorizontalFilter(){
     imageData = ctx.getImageData(0, 0, width, height);
     imageData2 = ctx.getImageData(0, 0, width, height); 
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
@@ -434,7 +436,8 @@ function hslToRgb(h, s, l) {
   
   function sobelVerticalFilter(){
     imageData = ctx.getImageData(0, 0, width, height);
-    imageData2 = ctx.getImageData(0, 0, width, height);    
+    imageData2 = ctx.getImageData(0, 0, width, height); 
+    atras = ctx.getImageData(0, 0, width, height);   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
