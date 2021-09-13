@@ -1,4 +1,5 @@
 "use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
   let canvas = document.getElementById("myCanvas");
   let ctx = canvas.getContext("2d");
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
   cleanCanvas();
-  // Botones de filtros
+ // Botones de filtros
   let btn1 = document.getElementById("flt-sepia");
   btn1.addEventListener("click", sepiaFilter);
   let btn2 = document.getElementById("flt-negative");
@@ -64,10 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
  let btn16=document.getElementById("moreSaturation");
  btn16.addEventListener("click",masSaturar);
 
+ 
+ // Vuelve a cargar en el canvas la matriz de la imagen anterior a aplicar modificaciones
  function deshace(){
   ctx.putImageData(atras, 0, 0);
  }
  
+ //Carga la matriz de la imagen original subida desde disco
  function original(){
   if (copia != null){
     ctx.putImageData(copia, 0, 0);
@@ -75,17 +79,21 @@ document.addEventListener("DOMContentLoaded", function () {
   
  }
   
+ // resta saturación a la imagen actual
  function desSaturar(){
     valueSat = -0.1;
     saturar();
  }
+
+ // suma saturación a la imagen actual
  function masSaturar(){
   valueSat = 0.1;
   saturar();
 }
 
-
-
+// trae la imagen actual, transforma los valores rgb a hsl, suma o resta la saturación deseada
+// vuelve a transformat a rgb y setea los pixeles con los nuevos valores.
+//por último carga la matriz en el contexto del canva.
 function saturar(){
   
   imageData = ctx.getImageData(0, 0, width, height);
@@ -147,17 +155,26 @@ function hslToRgb(h, s, l) {
   return [ r * 255, g * 255, b * 255 ];
 }
   
+//Guarda la matriz actual para uso en funcion deshacer
+//activa la funcionalidad pencil para que comience a dibujar el lápiz.
  function pencilON(){
   atras = ctx.getImageData(0, 0, width, height);
    pencil();
  }
+
+//Guarda la matriz actual para uso en funcion deshacer, la variable borrar se vuelve true
+// para que luego el color del lapiz sea blanco
+//activa la funcionalidad eraser para que comience a borra la goma.
  function eraser(){
   atras = ctx.getImageData(0, 0, width, height);
    borrar = true;
    pencil();
  }
  
- function pencil(){
+ // funcionalidad utilizada para el lápiz y para la goma
+ //se detectan tres eventos: mousedown(cuando se baja el lápiz "click")
+ // mousemove(cuando se está moviendo el mouse presionado) y mouseUp (cuando se suelta el click del mouse)
+  function pencil(){
 
   canvas.addEventListener("mousedown", function(e){
     x=e.clientX - rect.left;   //posicion en x donde hizo clic - posicion con respecto al canvas
@@ -183,28 +200,29 @@ function hslToRgb(h, s, l) {
     }
   });
 
+// funcion que permite dibujar según el recorrido del pencil
   function draw(x1,y1,x2,y2){
     ctx.beginPath();   //comienzo una nueva ruta
     ctx.lineCap = "round";
     if(borrar === true){
-      ctx.strokeStyle="#FFFFFF";
+      ctx.strokeStyle="#FFFFFF";   // en el caso de la goma, pinta blanco
 
     }else{
-      ctx.strokeStyle = document.getElementById("setColor").value;
+      ctx.strokeStyle = document.getElementById("setColor").value;  //toma el valor del input
     }
     
     ctx.lineWidth=document.getElementById("setGrosor").value;
     ctx.moveTo(x1,y1);   //muevo el lápiz a las coordenadas iniciales
-    ctx.lineTo(x2,y2);   //dibujo la linea
-    ctx.stroke();    
-    ctx.closePath();
+    ctx.lineTo(x2,y2);   //agrega un punto y crea una línea HASTA ese punto DESDE el último punto, sin dibujar
+    ctx.stroke();     //dibuja la linea definida en moveTo y LineTo
+    ctx.closePath();  //termina el camino
   }
  };
   
-   
+   // descarga la imagen actual del contexto del canva.
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
-    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); // devuelve la matriz
     dnld.setAttribute("href", image);
    }
   
