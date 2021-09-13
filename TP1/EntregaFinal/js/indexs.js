@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let a = 255;
   let r1,r2,g1,g2,b1,b2;
   let borrar = false;
-  
+  let valueSat=0;
+  let copia,atras;
+    
 
   cleanCanvas();
   // Botones de filtros
@@ -46,11 +48,116 @@ document.addEventListener("DOMContentLoaded", function () {
   btn8.addEventListener("change", addImageCanvas);
   let btn9 = document.getElementById("download");
   btn9.addEventListener("click", downloadImageCanvas);
+  let btn17 = document.getElementById("flt-origin");
+  btn17.addEventListener("click",original);
+  let btn18 = document.getElementById("deshacer");
+  btn18.addEventListener("click",deshace);
 
   //Botones de Barra de herramientas paint
 
   let btn10= document.getElementById("btnPencil");
- btn10.addEventListener("click",function(e){
+ btn10.addEventListener("click", pencilON);
+ let btn14= document.getElementById("btnGoma");
+ btn14.addEventListener("click", eraser);
+ let btn15=document.getElementById("lessSaturation");
+ btn15.addEventListener("click",desSaturar);
+ let btn16=document.getElementById("moreSaturation");
+ btn16.addEventListener("click",masSaturar);
+
+ function deshace(){
+  ctx.putImageData(atras, 0, 0);
+ }
+ 
+ function original(){
+  if (copia != null){
+    ctx.putImageData(copia, 0, 0);
+  }
+  
+ }
+  
+ function desSaturar(){
+    valueSat = -0.1;
+    saturar();
+ }
+ function masSaturar(){
+  valueSat = 0.1;
+  saturar();
+}
+
+
+
+function saturar(){
+  
+  imageData = ctx.getImageData(0, 0, width, height);
+ 
+  for (let x = 0; x < imageData.width; x++) {
+          for (let y = 0; y < imageData.height; y++) {
+                  let hsl = rgbToHsl(imageData, x, y);
+                  hsl[1] = hsl[1] + valueSat;
+                  let rgb = hslToRgb(hsl[0], hsl[1], hsl[2]);
+                  setPixel(imageData, x, y, rgb[0], rgb[1], rgb[2], 255);
+          }
+  }
+  ctx.putImageData(imageData, 0, 0);
+}
+//transforma los valores rgb a hsl
+function rgbToHsl(imageData, x, y) {
+  let index = (x + y * imageData.width) * 4;
+  let r = imageData.data[index+0];
+  let g = imageData.data[index+1];
+  let b = imageData.data[index+2];
+  r /= 255, g /= 255, b /= 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+  if (max == min) {
+          h = s = 0; 
+  } else {
+          var d = max - min;
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+          switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+          }
+          h /= 6;
+  }
+  return [ h, s, l ];
+}
+
+//transforma los valores hsl a rgb
+function hslToRgb(h, s, l) {
+  var r, g, b;
+  if (s == 0) {
+          r = g = b = l; 
+  } else {
+          function hue2rgb(p, q, t) {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+          }
+          var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+          var p = 2 * l - q;
+          r = hue2rgb(p, q, h + 1/3);
+          g = hue2rgb(p, q, h);
+          b = hue2rgb(p, q, h - 1/3);
+  }
+  return [ r * 255, g * 255, b * 255 ];
+}
+  
+ function pencilON(){
+  atras = ctx.getImageData(0, 0, width, height);
+   pencil();
+ }
+ function eraser(){
+  atras = ctx.getImageData(0, 0, width, height);
+   borrar = true;
+   pencil();
+ }
+ 
+ function pencil(){
 
   canvas.addEventListener("mousedown", function(e){
     x=e.clientX - rect.left;   //posicion en x donde hizo clic - posicion con respecto al canvas
@@ -72,29 +179,29 @@ document.addEventListener("DOMContentLoaded", function () {
      x=0;      //reinicio variables
      y=0;
      dibujar=false;
+     borrar=false;
     }
   });
 
   function draw(x1,y1,x2,y2){
     ctx.beginPath();   //comienzo una nueva ruta
     ctx.lineCap = "round";
-    ctx.strokeStyle = document.getElementById("setColor").value;
+    if(borrar === true){
+      ctx.strokeStyle="#FFFFFF";
+
+    }else{
+      ctx.strokeStyle = document.getElementById("setColor").value;
+    }
+    
     ctx.lineWidth=document.getElementById("setGrosor").value;
     ctx.moveTo(x1,y1);   //muevo el lápiz a las coordenadas iniciales
     ctx.lineTo(x2,y2);   //dibujo la linea
     ctx.stroke();    
     ctx.closePath();
   }
- });
+ };
   
    
-
-//  canvas.addEventListener("mouseout", finish);
- 
-
-
-
-
   function downloadImageCanvas(){
     let dnld = document.getElementById("imgDownload");
     let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -131,14 +238,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         ctx.drawImage(image, 0, 0, imgWidth, imgHeight);
+        copia = ctx.getImageData(0, 0, width, height);
+        atras = copia;
       };
     };
     reader.readAsDataURL(urlImagen);
+    
   }
 
   function cleanCanvas() {
-   // ctx.clearRect(0, 0, width, height);
+   
    imageData = ctx.getImageData(0, 0, width, height);
+   atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = 255;
@@ -150,16 +261,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  function downloadCanvas(){
-   
-    let dnld = document.getElementById("download");
-    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    dnld.setAttribute("href", image);
-
-  }
-
+  
   function moreBright() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -173,6 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function lessBright() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+  
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -186,6 +293,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function sepiaFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r =
@@ -217,6 +326,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function negativeFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+  
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -230,6 +341,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function greyScale() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
+    
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
@@ -245,6 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function binarizationFilter() {
     let pixel;
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         pixel =
@@ -260,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     ctx.putImageData(imageData, 0, 0);
+    
   }
 
   function generateAverageGray(r, g, b) {
@@ -269,6 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function blurFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
+    atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = (getRed(imageData, x, y)+getRed(imageData, x-1, y)+getRed(imageData, x+1, y)+getRed(imageData, x-1, y+1)+getRed(imageData, x-1, y-1)+getRed(imageData, x, y+1)+getRed(imageData, x, y-1)+getRed(imageData, x+1, y+1)+getRed(imageData, x+1, y-1))/9;
