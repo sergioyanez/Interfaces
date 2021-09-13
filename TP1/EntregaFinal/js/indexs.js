@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let x = 0, y = 0, dibujar = false;
   let width = canvas.width;
   let height = canvas.height;
-  let imageData;
+  let imageData, imageData2;
   let grayPixel;
   let r;
   let g;
@@ -32,10 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
   btn6.addEventListener("click", moreBright);
   let btn11 = document.getElementById("flt-blur");
   btn11.addEventListener("click", blurFilter);
-  let btn12 = document.getElementById("flt-sobel-horizontal");
-  btn12.addEventListener("click", sobelHorizontalFilter);
-  let btn13 = document.getElementById("flt-sobel-vertical");
-  btn13.addEventListener("click", sobelVerticalFilter);
+  let btn12 = document.getElementById("flt-sobel");
+  btn12.addEventListener("click", sobelFilter);
+  let btn13 = document.getElementById("flt-sobel-horizontal");
+  btn13.addEventListener("click", sobelHorizontalFilter);
+  let btn14 = document.getElementById("flt-sobel-vertical");
+  btn14.addEventListener("click", sobelVerticalFilter);
 
   // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
@@ -279,33 +281,54 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  function sobelHorizontalFilter(){
+  function sobelFilter(){
     imageData = ctx.getImageData(0, 0, width, height);
+    imageData2 = ctx.getImageData(0, 0, width, height);    
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
-        r = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
-        g =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
-        b = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
-      setPixel(imageData, x, y, r,g,b, a);
+        r2 = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
+        g2 =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
+        b2 = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
+      
+        r1 = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
+        g1 =getGreen(imageData, x-1, y+1)*(1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(2)+getGreen(imageData, x, y-1)*(-2)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(-1);
+        b1 = getBlue(imageData, x-1, y+1)*(1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(2)+getBlue(imageData, x, y-1)*(-2)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(-1);
+        r= Math.sqrt(Math.pow(r1,2)+Math.pow(r2,2));
+        g= Math.sqrt(Math.pow(g1,2)+Math.pow(g2,2));
+        b= Math.sqrt(Math.pow(b1,2)+Math.pow(b2,2));
+        setPixel(imageData2, x, y, r,g,b, a);
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);
   }
 
-  function sobelVerticalFilter(){
+  function sobelHorizontalFilter(){
     imageData = ctx.getImageData(0, 0, width, height);
+    imageData2 = ctx.getImageData(0, 0, width, height); 
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
         g =getGreen(imageData, x-1, y+1)*(1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(2)+getGreen(imageData, x, y-1)*(-2)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(-1);
         b = getBlue(imageData, x-1, y+1)*(1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(2)+getBlue(imageData, x, y-1)*(-2)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(-1);
-        setPixel(imageData, x, y, r,g,b, a);
+        setPixel(imageData2, x, y, r,g,b, a);
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);
   }
   
-
+  function sobelVerticalFilter(){
+    imageData = ctx.getImageData(0, 0, width, height);
+    imageData2 = ctx.getImageData(0, 0, width, height);    
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        r = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
+        g =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
+        b = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
+        setPixel(imageData2, x, y, r,g,b, a);
+      }
+    }
+    ctx.putImageData(imageData2, 0, 0);
+  }
 
   function setPixel(image, x, y, r, g, b, a) {
     let index = (x + y * image.width) * 4;
