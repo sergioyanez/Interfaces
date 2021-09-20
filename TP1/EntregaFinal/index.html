@@ -20,7 +20,6 @@
 
 
 <header>
-  
 
 </header>
 
@@ -38,7 +37,7 @@
                         <div>
                                 <i class="fas fa-palette text-primary"></i> Color
                                 <input type="color" id="setColor" value="#000000"> 
-                                <label for="formFileSm" class="form-label">Grosor</label>
+                                <label for="formFileSm" class="form-label"><i class="fas fa-brush text-primary"></i>Grosor</label>
                                  <input type="range" min="1" max="50" value="1" id="setGrosor">  
                             
                         </div>
@@ -78,16 +77,16 @@
                 <h3  class="btn btn-light btn-block"style=" border-style: solid; border-color: black"><i class="far fa-image"></i> Imagen </h3>
             </div>
             <div class="col-auto justify-content-center">
-                <canvas  id="myCanvas" width="500" height="400" style="border:1px solid black;"></canvas>
+                <canvas  id="myCanvas" width="485" height="400" style="border:1px solid black;"></canvas>
                 <div class="btn-group btn btn-dark btn-block" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-outline-light" id="lessSaturation">-</button>
-                    <button type="button" class="btn btn-outline-light">Saturacion</button>
+                    <button type="button" class="btn btn-outline-light"><i class="fas fa-adjust text-warning"></i>Saturacion</button>
                     <button type="button" class="btn btn-outline-light" id="moreSaturation">+</button>                 
                </div>
                 
                 <div class="btn-group btn btn-dark btn-block" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-outline-light" id="lessBright">-</button>
-                    <button type="button" class="btn btn-outline-light">Brillo</button>
+                    <button type="button" class="btn btn-outline-light"><i class="fas fa-sun  text-warning"></i>Brillo</button>
                     <button type="button" class="btn btn-outline-light" id="moreBright">+</button>
                   </div>
             </div>
