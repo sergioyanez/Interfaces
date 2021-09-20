@@ -226,9 +226,9 @@ function hslToRgb(h, s, l) {
     dnld.setAttribute("href", image);
    }
   
-  
+  // agrega una image desde disco a Canvas
   function addImageCanvas(e) {
-    cleanCanvas();
+    cleanCanvas();        //se limpia canvas
     let urlImagen = e.target.files[0];
     let reader = new FileReader();
     let image = new Image();
@@ -263,12 +263,12 @@ function hslToRgb(h, s, l) {
     reader.readAsDataURL(urlImagen);
     
   }
-
-  function cleanCanvas() {
+  //limpia canvas, obteniendo una lienzo en blanco para comenzar nuevamente
+  function cleanCanvas() {    
    
-   imageData = ctx.getImageData(0, 0, width, height);
-   atras = ctx.getImageData(0, 0, width, height);
-    for (let x = 0; x < width; x++) {
+   imageData = ctx.getImageData(0, 0, width, height);   
+   atras = ctx.getImageData(0, 0, width, height);   //se guarda imageData para la funcionalidad deshacer
+    for (let x = 0; x < width; x++) {         //Se colocan en blanco todos los pixeles del canva
       for (let y = 0; y < height; y++) {
         r = 255;
         g = 255;
@@ -279,21 +279,22 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  
-  function moreBright() {
+  //Agrega más brillo a la imagen actual en canva
+  function moreBright() {           
     imageData = ctx.getImageData(0, 0, width, height);
     atras = ctx.getImageData(0, 0, width, height);
     for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
-        r = getRed(imageData, x, y);
-        g = getGreen(imageData, x, y);
+      for (let y = 0; y < height; y++) {  //trae el Rojo, Verde y Azul del pixel en la ubicacion x,y 
+        r = getRed(imageData, x, y);      
+        g = getGreen(imageData, x, y);    
         b = getBlue(imageData, x, y);
-        setPixelMoreBright(imageData, x, y, r, g, b, a);
+        setPixelMoreBright(imageData, x, y, r, g, b, a); //llama a la funcion para agregar brillo    
       }
     }
     ctx.putImageData(imageData, 0, 0);
   }
 
+  //Quita brillo a la imagen actual
   function lessBright() {
     imageData = ctx.getImageData(0, 0, width, height);
     atras = ctx.getImageData(0, 0, width, height);
@@ -303,7 +304,7 @@ function hslToRgb(h, s, l) {
         r = getRed(imageData, x, y);
         g = getGreen(imageData, x, y);
         b = getBlue(imageData, x, y);
-        setPixeLessBright(imageData, x, y, r, g, b, a);
+        setPixeLessBright(imageData, x, y, r, g, b, a); //llama a la funcion para quitar brillo 
       }
     }
     ctx.putImageData(imageData, 0, 0);
@@ -342,6 +343,7 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);
   }
 
+  // Genera una imagen, con filtro negativo de la actual
   function negativeFilter() {
     imageData = ctx.getImageData(0, 0, width, height);
     atras = ctx.getImageData(0, 0, width, height);
@@ -351,12 +353,13 @@ function hslToRgb(h, s, l) {
         r = getRed(imageData, x, y);
         g = getGreen(imageData, x, y);
         b = getBlue(imageData, x, y);
-        setPixel(imageData, x, y, 255 - r, 255 - g, 255 - b, a);
+        setPixel(imageData, x, y, 255 - r, 255 - g, 255 - b, a);  //Se setean los pixeles con los colores complementarios
       }
     }
     ctx.putImageData(imageData, 0, 0);
   }
 
+  //Convierte la imagen actual en escala de grises (RGB deben ser iguales)
   function greyScale() {
     imageData = ctx.getImageData(0, 0, width, height);
     atras = ctx.getImageData(0, 0, width, height);
@@ -366,8 +369,8 @@ function hslToRgb(h, s, l) {
         r = getRed(imageData, x, y);
         g = getGreen(imageData, x, y);
         b = getBlue(imageData, x, y);
-        grayPixel = generateAverageGray(r, g, b);
-        setPixel(imageData, x, y, grayPixel, grayPixel, grayPixel, a);
+        grayPixel = generateAverageGray(r, g, b);  //Se asigna el valor promedio para todos los colores
+        setPixel(imageData, x, y, grayPixel, grayPixel, grayPixel, a);  //se setea el pixele 
       }
     }
     ctx.putImageData(imageData, 0, 0);
@@ -394,7 +397,7 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);
     
   }
-
+  //Retorna el valor promedio de R,G,B para lograr una escala de grises
   function generateAverageGray(r, g, b) {
     let gray = (r + g + b) / 3;
     return gray;
@@ -467,6 +470,7 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData2, 0, 0);
   }
 
+  // Setea el pixel en la posición x,y de la imagen, con los valores pasados por parámetro
   function setPixel(image, x, y, r, g, b, a) {
     let index = (x + y * image.width) * 4;
     image.data[index] = r;
@@ -475,15 +479,17 @@ function hslToRgb(h, s, l) {
     image.data[index + 3] = a;
   }
 
-  function setPixelMoreBright(imageData, x, y, r, g, b, a) {
-    let index = (x + y * imageData.width) * 4;
-
-    imageData.data[index + 3] = a;
-    imageData.data[index + 0] = r + 10;
+  //Agrega brillo al pixel en la posición x,y
+  function setPixelMoreBright(imageData, x, y, r, g, b, a) { 
+    let index = (x + y * imageData.width) * 4;   //calcula el index para poder recorres el arreglo imageData
+    
+    imageData.data[index + 0] = r + 10;   //suma 10 en cada color para aumentar el brillo
     imageData.data[index + 1] = g + 10;
     imageData.data[index + 2] = b + 10;
+    imageData.data[index + 3] = a;   //la transparencia queda igual
   }
 
+  //Quita brillo al pixel en la posición x,y
   function setPixeLessBright(imageData, x, y, r, g, b, a) {
     let index = (x + y * imageData.width) * 4;
 
@@ -493,14 +499,17 @@ function hslToRgb(h, s, l) {
     imageData.data[index + 2] = b - 10;
   }
 
+  //Devuelve el valor de Rojo en la posición x,y de la imagen
   function getRed(image, x, y) {
     let index = (x + y * image.width) * 4;
     return image.data[index];
   }
+  //Devuelve el valor de Verde en la posición x,y de la imagen
   function getGreen(image, x, y) {
     let index = (x + y * image.width) * 4;
     return image.data[index + 1];
   }
+  //Devuelve el valor de Azul en la posición x,y de la imagen
   function getBlue(image, x, y) {
     let index = (x + y * image.width) * 4;
     return image.data[index + 2];
