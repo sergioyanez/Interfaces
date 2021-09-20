@@ -88,3 +88,7 @@ header{
     border-color: black;
     
   }
+  .fondoTrans{
+    background-color: rgb(213, 213, 228,0.4);
+    
+  }
