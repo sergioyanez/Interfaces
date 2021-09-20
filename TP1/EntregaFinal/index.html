@@ -34,21 +34,23 @@
    
     <div class="row">
 
-        <div class="col-md-3  order-md-1 col-sm-12 order-sm-2 col-12 order-2">
+        <div class="col-md-3  order-md-1 col-sm-12 order-sm-2 col-12 order-2 derecha">
             <div class= "col-auto centrado">
                 <img src="images/logo.png">
             </div>
-            <div class="col-auto">
-               <h3 class="btn btn-light btn-block"style=" border-style: solid; border-color: black"> <i class="fas fa-tools"></i> Herramientas</h3>
+            <div class="col-auto ">
+               <h3 class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-tools"></i> Herramientas</h3>
             </div>
             <div class="col-auto btn btn btn-block colorAzul">
                 <div class="col mt-1">
                   
-                        <div>
-                                <i class="fas fa-palette text-primary"></i> Color
-                                <input type="color" id="setColor" value="#000000"> 
-                                <label for="formFileSm" class="form-label"><i class="fas fa-brush text-primary"></i>Grosor</label>
-                                 <input type="range" min="1" max="50" value="1" id="setGrosor">  
+                        <div class="izquierda">
+                            <label for="formFileSm" class="form-label btn-outline-light"> <i class="fas fa-palette text-primary"></i>Color</label>
+                             <input type="color" id="setColor" value="#000000"> 
+                             <div class = "izquierda"><label for="formFileSm" class="form-label btn-outline-light"><i class="fas fa-brush text-primary"></i>Grosor</label>
+                                <input type="range" min="1" max="50" value="1" id="setGrosor"> 
+                            </div>
+                                 
                             
                         </div>
                        
@@ -82,9 +84,9 @@
             </div>
            
         </div>
-        <div class=" col-md-5 order-md-2 col-sm-12 order-sm-1 col-12 order-1">
+        <div class=" col-md-6 order-md-2 col-sm-12 order-sm-1 col-12 order-1">
             <div class="col-auto">
-                <h3  class="btn btn-light btn-block"style=" border-style: solid; border-color: black"><i class="far fa-image"></i> Imagen </h3>
+                <h3  class="btn btn-light btn-block titulosAwasome"><i class="far fa-image"></i> Imagen </h3>
             </div>
             <div class="col-auto justify-content-center">
                 <canvas  id="myCanvas" width="525" height="400" style="border:1px solid black;"></canvas>
@@ -101,9 +103,9 @@
                   </div>
             </div>
         </div>
-        <div  class="col-md-4 order-md-3 col-sm-12 order-sm-3 col-12 order-3 ">
+        <div  class="col-md-3 order-md-3 col-sm-12 order-sm-3 col-12 order-3 ">
             <div class="col-auto">
-                <h3  class="btn btn-light btn-block"style=" border-style: solid; border-color: black"> <i class="fas fa-filter"></i> Filtros</h3>
+                <h3  class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-filter"></i> Filtros</h3>
              </div>
             <div class="filters btn btn btn-block colorAzul">
                <button class="btn btn-outline-light btn-block" id="flt-origin">Original</button>
@@ -125,7 +127,7 @@
 </body>
 
 
-<footer></footer>
+<footer class="colorAzulclaro"><h4 class="blanco centrado">Interfaces de usuario e interacción - TUDAI 2021 - UNICEN</h4></footer>
 
 
 

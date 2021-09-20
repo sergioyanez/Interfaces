@@ -48,3 +48,24 @@ header{
   .centrado{
    text-align: center;
   }
+  .izquierda{
+    text-align: left;
+  }
+  .derecha{
+    text-align: right;
+  }
+  footer{
+    
+    margin-top: 1%;
+   
+  }
+  .blanco{
+    color: white;
+  }
+  .colorAzulclaro{
+    background-color:rgb(70, 70, 155);
+  }
+  .titulosAwasome{
+    border-style: solid; 
+    border-color: black";
+  }
