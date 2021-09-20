@@ -1,2 +1,4 @@
 # interfaces-
-Actividades de la materia Interfaces de usuario e interacción
+Trabajos prácticos entregables.
+
+Se diseña para resolucion 1366x768
