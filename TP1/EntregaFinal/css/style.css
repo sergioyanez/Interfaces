@@ -54,6 +54,15 @@ header{
   .derecha{
     text-align: right;
   }
+  .margensup {
+    margin-top: 1%;
+}
+.margender {
+  margin-right: 2%;
+}
+.margenizq {
+  margin-left: 1%;
+}
   footer{
     
     margin-top: 1%;
@@ -67,5 +76,12 @@ header{
   }
   .titulosAwasome{
     border-style: solid; 
-    border-color: black";
+    border-color: black"
+  }
+  canvas{
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    
   }

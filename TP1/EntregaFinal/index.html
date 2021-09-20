@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,127 +8,139 @@
     <title>Entrega Nº 1 || Kehler - Yañez </title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
- 
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/fontawesome-free-5.12.1-web/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head> 
-        
+</head>
+
 
 <header>
     <div class="row">
-        
-        <div class col= "col-md-10  order-md-1 col-sm-12 order-sm-2 col-12 order-2">
-            
+
+        <div class col="col-md-10  order-md-1 col-sm-12 order-sm-2 col-12 order-2">
+
         </div>
-        
+
     </div>
 </header>
 
 <body>
-    
-   
+
+
     <div class="row">
 
         <div class="col-md-3  order-md-1 col-sm-12 order-sm-2 col-12 order-2 derecha">
-            <div class= "col-auto centrado">
+            <div class="col-auto centrado">
                 <img src="images/logo.png">
             </div>
             <div class="col-auto ">
-               <h3 class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-tools"></i> Herramientas</h3>
+                <h3 class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-tools"></i> Herramientas</h3>
             </div>
             <div class="col-auto btn btn btn-block colorAzul">
                 <div class="col mt-1">
-                  
-                        <div class="izquierda">
-                            <label for="formFileSm" class="form-label btn-outline-light"> <i class="fas fa-palette text-primary"></i>Color</label>
-                             <input type="color" id="setColor" value="#000000"> 
-                             <div class = "izquierda"><label for="formFileSm" class="form-label btn-outline-light"><i class="fas fa-brush text-primary"></i>Grosor</label>
-                                <input type="range" min="1" max="50" value="1" id="setGrosor"> 
-                            </div>
-                                 
-                            
+
+                    <div class="izquierda">
+                        <label for="formFileSm" class="form-label btn-outline-light"> <i
+                                class="fas fa-palette text-primary"></i>Color</label>
+                        <input type="color" id="setColor" value="#000000">
+                        <div class="izquierda"><label for="formFileSm" class="form-label btn-outline-light"><i
+                                    class="fas fa-brush text-primary"></i>Grosor</label>
+                            <input type="range" min="1" max="50" value="1" id="setGrosor">
                         </div>
-                       
-                        <button id="btnPencil" class="btn btn-outline-light btn-block" role="button">
-                            <i class="fas fa-pencil-alt text-success"></i> Lapiz
-                        </button>
-                    
-                    
-                  
-                        <button id="btnGoma" class="btn btn-outline-light btn-block" role="button">
-                            <i class="fas fa-eraser text-danger"></i> Goma
-                        </button>
-                   
-                    
-                    
-                        <button id="btnClean" class="btn btn-outline-light btn-block" role="button">
-                            <i class="fas fa-broom"></i> Limpiar Canvas
-                        </button>
-                   
-                    <div class="mb-3">
-                        <label for="formFileSm" class="form-label"> </label>                
-                        <input class="btn btn-outline-light btn-block" id="addImage" type="file">                        
+
+
                     </div>
-                    <div>                       
-                        <a id= "imgDownload" download="image.png" href="" download>
+
+                    <button id="btnPencil" class="btn btn-outline-light btn-block" role="button">
+                        <i class="fas fa-pencil-alt text-success"></i> Lapiz
+                    </button>
+
+
+
+                    <button id="btnGoma" class="btn btn-outline-light btn-block" role="button">
+                        <i class="fas fa-eraser text-danger"></i> Goma
+                    </button>
+
+
+
+                    <button id="btnClean" class="btn btn-outline-light btn-block" role="button">
+                        <i class="fas fa-broom"></i> Limpiar Canvas
+                    </button>
+
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label"> </label>
+                        <input class="btn btn-outline-light btn-block" id="addImage" type="file">
+                    </div>
+                    <div>
+                        <a id="imgDownload" download="image.png" href="" download>
                             <button class="btn btn-outline-light btn-block" id="download">
                                 <i class="fas fa-download text-warning"></i>
-                            Descargar</button> </a>                               
+                                Descargar</button> </a>
                     </div>
                 </div>
             </div>
-           
+
         </div>
         <div class=" col-md-6 order-md-2 col-sm-12 order-sm-1 col-12 order-1">
             <div class="col-auto">
-                <h3  class="btn btn-light btn-block titulosAwasome"><i class="far fa-image"></i> Imagen </h3>
+                <h3 class="btn btn-light btn-block titulosAwasome"><i class="far fa-image"></i> Imagen </h3>
             </div>
             <div class="col-auto justify-content-center">
-                <canvas  id="myCanvas" width="525" height="400" style="border:1px solid black;"></canvas>
-                <div class="btn-group btn btn btn-block colorAzul" role="group" aria-label="Basic example">
+                <canvas id="myCanvas" width="525" height="400"></canvas>
+
+
+                <div class="margensup col-md-12 btn-group btn btn btn-block colorAzul" role="group"
+                    aria-label="Basic example">
                     <button type="button" class="btn btn-outline-light" id="lessSaturation">-</button>
-                    <button type="button" class="btn btn-outline-light"><i class="fas fa-adjust text-warning"></i>Saturacion</button>
-                    <button type="button" class="btn btn-outline-light" id="moreSaturation">+</button>                 
-               </div>
-                
-                <div class="btn-group btn btn btn-block colorAzul" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-light"><i
+                            class="fas fa-adjust text-warning"></i>Saturacion</button>
+                    <button type="button" class="margender btn btn-outline-light" id="moreSaturation">+</button>
+
                     <button type="button" class="btn btn-outline-light" id="lessBright">-</button>
-                    <button type="button" class="btn btn-outline-light"><i class="fas fa-sun  text-warning"></i>Brillo</button>
+                    <button type="button" class="btn btn-outline-light"><i
+                            class="fas fa-sun  text-warning"></i>Brillo</button>
                     <button type="button" class="btn btn-outline-light" id="moreBright">+</button>
-                  </div>
+                </div>
+
+
             </div>
         </div>
-        <div  class="col-md-3 order-md-3 col-sm-12 order-sm-3 col-12 order-3 ">
+        <div class="col-md-3 order-md-3 col-sm-12 order-sm-3 col-12 order-3 ">
             <div class="col-auto">
-                <h3  class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-filter"></i> Filtros</h3>
-             </div>
+                <h3 class="btn btn-light btn-block titulosAwasome"> <i class="fas fa-filter"></i> Filtros</h3>
+            </div>
             <div class="filters btn btn btn-block colorAzul">
-               <button class="btn btn-outline-light btn-block" id="flt-origin">Original</button>
-               <button class="btn btn-outline-light btn-block" id="deshacer">Deshacer</button>
+                <button class="btn btn-outline-light btn-block" id="flt-origin">Original</button>
+                <button class="btn btn-outline-light btn-block" id="deshacer">Deshacer</button>
                 <button class="btn btn-outline-light btn-block" id="flt-sepia">Sepia</button>
                 <button class="btn btn-outline-light btn-block" id="flt-negative">Negativo</button>
                 <button class="btn btn-outline-light btn-block" id="flt-greyScale">Escala de grises</button>
                 <button class="btn btn-outline-light btn-block" id="flt-binarie">Binarización</button>
                 <button class="btn btn-outline-light btn-block" id="flt-blur">Blur</button>
                 <button class="btn btn-outline-light btn-block" id="flt-sobel">Detección de bordes </button>
-                <button class="btn btn-outline-light btn-block" id="flt-sobel-horizontal">Detección de bordes Horizontal</button>
-                <button class="btn btn-outline-light btn-block" id="flt-sobel-vertical">Detección de bordes Vertical</button>              
-                
-                
-              </div>
+                <button class="btn btn-outline-light btn-block" id="flt-sobel-horizontal">Detección de bordes
+                    Horizontal</button>
+                <button class="btn btn-outline-light btn-block" id="flt-sobel-vertical">Detección de bordes
+                    Vertical</button>
+
+
+            </div>
         </div>
     </div>
-   
+
 </body>
 
 
-<footer class="colorAzulclaro"><h4 class="blanco centrado">Interfaces de usuario e interacción - TUDAI 2021 - UNICEN</h4></footer>
+<footer class="colorAzulclaro">
+    <h4 class="blanco centrado">Interfaces de usuario e interacción - TUDAI 2021 - UNICEN</h4>
+</footer>
 
 
 
