@@ -1,8 +1,29 @@
+html{
+  
+  margin-bottom: 3%;
+  margin-top: 3%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
 body {
+  background-image: url("../images/fondo2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
+    /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+   
     background-color: #f1f087;
+     overflow-x:hidden; 
+     overflow-y:hidden;
   }
 
-
+header{
+  margin-bottom: 1%;
+  
+}
   h1 {
    font-style:inherit;
     display: flex;
@@ -21,3 +42,9 @@ body {
     color: rgb(40, 40, 141);  
   }
 
+  .colorAzul{
+    background-color:rgb(1, 1, 75);
+  }
+  .centrado{
+   text-align: center;
+  }
