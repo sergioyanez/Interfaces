@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let copia,atras;
     
 
-  cleanCanvas();
+  cleanCanvas();// limpia el canvas
  // Botones de filtros
   let btn1 = document.getElementById("flt-sepia");
   btn1.addEventListener("click", sepiaFilter);
@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
  
  // Vuelve a cargar en el canvas la matriz de la imagen anterior a aplicar modificaciones
  function deshace(){
-  ctx.putImageData(atras, 0, 0);
+  ctx.putImageData(atras, 0, 0);//se coloca la nueva imagen en el contexto
  }
  
  //Carga la matriz de la imagen original subida desde disco
  function original(){
   if (copia != null){
-    ctx.putImageData(copia, 0, 0);
+    ctx.putImageData(copia, 0, 0);//se coloca la nueva imagen en el contexto
   }
   
  }
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //por último carga la matriz en el contexto del canva.
 function saturar(){
   
-  imageData = ctx.getImageData(0, 0, width, height);
+  imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
  
   for (let x = 0; x < imageData.width; x++) {
           for (let y = 0; y < imageData.height; y++) {
@@ -106,7 +106,7 @@ function saturar(){
                   setPixel(imageData, x, y, rgb[0], rgb[1], rgb[2], 255);
           }
   }
-  ctx.putImageData(imageData, 0, 0);
+  ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
 }
 //transforma los valores rgb a hsl
 function rgbToHsl(imageData, x, y) {
@@ -158,7 +158,7 @@ function hslToRgb(h, s, l) {
 //Guarda la matriz actual para uso en funcion deshacer
 //activa la funcionalidad pencil para que comience a dibujar el lápiz.
  function pencilON(){
-  atras = ctx.getImageData(0, 0, width, height);
+  atras = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
    pencil();
  }
 
@@ -166,7 +166,7 @@ function hslToRgb(h, s, l) {
 // para que luego el color del lapiz sea blanco
 //activa la funcionalidad eraser para que comience a borra la goma.
  function eraser(){
-  atras = ctx.getImageData(0, 0, width, height);
+  atras = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
    borrar = true;
    pencil();
  }
@@ -229,7 +229,7 @@ function hslToRgb(h, s, l) {
   // agrega una image desde disco a Canvas
   function addImageCanvas(e) {
     cleanCanvas();        //se limpia canvas
-    let urlImagen = e.target.files[0];
+    let urlImagen = e.target.files[0];//se toma la URL de la imagen con el target del evento
     let reader = new FileReader();
     let image = new Image();
     image.title = urlImagen.name;
@@ -255,18 +255,18 @@ function hslToRgb(h, s, l) {
             imgHeight = imgHeight * (proportionHeight/100);
         }
 
-        ctx.drawImage(image, 0, 0, imgWidth, imgHeight);
+        ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
         copia = ctx.getImageData(0, 0, width, height);
         atras = copia;
       };
     };
-    reader.readAsDataURL(urlImagen);
+    reader.readAsDataURL(urlImagen);// codifico los datos como la URL de la imagen
     
   }
   //limpia canvas, obteniendo una lienzo en blanco para comenzar nuevamente
   function cleanCanvas() {    
    
-   imageData = ctx.getImageData(0, 0, width, height);   
+   imageData = ctx.getImageData(0, 0, width, height);  // trae la imagen del contexto 
    atras = ctx.getImageData(0, 0, width, height);   //se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {         //Se colocan en blanco todos los pixeles del canva
       for (let y = 0; y < height; y++) {
@@ -276,13 +276,13 @@ function hslToRgb(h, s, l) {
         setPixel(imageData, x, y, r, g, b, a);
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   //Agrega más brillo a la imagen actual en canva
   function moreBright() {           
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {  //trae el Rojo, Verde y Azul del pixel en la ubicacion x,y 
         r = getRed(imageData, x, y);      
@@ -291,13 +291,13 @@ function hslToRgb(h, s, l) {
         setPixelMoreBright(imageData, x, y, r, g, b, a); //llama a la funcion para agregar brillo    
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   //Quita brillo a la imagen actual
   function lessBright() {
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
@@ -307,30 +307,30 @@ function hslToRgb(h, s, l) {
         setPixeLessBright(imageData, x, y, r, g, b, a); //llama a la funcion para quitar brillo 
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
-
+//genera una imágen con colores sepia 
   function sepiaFilter() {
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
    
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
-        r =
+        r =//se asigna valores a r según una de las formulas para imagenes sepia
           0.898 * getRed(imageData, x, y) +
           0.769 * getGreen(imageData, x, y) +
           0.189 * getBlue(imageData, x, y);
         if (r > 255) {
           r = 255;
         }
-        g =
+        g =// se asigna valores a g según una de las formulas para imagenes sepia
           0.649 * getRed(imageData, x, y) +
           0.686 * getGreen(imageData, x, y) +
           0.168 * getBlue(imageData, x, y);
         if (g > 255) {
           g = 255;
         }
-        b =
+        b =//se asigna valores a b según una de las formulas para imagenes sepia
           0.349 * getRed(imageData, x, y) +
           0.686 * getGreen(imageData, x, y) +
           0.168 * getBlue(imageData, x, y);
@@ -340,13 +340,13 @@ function hslToRgb(h, s, l) {
         setPixel(imageData, x, y, r, g, b, a);
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   // Genera una imagen, con filtro negativo de la actual
   function negativeFilter() {
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
   
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
@@ -356,30 +356,30 @@ function hslToRgb(h, s, l) {
         setPixel(imageData, x, y, 255 - r, 255 - g, 255 - b, a);  //Se setean los pixeles con los colores complementarios
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   //Convierte la imagen actual en escala de grises (RGB deben ser iguales)
   function greyScale() {
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
     
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         r = getRed(imageData, x, y);
         g = getGreen(imageData, x, y);
         b = getBlue(imageData, x, y);
-        grayPixel = generateAverageGray(r, g, b);  //Se asigna el valor promedio para todos los colores
-        setPixel(imageData, x, y, grayPixel, grayPixel, grayPixel, a);  //se setea el pixele 
+        grayPixel = generateAverageGray(r, g, b);  //Se asigna el valor promedio para todos los colores para generar pixel gris
+        setPixel(imageData, x, y, grayPixel, grayPixel, grayPixel, a);  //se setea el pixel
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   function binarizationFilter() {
     let pixel;
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
         pixel =
@@ -388,13 +388,13 @@ function hslToRgb(h, s, l) {
           getBlue(imageData, x, y);
         //uso 381 ((255 + 255 + 255) / 2) como valor frontera entre Blanco y Negro.
         if (pixel > 381) {
-          setPixel(imageData, x, y, 255, 255, 255, a);
+          setPixel(imageData, x, y, 255, 255, 255, a); //setea pixel a blanco
         } else {
-          setPixel(imageData, x, y, 0, 0, 0, a);
+          setPixel(imageData, x, y, 0, 0, 0, a);//setea pixel a negro
         }
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
     
   }
   //Retorna el valor promedio de R,G,B para lograr una escala de grises
@@ -402,12 +402,12 @@ function hslToRgb(h, s, l) {
     let gray = (r + g + b) / 3;
     return gray;
   }
-
+//filtro que difumina la imágen del contexto
   function blurFilter() {
-    imageData = ctx.getImageData(0, 0, width, height);
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
+      for (let y = 0; y < height; y++) {// a cada pixel se le coloca el r,g,b promedio de sus pixeles vecinos(suma de los valores del pixel + los valores de los pixeles vecinos dividido la cantidad de pixeles que participan (9 en la region central, 6 en los bordes y 4 en las puntas del canvas))
         r = (getRed(imageData, x, y)+getRed(imageData, x-1, y)+getRed(imageData, x+1, y)+getRed(imageData, x-1, y+1)+getRed(imageData, x-1, y-1)+getRed(imageData, x, y+1)+getRed(imageData, x, y-1)+getRed(imageData, x+1, y+1)+getRed(imageData, x+1, y-1))/9;
         g = (getGreen(imageData, x, y)+getGreen(imageData, x-1, y)+getGreen(imageData, x+1, y)+getGreen(imageData, x-1, y+1)+getGreen(imageData, x-1, y-1)+getGreen(imageData, x, y+1)+getGreen(imageData, x, y-1)+getGreen(imageData, x+1, y+1)+getGreen(imageData, x+1, y-1))/9;
         b =  (getBlue(imageData, x, y)+getBlue(imageData, x-1, y)+getBlue(imageData, x+1, y)+getBlue(imageData, x-1, y+1)+getBlue(imageData, x-1, y-1)+getBlue(imageData, x, y+1)+getBlue(imageData, x, y-1)+getBlue(imageData, x+1, y+1)+getBlue(imageData, x+1, y-1))/9;
@@ -415,59 +415,62 @@ function hslToRgb(h, s, l) {
         setPixel(imageData, x, y, r,g,b, a);
       }
     }
-    ctx.putImageData(imageData, 0, 0);
+    ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
-
+//filtro que remarca los bordes de una imágen
   function sobelFilter(){
-    imageData = ctx.getImageData(0, 0, width, height);
-    imageData2 = ctx.getImageData(0, 0, width, height); 
-    atras = ctx.getImageData(0, 0, width, height);   
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    imageData2 = ctx.getImageData(0, 0, width, height); //se hace una copia sobre la que se sobreescribiran el seteo de pixeles nuevos
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer   
     for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
+      for (let y = 0; y < height; y++) {// se multiplica el ,r,g,b de cada pixel por la matriz [ [-1,0,1] , [-2,0,2] , [-1,0,1] ] para obtener r2, g2, b2, es el gradiente en X
         r2 = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
         g2 =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
         b2 = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
       
+        // se multiplica el ,r,g,b de cada pixel por la matriz [ [-1,-2,-1] , [0,0,0] , [1,2,1] ] para obtener r1, g1, b1 , es el gradiente en Y
         r1 = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
         g1 =getGreen(imageData, x-1, y+1)*(1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(2)+getGreen(imageData, x, y-1)*(-2)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(-1);
         b1 = getBlue(imageData, x-1, y+1)*(1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(2)+getBlue(imageData, x, y-1)*(-2)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(-1);
+      
+        //se calcula el modulo de r, g, b a partir de las componentes r1, r2 ; g1, g2 ; b1, b2
         r= Math.sqrt(Math.pow(r1,2)+Math.pow(r2,2));
         g= Math.sqrt(Math.pow(g1,2)+Math.pow(g2,2));
         b= Math.sqrt(Math.pow(b1,2)+Math.pow(b2,2));
-        setPixel(imageData2, x, y, r,g,b, a);
+        setPixel(imageData2, x, y, r,g,b, a);//
       }
     }
-    ctx.putImageData(imageData2, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);//se coloca la nueva imagen en el contexto
   }
-
+// filtro que remarca los bordes horizontales
   function sobelHorizontalFilter(){
-    imageData = ctx.getImageData(0, 0, width, height);
-    imageData2 = ctx.getImageData(0, 0, width, height); 
-    atras = ctx.getImageData(0, 0, width, height);
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    imageData2 = ctx.getImageData(0, 0, width, height);  //se hace una copia sobre la que se sobreescribiran el seteo de pixeles nuevos
+    atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
+      for (let y = 0; y < height; y++) {// se multiplica el r,g,b de cada pixel por la matriz [ [-1,0,1] , [-2,0,2] , [-1,0,1] ], se obtiene el gradiente en X
         r = getRed(imageData, x-1, y+1)*(1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(2)+getRed(imageData, x, y-1)*(-2)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(-1);
         g =getGreen(imageData, x-1, y+1)*(1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(2)+getGreen(imageData, x, y-1)*(-2)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(-1);
         b = getBlue(imageData, x-1, y+1)*(1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(2)+getBlue(imageData, x, y-1)*(-2)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(-1);
         setPixel(imageData2, x, y, r,g,b, a);
       }
     }
-    ctx.putImageData(imageData2, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);//se coloca la nueva imagen en el contexto
   }
-  
+  // filtro que remarca los bordes verticales
   function sobelVerticalFilter(){
-    imageData = ctx.getImageData(0, 0, width, height);
-    imageData2 = ctx.getImageData(0, 0, width, height); 
-    atras = ctx.getImageData(0, 0, width, height);   
+    imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
+    imageData2 = ctx.getImageData(0, 0, width, height);  //se hace una copia sobre la que se sobreescribiran el seteo de pixeles nuevos
+    atras = ctx.getImageData(0, 0, width, height); //se guarda imageData para la funcionalidad deshacer  
     for (let x = 0; x < width; x++) {
-      for (let y = 0; y < height; y++) {
+      for (let y = 0; y < height; y++) { // se multiplica el ,r,g,b de cada pixel por la matriz [ [-1,-2,-1] , [0,0,0] , [1,2,1] ] se obtiene el gradiente en Y
         r = getRed(imageData, x-1, y)*(-2)+getRed(imageData, x+1, y)*(2)+getRed(imageData, x-1, y+1)*(-1)+getRed(imageData, x-1, y-1)*(-1)+getRed(imageData, x, y+1)*(0)+getRed(imageData, x, y-1)*(0)+getRed(imageData, x+1, y+1)*(1)+getRed(imageData, x+1, y-1)*(1);
         g =getGreen(imageData, x-1, y)*(-2)+getGreen(imageData, x+1, y)*(2)+getGreen(imageData, x-1, y+1)*(-1)+getGreen(imageData, x-1, y-1)*(-1)+getGreen(imageData, x, y+1)*(0)+getGreen(imageData, x, y-1)*(0)+getGreen(imageData, x+1, y+1)*(1)+getGreen(imageData, x+1, y-1)*(1);
         b = getBlue(imageData, x-1, y)*(-2)+getBlue(imageData, x+1, y)*(2)+getBlue(imageData, x-1, y+1)*(-1)+getBlue(imageData, x-1, y-1)*(-1)+getBlue(imageData, x, y+1)*(0)+getBlue(imageData, x, y-1)*(0)+getBlue(imageData, x+1, y+1)*(1)+getBlue(imageData, x+1, y-1)*(1);
         setPixel(imageData2, x, y, r,g,b, a);
       }
     }
-    ctx.putImageData(imageData2, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
   // Setea el pixel en la posición x,y de la imagen, con los valores pasados por parámetro
