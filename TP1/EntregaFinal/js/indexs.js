@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let borrar = false;
   let valueSat=0;
   let copia,atras;
-    
+  let inputFile = document.getElementById('addImage'); 
 
   cleanCanvas();// limpia el canvas
  // Botones de filtros
@@ -44,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Botones de administracion de imagen
   let btn7 = document.getElementById("btnClean");
-  btn7.addEventListener("click", cleanCanvas);
+  btn7.addEventListener("click",  e => {
+        inputFile.value = '';
+        cleanCanvas();});
   let btn8 = document.getElementById("addImage");
   btn8.addEventListener("change", addImageCanvas);
   let btn9 = document.getElementById("download");
@@ -241,7 +243,8 @@ function hslToRgb(h, s, l) {
 
         let imgWidth = image.width;
         let imgHeight = image.height;
-        
+
+        //ajusta la imagen al canvas si la imagen es mas grande que el canvas
         if(imgWidth < imgHeight){ // ajusta,para mantener el aspecto de la imagen original, si la imagen tiene más alto que ancho
             let proportion = (height * 100) / imgHeight;
             imgWidth = imgWidth * (proportion/100);
@@ -256,13 +259,13 @@ function hslToRgb(h, s, l) {
             imgWidth = imgWidth * (proportionWidth/100);
             imgHeight = imgHeight * (proportionHeight/100);
         }
+      //ajusta el canvas a la imagen si la imagen es más chica en ancho que el ancho del canvas
         if(width>imgWidth){
-          ctx.canvas.width=imgWidth;
-        
+          ctx.canvas.width=imgWidth;        
         }
+        //ajusta el canvas a la imagen si la imagen es más chica en alto que el alto del canvas
         else if (height>imgHeight){
-          ctx.canvas.height=imgHeight;
-         
+          ctx.canvas.height=imgHeight;         
         }
     
           ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
@@ -276,7 +279,7 @@ function hslToRgb(h, s, l) {
   }
   //limpia canvas, obteniendo una lienzo en blanco para comenzar nuevamente
   function cleanCanvas() {    
-   
+ 
    imageData = ctx.getImageData(0, 0, width, height);  // trae la imagen del contexto 
    atras = ctx.getImageData(0, 0, width, height);   //se guarda imageData para la funcionalidad deshacer
     for (let x = 0; x < width; x++) {         //Se colocan en blanco todos los pixeles del canvas
@@ -287,7 +290,9 @@ function hslToRgb(h, s, l) {
         setPixel(imageData, x, y, r, g, b, a);
       }
     }
+    
     ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
+    
   }
 
   //Agrega más brillo a la imagen actual en canvas
