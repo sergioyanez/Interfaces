@@ -281,7 +281,7 @@ function hslToRgb(h, s, l) {
    
    imageData = ctx.getImageData(0, 0, width, height);  // trae la imagen del contexto 
    atras = ctx.getImageData(0, 0, width, height);   //se guarda imageData para la funcionalidad deshacer
-    for (let x = 0; x < width; x++) {         //Se colocan en blanco todos los pixeles del canva
+    for (let x = 0; x < width; x++) {         //Se colocan en blanco todos los pixeles del canvas
       for (let y = 0; y < height; y++) {
         r = 255;
         g = 255;
@@ -292,7 +292,7 @@ function hslToRgb(h, s, l) {
     ctx.putImageData(imageData, 0, 0);//se coloca la nueva imagen en el contexto
   }
 
-  //Agrega más brillo a la imagen actual en canva
+  //Agrega más brillo a la imagen actual en canvas
   function moreBright() {           
     imageData = ctx.getImageData(0, 0, width, height);// trae la imagen del contexto
     atras = ctx.getImageData(0, 0, width, height);//se guarda imageData para la funcionalidad deshacer
