@@ -256,26 +256,19 @@ function hslToRgb(h, s, l) {
             imgWidth = imgWidth * (proportionWidth/100);
             imgHeight = imgHeight * (proportionHeight/100);
         }
-
-        console.log(width,imgWidth);
-        console.log(height,imgHeight);
         if(width>imgWidth){
           ctx.canvas.width=imgWidth;
-          ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
-          copia = ctx.getImageData(0, 0, width, height);
-          atras = copia;
+        
         }
         else if (height>imgHeight){
           ctx.canvas.height=imgHeight;
+         
+        }
+    
           ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
           copia = ctx.getImageData(0, 0, width, height);
           atras = copia;
-        }
-        else{
-          ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
-          copia = ctx.getImageData(0, 0, width, height);
-          atras = copia;
-        }
+        
       };
     };
     reader.readAsDataURL(urlImagen);// codifico los datos como la URL de la imagen
