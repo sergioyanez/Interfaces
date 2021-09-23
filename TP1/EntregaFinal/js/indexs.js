@@ -228,7 +228,9 @@ function hslToRgb(h, s, l) {
   
   // agrega una image desde disco a Canvas
   function addImageCanvas(e) {
-    cleanCanvas();        //se limpia canvas
+    cleanCanvas();
+    ctx.canvas.width=width; 
+    ctx.canvas.height=height;       //se limpia canvas
     let urlImagen = e.target.files[0];//se toma la URL de la imagen con el target del evento
     let reader = new FileReader();
     let image = new Image();
@@ -255,14 +257,17 @@ function hslToRgb(h, s, l) {
             imgHeight = imgHeight * (proportionHeight/100);
         }
 
-      
+        console.log(width,imgWidth);
+        console.log(height,imgHeight);
         if(width>imgWidth){
-          ctx.drawImage(image, (width-imgWidth)/2, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
+          ctx.canvas.width=imgWidth;
+          ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
           copia = ctx.getImageData(0, 0, width, height);
           atras = copia;
         }
         else if (height>imgHeight){
-          ctx.drawImage(image, 0, (height-imgHeight)/2, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
+          ctx.canvas.height=imgHeight;
+          ctx.drawImage(image, 0, 0, imgWidth, imgHeight);//dibuja la imagen en el contexto ctx 
           copia = ctx.getImageData(0, 0, width, height);
           atras = copia;
         }
