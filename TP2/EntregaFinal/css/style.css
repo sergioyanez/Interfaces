@@ -1,0 +1,20 @@
+canvas{
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: whitesmoke;
+    
+  }
+
+  body {
+    background-image: url("../images/estrellaDeLaMuerte.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+      /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+      background-size:100%;
+      /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
+     
+   /*   background-color: #f1f087;*/
+    
+    }
