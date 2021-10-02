@@ -16,17 +16,20 @@ class Tablero{
         
     }
 
-    drawTablero(){        
+    drawTablero(){      
+     //   alert("entro");
         let inicioX = this.width/4;
         for (let i = 0; i < this.columnas; i++) {
             for (let j = 0; j < this.filas; j++) {
                 this.ctx.beginPath();
-                this.ctx.drawImage(this.imgCasillero, inicioX+i*85 , 100+j*85 );
+                this.ctx.drawImage(this.imgCasillero, inicioX+i*84 , 100+j*84 );
                 this.ctx.fill();
                 this.ctx.closePath();            
             }          
-        }    
-    }
+        } 
+       }
+           
+  
 
 
 }
