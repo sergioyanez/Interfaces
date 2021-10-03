@@ -36,10 +36,7 @@ class FichaRedonda extends Ficha{
             
         }
       
-<<<<<<< HEAD
-=======
     
->>>>>>> 3710caedc944b180b2c0cf89de866a9ed3c0d32c
     }
 
  
