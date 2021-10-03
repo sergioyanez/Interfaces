@@ -4,11 +4,14 @@ class FichaRedonda extends Ficha{
         super(posX, posY, fill, context);
        
         this.radius = radius;
-        
-
+      
+      
         
     }
 
+   
+
+  
     draw(){
             super.draw();       //llama al draw del padre, solo le pone el fill, el color de relleno       
             ctx.save();
@@ -35,6 +38,7 @@ class FichaRedonda extends Ficha{
       
     
     }
+
  
     getRadius(){
         return this.radius;

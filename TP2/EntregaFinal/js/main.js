@@ -53,11 +53,15 @@ function addFicha2(posX,posY){
    ficha.draw();
 }
 
-function addFicha(posX,posY){
-    let imgFicha1 = document.getElementById("imgP2");
-       
-    let ficha = new FichaRedonda(posX,posY,RADIUS,imgFicha1,ctx);
-   
+function addFicha1(posX,posY){
+    let imgFicha = document.getElementById("imgP1");       
+    let ficha = new FichaRedonda(posX,posY,RADIUS,imgFicha,ctx);   
+    ficha.draw();
+}
+
+function addFicha2(posX,posY){
+    let imgFicha = document.getElementById("imgP2");       
+    let ficha = new FichaRedonda(posX,posY,RADIUS,imgFicha,ctx);   
     ficha.draw();
 }
     
