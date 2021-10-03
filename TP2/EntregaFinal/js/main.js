@@ -24,7 +24,34 @@ const COLUMNAS = 7; //Por ej: que elija el valor de un select
 const CANT_FICHAS = FILAS * COLUMNAS;
 
 
+function onmousedown(e) {
+  //   console.log(e);
+   isMouseDown = true;
+   if (lastClicFicha != null) {// se dejó de seleccionar una ficha
+     lastClicFicha.setResaltado(false);
+     lastClicFicha = null;
+   }
+   let fichaCliqueada = encontrarFicha(e.layerX, e.layerY); //e.layerX, e.layerY, son las posiciones x,y dentro del canvas
+  // console.log("posiciones del evento",e.layerX, e.layerY);
+   if (fichaCliqueada != null) {
+     fichaCliqueada.setResaltado(true);
+     lastClicFicha = fichaCliqueada;
+   }
+   drawFichas();
+ }
+ 
+ function onmousemove(e) {}
+ if(isMouseDown && lastClicFicha != null){
+   fichaCliqueada.setPosition(e.layerX,e.layerY);
+   drawFichas();
+ //  console.log(fichaCliqueada.getPosition());
+ }
 
+ function onmouseup(e) {
+   isMouseDown = false;
+ }
+
+ 
 function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliqueada
   for (let i = 0; i < fichas.length; i++) {
     const element = fichas[i];
