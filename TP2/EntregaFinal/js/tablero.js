@@ -20,10 +20,6 @@ class Tablero{
         let inicioX = this.width/4;
         for (let i = 0; i < this.columnas; i++) {
             for (let j = 0; j < this.filas; j++) {
-                ctx.save();
-                ctx.beginPath();
-                ctx.rect(0,0,50,50);            
-                ctx.clip();
                 this.ctx.beginPath();
                 this.ctx.drawImage(this.imgCasillero, inicioX+i*84 , 100+j*84 );
                 this.ctx.fill();
