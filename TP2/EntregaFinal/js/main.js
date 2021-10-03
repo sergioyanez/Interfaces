@@ -5,9 +5,6 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let width = canvas.width;
 let height = canvas.height;
-canvas.addEventListener("mousedown", onmousedown, false);
-canvas.addEventListener("mousemove", onmousemove, false);
-canvas.addEventListener("mouseup", onmouseup, false);
 
 const CANT_FIG = 21;
 const RADIUS = 25;
