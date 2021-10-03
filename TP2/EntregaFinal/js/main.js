@@ -31,14 +31,26 @@ agregarTablero();
 
 
 function addFichas(){   //paso como parámetro la imagen y la posición? o paso el jugador???
-     for (let i = 1; i<CANT_FIG; i++ ){
-             addFicha1((width/4)-100, i*30 );
-              //mover la posición y    
-     } 
     for (let i = 1; i<CANT_FIG; i++ ){
-        addFicha2(3*(width/4)+50, i*30 );
-        //mover la posición y         
-    }
+            addFicha1((width/4)-100, i*30 );
+             //mover la posición y    
+    } 
+   for (let i = 1; i<CANT_FIG; i++ ){
+       addFicha2(3*(width/4)+50, i*30 );
+       //mover la posición y         
+   }
+}
+
+function addFicha1(posX,posY){
+   let imgFicha = document.getElementById("imgP1");       
+   let ficha = new FichaRedonda(posX,posY,RADIUS,imgFicha,ctx);   
+   ficha.draw();
+}
+
+function addFicha2(posX,posY){
+   let imgFicha = document.getElementById("imgP2");       
+   let ficha = new FichaRedonda(posX,posY,RADIUS,imgFicha,ctx);   
+   ficha.draw();
 }
 
 function addFicha1(posX,posY){
