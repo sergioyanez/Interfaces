@@ -15,6 +15,6 @@ canvas{
       background-size:100%;
       /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
      
-   /*   background-color: #f1f087;*/
+      background-color: #f1f087;
     
     }
