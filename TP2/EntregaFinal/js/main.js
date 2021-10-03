@@ -15,6 +15,10 @@ let imgFicha2 = document.getElementById("imgP2");
 let lastClicFicha = null;
 let isMouseDown = false;
 
+canvas.addEventListener("mousedown", onmousedown, false);
+canvas.addEventListener("mousemove", onmousemove, false);
+canvas.addEventListener("mouseup", onmouseup, false);
+
 //Variables del Tablero.
 const FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
 const COLUMNAS = 7; //Por ej: que elija el valor de un select
@@ -48,7 +52,7 @@ function onmousedown(e) {
    isMouseDown = false;
  }
 
- 
+
 function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliqueada
   for (let i = 0; i < fichas.length; i++) {
     const element = fichas[i];
