@@ -8,9 +8,14 @@ class Tablero{
         this.height = height;
         this.ctx = ctx;
         this.filas = filas;
-        this.columnas = columnas;
+        this.columnas = columnas;       
         this.imgCasillero = new Image();
         this.imgCasillero.src = "images/casillero.png";
+        this.relleno=ctx.createPattern(this.imgCasillero,"repeat");
+        
+        this.imgCasillero.onload = function(){           
+            ctx.fillStyle = this.relleno;
+        }
   
 
         

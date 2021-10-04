@@ -41,12 +41,13 @@ function onmousedown(e) {
    drawFichas();
  }
  
- function onmousemove(e) {}
- if(isMouseDown && lastClicFicha != null){
-   fichaCliqueada.setPosition(e.layerX,e.layerY);
-   drawFichas();
- //  console.log(fichaCliqueada.getPosition());
- }
+ function onmousemove(e) {
+    if(isMouseDown && lastClicFicha != null){
+      lastClicFicha.setPosition(e.layerX,e.layerY);
+      drawFichas();
+    //  console.log(fichaCliqueada.getPosition());
+    }
+  }
 
  function onmouseup(e) {
    isMouseDown = false;
