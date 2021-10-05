@@ -3,26 +3,22 @@
 
 
 class Tablero{
-    constructor(ctx, width, height, filas, columnas){
+    constructor(ctx, width, height, filas, columnas,img){
         this.width = width;
         this.height = height;
         this.ctx = ctx;
         this.filas = filas;
         this.columnas = columnas;       
-        this.imgCasillero = new Image();
-        this.imgCasillero.src = "images/casillero.png";
-        this.relleno=ctx.createPattern(this.imgCasillero,"repeat");
+        this.imgCasillero = img;
+      
         
-        this.imgCasillero.onload = function(){           
-            ctx.fillStyle = this.relleno;
-        }
-  
-
         
     }
 
-    drawTablero(){      
-        let inicioX = this.width/4;
+    drawTablero(){  
+            ctx.fillStyle = this.relleno;
+        //    this.relleno=ctx.createPattern(imgCasillero,"repeat");  
+            let inicioX = this.width/4;
         for (let i = 0; i < this.columnas; i++) {
             for (let j = 0; j < this.filas; j++) {
                 this.ctx.beginPath();
@@ -30,7 +26,10 @@ class Tablero{
                 this.ctx.fill();
                 this.ctx.closePath();            
             }          
-        } 
+        }       
+            
+            
+        
        }
            
   

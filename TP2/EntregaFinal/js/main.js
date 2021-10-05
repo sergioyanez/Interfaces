@@ -12,6 +12,7 @@ const RADIUS = 25;
 let fichas = []; //tengo arreglo de fichas
 let imgFicha1 = document.getElementById("imgP1");
 let imgFicha2 = document.getElementById("imgP2");
+let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
 
@@ -70,7 +71,7 @@ function iniciarJuego() {
 }
 
 function agregarTablero() {
-  let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS);
+  let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
   tablero.drawTablero();
 }
 
