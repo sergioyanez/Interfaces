@@ -18,7 +18,7 @@ class Ficha{
         this.posY = y;
     }
 
-    getPertenecea(){
+    getPerteneceA(){
         return this.perteneceA;
     }
 

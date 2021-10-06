@@ -1,4 +1,4 @@
-"use strict";
+
 //Variables del Canvas
 
 let canvas = document.getElementById("canvas");
@@ -9,6 +9,18 @@ let height = canvas.height;
 const CANT_FIG = 21;
 const RADIUS = 25;
 
+//Variables del Tablero.
+const FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
+const COLUMNAS = 7; //Por ej: que elija el valor de un select
+const CANT_FICHAS = FILAS * COLUMNAS;
+const TNO_FICHA = 84;
+const MARGEN_TABLERO = 100;
+const ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
+const ALTO_TABLERO = FILAS * TNO_FICHA;
+const INICIO_TABLERO = width/4;
+const FRONTERA = 10;   //líneas de la zona de lanzamiento
+
+
 let fichas = []; //tengo arreglo de fichas
 let imgFicha1 = document.getElementById("imgP1");
 let imgFicha2 = document.getElementById("imgP2");
@@ -17,15 +29,14 @@ let lastClicFicha = null;
 let isMouseDown = false;
 let jugador1="Tito";  //tomarlo de Input
 let jugador2= "Elvy";
+let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
+let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
 
-//Variables del Tablero.
-const FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
-const COLUMNAS = 7; //Por ej: que elija el valor de un select
-const CANT_FICHAS = FILAS * COLUMNAS;
+
 
 
 function onmousedown(e) {
@@ -52,8 +63,29 @@ function onmousedown(e) {
     }
   }
 
+  function columnaQueTiro(ficha){
+for(let i =0;i< COLUMNAS;i++){
+  if((ficha.getPosX>INICIO_TABLERO+i*TNO_FICHA) && ficha.getPosX < INICIO_TABLERO + TNO_FICHA+i*TNO_FICHA){
+    alert("la columna es: "+ i);
+    return i;
+  }
+}
+  }
+  //ACA MODIFIQUE
  function onmouseup(e) {
    isMouseDown = false;
+   
+   if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
+     alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
+   let columnaATirar = columnaQueTiro(lastClicFicha);
+    let ultimo = tablero.ultimoVacio(columnaATirar);
+    let posY =  lastClicFicha.getPosY();
+    let posX = lastClicFicha.getPosX();
+     for (let i = posY;i<ultimo;i++){
+        lastClicFicha.setPosition(posX,posY-i);
+        drawFichas();
+      }
+   }
  }
 
 
@@ -76,6 +108,7 @@ function iniciarJuego() {
 function addZonaJuego(){
   let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
   zonaJuego.drawZonaJuego();
+  
 }
 
 function agregarTablero() {
@@ -101,6 +134,7 @@ function addFichas() {
 function addFicha(posX, posY, imgFicha, jugador) {
 //  console.log("posiciones x , y ",posX,posY);
   let ficha = new FichaRedonda(posX, posY, RADIUS, imgFicha, ctx, jugador);
+  console.log(ficha.getPosition());
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
 
@@ -112,7 +146,7 @@ function drawFichas() {
   }
 }
 function clearCanvas(){
-  console.log("limpia");
+ // console.log("limpia");
   ctx.clearRect(0,0,width,height);
   agregarTablero();
 }
