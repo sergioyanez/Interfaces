@@ -68,6 +68,12 @@ function iniciarJuego() {
   // HACER UN BOTON REINICIAR JUEGO
   agregarTablero();
   addFichas();
+  addZonaJuego();
+}
+
+function addZonaJuego(){
+  let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
+  zonaJuego.drawZonaJuego();
 }
 
 function agregarTablero() {
