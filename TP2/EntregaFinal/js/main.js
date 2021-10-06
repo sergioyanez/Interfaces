@@ -15,6 +15,8 @@ let imgFicha2 = document.getElementById("imgP2");
 let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
+let jugador1="Tito";  //tomarlo de Input
+let jugador2= "Elvy";
 
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
@@ -85,20 +87,20 @@ function addFichas() {
   //paso como parámetro la imagen y la posición? o paso el jugador???
   for (let i = 1; i <= CANT_FIG; i++) {
     if (i < CANT_FIG / 2) {
-      addFicha(width / 4 - 200, i * 50 , imgFicha1);
-    } else addFicha(width / 4 - 100, i * 50-500, imgFicha1);
+      addFicha(width / 4 - 200, i * 50 , imgFicha1,jugador1);
+    } else addFicha(width / 4 - 100, i * 50-500, imgFicha1,jugador1);
   }
   for (let i = 1; i <=CANT_FIG; i++) {
     if (i < CANT_FIG / 2) {
-      addFicha(3 * (width / 4)+ 50, i * 50 , imgFicha2);
-    } else addFicha(3 * (width / 4) + 150, i * 50 - 500, imgFicha2);
+      addFicha(3 * (width / 4)+ 50, i * 50 , imgFicha2,jugador2);
+    } else addFicha(3 * (width / 4) + 150, i * 50 - 500, imgFicha2, jugador2);
   }
   drawFichas();
 }
 
-function addFicha(posX, posY, imgFicha) {
+function addFicha(posX, posY, imgFicha, jugador) {
 //  console.log("posiciones x , y ",posX,posY);
-  let ficha = new FichaRedonda(posX, posY, RADIUS, imgFicha, ctx);
+  let ficha = new FichaRedonda(posX, posY, RADIUS, imgFicha, ctx, jugador);
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
 

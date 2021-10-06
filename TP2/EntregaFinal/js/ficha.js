@@ -1,11 +1,12 @@
 class Ficha{
-    constructor(posX, posY, fill, context){
+    constructor(posX, posY, fill, context,jugador){
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
         this.resaltado = false;         //variable para indicar si la figura está siendo seleccionada o no
         this.resaltadoEstilo = 'yellow';       // color del resaltado para la selección
         this.ctx = context;
+        this.perteneceA = jugador;
     }
 
     setFill(fill){      //cambiar el color de relleno, acá va la imagen apra la ficha
@@ -15,6 +16,10 @@ class Ficha{
     setPosition(x, y){
         this.posX = x;
         this.posY = y;
+    }
+
+    getPertenecea(){
+        return this.perteneceA;
     }
 
 
