@@ -11,12 +11,12 @@ class Tablero{
         this.columnas = columnas;       
         this.imgCasillero = img;       
         this.casilla = null;
-        
+        this.matriz = [];
         
     }
    
     drawTablero(){  
-        this.matriz = [];
+        
             ctx.fillStyle = this.relleno;
         //    this.relleno=ctx.createPattern(imgCasillero,"repeat");  
             let inicioX = this.width/4;
@@ -33,22 +33,23 @@ class Tablero{
                       
             }          
         } 
-        console.log(this.matriz);        
+        //console.log(this.matriz);        
     }        
           
         
-    /*   
+       
        //VER CUÁL ES LA POSICIÓN HASTA DONDE BAJAR
     ultimoVacio(columna){
-
-        for(let j=0;j<this.filas;i++){
-          if(this.matriz[columna,j]!=null){
-            return j;
+        
+        let aux = this.filas-1;
+        for(let j=this.filas-1;j<=0;i--){
+          if(this.matriz[j,columna]==null){
+           return j;
           }          
         }
-        return j; 
+     return aux; 
     }
-    */
+    
            
   
 

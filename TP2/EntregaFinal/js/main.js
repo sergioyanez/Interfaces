@@ -81,13 +81,12 @@ for(let i =0;i< COLUMNAS;i++){
    let columnaATirar = columnaQueTiro(lastClicFicha);
   // alert("columna a tirar: "+columnaATirar);
     let ultimo = tablero.ultimoVacio(columnaATirar);
-  //  console.log(ultimo);
     let posY =  lastClicFicha.getPosY();
     let posX = lastClicFicha.getPosX();
-     for (let i = posY;i<ultimo;i++){
-        lastClicFicha.setPosition(posX,posY-i);
-        drawFichas();
-      }
+    lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
+    console.log(ultimo*TNO_FICHA);
+    
+    
    }
  }
 
