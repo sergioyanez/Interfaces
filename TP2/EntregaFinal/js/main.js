@@ -67,7 +67,7 @@ function onmousedown(e) {
   //  console.log(INICIO_TABLERO,ficha.getPosX(),INICIO_TABLERO + TNO_FICHA);
 for(let i =0;i< COLUMNAS;i++){
   if((ficha.getPosX() > INICIO_TABLERO + i*TNO_FICHA) && ficha.getPosX() < INICIO_TABLERO + TNO_FICHA + i*TNO_FICHA){
-    alert("la columna es: "+ i);
+ //   alert("la columna es: "+ i);
     return i;
   }
 }
@@ -80,11 +80,16 @@ for(let i =0;i< COLUMNAS;i++){
    //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
    let columnaATirar = columnaQueTiro(lastClicFicha);
   // alert("columna a tirar: "+columnaATirar);
-    let ultimo = tablero.ultimoVacio(columnaATirar);
-    let posY =  lastClicFicha.getPosY();
-    let posX = lastClicFicha.getPosX();
-    lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
-    console.log(ultimo*TNO_FICHA);
+    let posUltimo = tablero.ultimoVacio(columnaATirar);  // devuelve la pos en x e y
+  //  let posY =  lastClicFicha.getPosY();
+ //   let posX = lastClicFicha.getPosX();
+   // lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
+
+   lastClicFicha.setPosition(posUltimo.x+TNO_FICHA/2,posUltimo.y+TNO_FICHA/2);
+     drawFichas();
+
+   
+    
     
     
    }
@@ -104,19 +109,18 @@ function iniciarJuego() {
   // HACER UN BOTON REINICIAR JUEGO
   
   agregarTablero();
-  
   addFichas();
   addZonaJuego();
 }
 
 function addZonaJuego(){
-  let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
+ // let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
   zonaJuego.drawZonaJuego();
   
 }
 
 function agregarTablero() {
-  let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
+ // let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
   tablero.drawTablero();
 }
 
@@ -153,6 +157,8 @@ function clearCanvas(){
  // console.log("limpia");
   ctx.clearRect(0,0,width,height);
   agregarTablero();
+  addZonaJuego();
+
 }
 
 iniciarJuego();

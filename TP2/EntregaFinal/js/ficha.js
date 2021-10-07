@@ -7,6 +7,7 @@ class Ficha{
         this.resaltadoEstilo = 'yellow';       // color del resaltado para la selección
         this.ctx = context;
         this.perteneceA = jugador;
+        this.disponible = true;
     }
 
     setFill(fill){      //cambiar el color de relleno, acá va la imagen apra la ficha
@@ -54,4 +55,11 @@ class Ficha{
     isPOintInside(x,y){             //Metodo abstracto, me dice si el mouse está adentro de la figura
 
     }
+    getDisponible(){
+        return this.disponible;
+    }
+    setDisponible(disp){
+        this.disponible = disp;
+    }
+    
 }
