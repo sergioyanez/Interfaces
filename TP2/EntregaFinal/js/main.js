@@ -31,6 +31,7 @@ let jugador1="Tito";  //tomarlo de Input
 let jugador2= "Elvy";
 let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
 let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
+let posX_Original,posY_Original;
 
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
@@ -47,8 +48,10 @@ function onmousedown(e) {
      lastClicFicha = null;
    }
    let fichaCliqueada = encontrarFicha(e.layerX, e.layerY); //e.layerX, e.layerY, son las posiciones x,y dentro del canvas
-  // console.log("posiciones del evento",e.layerX, e.layerY);
+   console.log("posiciones del evento",e.layerX, e.layerY);
    if (fichaCliqueada != null) {
+     posX_Original = e.layerX;
+     posY_Original = e.layerY;
      fichaCliqueada.setResaltado(true);
      lastClicFicha = fichaCliqueada;
    }
@@ -75,7 +78,7 @@ for(let i =0;i< COLUMNAS;i++){
   //ACA MODIFIQUE
  function onmouseup(e) {
    isMouseDown = false;
-   
+  
    if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
    //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
    let columnaATirar = columnaQueTiro(lastClicFicha);
@@ -84,15 +87,19 @@ for(let i =0;i< COLUMNAS;i++){
   //  let posY =  lastClicFicha.getPosY();
  //   let posX = lastClicFicha.getPosX();
    // lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
-
-   lastClicFicha.setPosition(posUltimo.x+TNO_FICHA/2,posUltimo.y+TNO_FICHA/2);
-     drawFichas();
-
-   
-    
-    
-    
-   }
+      if(posUltimo.y < MARGEN_TABLERO){
+        lastClicFicha.setPosition(posX_Original,posY_Original);
+        drawFichas();
+      }
+      else {
+            lastClicFicha.setPosition(posUltimo.x+TNO_FICHA/2,posUltimo.y+TNO_FICHA/2);
+            drawFichas();
+      }
+    }
+    else{
+      lastClicFicha.setPosition(posX_Original,posY_Original);
+      drawFichas();
+    }
  }
 
 

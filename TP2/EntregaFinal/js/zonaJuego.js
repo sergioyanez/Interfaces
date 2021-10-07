@@ -23,11 +23,10 @@ drawZonaJuego(){     //crea una fila con la cantidad de columnas que tiene el ta
 //verifica que la ficha se encuentre en la zona de juego, para luego desplazarla
 inZonaJuego(ficha){
     let posX = ficha.getPosX();
-   
-    
+    let posY = ficha.getPosY();
     for (let i = 0;i<COLUMNAS;i++){
       //  alert ("entra el for");
-       if( (posX > (INICIO_TABLERO+i*TNO_FICHA) +FRONTERA) && (posX < ((INICIO_TABLERO+i*TNO_FICHA)-FRONTERA)+ TNO_FICHA)){
+       if( (posX > (INICIO_TABLERO+i*TNO_FICHA) +FRONTERA) && (posX < ((INICIO_TABLERO+i*TNO_FICHA)-FRONTERA)+ TNO_FICHA) && (posY < MARGEN_TABLERO)){
         //    alert("esta en zona for" + ficha.getPosX());
             
             return true;
