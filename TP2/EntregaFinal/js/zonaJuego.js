@@ -28,7 +28,7 @@ inZonaJuego(ficha){
     for (let i = 0;i<COLUMNAS;i++){
       //  alert ("entra el for");
        if( (posX > (INICIO_TABLERO+i*TNO_FICHA) +FRONTERA) && (posX < ((INICIO_TABLERO+i*TNO_FICHA)-FRONTERA)+ TNO_FICHA)){
-            alert("esta en zona for" + ficha.getPosX());
+        //    alert("esta en zona for" + ficha.getPosX());
             
             return true;
         }            

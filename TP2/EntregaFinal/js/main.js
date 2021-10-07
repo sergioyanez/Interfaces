@@ -7,7 +7,7 @@ let width = canvas.width;
 let height = canvas.height;
 
 const CANT_FIG = 21;
-const RADIUS = 25;
+const RADIUS = 35;
 
 //Variables del Tablero.
 const FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
@@ -64,8 +64,9 @@ function onmousedown(e) {
   }
 
   function columnaQueTiro(ficha){
+  //  console.log(INICIO_TABLERO,ficha.getPosX(),INICIO_TABLERO + TNO_FICHA);
 for(let i =0;i< COLUMNAS;i++){
-  if((ficha.getPosX>INICIO_TABLERO+i*TNO_FICHA) && ficha.getPosX < INICIO_TABLERO + TNO_FICHA+i*TNO_FICHA){
+  if((ficha.getPosX() > INICIO_TABLERO + i*TNO_FICHA) && ficha.getPosX() < INICIO_TABLERO + TNO_FICHA + i*TNO_FICHA){
     alert("la columna es: "+ i);
     return i;
   }
@@ -76,9 +77,11 @@ for(let i =0;i< COLUMNAS;i++){
    isMouseDown = false;
    
    if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
-     alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
+   //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
    let columnaATirar = columnaQueTiro(lastClicFicha);
+  // alert("columna a tirar: "+columnaATirar);
     let ultimo = tablero.ultimoVacio(columnaATirar);
+  //  console.log(ultimo);
     let posY =  lastClicFicha.getPosY();
     let posX = lastClicFicha.getPosX();
      for (let i = posY;i<ultimo;i++){
@@ -100,7 +103,9 @@ function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliquead
 
 function iniciarJuego() {
   // HACER UN BOTON REINICIAR JUEGO
+  
   agregarTablero();
+  
   addFichas();
   addZonaJuego();
 }
@@ -134,7 +139,7 @@ function addFichas() {
 function addFicha(posX, posY, imgFicha, jugador) {
 //  console.log("posiciones x , y ",posX,posY);
   let ficha = new FichaRedonda(posX, posY, RADIUS, imgFicha, ctx, jugador);
-  console.log(ficha.getPosition());
+//  console.log(ficha.getPosition());
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
 
