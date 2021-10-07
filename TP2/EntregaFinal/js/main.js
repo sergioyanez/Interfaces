@@ -29,10 +29,11 @@ let lastClicFicha = null;
 let isMouseDown = false;
 let jugador1="Tito";  //tomarlo de Input
 let jugador2= "Elvy";
+
 let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
 let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 let posX_Original,posY_Original;
-
+let turno = 1;
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
@@ -43,15 +44,20 @@ canvas.addEventListener("mouseup", onmouseup, false);
 function onmousedown(e) {
   //   console.log(e);
    isMouseDown = true;
+   if (turno%2 ==0){
+    habilitarFicha(jugador1);
+   }else{
+     habilitarFicha(jugador2);
+   }
    if (lastClicFicha != null) {// se dejó de seleccionar una ficha
      lastClicFicha.setResaltado(false);
      lastClicFicha = null;
    }
    let fichaCliqueada = encontrarFicha(e.layerX, e.layerY); //e.layerX, e.layerY, son las posiciones x,y dentro del canvas
-   console.log("posiciones del evento",e.layerX, e.layerY);
-   if (fichaCliqueada != null) {
-     posX_Original = e.layerX;
-     posY_Original = e.layerY;
+
+   if (fichaCliqueada != null && fichaCliqueada.getDisponible()) {
+     posX_Original = fichaCliqueada.getPosX();
+     posY_Original = fichaCliqueada.getPosY();
      fichaCliqueada.setResaltado(true);
      lastClicFicha = fichaCliqueada;
    }
@@ -78,25 +84,36 @@ for(let i =0;i< COLUMNAS;i++){
   //ACA MODIFIQUE
  function onmouseup(e) {
    isMouseDown = false;
-  
+ /*  if (turno%2 ==0){
+    habilitarFicha(jugador1);
+   }else{
+     habilitarFicha(jugador2);
+   }*/
+   
    if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
    //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
    let columnaATirar = columnaQueTiro(lastClicFicha);
   // alert("columna a tirar: "+columnaATirar);
-    let posUltimo = tablero.ultimoVacio(columnaATirar);  // devuelve la pos en x e y
+    let posUltimoCasillero = tablero.ultimoVacio(columnaATirar);  // devuelve la pos en x e y
   //  let posY =  lastClicFicha.getPosY();
  //   let posX = lastClicFicha.getPosX();
    // lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
-      if(posUltimo.y < MARGEN_TABLERO){
+   console.log(posUltimoCasillero);
+      if(posUltimoCasillero == null){
         lastClicFicha.setPosition(posX_Original,posY_Original);
         drawFichas();
       }
       else {
-            lastClicFicha.setPosition(posUltimo.x+TNO_FICHA/2,posUltimo.y+TNO_FICHA/2);
+            lastClicFicha.setPosition(posUltimoCasillero.x+TNO_FICHA/2,posUltimoCasillero.y+TNO_FICHA/2);
+            lastClicFicha.setDisponible(false);
+            lastClicFicha.setResaltado(false);
+            lastClicFicha.setUbicada(true);
+            turno++;
+            
             drawFichas();
       }
     }
-    else{
+    else if(lastClicFicha != null){
       lastClicFicha.setPosition(posX_Original,posY_Original);
       drawFichas();
     }
@@ -112,13 +129,7 @@ function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliquead
   }
 }
 
-function iniciarJuego() {
-  // HACER UN BOTON REINICIAR JUEGO
-  
-  agregarTablero();
-  addFichas();
-  addZonaJuego();
-}
+
 
 function addZonaJuego(){
  // let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
@@ -146,10 +157,12 @@ function addFichas() {
   drawFichas();
 }
 
-function addFicha(posX, posY, imgFicha, jugador) {
+function addFicha(posX, posY, imgFicha,jugador) {
 //  console.log("posiciones x , y ",posX,posY);
-  let ficha = new FichaRedonda(posX, posY, RADIUS, imgFicha, ctx, jugador);
-//  console.log(ficha.getPosition());
+  let ficha = new FichaRedonda(posX, posY, RADIUS,imgFicha, ctx,jugador);
+ // console.log("en ficha"+ficha.getPerteneceA());
+ // console.log("en parametro"+jugador);+
+ 
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
 
@@ -167,5 +180,28 @@ function clearCanvas(){
   addZonaJuego();
 
 }
+function iniciarJuego() {
+  // HACER UN BOTON REINICIAR JUEGO
+  agregarTablero();
+  addFichas();
+  addZonaJuego();
+ // jugar();
+}
+
+function habilitarFicha(jugador){
+  for(let i =0;i<fichas.length;i++){
+        if(fichas[i].getPerteneceA()==jugador){
+          if(fichas[i].getUbicada() == false){
+              fichas[i].setDisponible(true);
+          }
+        }else{
+          fichas[i].setDisponible(false);
+        }
+        
+      }
+  
+  }
+
+  
 
 iniciarJuego();

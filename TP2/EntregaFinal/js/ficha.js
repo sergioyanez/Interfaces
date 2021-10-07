@@ -1,5 +1,6 @@
 class Ficha{
     constructor(posX, posY, fill, context,jugador){
+      
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
@@ -8,6 +9,8 @@ class Ficha{
         this.ctx = context;
         this.perteneceA = jugador;
         this.disponible = true;
+        this.ubicada = false;
+       
     }
 
     setFill(fill){      //cambiar el color de relleno, acá va la imagen apra la ficha
@@ -60,6 +63,13 @@ class Ficha{
     }
     setDisponible(disp){
         this.disponible = disp;
+    }
+
+    getUbicada(){
+        return this.ubicada;
+    }
+    setUbicada(ubicada){
+        this.ubicada = ubicada;
     }
     
 }

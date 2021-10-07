@@ -1,8 +1,9 @@
 class FichaRedonda extends Ficha{
 
-    constructor(posX,posY, radius, fill, context){
-        super(posX, posY, fill, context);
-       
+    constructor(posX,posY, radius, fill, context,jugador){
+    
+        super(posX, posY, fill, context,jugador);
+     
         this.radius = radius;        
     }
 
