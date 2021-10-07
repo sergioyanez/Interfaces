@@ -44,7 +44,7 @@ canvas.addEventListener("mouseup", onmouseup, false);
 function onmousedown(e) {
   //   console.log(e);
    isMouseDown = true;
-   if (turno%2 ==0){
+   if (turno%2 !=0){
     habilitarFicha(jugador1);
    }else{
      habilitarFicha(jugador2);
