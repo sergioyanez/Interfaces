@@ -14,6 +14,14 @@ class Tablero{
         this.matriz = [];
         
     }
+
+    devolverMatriz(){
+        let matrizCopia=[];
+        for (let i=0;i<this.matriz.length;i++){
+            matrizCopia[i] = this.matriz[i];
+        }
+        return matrizCopia;
+    }
    
     drawTablero(){  
 
@@ -43,7 +51,7 @@ class Tablero{
         
        
        //VER CUÁL ES LA POSICIÓN HASTA DONDE BAJAR
-    ultimoVacio(columna){   
+    ultimoVacio(columna,ficha){   
     let col = columna;
     let encontrado = null;
 
@@ -58,7 +66,11 @@ class Tablero{
                         return null;
                     }else{
                    //     alert("encontro un true y no esta en la primer fila "+this.matriz[i-1].getPosition().y);
-                        this.matriz[i-1].setOcupado(true);
+                        this.matriz[i-1].setOcupado(true); 
+                        this.matriz[i-1].setFichaDeJugador(ficha.getPerteneceA());
+                     //   console.log( this.matriz[i-1]);  
+                        
+                           
                         return this.matriz[i-1].getPosition();
                         
                     }
@@ -66,6 +78,9 @@ class Tablero{
                 }
                 if (this.matriz[i].getFila() == FILAS -1){
                     this.matriz[i].setOcupado(true);
+                    this.matriz[i].setFichaDeJugador(ficha.getPerteneceA());
+               //     console.log( this.matriz[i]); 
+                   
                     encontrado =  this.matriz[i].getPosition();                
                    
                 }

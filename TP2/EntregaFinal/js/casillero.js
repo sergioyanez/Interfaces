@@ -7,11 +7,18 @@ class Casillero{
         this.col = col;
         this.img = img;
         this.ocupado = false;
-        this.ficha = null;   //para saber a qué jugador pertenece la ficha
+        this.fichaDeJugador = null;   //para saber a qué jugador pertenece la ficha
         
     }
     
+    getFichaDeJugador(){
+        return this.fichaDeJugador;
+    }
 
+    setFichaDeJugador(jugador){
+        this.fichaDeJugador = jugador;
+    }
+    
     getPosX(){
         return this.posX;
     }
