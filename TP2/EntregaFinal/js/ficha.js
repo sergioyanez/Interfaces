@@ -55,6 +55,10 @@ class Ficha{
         this.resaltado = resaltado;
     }
 
+    getResaltadoEstilo(){
+        return this.resaltadoEstilo;
+    }
+
     isPOintInside(x,y){             //Metodo abstracto, me dice si el mouse está adentro de la figura
 
     }
