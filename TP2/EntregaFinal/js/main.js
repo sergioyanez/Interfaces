@@ -8,7 +8,7 @@ let height = canvas.height;
 
 const CANT_FIG = 21;
 const RADIUS = 35;
-
+ 
 //Variables del Tablero.
 const FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
 const COLUMNAS = 7; //Por ej: que elija el valor de un select
@@ -73,10 +73,9 @@ function onmousedown(e) {
   }
 
   function columnaQueTiro(ficha){
-  //  console.log(INICIO_TABLERO,ficha.getPosX(),INICIO_TABLERO + TNO_FICHA);
-for(let i =0;i< COLUMNAS;i++){
+  for(let i =0;i< COLUMNAS;i++){
   if((ficha.getPosX() > INICIO_TABLERO + i*TNO_FICHA) && ficha.getPosX() < INICIO_TABLERO + TNO_FICHA + i*TNO_FICHA){
- //   alert("la columna es: "+ i);
+ 
     return i;
   }
 }
@@ -84,31 +83,27 @@ for(let i =0;i< COLUMNAS;i++){
   //ACA MODIFIQUE
  function onmouseup(e) {
    isMouseDown = false;
- /*  if (turno%2 ==0){
-    habilitarFicha(jugador1);
-   }else{
-     habilitarFicha(jugador2);
-   }*/
-   
+    
    if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
    //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
    let columnaATirar = columnaQueTiro(lastClicFicha);
   // alert("columna a tirar: "+columnaATirar);
-    let posUltimoCasillero = tablero.ultimoVacio(columnaATirar,lastClicFicha);  // devuelve la pos en x e y
-  //  let posY =  lastClicFicha.getPosY();
- //   let posX = lastClicFicha.getPosX();
-   // lastClicFicha.setPosition(posX,ultimo*TNO_FICHA-30);
-  // console.log(posUltimoCasillero);
-      if(posUltimoCasillero == null){
+    let ultimoCasillero = tablero.ultimoVacio(columnaATirar,lastClicFicha);  // devuelve el casillero donde ubicar la ficha
+    
+      if(ultimoCasillero == null){
+       
         lastClicFicha.setPosition(posX_Original,posY_Original);
         drawFichas();
       }
       else {
+            posUltimoCasillero = ultimoCasillero.getPosition();
+           
             lastClicFicha.setPosition(posUltimoCasillero.x+TNO_FICHA/2,posUltimoCasillero.y+TNO_FICHA/2);
             lastClicFicha.setDisponible(false);
             lastClicFicha.setResaltado(false);
             lastClicFicha.setUbicada(true);
-            if(verificarGanador(lastClicFicha) != null)   //devuelve el ganador
+            let index= tablero.index(ultimoCasillero);
+            if(verificarGanador(ultimoCasillero,index) != null)   //devuelve el ganador
                 //stop y mostrar ganador
             turno++;
             

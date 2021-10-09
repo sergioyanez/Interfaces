@@ -71,7 +71,7 @@ class Tablero{
                      //   console.log( this.matriz[i-1]);  
                         
                            
-                        return this.matriz[i-1].getPosition();
+                        return this.matriz[i-1];
                         
                     }
                        
@@ -81,7 +81,7 @@ class Tablero{
                     this.matriz[i].setFichaDeJugador(ficha.getPerteneceA());
                //     console.log( this.matriz[i]); 
                    
-                    encontrado =  this.matriz[i].getPosition();                
+                    encontrado =  this.matriz[i];                
                    
                 }
                 
@@ -94,7 +94,9 @@ class Tablero{
         return encontrado;              //retorna la posicion de casilla donde ubicar la ficha
     }
     
-    
+    index(casill){
+        return this.matriz.indexOf(casill);
+    }
     
     
            
