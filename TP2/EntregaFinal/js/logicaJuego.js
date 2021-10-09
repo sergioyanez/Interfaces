@@ -17,18 +17,16 @@ function verificarGanador(casi,index) {    //paso el casillero y el index en la 
       ganador = ganadorPorDiagDer(matriz,casillero,index);
       if (ganador != null) {
         alert("gana: " + ganador);
+      }else{
+        ganador = ganadorPorDiagIzq(matriz,casillero,index);
+      if (ganador != null){
+        alert("gana: "+ganador);
+       }
       }
     }
   }
 
-  /*   else{
-      ganador = ganadorPorDiagonal1(matriz);
-      if (ganador != null){
-        alert("gana: "+ganador);
-       }
-     }
-   }*/
-
+  
 
   return "verificando";
 
@@ -228,10 +226,10 @@ function ganadorPorDiagDer(matriz,casillero,index) {
        
         
         if (matriz[i].getFichaDeJugador() != null ){
-          console.log("evaluo "+i);
+        //  console.log("evaluo "+i);
           if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
             cant++;
-            console.log("cantdiag "+cant)
+          //  console.log("cantdiag "+cant)
    
            }else{
              cant = 1;
@@ -254,10 +252,10 @@ function ganadorPorDiagDer(matriz,casillero,index) {
        
         
     if (matriz[i].getFichaDeJugador() != null ){
-      console.log("evaluo "+i);
+   //   console.log("evaluo "+i);
       if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
         cant++;
-        console.log("cantdiag "+cant)
+     //   console.log("cantdiag "+cant)
 
        }  else{
          cant = 1;
@@ -279,3 +277,67 @@ function ganadorPorDiagDer(matriz,casillero,index) {
       return ganador;
     }
   
+    function ganadorPorDiagIzq(matriz,casillero,index) {
+      let columna = casillero.getCol();
+      let fila = casillero.getFila();
+      let jugador = casillero.getFichaDeJugador();
+      let ganador = null;
+      let juegoGanado = false;
+      let cant = 1;
+      let i = index-(COLUMNAS);
+      
+      while (columna > 0 && fila > 0 && juegoGanado == false) { //evaluo hacia arriba derecha
+           
+            
+            if (matriz[i].getFichaDeJugador() != null ){
+              console.log("evaluo "+i);
+              if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+                cant++;
+                console.log("cantdiag "+cant)
+       
+               }else{
+                 cant = 1;
+               }     
+              if (cant == NUMERO_GANADOR) {
+                 juegoGanado = true;
+                 ganador = jugador;
+               }
+            }
+            
+                i-= COLUMNAS;
+                columna--;
+                fila--;
+                console.log("i,col, fila ",i,columna,fila);
+      }
+      columna = casillero.getCol();
+      fila = casillero.getFila();
+      i = index+COLUMNAS;
+    
+      while (fila < FILAS-1 && columna < COLUMNAS-1 && juegoGanado == false) { //evaluo hacia arriba derecha
+           
+            
+        if (matriz[i].getFichaDeJugador() != null ){
+          console.log("evaluo "+i);
+          if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+            cant++;
+            console.log("cantdiag "+cant)
+    
+           }  else{
+             cant = 1;
+           }   
+          if (cant == NUMERO_GANADOR) {
+             juegoGanado = true;
+             ganador = jugador;
+           }
+        }
+        
+            i+= COLUMNAS;
+            columna++;
+            fila++;
+    }
+    
+            
+           
+            
+          return ganador;
+        }
