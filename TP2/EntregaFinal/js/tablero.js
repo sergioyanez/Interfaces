@@ -27,7 +27,7 @@ class Tablero{
 
             ctx.fillStyle = this.relleno;
         //    this.relleno=ctx.createPattern(imgCasillero,"repeat");  
-            let inicioX = this.width/4;
+            let inicioX = INICIO_TABLERO;
         for (let i = 0; i < this.columnas; i++) {
             for (let j = 0; j <this.filas; j++) {
                 let posX=inicioX + i*TNO_FICHA;
