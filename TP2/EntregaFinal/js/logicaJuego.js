@@ -8,19 +8,19 @@ function verificarGanador(casi,index) {    //paso el casillero y el index en la 
 //  console.log(matriz);
   ganador = ganadorPorColumna(matriz,casillero);
   if (ganador != null) {
-    alert("gana: " + ganador);
+   
   } else {
     ganador = ganadorPorFila(matriz,casillero);
     if (ganador != null) {
-      alert("gana: " + ganador);
+    
     } else {
       ganador = ganadorPorDiagDer(matriz,casillero,index);
       if (ganador != null) {
-        alert("gana: " + ganador);
+       
       }else{
         ganador = ganadorPorDiagIzq(matriz,casillero,index);
       if (ganador != null){
-        alert("gana: "+ganador);
+       
        }
       }
     }
@@ -28,7 +28,7 @@ function verificarGanador(casi,index) {    //paso el casillero y el index en la 
 
   
 
-  return "verificando";
+  return ganador;
 
 }
 

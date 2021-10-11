@@ -5,16 +5,16 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let width = canvas.width;
 let height = canvas.height;
-let modoJuego = document.getElementById("modojuego");
-modoJuego.addEventListener("click",elegirModo(modoJuego.value));
+let btnIniciar = document.getElementById("btnIniciar");
+    btnIniciar.addEventListener("click",elegirModo);
 
 //const CANT_FIG = 21;
 const RADIUS = 35;
  
 //Variables del Tablero.
-let FILAS = 6; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
-let COLUMNAS = 7; //Por ej: que elija el valor de un select
-let NUMERO_GANADOR = 4; //SE INGRESA POR INPUT 4, 5 o 6
+let FILAS = elegirModo()[0]; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
+let COLUMNAS =elegirModo()[1]; //Por ej: que elija el valor de un select
+let NUMERO_GANADOR = elegirModo()[2]; //SE INGRESA POR INPUT 4, 5 o 6
 const CANT_FICHAS = FILAS * COLUMNAS;
 const TNO_FICHA = 84;
 const MARGEN_TABLERO = 80;
@@ -37,24 +37,65 @@ let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
 let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 let posX_Original,posY_Original;
 let turno = 1;
+let jugando = true;
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
 
-function elegirModo(modo){
-  alert(modo);
-
+function elegirModo(){
+  let modo = document.getElementById("modojuego").value;
+  let tamanioTablero=[];
+  let fila,columna,numeroGanador;
+  if(modo == 4){
+      fila = 6;
+      tamanioTablero.push(fila);
+      columna = 7;
+      tamanioTablero.push(columna);
+      numeroGanador = 4;
+      tamanioTablero.push(numeroGanador);
+  }
+  else if(modo == 5){
+    fila = 7;
+    tamanioTablero.push(fila);
+    columna = 8;
+    tamanioTablero.push(columna);
+    numeroGanador = 5;
+    tamanioTablero.push(numeroGanador);
+  }
+  else if(modo == 6){
+    fila = 8;
+    tamanioTablero.push(fila);
+    columna = 9;
+    tamanioTablero.push(columna);
+    numeroGanador = 6;
+    tamanioTablero.push(numeroGanador);
+  }
+  else if(modo == 7){
+    fila = 9;
+    tamanioTablero.push(fila);
+    columna = 10;
+    tamanioTablero.push(columna);
+    numeroGanador = 10;
+    tamanioTablero.push(numeroGanador);
+  }
+ 
+return tamanioTablero
 }
 
 
 function onmousedown(e) {
   //   console.log(e);
    isMouseDown = true;
-   if (turno%2 !=0){
-    habilitarFicha(jugador1);
+   if (jugando == true){
+    if (turno%2 !=0){
+      habilitarFicha(jugador1);
+     }else{
+       habilitarFicha(jugador2);
+     }
    }else{
-     habilitarFicha(jugador2);
+     desHabilitarFichas();
    }
+   
    if (lastClicFicha != null) {// se dejó de seleccionar una ficha
      lastClicFicha.setResaltado(false);
      lastClicFicha = null;
@@ -89,40 +130,47 @@ function onmousedown(e) {
   //ACA MODIFIQUE
  function onmouseup(e) {
    isMouseDown = false;
-    
-   if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
-   //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
-   let columnaATirar = columnaQueTiro(lastClicFicha);
-  // alert("columna a tirar: "+columnaATirar);
-    let ultimoCasillero = tablero.ultimoVacio(columnaATirar,lastClicFicha);  // devuelve el casillero donde ubicar la ficha
-    
-      if(ultimoCasillero == null){
+   if(jugando == true){
+   
+    if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
+      //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
+      let columnaATirar = columnaQueTiro(lastClicFicha);
+     // alert("columna a tirar: "+columnaATirar);
+       let ultimoCasillero = tablero.ultimoVacio(columnaATirar,lastClicFicha);  // devuelve el casillero donde ubicar la ficha
        
-        lastClicFicha.setPosition(posX_Original,posY_Original);
-        drawFichas();
-      }
-      else {
-            posUltimoCasillero = ultimoCasillero.getPosition();
-           
-            lastClicFicha.setPosition(posUltimoCasillero.x+TNO_FICHA/2,posUltimoCasillero.y+TNO_FICHA/2);
-            lastClicFicha.setDisponible(false);
-            lastClicFicha.setResaltado(false);
-            lastClicFicha.setUbicada(true);
-            let index= tablero.index(ultimoCasillero);
-            if(verificarGanador(ultimoCasillero,index) != null)   //devuelve el ganador
-                //stop y mostrar ganador
-            turno++;
-            
-            drawFichas();
-      }
-    }
-    else if(lastClicFicha != null){
-      lastClicFicha.setPosition(posX_Original,posY_Original);
-      drawFichas();
-    }/*
-    if(juegoTerminado(lastClicFicha))
-    drawFichas();
-    */
+         if(ultimoCasillero == null){
+          
+           lastClicFicha.setPosition(posX_Original,posY_Original);
+           drawFichas();
+         }
+         else {
+               posUltimoCasillero = ultimoCasillero.getPosition();           
+               lastClicFicha.setPosition(posUltimoCasillero.x+TNO_FICHA/2,posUltimoCasillero.y+TNO_FICHA/2);
+               lastClicFicha.setDisponible(false);
+               lastClicFicha.setResaltado(false);
+               lastClicFicha.setUbicada(true);
+               let index= tablero.index(ultimoCasillero);
+               let ganador =verificarGanador(ultimoCasillero,index);
+               if( ganador!= null){
+                 alert("Ganador: "+ganador);
+                 jugando = false;
+               
+               }   //devuelve el ganador
+                   //stop y mostrar ganador
+               turno++;
+               
+               drawFichas();
+         }
+       }
+       else if(lastClicFicha != null){
+         lastClicFicha.setPosition(posX_Original,posY_Original);
+         drawFichas();
+       }/*
+       if(juegoTerminado(lastClicFicha))
+       drawFichas();
+       */
+   } 
+ 
  }
 
 
@@ -240,6 +288,12 @@ function habilitarFicha(jugador){
         
       }
   
+  }
+
+  function desHabilitarFichas(){
+    for(let i =0;i<fichas.length;i++){
+       fichas[i].setDisponible(false);
+    }   
   }
 iniciarJuego();
 
