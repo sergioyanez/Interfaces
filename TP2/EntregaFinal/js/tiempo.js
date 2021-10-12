@@ -5,6 +5,7 @@ class Tiempo{
         this.tiempoTotal = tiempoTotal; 
         this.tiempo = this.tiempoTotal * 60; //Los segundos totales
         this.reloj = reloj; //Invoca al texto del reloj
+        
     }
     //Disminuye el tiempo del reloj
     calcularTiempo(){
@@ -23,4 +24,6 @@ class Tiempo{
             this.tiempo --;
         }
     }
+
+   
 }

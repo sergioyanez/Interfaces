@@ -44,6 +44,7 @@ let jugando = true;
 // variables del reloj
 let reloj = null;
 const MiliSegundos = 1000;
+let interval;
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
@@ -284,19 +285,22 @@ function clearCanvas(){
 }
 
 function tiempoDeJuego(){
- 
+  
+  if (interval != null){
+    clearInterval(interval);
+  }
+  
   reloj = new Tiempo(5,document.getElementById("tiempo"));
   
-  window.setInterval(function(){
+  interval = setInterval(function(){
     reloj.calcularTiempo();   
   },MiliSegundos);
  
  
 }
+
 function iniciarJuego() {
-
-
- 
+  
   ctx.clearRect(0,0,width,height);
  
   tiempoDeJuego();
