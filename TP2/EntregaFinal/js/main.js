@@ -40,7 +40,7 @@ let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
 let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 let posX_Original,posY_Original;
 let turno = 1;
-let jugando = true;
+let jugando = false;
 // variables del reloj
 let reloj = null;
 const MiliSegundos = 1000;
@@ -342,12 +342,12 @@ function habilitarFicha(jugador){
   }
 
   function desHabilitarFichas(){
-    for(let i =0;i<fichas.length;i++){
+   for(let i =0;i<fichas.length;i++){
        fichas[i].setDisponible(false);
     }   
   }
 //iniciarJuego();
 clearCanvas();
 addFichas();
-desHabilitarFichas();
+
 
