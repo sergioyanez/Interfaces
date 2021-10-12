@@ -6,21 +6,22 @@ let ctx = canvas.getContext("2d");
 let width = canvas.width;
 let height = canvas.height;
 let btnIniciar = document.getElementById("btnIniciar");
-    btnIniciar.addEventListener("click",elegirModo);
+    btnIniciar.addEventListener("click",iniciarJuego);
 
 //const CANT_FIG = 21;
 const RADIUS = 35;
- 
+
 //Variables del Tablero.
-let FILAS = elegirModo()[0]; //Para agrandar el tablero y que se agreguen mas fichas esto puede hacerse dinamico
-let COLUMNAS =elegirModo()[1]; //Por ej: que elija el valor de un select
-let NUMERO_GANADOR = elegirModo()[2]; //SE INGRESA POR INPUT 4, 5 o 6
-const CANT_FICHAS = FILAS * COLUMNAS;
+var FILAS = 6;
+var COLUMNAS =7; //Por ej: que elija el valor de un select
+var NUMERO_GANADOR = 4; //SE INGRESA POR INPUT 4, 5 o 6
+
+let CANT_FICHAS = FILAS * COLUMNAS;
 const TNO_FICHA = 84;
 const MARGEN_TABLERO = 80;
-const ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
-const ALTO_TABLERO = FILAS * TNO_FICHA;
-const INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
+let ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
+//let ALTO_TABLERO = FILAS * TNO_FICHA;
+let INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
 const FRONTERA = 10;   //líneas de la zona de lanzamiento
 
 
@@ -30,10 +31,11 @@ let imgFicha2 = document.getElementById("imgP2");
 let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
-let jugador1="Tito";  //tomarlo de Input
-let jugador2= "Elvy";
+let jugador1="jugador1";  //tomarlo de Input
+let jugador2= "jugador2";
 let fichasJugadores = 0;
 let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
+//console.log("filas tab: "+FILAS +" "+ "columnas tab: "+COLUMNAS+ "columnas tab: "+NUMERO_GANADOR);
 let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 let posX_Original,posY_Original;
 let turno = 1;
@@ -41,6 +43,17 @@ let jugando = true;
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
+
+
+function configurar(){
+  let select = elegirModo();
+  FILAS = select[0];
+  COLUMNAS = select[1];
+  NUMERO_GANADOR = select[2];
+ 
+  
+
+}
 
 function elegirModo(){
   let modo = document.getElementById("modojuego").value;
@@ -79,7 +92,7 @@ function elegirModo(){
     tamanioTablero.push(numeroGanador);
   }
  
-return tamanioTablero
+  return tamanioTablero;
 }
 
 
@@ -165,10 +178,7 @@ function onmousedown(e) {
        else if(lastClicFicha != null){
          lastClicFicha.setPosition(posX_Original,posY_Original);
          drawFichas();
-       }/*
-       if(juegoTerminado(lastClicFicha))
-       drawFichas();
-       */
+       }
    } 
  
  }
@@ -186,17 +196,16 @@ function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliquead
 
 
 function addZonaJuego(){
- // let zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
   zonaJuego.drawZonaJuego();
   
 }
 
 function agregarTablero() {
- // let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
   tablero.drawTablero();
 }
 
 function addFichas() {
+ 
   //paso como parámetro la imagen y la posición? o paso el jugador???
   let fichasPorJugador = CANT_FICHAS/2;
   let posY = 50;
@@ -246,10 +255,9 @@ function addFichas() {
 }
 
 function addFicha(posX, posY, imgFicha,jugador) {
-//  console.log("posiciones x , y ",posX,posY);
+
   let ficha = new FichaRedonda(posX, posY, RADIUS,imgFicha, ctx,jugador);
- // console.log("en ficha"+ficha.getPerteneceA());
- // console.log("en parametro"+jugador);+
+ 
  
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
@@ -260,20 +268,30 @@ function drawFichas() {
   for (let i = 0; i < fichas.length; i++) {
     fichas[i].draw();
   }
+  
 }
 function clearCanvas(){
- // console.log("limpia");
-  ctx.clearRect(0,0,width,height);
+ ctx.clearRect(0,0,width,height);
   agregarTablero();
   addZonaJuego();
+  
 
 }
 function iniciarJuego() {
-  // HACER UN BOTON REINICIAR JUEGO
+  ctx.clearRect(0,0,width,height);
+  turno=1;
+  configurar();
+  tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
+  ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
+  INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
   agregarTablero();
-  addFichas();
+  zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
   addZonaJuego();
- // jugar();
+  CANT_FICHAS = FILAS*COLUMNAS;
+  fichas = [];
+  addFichas();
+ 
+
 }
 
 function habilitarFicha(jugador){
@@ -284,10 +302,8 @@ function habilitarFicha(jugador){
           }
         }else{
           fichas[i].setDisponible(false);
-        }
-        
-      }
-  
+        }        
+      }  
   }
 
   function desHabilitarFichas(){

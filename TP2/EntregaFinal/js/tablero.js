@@ -4,6 +4,7 @@
 
 class Tablero{
     constructor(ctx, width, height, filas, columnas,img){
+        
         this.width = width;
         this.height = height;
         this.ctx = ctx;
@@ -24,10 +25,11 @@ class Tablero{
     }
    
     drawTablero(){  
-
+            
             ctx.fillStyle = this.relleno;
         //    this.relleno=ctx.createPattern(imgCasillero,"repeat");  
             let inicioX = INICIO_TABLERO;
+            
         for (let i = 0; i < this.columnas; i++) {
             for (let j = 0; j <this.filas; j++) {
                 let posX=inicioX + i*TNO_FICHA;

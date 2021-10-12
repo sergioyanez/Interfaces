@@ -14,8 +14,6 @@ drawZonaJuego(){     //crea una fila con la cantidad de columnas que tiene el ta
     let inicioX = INICIO_TABLERO;
     for (let i = 0; i < this.columnas; i++) {
         ctx.fillRect(inicioX+i*TNO_FICHA,0,TNO_FICHA-FRONTERA,MARGEN_TABLERO) ; 
-
-
     }
                  
 }
