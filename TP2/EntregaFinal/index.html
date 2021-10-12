@@ -13,7 +13,7 @@
 		<div class= "flex-container">
 			
 			<div class= "flex-canva">
-				<canvas id="canvas" width="1440" height="850"></canvas>
+				<canvas id="canvas" width="1300" height="850"></canvas>
 			 
 				<img src="images/r2d2.jpg" alt="impP4" id="imgP4" hidden>
 				<img src="images/darthy2.jpg" alt="impP3" id="imgP3" hidden>
@@ -23,26 +23,31 @@
 					
 			</div>
 			<div id ="configuracionJuego" class="flex-conf">	
-				<select id="modojuego">
-					<option value="4">4 en línea</option>
-					<option value="5">5 en línea</option>
-					<option value="6">6 en línea</option>
-					<option value="7">7 en línea</option>
-				</select>
+				<div>
+					<h2 class= "p nav">Configuración</h2>
+				</div>
+				<div>
+					<select id="modojuego">
+						<option value="4">4 en línea</option>
+						<option value="5">5 en línea</option>
+						<option value="6">6 en línea</option>
+						<option value="7">7 en línea</option>
+					</select>
+					
+					<button id="btnIniciar">Iniciar/Reiniciar Juego</button>
+
+				</div>
+				<div>
+					<label class="p reloj" >Tiempo:</label>
+					<p class="p reloj" id="tiempo">5:00</p>
+				</div>
 				
-				<button id="btnIniciar">Iniciar/Reiniciar Juego</button>
-				<nav>
-					<ul>
-						
-						<p class="p nav" id="nombreJugador1">Jugador 1</p>
-						
-						<label class="p reloj" >Tiempo:</label>
-						<p class="p reloj" id="tiempo">5:00</p>
-						<p class="p nav" id="nombreJugador2"></p>
-						<p class="p nav" id="nombreJugador2">Jugador 2</p>
-						
-					</ul>
-				</nav>
+				<div>
+					<p class="p nav" id="nombreJugador1">Jugador 1</p>
+					<p class="p nav" id="nombreJugador2">Jugador 2</p>
+
+				</div>
+				
 			</div>
 
 		</div>

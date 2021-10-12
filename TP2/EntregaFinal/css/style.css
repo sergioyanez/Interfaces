@@ -29,7 +29,8 @@ canvas{
   
   p.reloj{
       margin: 0;
-      margin-right: 200px;
+      text-align: center;
+     /* margin-right: 200px;*/
       font-size: 40px;
   }
   .flex-container {
@@ -48,12 +49,19 @@ canvas{
     border-width: 1px;
     border-style: solid;
     border-color: whitesmoke;
+    
   }
   .flex-canva {
   
-    width: 80%;
+    width: 85%;
     margin: 10px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
+    margin-right: auto;
   }
+  
+  select, button {
+    font-size: 20px;
+}
+
