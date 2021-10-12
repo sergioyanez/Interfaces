@@ -171,6 +171,7 @@ function onmousedown(e) {
                let ganador =verificarGanador(ultimoCasillero,index);
                if (ganador == "EMPATE"){
                 swal('Termino el juego, empataron!!', ' ', 'success');
+                finJuego(); 
                }else if( ganador!= null){
                  swal('Termino el juego, ganador '+ganador, ' ', 'success');
               //   alert("Ganador: "+ganador);

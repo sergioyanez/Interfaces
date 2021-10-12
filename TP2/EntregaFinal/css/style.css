@@ -1,8 +1,8 @@
 canvas{
     
     border-width: 1px;
-    border-style: solid;
-    border-color: whitesmoke;
+  /*  border-style: solid;
+    border-color: whitesmoke;*/
     
   }
 
@@ -21,7 +21,7 @@ canvas{
     .p{
       color: white;
       display: inline-flex;
-      font-size: 40px;
+      font-size: 30px;
       height: 70px;
       width: 200px;
       margin: 20px;
@@ -30,5 +30,5 @@ canvas{
   p.reloj{
       margin: 0;
       margin-right: 200px;
-      font-size: 70px;
+      font-size: 40px;
   }

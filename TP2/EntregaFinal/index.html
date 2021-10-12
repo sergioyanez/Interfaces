@@ -12,7 +12,7 @@
 			
 			<p class="p nav" id="nombreJugador1">Jugador 1</p>
 			
-			
+			<label class="p reloj" >Tiempo:</label>
 			<p class="p reloj" id="tiempo">5:00</p>
 			<p class="p nav" id="nombreJugador2"></p>
 			<p class="p nav" id="nombreJugador2">Jugador 2</p>
@@ -21,25 +21,29 @@
 	</nav>
 
 	<body>
-		<div id ="configuracionJuego" class="configuracionJuego">	
-			<select id="modojuego">
-				<option value="4">4 en línea</option>
-				<option value="5">5 en línea</option>
-				<option value="6">6 en línea</option>
-				<option value="7">7 en línea</option>
-			</select>
-			
-			<button id="btnIniciar">Iniciar Juego</button>
-		</div>
-		<div>
-			<canvas id="canvas" width="1440" height="850"></canvas>
-		 
-		  
-			<img src="images/darthy4.jpg" alt="impP1" id="imgP1" hidden>
-			<img src="images/yoda.jpg" alt="yoda" id="imgP2" hidden>
-			<img src="images/casillero.png" alt="casillero" id="casillero" hidden>
+		<container>
+			<div id ="configuracionJuego" class="configuracionJuego">	
+				<select id="modojuego">
+					<option value="4">4 en línea</option>
+					<option value="5">5 en línea</option>
+					<option value="6">6 en línea</option>
+					<option value="7">7 en línea</option>
+				</select>
 				
-		</div>
+				<button id="btnIniciar">Iniciar/Reiniciar Juego</button>
+			</div>
+			<div>
+				<canvas id="canvas" width="1440" height="850"></canvas>
+			 
+			  
+				<img src="images/darthy4.jpg" alt="impP1" id="imgP1" hidden>
+				<img src="images/yoda.jpg" alt="yoda" id="imgP2" hidden>
+				<img src="images/casillero.png" alt="casillero" id="casillero" hidden>
+					
+			</div>
+
+		</container>
+		
 
 		
 	

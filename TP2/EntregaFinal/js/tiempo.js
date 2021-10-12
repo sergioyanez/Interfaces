@@ -11,8 +11,10 @@ class Tiempo{
     calcularTiempo(){
         //Si el tiempo finaliza, le informa a los jugadores 
         if(this.tiempo == 0) {
-            this.reloj.innerHTML = 'Finalizó el tiempo';
-            clearCanvas();  
+            this.reloj.innerHTML = 'Fin';
+            swal('Finalizó el tiempo!!', ' ', 'success');
+            clearCanvas(); 
+            finJuego(); 
            
         }
         //El tiempo sigue y decrementa los segundos
