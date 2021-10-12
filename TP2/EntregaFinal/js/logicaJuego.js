@@ -4,29 +4,30 @@ function verificarGanador(casi,index) {    //paso el casillero y el index en la 
   let fichasJugadas = cantFichasJugadas(matriz);
   let ganador = null;
   let casillero = casi;
- // esEmpate(fichasJugadas);
-
-  ganador = ganadorPorColumna(matriz,casillero);
-  if (ganador != null) {
-   
-  } else {
-    ganador = ganadorPorFila(matriz,casillero);
+  if (esEmpate(fichasJugadas)){
+    ganador = "EMPATE";
+  }else{
+    ganador = ganadorPorColumna(matriz,casillero);
     if (ganador != null) {
-    
+     
     } else {
-      ganador = ganadorPorDiagDer(matriz,casillero,index);
+      ganador = ganadorPorFila(matriz,casillero);
       if (ganador != null) {
-       
-      }else{
-        ganador = ganadorPorDiagIzq(matriz,casillero,index);
-      if (ganador != null){
-       
-       }
+      
+      } else {
+        ganador = ganadorPorDiagDer(matriz,casillero,index);
+        if (ganador != null) {
+         
+        }else{
+          ganador = ganadorPorDiagIzq(matriz,casillero,index);
+        if (ganador != null){
+         
+         }
+        }
       }
     }
   }
 
-  
 
   return ganador;
 
@@ -49,6 +50,7 @@ function esEmpate(fichasJugadas) {
 
     return true;
   }
+  return false;
 }
 
 function ganadorPorColumna(matriz,casillero) {
@@ -127,9 +129,9 @@ function ganadorPorDiagDer(matriz,casillero,index) {
   console.log("index"+index);
   while (columna < COLUMNAS-1 && fila > 0 && juegoGanado == false) { //evaluo hacia arriba derecha
              
-        if (matriz[i].getFichaDeJugador() != null ){
+        if (matriz[i].getFichaDeJugador() != null && matriz[i].getFichaDeJugador() == jugador){
            console.log("evaluo "+i);
-          if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+          if (cant < NUMERO_GANADOR) {
             cant++;
             console.log("cantdiag "+cant);
    
@@ -154,9 +156,9 @@ function ganadorPorDiagDer(matriz,casillero,index) {
   while (fila < FILAS-1 && columna > 0 && juegoGanado == false) { //evaluo hacia arriba derecha
        
         
-    if (matriz[i].getFichaDeJugador() != null ){
+    if (matriz[i].getFichaDeJugador() != null && matriz[i].getFichaDeJugador() == jugador){
       console.log("evaluo "+i);
-      if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+      if (cant < NUMERO_GANADOR) {
         cant++;
        console.log("cantdiag "+cant)
 
@@ -192,9 +194,9 @@ function ganadorPorDiagDer(matriz,casillero,index) {
       while (columna > 0 && fila > 0 && juegoGanado == false) { //evaluo hacia arriba derecha
            
             
-            if (matriz[i].getFichaDeJugador() != null ){
+            if (matriz[i].getFichaDeJugador() != null && matriz[i].getFichaDeJugador() == jugador ){
               console.log("evaluo "+i);
-              if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+              if (cant < NUMERO_GANADOR) {
                 cant++;
                console.log("cantdiag "+cant)
        
@@ -219,9 +221,9 @@ function ganadorPorDiagDer(matriz,casillero,index) {
       while (fila < FILAS-1 && columna < COLUMNAS-1 && juegoGanado == false) { //evaluo hacia arriba derecha
            
             
-        if (matriz[i].getFichaDeJugador() != null ){
+        if (matriz[i].getFichaDeJugador() != null && matriz[i].getFichaDeJugador() == jugador){
           console.log("evaluo "+i);
-          if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
+          if (cant < NUMERO_GANADOR) {
             cant++;
             console.log("cantdiag "+cant)
     
