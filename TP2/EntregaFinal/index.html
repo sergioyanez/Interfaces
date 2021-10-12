@@ -7,22 +7,22 @@
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<title>X en linea</title>
 	</head>
-	<nav>
-		<ul>
-			
-			<p class="p nav" id="nombreJugador1">Jugador 1</p>
-			
-			<label class="p reloj" >Tiempo:</label>
-			<p class="p reloj" id="tiempo">5:00</p>
-			<p class="p nav" id="nombreJugador2"></p>
-			<p class="p nav" id="nombreJugador2">Jugador 2</p>
-			
-		</ul>
-	</nav>
+	
 
 	<body>
-		<container>
-			<div id ="configuracionJuego" class="configuracionJuego">	
+		<div class= "flex-container">
+			
+			<div class= "flex-canva">
+				<canvas id="canvas" width="1440" height="850"></canvas>
+			 
+				<img src="images/r2d2.jpg" alt="impP4" id="imgP4" hidden>
+				<img src="images/darthy2.jpg" alt="impP3" id="imgP3" hidden>
+				<img src="images/darthy4.jpg" alt="impP1" id="imgP1" hidden>
+				<img src="images/yoda.jpg" alt="yoda" id="imgP2" hidden>
+				<img src="images/casillero.png" alt="casillero" id="casillero" hidden>
+					
+			</div>
+			<div id ="configuracionJuego" class="flex-conf">	
 				<select id="modojuego">
 					<option value="4">4 en línea</option>
 					<option value="5">5 en línea</option>
@@ -31,18 +31,21 @@
 				</select>
 				
 				<button id="btnIniciar">Iniciar/Reiniciar Juego</button>
-			</div>
-			<div>
-				<canvas id="canvas" width="1440" height="850"></canvas>
-			 
-			  
-				<img src="images/darthy4.jpg" alt="impP1" id="imgP1" hidden>
-				<img src="images/yoda.jpg" alt="yoda" id="imgP2" hidden>
-				<img src="images/casillero.png" alt="casillero" id="casillero" hidden>
-					
+				<nav>
+					<ul>
+						
+						<p class="p nav" id="nombreJugador1">Jugador 1</p>
+						
+						<label class="p reloj" >Tiempo:</label>
+						<p class="p reloj" id="tiempo">5:00</p>
+						<p class="p nav" id="nombreJugador2"></p>
+						<p class="p nav" id="nombreJugador2">Jugador 2</p>
+						
+					</ul>
+				</nav>
 			</div>
 
-		</container>
+		</div>
 		
 
 		

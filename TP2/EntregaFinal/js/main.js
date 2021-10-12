@@ -29,6 +29,9 @@ const FRONTERA = 10;   //líneas de la zona de lanzamiento
 let fichas = []; //tengo arreglo de fichas
 let imgFicha1 = document.getElementById("imgP1");
 let imgFicha2 = document.getElementById("imgP2");
+let imgFicha3 = document.getElementById("imgP3");
+let imgFicha4 = document.getElementById("imgP4");
+
 let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
@@ -56,7 +59,6 @@ function configurar(){
   COLUMNAS = select[1];
   NUMERO_GANADOR = select[2];
  
-  
 
 }
 
@@ -102,7 +104,7 @@ function elegirModo(){
 
 
 function onmousedown(e) {
-  //   console.log(e);
+  
    isMouseDown = true;
    if (jugando == true){
     if (turno%2 !=0){
@@ -133,7 +135,7 @@ function onmousedown(e) {
     if(isMouseDown && lastClicFicha != null){
       lastClicFicha.setPosition(e.layerX,e.layerY);
       drawFichas();
-    //  console.log(fichaCliqueada.getPosition());
+    
     }
   }
 
@@ -151,9 +153,9 @@ function onmousedown(e) {
    if(jugando == true){
    
     if (lastClicFicha != null && zonaJuego.inZonaJuego(lastClicFicha)) { 
-      //  alert( "entra la if de  mouse up");   //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
+         //si solte una ficha y estoy en la zona de juego, baja hasta ult. posicion vacia 
       let columnaATirar = columnaQueTiro(lastClicFicha);
-     // alert("columna a tirar: "+columnaATirar);
+    
        let ultimoCasillero = tablero.ultimoVacio(columnaATirar,lastClicFicha);  // devuelve el casillero donde ubicar la ficha
        
          if(ultimoCasillero == null){
@@ -174,10 +176,10 @@ function onmousedown(e) {
                 finJuego(); 
                }else if( ganador!= null){
                  swal('Termino el juego, ganador '+ganador, ' ', 'success');
-              //   alert("Ganador: "+ganador);
+              
                 finJuego(); 
 
-              //   window.location.reload();
+              
                
                }   //devuelve el ganador
                    //stop y mostrar ganador
@@ -273,8 +275,6 @@ function addFichas() {
 function addFicha(posX, posY, imgFicha,jugador) {
 
   let ficha = new FichaRedonda(posX, posY, RADIUS,imgFicha, ctx,jugador);
- 
- 
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
 
@@ -351,4 +351,10 @@ function habilitarFicha(jugador){
 clearCanvas();
 addFichas();
 
-
+function fichasParaElegir(){
+  let radio = 20;
+  let ficha1 = new FichaRedonda(posX, posY, radio,imgFicha1, ctx,jugador);
+  let ficha2 = new FichaRedonda(posX, posY, radio,imgFicha2, ctx,jugador);
+  let ficha3 = new FichaRedonda(posX, posY, radio,imgFicha3, ctx,jugador);
+  let ficha4 = new FichaRedonda(posX, posY, radio,imgFicha4, ctx,jugador);
+}

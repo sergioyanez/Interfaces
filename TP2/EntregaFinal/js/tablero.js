@@ -47,7 +47,7 @@ class Tablero{
                       
             }          
         } 
-        //console.log(this.matriz);        
+               
     }        
     
         
@@ -64,7 +64,8 @@ class Tablero{
              //   console.log("evaluo "+this.matriz[i].getCol()+" "+this. matriz[i].getFila());
                 if (this.matriz[i].getOcupado() == true){
                     if (this.matriz[i].getFila() == 0){
-                        alert("columna completa");
+                        swal('Columna completa', 'intente nuevamente', 'error');
+                     
                         return null;
                     }else{
                    //     alert("encontro un true y no esta en la primer fila "+this.matriz[i-1].getPosition().y);
