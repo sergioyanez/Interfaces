@@ -19,6 +19,7 @@ var NUMERO_GANADOR = 4; //SE INGRESA POR INPUT 4, 5 o 6
 let CANT_FICHAS = FILAS * COLUMNAS;
 const TNO_FICHA = 84;
 const MARGEN_TABLERO = 80;
+
 let ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
 //let ALTO_TABLERO = FILAS * TNO_FICHA;
 let INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
@@ -40,6 +41,9 @@ let tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
 let posX_Original,posY_Original;
 let turno = 1;
 let jugando = true;
+// variables del reloj
+let reloj = null;
+const MiliSegundos = 1000;
 canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
@@ -167,6 +171,7 @@ function onmousedown(e) {
                if( ganador!= null){
                  alert("Ganador: "+ganador);
                  jugando = false;
+                 window.location.reload();
                
                }   //devuelve el ganador
                    //stop y mostrar ganador
@@ -277,8 +282,24 @@ function clearCanvas(){
   
 
 }
+
+function tiempoDeJuego(){
+ 
+  reloj = new Tiempo(5,document.getElementById("tiempo"));
+  
+  window.setInterval(function(){
+    reloj.calcularTiempo();   
+  },MiliSegundos);
+ 
+ 
+}
 function iniciarJuego() {
+
+
+ 
   ctx.clearRect(0,0,width,height);
+ 
+  tiempoDeJuego();
   turno=1;
   configurar();
   tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
@@ -287,10 +308,13 @@ function iniciarJuego() {
   agregarTablero();
   zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
   addZonaJuego();
+  
   CANT_FICHAS = FILAS*COLUMNAS;
   fichas = [];
   addFichas();
+
  
+  
 
 }
 

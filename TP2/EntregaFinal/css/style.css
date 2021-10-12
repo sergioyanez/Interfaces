@@ -18,3 +18,17 @@ canvas{
       background-color: #f1f087;
     
     }
+    .p{
+      color: white;
+      display: inline-flex;
+      font-size: 40px;
+      height: 70px;
+      width: 200px;
+      margin: 20px;
+  }
+  
+  p.reloj{
+      margin: 0;
+      margin-right: 200px;
+      font-size: 70px;
+  }
