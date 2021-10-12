@@ -2,13 +2,13 @@
 
 class Tiempo{
     constructor(tiempoTotal, reloj){
-        this.tiempoTotal = tiempoTotal; //Puede ser dinamico con un input
+        this.tiempoTotal = tiempoTotal; 
         this.tiempo = this.tiempoTotal * 60; //Los segundos totales
         this.reloj = reloj; //Invoca al texto del reloj
     }
     //Disminuye el tiempo del reloj
     calcularTiempo(){
-        //Si el tiempo finaliza, le informa a los jugadores y vuelve a la personalización
+        //Si el tiempo finaliza, le informa a los jugadores 
         if(this.tiempo == 0) {
             this.reloj.innerHTML = 'Finalizó el tiempo';
             clearCanvas();  
