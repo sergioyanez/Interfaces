@@ -133,15 +133,13 @@ function ganadorPorDiagDer(matriz,casillero,index) {
             cant++;
             console.log("cantdiag "+cant);
    
-           }else{
-             cant = 1;
-           }     
+           }              
           if (cant == NUMERO_GANADOR) {
              juegoGanado = true;
              ganador = jugador;
            }
         }else{
-          return ganador;
+          fila = 0;
         }
         
         
@@ -162,15 +160,13 @@ function ganadorPorDiagDer(matriz,casillero,index) {
         cant++;
        console.log("cantdiag "+cant)
 
-       }  else{
-         cant = 1;
-       }   
+       }
       if (cant == NUMERO_GANADOR) {
          juegoGanado = true;
          ganador = jugador;
        }
     }else{
-      return ganador;
+      columna = 0;
     }
     
         i-= (FILAS-1);
@@ -202,16 +198,14 @@ function ganadorPorDiagDer(matriz,casillero,index) {
                 cant++;
                console.log("cantdiag "+cant)
        
-               }else{
-                 cant = 1;
-               }     
+               }
               if (cant == NUMERO_GANADOR) {
                  juegoGanado = true;
                  ganador = jugador;
                }
             }
             else{
-              return ganador;
+              columna = 0;
             }
                 i-= COLUMNAS;
                 columna--;
@@ -231,16 +225,14 @@ function ganadorPorDiagDer(matriz,casillero,index) {
             cant++;
             console.log("cantdiag "+cant)
     
-           }  else{
-             cant = 1;
-           }   
+           }
           if (cant == NUMERO_GANADOR) {
              juegoGanado = true;
              ganador = jugador;
            }
         }
         else{
-          return ganador;
+          fila = FILAS-1;
         }       
             i+= COLUMNAS;
             columna++;
