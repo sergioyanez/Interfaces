@@ -126,13 +126,12 @@ function ganadorPorDiagDer(matriz,casillero,index) {
   let i = index+(FILAS-1);
   console.log("index"+index);
   while (columna < COLUMNAS-1 && fila > 0 && juegoGanado == false) { //evaluo hacia arriba derecha
-       console.log("entro al while");
-        
+             
         if (matriz[i].getFichaDeJugador() != null ){
-         console.log("evaluo "+i);
+           console.log("evaluo "+i);
           if (matriz[i].getFichaDeJugador() == jugador && cant < NUMERO_GANADOR) {
             cant++;
-           console.log("cantdiag "+cant)
+            console.log("cantdiag "+cant);
    
            }else{
              cant = 1;
