@@ -93,7 +93,7 @@ function elegirModo(){
     tamanioTablero.push(fila);
     columna = 10;
     tamanioTablero.push(columna);
-    numeroGanador = 10;
+    numeroGanador = 7;
     tamanioTablero.push(numeroGanador);
   }
  
@@ -169,10 +169,14 @@ function onmousedown(e) {
                lastClicFicha.setUbicada(true);
                let index= tablero.index(ultimoCasillero);
                let ganador =verificarGanador(ultimoCasillero,index);
-               if( ganador!= null){
-                 alert("Ganador: "+ganador);
-                 jugando = false;
-                 window.location.reload();
+               if (ganador == "EMPATE"){
+                swal('Termino el juego, empataron!!', ' ', 'success');
+               }else if( ganador!= null){
+                 swal('Termino el juego, ganador '+ganador, ' ', 'success');
+              //   alert("Ganador: "+ganador);
+                finJuego(); 
+
+              //   window.location.reload();
                
                }   //devuelve el ganador
                    //stop y mostrar ganador
@@ -187,6 +191,11 @@ function onmousedown(e) {
        }
    } 
  
+ }
+ function finJuego(){
+  jugando = false;
+  clearInterval(interval);
+  desHabilitarFichas();
  }
 
 
@@ -300,11 +309,12 @@ function tiempoDeJuego(){
 }
 
 function iniciarJuego() {
-  
-  ctx.clearRect(0,0,width,height);
  
+ // ctx.clearRect(0,0,width,height);
+  clearCanvas();
   tiempoDeJuego();
   turno=1;
+  jugando = true;
   configurar();
   tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
   ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
@@ -316,9 +326,6 @@ function iniciarJuego() {
   CANT_FICHAS = FILAS*COLUMNAS;
   fichas = [];
   addFichas();
-
- 
-  
 
 }
 
@@ -339,5 +346,8 @@ function habilitarFicha(jugador){
        fichas[i].setDisponible(false);
     }   
   }
-iniciarJuego();
+//iniciarJuego();
+clearCanvas();
+addFichas();
+desHabilitarFichas();
 

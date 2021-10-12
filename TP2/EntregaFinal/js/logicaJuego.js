@@ -1,5 +1,6 @@
 function verificarGanador(casi,index) {    //paso el casillero y el index en la matriz
 
+  
   let matriz = tablero.devolverMatriz();
   let fichasJugadas = cantFichasJugadas(matriz);
   let ganador = null;
