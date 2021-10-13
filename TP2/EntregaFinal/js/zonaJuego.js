@@ -10,7 +10,7 @@ class ZonaJuego{
 }
 
 drawZonaJuego(){     //crea una fila con la cantidad de columnas que tiene el tablero
-    ctx.fillStyle = "rgba(255,255,255,0.5)";   //lo rellene de blanco con transparencia por el momento para identificarlo.
+    ctx.fillStyle = "rgba(255,255,255,0)";   //lo rellene de blanco con transparencia por el momento para identificarlo.
     let inicioX = INICIO_TABLERO;
     for (let i = 0; i < this.columnas; i++) {
         ctx.fillRect(inicioX+i*TNO_FICHA,0,TNO_FICHA-FRONTERA,MARGEN_TABLERO) ; 

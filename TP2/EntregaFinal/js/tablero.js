@@ -1,10 +1,7 @@
 "use strict";
 
-
-
 class Tablero{
     constructor(ctx, width, height, filas, columnas,img){
-        
         this.width = width;
         this.height = height;
         this.ctx = ctx;
@@ -15,7 +12,7 @@ class Tablero{
         this.matriz = [];
         
     }
-
+    // Retorna una copia de los casilleros en el arreglo matriz
     devolverMatriz(){
         let matrizCopia=[];
         for (let i=0;i<this.matriz.length;i++){
@@ -23,11 +20,10 @@ class Tablero{
         }
         return matrizCopia;
     }
-   
+   // dibuja el tablero en canva y guarda cada instancia de casillero en el arreglo matriz
     drawTablero(){  
             
             ctx.fillStyle = this.relleno;
-        //    this.relleno=ctx.createPattern(imgCasillero,"repeat");  
             let inicioX = INICIO_TABLERO;
             
         for (let i = 0; i < this.columnas; i++) {
@@ -49,31 +45,21 @@ class Tablero{
         } 
                
     }        
-    
-        
        
-       //VER CUÁL ES LA POSICIÓN HASTA DONDE BAJAR
+   // Retorna el casillero donde colocar la ficha
     ultimoVacio(columna,ficha){   
     let col = columna;
     let encontrado = null;
 
         for (let i = 0 ; i< COLUMNAS * FILAS; i++){
-            // console.log("pos matriz "+i+"columna: "+this.matriz[i].getCol()+" fila"+ this.matriz[i].getFila()
-            // + "ocupado "+this.matriz[i].getOcupado());
             if (this.matriz[i].getCol() == col){
-             //   console.log("evaluo "+this.matriz[i].getCol()+" "+this. matriz[i].getFila());
                 if (this.matriz[i].getOcupado() == true){
                     if (this.matriz[i].getFila() == 0){
                         swal('Columna completa', 'intente nuevamente', 'error');
-                     
                         return null;
                     }else{
-                   //     alert("encontro un true y no esta en la primer fila "+this.matriz[i-1].getPosition().y);
                         this.matriz[i-1].setOcupado(true); 
                         this.matriz[i-1].setFichaDeJugador(ficha.getPerteneceA());
-                     //   console.log( this.matriz[i-1]);  
-                        
-                           
                         return this.matriz[i-1];
                         
                     }
@@ -82,8 +68,6 @@ class Tablero{
                 if (this.matriz[i].getFila() == FILAS -1){
                     this.matriz[i].setOcupado(true);
                     this.matriz[i].setFichaDeJugador(ficha.getPerteneceA());
-               //     console.log( this.matriz[i]); 
-                   
                     encontrado =  this.matriz[i];                
                    
                 }
@@ -93,10 +77,9 @@ class Tablero{
               
         } 
     
-    //     console.log(encontrado);       
         return encontrado;              //retorna la posicion de casilla donde ubicar la ficha
     }
-    
+    //retorna el index, del casillero en el arreglo matriz
     index(casill){
         return this.matriz.indexOf(casill);
     }

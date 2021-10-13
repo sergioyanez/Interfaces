@@ -9,24 +9,21 @@ let btnIniciar = document.getElementById("btnIniciar");
     btnIniciar.addEventListener("click",iniciarJuego);
 let btnReIniciar = document.getElementById("btnReIniciar");
     btnReIniciar.addEventListener("click",ReIniciarJuego);
-//const CANT_FIG = 21;
-const RADIUS = 35;
 
 //Variables del Tablero.
 var FILAS = 6;
 var COLUMNAS =7; //Por ej: que elija el valor de un select
 var NUMERO_GANADOR = 4; //SE INGRESA POR INPUT 4, 5 o 6
-
 let CANT_FICHAS = FILAS * COLUMNAS;
 const TNO_FICHA = 84;
 const MARGEN_TABLERO = 80;
-
 let ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
-//let ALTO_TABLERO = FILAS * TNO_FICHA;
 let INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
 const FRONTERA = 10;   //líneas de la zona de lanzamiento
+let casillero = document.getElementById("casillero");
 
-
+//Variables de ficha
+const RADIUS = 35;
 let fichas = []; //tengo arreglo de fichas
 let imgFicha1 = document.getElementById("imgP1");
 let imgFicha2 = document.getElementById("imgP2");
@@ -46,19 +43,12 @@ let fichasElegidasJugador2 = false;
  let fichaDarthy = document.getElementById('darthy');
  let fichaBobaFet = document.getElementById('bobafet');
  let fichaStormTrooper = document.getElementById('stormtrooper');
- 
- fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy;fichaBobaFet.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden';fichasElegidasJugador2=true });
+  fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy;fichaBobaFet.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden';fichasElegidasJugador2=true });
  fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet;fichaDarthy.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden';fichasElegidasJugador2=true  });
  fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper;fichaBobaFet.style.visibility='hidden';fichaDarthy.style.visibility='hidden';fichasElegidasJugador2=true  });
 
+//Variables del juego
 
-
-
-
-
-
-
-let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
 let jugador1="jugador1";  //tomarlo de Input
@@ -78,7 +68,7 @@ canvas.addEventListener("mousedown", onmousedown, false);
 canvas.addEventListener("mousemove", onmousemove, false);
 canvas.addEventListener("mouseup", onmouseup, false);
 
-
+// Asigna las variables del modo de juego.
 function configurar(){
   let select = elegirModo();
   FILAS = select[0];
@@ -87,7 +77,8 @@ function configurar(){
  
 
 }
-
+//configura el modo elegido por los jugadores, 4 en línea, 5 en linea etc.
+//Guarda los valores del select en un arreglo.
 function elegirModo(){
   let modo = document.getElementById("modojuego").value;
   let tamanioTablero=[];
@@ -128,7 +119,7 @@ function elegirModo(){
   return tamanioTablero;
 }
 
-
+//Habilita el turno del jugador, resaltar la ficha seleccionada y desresaltar la que se dejó de seleccionar
 function onmousedown(e) {
   
    isMouseDown = true;
@@ -157,6 +148,7 @@ function onmousedown(e) {
    drawFichas();
  }
  
+ //permite mover una ficha a otra posición según el mouse
  function onmousemove(e) {
     if(isMouseDown && lastClicFicha != null){
       lastClicFicha.setPosition(e.layerX,e.layerY);
@@ -165,6 +157,7 @@ function onmousedown(e) {
     }
   }
 
+  //Retorna la columna en la que tiró la ficha el jugador
   function columnaQueTiro(ficha){
   for(let i =0;i< COLUMNAS;i++){
   if((ficha.getPosX() > INICIO_TABLERO + i*TNO_FICHA) && ficha.getPosX() < INICIO_TABLERO + TNO_FICHA + i*TNO_FICHA){
@@ -173,7 +166,7 @@ function onmousedown(e) {
   }
 }
   }
-  //ACA MODIFIQUE
+  //Baja la ficha hasta la posición correcta y verifica si hay un ganador
  function onmouseup(e) {
    isMouseDown = false;
    if(jugando == true){
@@ -221,12 +214,14 @@ function onmousedown(e) {
    } 
  
  }
+ //Deshabilita las opciones de juego ON, limpia el interval del time.
  function finJuego(){
   jugando = false;
   clearInterval(interval);
   desHabilitarFichas();
   desOcultarFichas();
  }
+ //Muestra en DOM las opciones de fichas para cada jugador
 function desOcultarFichas(){
   fichaYoda.style.visibility='visible';
   fichaR2d2.style.visibility='visible';
@@ -238,8 +233,8 @@ function desOcultarFichas(){
   fichasElegidasJugador1=false;
   fichasElegidasJugador2=false;
 }
-
-function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliqueada
+//Retorna la instancia de la ficha clickeada
+function encontrarFicha(x, y) {
   for (let i = 0; i < fichas.length; i++) {
     const element = fichas[i];
     if (element.isPointInside(x, y)) {
@@ -249,19 +244,18 @@ function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliquead
 }
 
 
-
+//Dibuja en Canva la zona de Juago (donde puede tirar el jugador)
 function addZonaJuego(){
   zonaJuego.drawZonaJuego();
   
 }
-
+//Dibuja en Canva el tablero
 function agregarTablero() {
   tablero.drawTablero();
 }
-
+//Toma las variables necesarias para CREAR las fichas, agrega las instancias de mismas en un arreglo y las dibuja en canva
 function addFichas() {
  
-  //paso como parámetro la imagen y la posición? o paso el jugador???
   let fichasPorJugador = CANT_FICHAS/2;
   let posY = 50;
   let cant = 0;
@@ -308,29 +302,28 @@ function addFichas() {
   }
   drawFichas();
 }
-
+// crea una nueva instancia de Ficha y la agrega al arreglo de fichas
 function addFicha(posX, posY, imgFicha,jugador) {
 
   let ficha = new FichaRedonda(posX, posY, RADIUS,imgFicha, ctx,jugador);
   fichas.push(ficha); // agrego la nueva ficha  al arreglo de fichas
 }
-
+//Limpia en canva y dibuja las fichas en el mismo a partir del arreglo de fichas
 function drawFichas() {
   clearCanvas();
-  // dibuja las fichas a partir del arreglo fichas
   for (let i = 0; i < fichas.length; i++) {
     fichas[i].draw();
   }
   
 }
+//Limpia en canvas y agrega el tablero y la zona de juego
 function clearCanvas(){
  ctx.clearRect(0,0,width,height);
   agregarTablero();
   addZonaJuego();
-  
-
+ 
 }
-
+// crea el reloj y su intervalo de tiempo
 function tiempoDeJuego(){
   
   if (interval != null){
@@ -345,10 +338,11 @@ function tiempoDeJuego(){
  
  
 }
-
+// reinicia el juego cargando nuevamente la url
 function ReIniciarJuego(){
   window.location.reload();
 }
+//Prepara las configuraciones iniciales teniendo en cuenta diversos tableros y fichas
 function iniciarJuego() {
   if( !fichasElegidasJugador1 || !fichasElegidasJugador2){
     swal('Ambos jugadores deben elegir una ficha ',' ', 'error');
@@ -375,7 +369,7 @@ function iniciarJuego() {
  
 
 }
-
+// Habilita las fichas del jugador en turno y deshabilita las de su adversario
 function habilitarFicha(jugador){
   for(let i =0;i<fichas.length;i++){
         if(fichas[i].getPerteneceA()==jugador){
@@ -387,20 +381,13 @@ function habilitarFicha(jugador){
         }        
       }  
   }
-
+//Deshabilita todas las fichas de ambos jugadores
   function desHabilitarFichas(){
    for(let i =0;i<fichas.length;i++){
        fichas[i].setDisponible(false);
     }   
   }
-//iniciarJuego();
+
 clearCanvas();
 addFichas();
 
-function fichasParaElegir(){
-  let radio = 20;
-  let ficha1 = new FichaRedonda(posX, posY, radio,imgFicha1, ctx,jugador);
-  let ficha2 = new FichaRedonda(posX, posY, radio,imgFicha2, ctx,jugador);
-  let ficha3 = new FichaRedonda(posX, posY, radio,imgFicha3, ctx,jugador);
-  let ficha4 = new FichaRedonda(posX, posY, radio,imgFicha4, ctx,jugador);
-}
