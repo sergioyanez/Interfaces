@@ -113,4 +113,10 @@ canvas{
     background-color: #008CBA;
     color: white;
   }
+  #ocultar {
+    visibility: hidden;
+  }
+  #mostrar{
+    visibility: visible;
+  }
 

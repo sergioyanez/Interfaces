@@ -37,17 +37,17 @@ let imgFicha4 = document.getElementById("imgP4");
  let fichaYoda = document.getElementById('yoda');
  let fichaR2d2 = document.getElementById('r2d2'); 
  let fichaC3po = document.getElementById('c3po'); 
- fichaYoda.addEventListener("click", function(){ imgFicha1 = fichaYoda; });
- fichaR2d2.addEventListener("click", function(){ imgFicha1 = fichaR2d2; });
- fichaC3po.addEventListener("click", function(){ imgFicha1 = fichaC3po; });
+ fichaYoda.addEventListener("click", function(){ imgFicha1 = fichaYoda;fichaR2d2.style.visibility='hidden';fichaC3po.style.visibility='hidden' });
+ fichaR2d2.addEventListener("click", function(){ imgFicha1 = fichaR2d2;fichaYoda.style.visibility='hidden';fichaC3po.style.visibility='hidden' });
+ fichaC3po.addEventListener("click", function(){ imgFicha1 = fichaC3po;fichaYoda.style.visibility='hidden';fichaR2d2.style.visibility='hidden' });
  //Fichas jugador 2
  let fichaDarthy = document.getElementById('darthy');
  let fichaBobaFet = document.getElementById('bobafet');
  let fichaStormTrooper = document.getElementById('stormtrooper');
  
- fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy; });
- fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet; });
- fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper; });
+ fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy;fichaBobaFet.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden' });
+ fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet;fichaDarthy.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden' });
+ fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper;fichaBobaFet.style.visibility='hidden';fichaDarthy.style.visibility='hidden' });
 
 
 
@@ -223,8 +223,17 @@ function onmousedown(e) {
   jugando = false;
   clearInterval(interval);
   desHabilitarFichas();
+  desOcultarFichas();
  }
-
+function desOcultarFichas(){
+  fichaYoda.style.visibility='visible';
+  fichaR2d2.style.visibility='visible';
+  fichaC3po.style.visibility='visible'; 
+  fichaDarthy.style.visibility='visible';
+  fichaBobaFet.style.visibility='visible';
+  fichaStormTrooper.style.visibility='visible';
+  btnIniciar.style.visibility='visible';
+}
 
 function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliqueada
   for (let i = 0; i < fichas.length; i++) {
@@ -334,7 +343,7 @@ function tiempoDeJuego(){
 }
 
 function iniciarJuego() {
- 
+  btnIniciar.style.visibility = 'hidden';
  // ctx.clearRect(0,0,width,height);
   clearCanvas();
   tiempoDeJuego();
