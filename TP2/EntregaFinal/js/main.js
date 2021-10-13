@@ -233,7 +233,7 @@ function desOcultarFichas(){
   fichaDarthy.style.visibility='visible';
   fichaBobaFet.style.visibility='visible';
   fichaStormTrooper.style.visibility='visible';
-  btnIniciar.style.visibility='visible';
+ 
   fichasElegidasJugador1=false;
   fichasElegidasJugador2=false;
 }
@@ -350,7 +350,7 @@ function iniciarJuego() {
     swal('Ambos jugadores deben elegir una ficha ',' ', 'error');
   }
   else{
-    btnIniciar.style.visibility = 'hidden';
+   
     // ctx.clearRect(0,0,width,height);
      clearCanvas();
      tiempoDeJuego();
