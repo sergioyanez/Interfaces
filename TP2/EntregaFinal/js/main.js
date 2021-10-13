@@ -350,7 +350,7 @@ function iniciarJuego() {
     swal('Ambos jugadores deben elegir una ficha ',' ', 'error');
   }
   else{
-    btnIniciar.style.visibility == 'hidden';
+    btnIniciar.style.visibility = 'hidden';
     // ctx.clearRect(0,0,width,height);
      clearCanvas();
      tiempoDeJuego();
