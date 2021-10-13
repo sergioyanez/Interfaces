@@ -31,23 +31,24 @@ let imgFicha1 = document.getElementById("imgP1");
 let imgFicha2 = document.getElementById("imgP2");
 let imgFicha3 = document.getElementById("imgP3");
 let imgFicha4 = document.getElementById("imgP4");
-
+let fichasElegidasJugador1 = false;
+let fichasElegidasJugador2 = false;
 
  //Fichas jugador 1
  let fichaYoda = document.getElementById('yoda');
  let fichaR2d2 = document.getElementById('r2d2'); 
  let fichaC3po = document.getElementById('c3po'); 
- fichaYoda.addEventListener("click", function(){ imgFicha1 = fichaYoda;fichaR2d2.style.visibility='hidden';fichaC3po.style.visibility='hidden' });
- fichaR2d2.addEventListener("click", function(){ imgFicha1 = fichaR2d2;fichaYoda.style.visibility='hidden';fichaC3po.style.visibility='hidden' });
- fichaC3po.addEventListener("click", function(){ imgFicha1 = fichaC3po;fichaYoda.style.visibility='hidden';fichaR2d2.style.visibility='hidden' });
+ fichaYoda.addEventListener("click", function(){ imgFicha1 = fichaYoda;fichaR2d2.style.visibility='hidden';fichaC3po.style.visibility='hidden';fichasElegidasJugador1=true  });
+ fichaR2d2.addEventListener("click", function(){ imgFicha1 = fichaR2d2;fichaYoda.style.visibility='hidden';fichaC3po.style.visibility='hidden';fichasElegidasJugador1=true  });
+ fichaC3po.addEventListener("click", function(){ imgFicha1 = fichaC3po;fichaYoda.style.visibility='hidden';fichaR2d2.style.visibility='hidden';fichasElegidasJugador1=true  });
  //Fichas jugador 2
  let fichaDarthy = document.getElementById('darthy');
  let fichaBobaFet = document.getElementById('bobafet');
  let fichaStormTrooper = document.getElementById('stormtrooper');
  
- fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy;fichaBobaFet.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden' });
- fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet;fichaDarthy.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden' });
- fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper;fichaBobaFet.style.visibility='hidden';fichaDarthy.style.visibility='hidden' });
+ fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy;fichaBobaFet.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden';fichasElegidasJugador2=true });
+ fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet;fichaDarthy.style.visibility='hidden';fichaStormTrooper.style.visibility='hidden';fichasElegidasJugador2=true  });
+ fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper;fichaBobaFet.style.visibility='hidden';fichaDarthy.style.visibility='hidden';fichasElegidasJugador2=true  });
 
 
 
@@ -233,6 +234,8 @@ function desOcultarFichas(){
   fichaBobaFet.style.visibility='visible';
   fichaStormTrooper.style.visibility='visible';
   btnIniciar.style.visibility='visible';
+  fichasElegidasJugador1=false;
+  fichasElegidasJugador2=false;
 }
 
 function encontrarFicha(x, y) {// busca (en el arreglo fichas) la ficha cliqueada
@@ -343,23 +346,29 @@ function tiempoDeJuego(){
 }
 
 function iniciarJuego() {
-  btnIniciar.style.visibility = 'hidden';
- // ctx.clearRect(0,0,width,height);
-  clearCanvas();
-  tiempoDeJuego();
-  turno=1;
-  jugando = true;
-  configurar();
-  tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
-  ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
-  INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
-  agregarTablero();
-  zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
-  addZonaJuego();
-  
-  CANT_FICHAS = FILAS*COLUMNAS;
-  fichas = [];
-  addFichas();
+  if( !fichasElegidasJugador1 || !fichasElegidasJugador2){
+    swal('Ambos jugadores deben elegir una ficha ',' ', 'error');
+  }
+  else{
+    btnIniciar.style.visibility == 'hidden';
+    // ctx.clearRect(0,0,width,height);
+     clearCanvas();
+     tiempoDeJuego();
+     turno=1;
+     jugando = true;
+     configurar();
+     tablero = new Tablero(ctx, width, height, FILAS, COLUMNAS,casillero);
+     ANCHO_TABLERO = COLUMNAS * TNO_FICHA;
+     INICIO_TABLERO = width/2-(ANCHO_TABLERO/2);
+     agregarTablero();
+     zonaJuego = new ZonaJuego(ctx, width, height, COLUMNAS);
+     addZonaJuego();
+     
+     CANT_FICHAS = FILAS*COLUMNAS;
+     fichas = [];
+     addFichas();
+  }
+ 
 
 }
 
