@@ -7,7 +7,8 @@ let width = canvas.width;
 let height = canvas.height;
 let btnIniciar = document.getElementById("btnIniciar");
     btnIniciar.addEventListener("click",iniciarJuego);
-
+let btnReIniciar = document.getElementById("btnReIniciar");
+    btnReIniciar.addEventListener("click",ReIniciarJuego);
 //const CANT_FIG = 21;
 const RADIUS = 35;
 
@@ -233,7 +234,7 @@ function desOcultarFichas(){
   fichaDarthy.style.visibility='visible';
   fichaBobaFet.style.visibility='visible';
   fichaStormTrooper.style.visibility='visible';
- 
+  btnIniciar.style.visibility='visible';
   fichasElegidasJugador1=false;
   fichasElegidasJugador2=false;
 }
@@ -345,12 +346,15 @@ function tiempoDeJuego(){
  
 }
 
+function ReIniciarJuego(){
+  window.location.reload();
+}
 function iniciarJuego() {
   if( !fichasElegidasJugador1 || !fichasElegidasJugador2){
     swal('Ambos jugadores deben elegir una ficha ',' ', 'error');
   }
   else{
-   
+    btnIniciar.style.visibility='hidden';
     // ctx.clearRect(0,0,width,height);
      clearCanvas();
      tiempoDeJuego();
