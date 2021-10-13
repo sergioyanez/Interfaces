@@ -32,6 +32,30 @@ let imgFicha2 = document.getElementById("imgP2");
 let imgFicha3 = document.getElementById("imgP3");
 let imgFicha4 = document.getElementById("imgP4");
 
+
+ //Fichas jugador 1
+ let fichaYoda = document.getElementById('yoda');
+ let fichaR2d2 = document.getElementById('r2d2'); 
+ let fichaC3po = document.getElementById('c3po'); 
+ fichaYoda.addEventListener("click", function(){ imgFicha1 = fichaYoda; });
+ fichaR2d2.addEventListener("click", function(){ imgFicha1 = fichaR2d2; });
+ fichaC3po.addEventListener("click", function(){ imgFicha1 = fichaC3po; });
+ //Fichas jugador 2
+ let fichaDarthy = document.getElementById('darthy');
+ let fichaBobaFet = document.getElementById('bobafet');
+ let fichaStormTrooper = document.getElementById('stormtrooper');
+ 
+ fichaDarthy.addEventListener("click", function(){ imgFicha2 = fichaDarthy; });
+ fichaBobaFet.addEventListener("click", function(){ imgFicha2 = fichaBobaFet; });
+ fichaStormTrooper.addEventListener("click", function(){ imgFicha2 = fichaStormTrooper; });
+
+
+
+
+
+
+
+
 let casillero = document.getElementById("casillero");
 let lastClicFicha = null;
 let isMouseDown = false;
