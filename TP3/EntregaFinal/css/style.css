@@ -1,53 +1,20 @@
 
-  body {
-    /* background-image: url("../images/estrellaDeLaMuerte.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
-      /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
-      /* background-size:100%; */
-      /* Se muestra un color de fondo mientras se está cargando la imagen de fondo o si hay problemas para cargarla */
-     
-       background-color:black; 
-    
-    } 
- 
-  .flex-container {
-    display: flex;
-    flex-wrap: nowrap;
-    
-  }
   
-  .flex-conf {
-   
-    width: 20%;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: whitesmoke;
+  
+  @keyframes walk {
+    0% {background-position: 0;}
+    100% {background-position: -936px;}
     
-  }
-  .flex-canva {
-  
-    width: 85%;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-    margin-right: auto;
-  }
-  
-  select:hover {
-    background-color: #008CBA;
-    color: white;
-  }
-  #ocultar {
-    visibility: hidden;
-  }
-  #mostrar{
-    visibility: visible;
-  }
+}
 
+#personaje{
+  
+    width:156px;
+    height: 156px;
+    margin:0%;
+    margin-top: 20%;
+    background: url(../images/pers.png) left center;
+    animation:walk 2s steps(6) infinite;  /* funcion de timing -> steps (6), porque son 6 frames
+    /* position:relative;
+    bottom: 34px; */
+}
