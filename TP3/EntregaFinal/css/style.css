@@ -2,11 +2,30 @@
 #sonic{  
   width:119.75px;
   height: 139px; 
+  position:absolute; 
+  bottom: 15%;
+  left: 200px;
+  overflow: visible;
+}
+
+
+.caminando{
   background: url(../images/sonic_camina.png) left center;
   animation:sonicCamina 0.8s steps(10) infinite;  
-  position:absolute; 
-  top: 450px;
-  overflow: visible;
+}
+
+.saltando{
+  background: url(../images/bolita.png) left center no-repeat;
+  animation:sonicSalta 1s steps(8) infinite;  
+}
+
+@keyframes sonicSalta{
+0%{  bottom: 15%}
+20%{  bottom: 25%}
+30%{  bottom: 35%}
+50%{  bottom: 50%}
+80%{  bottom: 35%}
+100%{  bottom: 15%; background-position: -960px;}
 }
 
 @keyframes sonicCamina {
@@ -52,7 +71,7 @@
 #piso{
   position: absolute;
   top:-10px;
-  z-index: -40;
+  z-index: -20;
   height: 100%;
   width: 100%;
   background:url(../images/suelo.png) repeat-X;
@@ -60,7 +79,7 @@
 }
 @keyframes movimientoPiso{
   100%{
-      background-position-x: -2500px;
+      background-position-x: -2540px;
   }
 }
 
