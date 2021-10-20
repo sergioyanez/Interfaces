@@ -2,7 +2,7 @@
 #sonic{  
   width:119.75px;
   height: 139px; 
-  background: url(../images/sonic.png) left center;
+  background: url(../images/sonic_camina.png) left center;
   animation:sonicCamina 0.8s steps(10) infinite;  
   position:absolute; 
   top: 450px;
@@ -56,7 +56,7 @@
   height: 100%;
   width: 100%;
   background:url(../images/suelo.png) repeat-X;
-  animation: movimientoPiso 10s linear infinite;
+  animation: movimientoPiso 15s linear infinite;
 }
 @keyframes movimientoPiso{
   100%{
