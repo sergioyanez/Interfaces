@@ -1,20 +1,75 @@
 
-  
-  
-  @keyframes walk {
-    0% {background-position: 0;}
-    100% {background-position: -936px;}
-    
+#sonic{  
+  width:119.75px;
+  height: 139px; 
+  background: url(../images/sonic.png) left center;
+  animation:sonicCamina 0.8s steps(10) infinite;  
+  position:absolute; 
+  top: 450px;
+  overflow: visible;
 }
 
-#personaje{
+@keyframes sonicCamina {
+  0% {background-position: 0;}
+  100% {background-position: -1197.5px;}
   
-    width:156px;
-    height: 156px;
-    margin:0%;
-    margin-top: 20%;
-    background: url(../images/pers.png) left center;
-    animation:walk 2s steps(6) infinite;  /* funcion de timing -> steps (6), porque son 6 frames
-    /* position:relative;
-    bottom: 34px; */
+}
+
+#cielo {
+  position: absolute;
+  top: 0;
+  z-index: -50;
+  height: 50%;
+  width: 100%;
+  background:url(../images/cielo.png) repeat-X;
+  animation: movimientoCielo 30s linear infinite;
+}
+
+@keyframes movimientoCielo{
+  100%{
+      background-position-x: -2550px;
+  }
+}
+
+#islas_y_mar {
+  position: absolute;
+  top: 0px;
+  z-index: -40;
+  height: 100%;
+  width: 100%;
+  background:url(../images/islas.png) repeat-X;
+  animation: movimientoIslas 25s linear infinite;
+
+
+}
+
+@keyframes movimientoIslas{
+  100%{
+      background-position-x: -2550px;
+  }
+}
+
+#piso{
+  position: absolute;
+  top:-10px;
+  z-index: -40;
+  height: 100%;
+  width: 100%;
+  background:url(../images/suelo.png) repeat-X;
+  animation: movimientoPiso 10s linear infinite;
+}
+@keyframes movimientoPiso{
+  100%{
+      background-position-x: -2500px;
+  }
+}
+
+#container{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: all;
 }
