@@ -16,16 +16,14 @@
 
 .saltando{
   background: url(../images/bolita.png) left center no-repeat;
-  animation:sonicSalta 1s steps(8) infinite;  
+  animation:sonicSalta 2s steps(8) forwards;  
 }
 
 @keyframes sonicSalta{
-0%{  bottom: 15%}
-20%{  bottom: 25%}
-30%{  bottom: 35%}
-50%{  bottom: 50%}
-80%{  bottom: 35%}
-100%{  bottom: 15%; background-position: -960px;}
+  35%{bottom: 50%}
+  50%{  bottom: 50%}
+  
+  100%{  bottom: 15%; background-position: -960px;}
 }
 
 @keyframes sonicCamina {
