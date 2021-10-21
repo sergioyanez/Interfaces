@@ -1,5 +1,6 @@
 
 #sonic{  
+/*  border: 2px rgb(14, 13, 13) solid;    */
   width:119.75px;
   height: 139px; 
   position:absolute; 
@@ -47,6 +48,29 @@
       background-position-x: -2550px;
   }
 }
+
+#obstaculo{  
+ /* border: 2px rgb(14, 13, 13) solid;    */
+  width:38px;
+  height: 155px; 
+  position:absolute; 
+  bottom: 15%;    
+  background-image:url(../images/pincho.png) ; 
+  animation: obstaculo 4s steps(1) infinite;
+  overflow: visible;
+}
+
+
+
+@keyframes obstaculo {
+  0% { background-position: 0 0px; right: 0%}
+  20% { background-position:  -750px 0px; right: 20%; }
+  40% { background-position:  0 0px; right: 40%; }
+  60% { background-position:  -750px 0px; right: 60%; }
+  80% { background-position:  0 0px; right: 80%;}
+  100% { background-position: -750px 0px; right: 95% }
+}
+
 
 #islas_y_mar {
   position: absolute;
