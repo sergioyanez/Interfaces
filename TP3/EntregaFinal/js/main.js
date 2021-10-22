@@ -17,6 +17,5 @@ function cambiarClase(saltar){
     sonic.setAttribute("class","caminando");
     
 }
-
-
 sonic.addEventListener("animationend", function() { cambiarClase(false)})
+

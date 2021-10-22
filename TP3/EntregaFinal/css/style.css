@@ -1,6 +1,6 @@
 
 #sonic{  
-/*  border: 2px rgb(14, 13, 13) solid;    */
+  border: 2px rgb(14, 13, 13) solid;    
   width:119.75px;
   height: 139px; 
   position:absolute; 
@@ -22,8 +22,7 @@
 
 @keyframes sonicSalta{
   35%{bottom: 50%}
-  50%{  bottom: 50%}
-  
+  50%{  bottom: 50%}  
   100%{  bottom: 15%; background-position: -960px;}
 }
 
@@ -50,25 +49,76 @@
 }
 
 #obstaculo{  
- /* border: 2px rgb(14, 13, 13) solid;    */
+  border: 2px rgb(14, 13, 13) solid;   
   width:38px;
   height: 155px; 
   position:absolute; 
-  bottom: 15%;    
+  bottom: 20%;    
   background-image:url(../images/pincho.png) ; 
-  animation: obstaculo 4s steps(1) infinite;
+  animation: obstaculo 7s steps(15)  infinite;
   overflow: visible;
 }
 
+#obstaculo2{  
+   border: 2px rgb(14, 13, 13) solid;    
+   width:129px;
+   height: 87px; 
+   position:absolute; 
+   bottom: 60%;    
+   background-image:url(../images/enem2.png) ; 
+   animation: obstaculo2 10s steps(15)  infinite;
+   overflow: visible;
+ }
 
+
+#anillo{  
+   border: 2px rgb(14, 13, 13) solid;    
+   width:110px;
+   height: 100px; 
+   right:0;
+   position:absolute; 
+   bottom: 50%;    
+   background-image:url(../images/anillos.png) ;    
+   animation: anillo 3s steps(8)  infinite;
+   overflow: visible;
+  
+ }
+ @keyframes anillo {
+ 
+  0%{right: 0% }
+  20%{right: 20% }
+  40%{right: 40% }
+  50%{right: 50% }
+  60%{right: 60% }
+  70%{right: 70% }
+  80%{right: 80% }
+  90%{right: 90% }
+  100%{right: 100%;background-position: -960px; }
+
+}
+
+@keyframes obstaculo2 {
+  0%{right: 0% ;top:0%}
+  20%{right: 20%;top:20% }
+  40%{right: 40%;top:40%  }
+  50%{right: 50%;top:50%  }
+  60%{right: 60%;top:60%  }
+  70%{right: 70%;top:40%  }
+  80%{right: 80%;top:20%  }
+  90%{right: 90%;top:10%  }
+  100%{right: 100%;top:0%  }
+ }
 
 @keyframes obstaculo {
-  0% { background-position: 0 0px; right: 0%}
-  20% { background-position:  -750px 0px; right: 20%; }
-  40% { background-position:  0 0px; right: 40%; }
-  60% { background-position:  -750px 0px; right: 60%; }
-  80% { background-position:  0 0px; right: 80%;}
-  100% { background-position: -750px 0px; right: 95% }
+ 0%{right: 0% }
+ 20%{right: 20% }
+ 40%{right: 40% }
+ 50%{right: 50% }
+ 60%{right: 60% }
+ 70%{right: 70% }
+ 80%{right: 80% }
+ 90%{right: 90% }
+ 100%{right: 100% }
 }
 
 
