@@ -1,5 +1,6 @@
 'use strict'
 let saltar = false;
+let morir = false;
 let sonic = document.getElementById("sonic");
 document.addEventListener("keydown", event =>{
     if(event.code == "ArrowUp"){
@@ -16,6 +17,13 @@ function cambiarClase(saltar){
     else
     sonic.setAttribute("class","caminando");
     
+}
+
+function cambiarClase2(morir){
+    if(morir){
+        sonic.setAttribute("class","morir");
+    }
+       
 }
 sonic.addEventListener("animationend", function() { cambiarClase(false)})
 
@@ -34,7 +42,14 @@ function detectarColision(){
     //let anilloHeight = anilloPos.top + anilloPos.height;
     let obstaculoWidht = obstaculoPos.left+obstaculoPos.width;
     let obstaculoHeight = obstaculoPos.top+obstaculoPos.height;
-    if(sonicPos.left<=obstaculoWidht && sonicWidht>=obstaculoPos.left && sonicHeight>=obstaculoPos.top && sonicPos.top <= obstaculoHeight  ){
+
+    
+  
+
+    if( sonicPos.left<=obstaculoWidht && 
+        sonicWidht>=obstaculoPos.left && 
+        sonicHeight>=obstaculoPos.top && 
+        sonicPos.top <= obstaculoHeight  ){
   //  if(sonicWidht>=obstaculoPos.left && sonicPos.bottom<=obstaculoHeight){     
         console.log("de frente");
         console.log(sonicWidht>=obstaculoPos.left);
@@ -44,8 +59,9 @@ function detectarColision(){
      //   console.log(sonicPos.bottom<=obstaculoPos.top);
     //    console.log("choque al saltar antes de pasar: "+sonicHeight>=obstaculoPos.top);
      //   console.log("choque otro: "+sonicPos.top <= obstaculoHeight);
-        alert("murio")// restar vidas;
-  
+     //   alert("murio")// restar vidas;
+            morir= true;
+            cambiarClase2(morir);
     }
    // if(sonicPos.left<=anilloWidht && sonicWidht>=anilloPos.left && sonicHeight>=anilloPos.top && sonicPos.top <= anilloHeight )
 
