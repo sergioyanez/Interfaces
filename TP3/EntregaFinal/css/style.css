@@ -1,3 +1,22 @@
+.puntaje{
+  color: white;
+  position: absolute;
+  font-size: 30px;
+  height: 70px;
+  width: 200px;
+  align-content: left;
+}
+
+.reloj{
+  color: white;
+  position: absolute;
+  font-size: 30px;
+  height: 70px;
+  width: 200px;
+  left:50%;
+  align-content: center;
+}
+
 
 #sonic{  
 /*  border: 2px rgb(14, 13, 13) solid;  */  
@@ -9,7 +28,10 @@
   overflow: visible;
 }
 
-
+.stopAnimaciones{
+  animation-play-state: paused;
+}
+ 
 .caminando{
   background: url(../images/sonic_camina.png) left center;
   animation:sonicCamina 0.8s steps(10) infinite;  
@@ -102,6 +124,10 @@
    animation: anillo 3s steps(8)  infinite;
    overflow: visible;
   
+ }
+
+ .agarreAnillo{
+   right:0%
  }
  @keyframes anillo {
  
