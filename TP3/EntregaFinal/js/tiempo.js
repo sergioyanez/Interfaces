@@ -1,5 +1,6 @@
 "use strict";
 
+
 class Tiempo{
     constructor(tiempoTotal, reloj){
         this.tiempoTotal = tiempoTotal; 
@@ -11,10 +12,12 @@ class Tiempo{
     calcularTiempo(){
         //Si el tiempo finaliza, le informa a los jugadores 
         if(this.tiempo <= 0) {
-            this.reloj.innerHTML = 'Fin';
+         //   this.reloj.innerHTML = '   Perdiste!! Finalizó el tiempo';
             swal('Finalizó el tiempo PERDISTE!!  GAME OVER..', ' ', 'error');
-
-            finJuego(); 
+            
+         //    palabraTiempo.setAttribute("class","oculto");
+            finJuego();
+           
            
         }
         //El tiempo sigue y decrementa los segundos
@@ -33,7 +36,7 @@ class Tiempo{
     }
 
 cambiarReloj(){ 
-    let palabraTiempo = document.getElementById("cartel2");       
+         
             this.reloj.setAttribute("class","relojRojo"); 
             palabraTiempo.setAttribute ("class","colorRojo");           
     }
@@ -42,6 +45,10 @@ cambiarReloj(){
 descontarTiempo(){
     this.tiempo-=60;
    
+}
+detenerTiempo(){
+    this.reloj.innerHTML = '   Fin de juego';
+    palabraTiempo.setAttribute("class","oculto");
 }
    
 }

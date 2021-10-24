@@ -16,11 +16,19 @@ let puntaje = document.getElementById("puntaje");
 let sonic = document.getElementById("sonic");
 let obstaculo = document.querySelector(".obstaculo");
 let obstaculo2 = document.querySelector(".obstaculo2");
-let anillo = document.getElementById("anillo");
+let anillo = document.querySelector(".anillo");
 let cielo = document.getElementById("cielo");
 let islasYmar = document.getElementById("islas_y_mar");
 let piso =document.getElementById("piso");
 let t = document.getElementById("tiempo");
+let palabraTiempo = document.getElementById("cartel2");
+let btnReiniciar = document.querySelector(".reiniciar");
+btnReiniciar.addEventListener("click",reiniciar);
+
+function reiniciar(){
+    window.location.reload();
+}
+
 
 document.addEventListener("keydown", event =>{
     if(event.code == "ArrowUp"){
@@ -95,16 +103,18 @@ function pausarAnimaciones(){
 
 
 //ejecuta la función detectarColisión cada 1000 milisegundos
-setInterval(detectarColision,1000);
+setInterval(detectarColision,500);
 
 
 //Detecta si el div de sonic colisiona con el div del pincho, la abeja o el anillo
 function detectarColision(){ 
-    morir = false;     
+    morir = false;
+    if (fin == false){
+            
     let sonicPos = sonic.getBoundingClientRect();       
     let pinchoPos =  obstaculo.getBoundingClientRect();
     let abejaPos =  obstaculo2.getBoundingClientRect();
-    let anilloPos =anillo.getBoundingClientRect();
+    let anilloPos = anillo.getBoundingClientRect();
     let abejaWidht = abejaPos.left + abejaPos.width;
     let abejaHeight = abejaPos.top + abejaPos.height;
     let sonicWidht = sonicPos.left + sonicPos.width;
@@ -144,21 +154,26 @@ function detectarColision(){
     }
 
     //si sonic colisiona con el anillo se suma puntaje
-    if( sonicPos.left<=anilloWidht && 
+   
+    if(sonicPos.left<=anilloWidht && 
         sonicWidht>=anilloPos.left && 
         sonicHeight>=anilloPos.top && 
-        sonicPos.top <= anilloHeight  ){
-          
-            if(fin == false)
+        sonicPos.top <= anilloHeight){
+               
+           if(fin == false)
                 sumarPuntos();
            if (puntos == 10){
             swal('Ganaste el juego, GAME OVER...', ' ', 'success'); 
-            interval=null; ;
-            tiempoDeJuego()
+           
+           // interval=null;
+           // tiempoDeJuego()
             finJuego();
            }
           
     }
+
+    }
+    
  
       return morir;    
   
@@ -178,14 +193,14 @@ function detectarColision(){
       clearInterval(interval);
     }
     
-    reloj = new Tiempo(10,t);
+    reloj = new Tiempo(3,t);
     
     if(fin == false){
         interval = setInterval(function(){
             reloj.calcularTiempo();
            
-            if( reloj.calcularTiempo()<60){
-                reloj.cambiarReloj();
+            if( reloj.calcularTiempo()<60 && reloj.calcularTiempo()>0){
+                palabraTiempo.setAttribute("class","colorRojo");
             }   
           },MiliSegundos);
     }
@@ -194,13 +209,21 @@ function detectarColision(){
    // inicia el juego
   }
   function iniciarJuego(){
+     
     tiempoDeJuego();
   }
 
   // finaliza el juego
   function  finJuego(){
       fin = true;
-   pausarAnimaciones();
+      pausarAnimaciones();
+      clearInterval(interval);
+      reloj.detenerTiempo();
+      btnReiniciar.classList.remove("ocult");
+      btnReiniciar.classList.add("desocultar");
+      
+    
+  
      
   }
 

@@ -1,3 +1,31 @@
+.reiniciar{
+  opacity:1;
+  position: absolute;
+  width: 160px;
+  height: 40px;
+  right:10%;
+  text-align: center ;
+  color:black;
+  font-size: 30px;
+  background-color:white;
+  transition: background-color .5s ease-out;
+  transition: color .5s ease-out;
+ 
+}
+.reiniciar:hover{
+  background-color:rgb(5, 5, 116);
+  color:white;
+  transition: background-color .5s ease-in;
+  transition: color .5s ease-in;
+  
+}
+.ocult{
+  opacity:0;
+}
+.desocultar{
+  opacity:1;
+}
+
 .puntaje{
   color: white;
   position: absolute;
@@ -20,12 +48,13 @@
   align-content: center;
 }
 
+
 .reloj{
   color: white;
   position: absolute;
   font-size: 30px;
   height: 70px;
-  width: 200px;
+  width: 50%;
   left:50%;
   align-content: center;
 }
@@ -37,20 +66,29 @@
   visibility: visible;
 }
 .cartel{
-  left: 100%;
+  left:20%;
   height: 70px;
-  width: 100px;
+  width: 300px;
   position: absolute;
  
-  animation: apareceCartel 2s ease .2 forwards;
+  animation: apareceCartel 6s ease .2 forwards;
 }
 
 @keyframes apareceCartel{
-  0%{ opacity: 0;}
-  50%{ opacity: 0.5;}
-  60%{ opacity: 1;}
-  70%{ opacity: 0.5;}
-  100%{ opacity: 0;}
+  0%{ opacity: 0;
+    font-size: 30px;
+    transform : translateX(10%)}
+  50%{ opacity: 1;
+    font-size: 40px;
+    transform : translateX(30%)}
+  60%{ opacity: 1;
+    font-size: 50px;
+    transform : translateX(60%)}
+  70%{ opacity: 1;
+    font-size: 40px;
+    transform : translateX(90%)}
+  100%{ opacity: 0;
+    font-size: 30px;}
 }
 
 
@@ -59,7 +97,7 @@
   width:119.75px;
   height: 139px; 
   position:absolute; 
-  bottom: 15%;
+  bottom: 35%;
   left: 200px;
   overflow: visible;
 }
@@ -101,7 +139,7 @@
 @keyframes sonicSalta{
   35%{bottom: 50%}
   50%{  bottom: 50%}  
-  100%{  bottom: 15%; background-position: -960px;}
+  100%{  bottom: 35%; background-position: -960px;}
 }
 
 @keyframes sonicCamina {
@@ -131,7 +169,7 @@
   width:38px;
   height: 155px; 
   position:absolute; 
-  bottom: 20%;    
+  bottom: 35%;    
   background-image:url(../images/pincho.png) ; 
   animation: obstaculo 7s steps(15)  infinite;
   overflow: visible;
@@ -144,7 +182,7 @@
    position:absolute; 
    bottom: 60%;    
    background-image:url(../images/enem2.png) ; 
-   animation: obstaculo2 10s steps(15)  infinite;
+   animation: obstaculo2 5s steps(15)  infinite;
    overflow: visible;
  }
 
@@ -156,9 +194,9 @@
   /* border: 2px rgb(14, 13, 13) solid;    */
    width:110px;
    height: 100px; 
-   right:0;
+   right:0%;
    position:absolute; 
-   bottom: 50%;    
+   bottom: 55%;    
    background-image:url(../images/anillos.png) ;    
    animation: anillo 3s steps(8)  infinite;
    overflow: visible;
@@ -190,8 +228,8 @@
   50%{right: 50%;top:50%  }
   60%{right: 60%;top:60%  }
   70%{right: 70%;top:40%  }
-  80%{right: 80%;top:20%  }
-  90%{right: 90%;top:10%  }
+  80%{right: 80%;top:30%  }
+  90%{right: 90%;top:20%  }
   100%{right: 100%;top:0%  }
  }
 
