@@ -12,7 +12,7 @@ class Tiempo{
         //Si el tiempo finaliza, le informa a los jugadores 
         if(this.tiempo <= 0) {
             this.reloj.innerHTML = 'Fin';
-            swal('Finalizó el tiempo PERDISTE!!', ' ', 'error');
+            swal('Finalizó el tiempo PERDISTE!!  GAME OVER..', ' ', 'error');
 
             finJuego(); 
            
@@ -23,17 +23,23 @@ class Tiempo{
         
             const minutos = Math.floor(this.tiempo / 60);
             let segundos = this.tiempo % 60;
+          
             if(segundos < 10) this.reloj.innerHTML = `${minutos}:0${segundos}`;
             else this.reloj.innerHTML = `${minutos}:${segundos}`;
             this.tiempo --;
            }
+        return this.tiempo;
         
-        
+    }
+
+cambiarReloj(){ 
+    let palabraTiempo = document.getElementById("cartel2");       
+            this.reloj.setAttribute("class","relojRojo"); 
+            palabraTiempo.setAttribute ("class","colorRojo");           
     }
 
 
 descontarTiempo(){
- //   swal('chocaste se te descuenta 1 minuto', ' ', 'error');
     this.tiempo-=60;
    
 }

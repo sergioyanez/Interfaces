@@ -1,28 +1,36 @@
 'use strict'
+
+const MiliSegundos=1000;
+
 let saltar = false;
 let morir = false;
 let fin = false;
 let interval;
 let reloj = null;
 let puntos = 0;
-const MiliSegundos=1000;
+let colAbeja = false;
+let colAnillo = false;
+let mostrarCartel = false;
+let cartel =  document.getElementById("cartel");
 let puntaje = document.getElementById("puntaje");
 let sonic = document.getElementById("sonic");
 let obstaculo = document.querySelector(".obstaculo");
 let obstaculo2 = document.querySelector(".obstaculo2");
-let anillo = document.querySelector(".anillo");
+let anillo = document.getElementById("anillo");
 let cielo = document.getElementById("cielo");
 let islasYmar = document.getElementById("islas_y_mar");
 let piso =document.getElementById("piso");
 let t = document.getElementById("tiempo");
+
 document.addEventListener("keydown", event =>{
     if(event.code == "ArrowUp"){
         saltar = true;
-        cambiarClase(saltar);
-     //   alert("flecha arriba");
+        cambiarClase(saltar)
     }
 });
 
+
+//Cambia sonic caminando por sonic saltando, hecho una bolita
 function cambiarClase(saltar){
     if(saltar){
     sonic.setAttribute("class","saltando");
@@ -31,15 +39,45 @@ function cambiarClase(saltar){
     sonic.setAttribute("class","caminando");
     
 }
+
+// luego de que sonico salta hecho una bolita, vuelve a caminar
 sonic.addEventListener("animationend", function() { cambiarClase(false)})
 
 
+// Cambia sonic caminando por una explosión
 function cambiarClase2(morir){
     if(morir){
         sonic.setAttribute("class","morir");
     }       
 }
+// Muestra cartel de que ha perdido tiempo
+function mostraCartel(mostrarCartel){
+    
+    if(mostrarCartel){
+        cartel.setAttribute("class","cartel");
+        }
+        else
+        cartel.setAttribute("class","oculto");
+}
+cartel.addEventListener("animationend", function() {  mostraCartel(false)})
 
+function colisionAbeja(){
+      return  obstaculo2.getBoundingClientRect();
+        
+}
+//obstaculo2.addEventListener("animationend", function() {  colisionAbeja(false)})
+
+
+
+
+function colisionAnillo(){
+let aTop = anillo.getBoundingClientRect().top
+    aLeft = anillo.offsetLeft
+   
+}
+//anillo.addEventListener("animationend", function() {  colisionAnillo(false)})
+
+//Pone en pausa todas las animaciones al terminar el juego
 function pausarAnimaciones(){
 
         sonic.style.animationPlayState = "paused";
@@ -51,25 +89,20 @@ function pausarAnimaciones(){
         obstaculo2.style.animationPlayState = "paused"; 
        
 }
-function cambiarClase2(morir){
-    if(morir){
-        sonic.setAttribute("class","morir");
-    }
-       
-}
-
 
 //--------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
 
-//let anillo = document.querySelector(".anillo");
 
+//ejecuta la función detectarColisión cada 1000 milisegundos
 setInterval(detectarColision,1000);
 
+
+//Detecta si el div de sonic colisiona con el div del pincho, la abeja o el anillo
 function detectarColision(){ 
     morir = false;     
     let sonicPos = sonic.getBoundingClientRect();       
-    let obstaculoPos =  obstaculo.getBoundingClientRect();
+    let pinchoPos =  obstaculo.getBoundingClientRect();
     let abejaPos =  obstaculo2.getBoundingClientRect();
     let anilloPos =anillo.getBoundingClientRect();
     let abejaWidht = abejaPos.left + abejaPos.width;
@@ -78,51 +111,67 @@ function detectarColision(){
     let sonicHeight = sonicPos.top + sonicPos.height;
     let anilloWidht = anilloPos.left + anilloPos.width;
     let anilloHeight = anilloPos.top + anilloPos.height;
-    let obstaculoWidht = obstaculoPos.left+obstaculoPos.width;
-    let obstaculoHeight = obstaculoPos.top+obstaculoPos.height; 
+    let pinchoWidht = pinchoPos.left + pinchoPos.width;
+    let pinchoHeight = pinchoPos.top + pinchoPos.height; 
 
+    //si sonic colisiona con la abeja se descuenta tiempo
     if( sonicPos.left<=abejaWidht && 
         sonicWidht>=abejaPos.left && 
         sonicHeight>=abejaPos.top && 
-        sonicPos.top <= abejaHeight  ){ 
+        sonicPos.top <= abejaHeight  ){
+        //    this.position.top = this.div.getBoundingClientRect().top;
+       
             morir= true;
             cambiarClase2(morir);
-            reloj.descontarTiempo();
+            mostrarCartel = true; 
+            mostraCartel(mostrarCartel)
+            reloj.descontarTiempo(); 
+            
+           
     }
-    if( sonicPos.left<=obstaculoWidht && 
-        sonicWidht>=obstaculoPos.left && 
-        sonicHeight>=obstaculoPos.top && 
-        sonicPos.top <= obstaculoHeight  ){ 
+
+    //si sonic colisiona con el pincho se descuenta tiempo
+    if( sonicPos.left<=pinchoWidht && 
+        sonicWidht>=pinchoPos.left && 
+        sonicHeight>=pinchoPos.top && 
+        sonicPos.top <= pinchoHeight  ){ 
             morir= true;
             cambiarClase2(morir);
+            mostrarCartel = true; 
+            mostraCartel(mostrarCartel)
             reloj.descontarTiempo();
+           
     }
 
-
+    //si sonic colisiona con el anillo se suma puntaje
     if( sonicPos.left<=anilloWidht && 
         sonicWidht>=anilloPos.left && 
         sonicHeight>=anilloPos.top && 
         sonicPos.top <= anilloHeight  ){
+          
             if(fin == false)
                 sumarPuntos();
            if (puntos == 10){
-            swal('Ganaste el juego', ' ', 'success'); 
+            swal('Ganaste el juego, GAME OVER...', ' ', 'success'); 
             interval=null; ;
             tiempoDeJuego()
             finJuego();
            }
-           
+          
     }
  
       return morir;    
   
   }
 
+
+// acumula los puntos obtenidos
   function sumarPuntos(){
     puntos++;
     puntaje.innerHTML= puntos;
   }
 
+  // muestra el tiempo de juego que resta para terminar
   function tiempoDeJuego(){
   
     if (interval != null){
@@ -130,22 +179,30 @@ function detectarColision(){
     }
     
     reloj = new Tiempo(10,t);
+    
     if(fin == false){
         interval = setInterval(function(){
-            reloj.calcularTiempo();   
+            reloj.calcularTiempo();
+           
+            if( reloj.calcularTiempo()<60){
+                reloj.cambiarReloj();
+            }   
           },MiliSegundos);
     }
     
    
-   
+   // inicia el juego
   }
   function iniciarJuego(){
     tiempoDeJuego();
   }
 
+  // finaliza el juego
   function  finJuego(){
       fin = true;
    pausarAnimaciones();
      
   }
+
+
   iniciarJuego();
