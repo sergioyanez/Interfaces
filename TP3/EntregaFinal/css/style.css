@@ -1,9 +1,29 @@
+.iniciar{
+  font-family: sans-serif;
+  opacity:1;
+  position: absolute;
+  width: 100px;
+  height: 40px; 
+  text-align: center ;
+  color:black;
+  font-size: 30px;
+  background-color:white;
+  transition: background-color .5s ease-out;
+  transition: color .5s ease-out;
+}
+.iniciar:hover{
+  background-color:rgb(134, 7, 86);
+  color:white;
+  transition: background-color .5s ease-in;
+  transition: color .5s ease-in;
+}
 .reiniciar{
+  font-family: sans-serif;
   opacity:1;
   position: absolute;
   width: 160px;
   height: 40px;
-  right:10%;
+  top:10%;
   text-align: center ;
   color:black;
   font-size: 30px;
@@ -12,7 +32,7 @@
   transition: color .5s ease-out;
  
 }
-.reiniciar:hover{
+.reiniciar:hover{      /* .iniciar*/
   background-color:rgb(5, 5, 116);
   color:white;
   transition: background-color .5s ease-in;
@@ -22,18 +42,23 @@
 .ocult{
   opacity:0;
 }
+
 .desocultar{
   opacity:1;
 }
 
 .puntaje{
+  font-family: sans-serif;
   color: white;
   position: absolute;
   font-size: 30px;
   height: 70px;
   width: 200px;
+  left:15%;
   align-content: left;
 }
+
+
 .colorRojo{
   color: rgb(248, 12, 12);
 }
@@ -50,12 +75,26 @@
 
 
 .reloj{
+  font-family: sans-serif;
   color: white;
   position: absolute;
   font-size: 30px;
   height: 70px;
   width: 30%;
   left:30%;
+  align-content: center;
+}
+
+.explicacion{
+  font-family: sans-serif;
+  color: black;
+  background-color: whitesmoke;
+  position: absolute;
+  font-size: 30px;
+  height: 210px;
+  width: 30%;
+  left:30%;
+  top:40%;
   align-content: center;
 }
 .oculto{
@@ -66,6 +105,7 @@
   visibility: visible;
 }
 .cartel{
+  font-family: sans-serif;
   left:20%;
   height: 70px;
   width: 300px;
@@ -138,7 +178,7 @@
 
 @keyframes sonicSalta{
   35%{bottom: 50%}
-  50%{  bottom: 50%}  
+  50%{  bottom: 55%}  
   100%{  bottom: 35%; background-position: -960px;}
 }
 
@@ -164,34 +204,32 @@
   }
 }
 
-#obstaculo{  
+.obstaculo{  
 /*  border: 2px rgb(14, 13, 13) solid;   */
   width:38px;
   height: 155px; 
   position:absolute; 
   bottom: 35%;    
   background-image:url(../images/pincho.png) ; 
-  animation: obstaculo 7s steps(15)  infinite;
+  animation: obstaculo 6s steps(15)  infinite;
   overflow: visible;
 }
 
-#obstaculo2{  
+.obstaculo2{  
  /*  border: 2px rgb(14, 13, 13) solid;    */
    width:129px;
    height: 87px; 
    position:absolute; 
    bottom: 60%;    
    background-image:url(../images/enem2.png) ; 
-   animation: obstaculo2 5s steps(15)  infinite;
+   animation: obstaculo2 12s steps(15)  infinite;
    overflow: visible;
  }
-
-
   
-
+/*
 
 #anillo{  
-  /* border: 2px rgb(14, 13, 13) solid;    */
+
    width:110px;
    height: 100px; 
    right:0%;
@@ -203,7 +241,19 @@
   
  }
 
-
+*/
+ .anillo{  
+  /* border: 2px rgb(14, 13, 13) solid;    */
+   width:110px;
+   height: 100px; 
+   right:0%;
+   position:absolute; 
+   bottom: 55%;    
+   background-image:url(../images/anillos.png) ;    
+   animation: anillo 3s steps(8)  infinite;
+   overflow: visible;
+  
+ }
 
 
 
@@ -226,9 +276,9 @@
   20%{right: 20%;top:20% }
   40%{right: 40%;top:40%  }
   50%{right: 50%;top:50%  }
-  60%{right: 60%;top:60%  }
+  60%{right: 60%;top:50%  }
   70%{right: 70%;top:40%  }
-  80%{right: 80%;top:30%  }
+  80%{right: 80%;top:40%  }
   90%{right: 90%;top:20%  }
   100%{right: 100%;top:0%  }
  }
