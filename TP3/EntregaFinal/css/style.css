@@ -86,15 +86,15 @@
 }
 
 .explicacion{
-  font-family: sans-serif;
+  font-family:sans-serif;
   color: black;
   background-color: whitesmoke;
   position: absolute;
   font-size: 30px;
-  height: 210px;
+  height: 310px;
   width: 30%;
   left:30%;
-  top:40%;
+  top:20%;
   align-content: center;
 }
 .oculto{
