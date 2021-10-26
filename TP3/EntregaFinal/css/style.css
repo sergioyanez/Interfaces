@@ -91,11 +91,13 @@
   background-color: whitesmoke;
   position: absolute;
   font-size: 30px;
-  height: 310px;
-  width: 30%;
-  left:30%;
-  top:20%;
-  align-content: center;
+  height: 450px;
+  width: 50%;
+  top:15%;
+  left:25%;
+  padding-left: 30px;
+  padding-right: 30px;
+  /*align-content: center;*/
 }
 .oculto{
   visibility: hidden;
@@ -274,11 +276,11 @@
 @keyframes obstaculo2 {
   0%{right: 0% ;top:0%}
   20%{right: 20%;top:20% }
-  40%{right: 40%;top:40%  }
-  50%{right: 50%;top:50%  }
-  60%{right: 60%;top:50%  }
+  40%{right: 40%;top:30%  }
+  50%{right: 50%;top:40%  }
+  60%{right: 60%;top:45%  }
   70%{right: 70%;top:40%  }
-  80%{right: 80%;top:40%  }
+  80%{right: 80%;top:30%  }
   90%{right: 90%;top:20%  }
   100%{right: 100%;top:0%  }
  }

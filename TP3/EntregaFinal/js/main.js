@@ -22,7 +22,7 @@ let islasYmar = document.getElementById("islas_y_mar");
 let piso =document.getElementById("piso");
 let t = document.getElementById("tiempo");
 let palabraTiempo = document.getElementById("cartel2");
-let explicacion =  document.querySelector("#explicacion");
+let explicacion =  document.querySelector(".explicacion");
 let btnReiniciar = document.querySelector(".reiniciar");
     btnReiniciar.addEventListener("click",reiniciar);
 let btnIniciar =  document.querySelector(".iniciar");
