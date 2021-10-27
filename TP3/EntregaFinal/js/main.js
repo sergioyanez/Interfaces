@@ -11,6 +11,7 @@ let puntos = 0;
 let colAbeja = false;
 let colAnillo = false;
 let mostrarCartel = false;
+let sonido = true;
 let cartel =  document.getElementById("cartel");
 let puntaje = document.getElementById("puntaje");
 let sonic = document.querySelector("#sonic");
@@ -43,7 +44,25 @@ let sonidoVictoria=document.getElementById("victorySound");
 let sonidoJuego=document.getElementById("gameSound");
 let sonidoChoque = document.getElementById("chocaSound");
 let sonidoGameOver = document.getElementById("gameOverSound");
+let btnSonido = document.getElementById("sonido");
+    btnSonido.addEventListener("click",quitarSonido);
 
+
+    function quitarSonido(){
+        if(sonido ==true){
+            sonido = false;
+            sonidoJuego.pause();
+            btnSonido.classList.remove("volumen");
+            btnSonido.classList.add("enmudecer")
+        }
+        else{
+            sonido= true;
+            sonidoJuego.play();
+            btnSonido.classList.remove("enmudecer");
+            btnSonido.classList.add("volumen")
+        }
+       
+    }
 //elije el avatar 1 sonic azul
 function elegirAvatar1(){
    // elegirPersonaje.setAttribute("class","ocult");
@@ -248,6 +267,7 @@ function detectarColision(){
         explicacion.classList.add("ocult");
         jugando = true;
         sonidoJuego.play();
+        btnSonido.classList.remove("ocult");
         if(jugando){
         reacomodarClases();
         //ejecuta la función detectarColisión cada 500 milisegundos
@@ -288,6 +308,7 @@ function detectarColision(){
       pausarAnimaciones();
       clearInterval(interval);
       reloj.detenerTiempo();
+      btnSonido.classList.add("ocult");
       btnReiniciar.classList.remove("ocult");
       btnReiniciar.classList.add("desocultar");
   }

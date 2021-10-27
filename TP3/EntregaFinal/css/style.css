@@ -11,6 +11,22 @@
   transition: background-color .5s ease-out;
   transition: color .5s ease-out;
 }
+
+.volumen{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 10%;
+  background: url(../images/botonAudioSi.png)
+}
+
+.enmudecer{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 10%;
+  background: url(../images/botonAudioNo.png)
+}
 .elijePersonaje{
   border-color: black;
   position: absolute;
