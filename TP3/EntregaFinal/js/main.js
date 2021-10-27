@@ -242,11 +242,12 @@ function detectarColision(){
 
    // inicia el juego
   function iniciarJuego(){ 
-        sonidoJuego.play();
+       
       if (personaje != null && escenario != null){
         elegirPersonaje.setAttribute("class","ocult");
         explicacion.classList.add("ocult");
         jugando = true;
+        sonidoJuego.play();
         if(jugando){
         reacomodarClases();
         //ejecuta la función detectarColisión cada 500 milisegundos
