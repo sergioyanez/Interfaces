@@ -14,16 +14,16 @@
 .elijePersonaje{
   border-color: black;
   position: absolute;
-  top:50%;
-  left: 75%;
-  width: 300px;
+  top:55%;
+  left: 60%;
+  width: 550px;
   height: 200px;
   
 }
 .Sonic1{
   position: absolute;
   top:50px;
-  left:20%;
+  left:10%;
   bottom: 15%;
   width:128px;
   height: 140px;
@@ -33,11 +33,29 @@
 .Sonic2{
   position: absolute;
   top:50px;
-  left:70%;
+  left:40%;
   bottom: 15%;
   width:128px;
   height: 140px;
   background: url(../images/avatarSonic2.png);
+}
+.escenario1{
+  position: absolute;
+  top:50px;
+  left: 70%;
+  bottom: 15%;
+  width:128px;
+  height: 140px;
+  background: url(../images/escenariodia.png);
+}
+.escenario2{
+  position: absolute;
+  top:50px;
+  left: 99%;
+  bottom: 15%;
+  width:128px;
+  height: 140px;
+  background: url(../images/escenarionoche.png);
 }
 
 .iniciar:hover{
@@ -186,12 +204,12 @@
 
 .saltando{
   background: url(../images/bolita.png) left center no-repeat;
-  animation:sonicSalta 2s steps(8) forwards;  
+  animation:sonicSalta 1s steps(8) forwards;  
 }
 
 .saltando2{
   background: url(../images/sonic2_gira.png) left center no-repeat;
-  animation:sonicSalta 2s steps(8) forwards;  
+  animation:sonicSalta 1s steps(8) forwards;  
 }
 
 .morir {
@@ -224,14 +242,19 @@
   
 }
 
-#cielo {
+.cielo {
   position: absolute;
   top: 0;
   z-index: -50;
   height: 50%;
   width: 100%;
-  background:url(../images/cielo.png) repeat-X;
   animation: movimientoCielo 30s linear infinite;
+}
+.cielo1{
+  background:url(../images/cielo.png) repeat-X;
+}
+.cielo2{
+  background:url(../images/cielonocturno.png) repeat-X;
 }
 
 @keyframes movimientoCielo{
@@ -255,7 +278,7 @@
    height: 87px; 
    position:absolute; 
    bottom: 60%;    
-   background-image:url(../images/enem2.png) ; 
+   background-image:url(../images/abeja.png) ; 
    animation: obstaculo2 12s steps(15)  infinite;
    overflow: visible;
  }

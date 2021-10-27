@@ -17,7 +17,7 @@ let sonic = document.querySelector("#sonic");
 let obstaculo = document.querySelector("#obstaculo");
 let obstaculo2 = document.querySelector("#obstaculo2");
 let anillo = document.querySelector("#anillo");
-let cielo = document.getElementById("cielo");
+let cielo = document.querySelector(".cielo");
 let islasYmar = document.getElementById("islas_y_mar");
 let piso =document.getElementById("piso");
 let t = document.getElementById("tiempo");
@@ -33,6 +33,11 @@ let avatar2 =document.querySelector(".Sonic2");
     avatar2.addEventListener("click",elegirAvatar2);
 let elegirPersonaje = document.querySelector(".elijePersonaje");
 let personaje = null;
+let escenario = null;
+let escenario1 =document.querySelector(".escenario1");
+escenario1.addEventListener("click",elegirEscenario1);
+let escenario2 =document.querySelector(".escenario2");
+escenario2.addEventListener("click",elegirEscenario2);
 let sonidoAnillo=document.getElementById("anilloSound");
 let sonidoVictoria=document.getElementById("victorySound");
 let sonidoJuego=document.getElementById("gameSound");
@@ -41,8 +46,11 @@ let sonidoGameOver = document.getElementById("gameOverSound");
 
 //elije el avatar 1 sonic azul
 function elegirAvatar1(){
-    elegirPersonaje.setAttribute("class","ocult");
+   // elegirPersonaje.setAttribute("class","ocult");
+   // explicacion.classList.add("ocult");
     personaje = "Sonic1";
+    avatar1.setAttribute("class","ocult");
+    avatar2.setAttribute("class","ocult");
 }
 
 // elije el avatar 2 sonic azul oscuro y rojo
@@ -50,9 +58,25 @@ function elegirAvatar2(){
     personaje = "Sonic2";
     sonic.classList.remove("caminando");
     sonic.classList.add("caminando2");
-    elegirPersonaje.setAttribute("class","ocult");
+  //  elegirPersonaje.setAttribute("class","ocult");
+  //  explicacion.classList.add("ocult");
+    avatar1.setAttribute("class","ocult");
+    avatar2.setAttribute("class","ocult");
    
-}     
+}    
+function elegirEscenario1(){
+   escenario = "Escenario1";
+   escenario1.setAttribute("class","ocult");
+   escenario2.setAttribute("class","ocult");
+
+} 
+function elegirEscenario2(){
+    escenario = "Escenario2";
+    cielo.classList.remove("cielo1");
+    cielo.classList.add("cielo2");
+    escenario1.setAttribute("class","ocult");
+    escenario2.setAttribute("class","ocult");
+ }
 
 
      
@@ -219,16 +243,18 @@ function detectarColision(){
    // inicia el juego
   function iniciarJuego(){ 
         sonidoJuego.play();
-      if (personaje != null){
+      if (personaje != null && escenario != null){
+        elegirPersonaje.setAttribute("class","ocult");
+        explicacion.classList.add("ocult");
         jugando = true;
         if(jugando){
         reacomodarClases();
-        //ejecuta la función detectarColisión cada 1000 milisegundos
+        //ejecuta la función detectarColisión cada 500 milisegundos
         setInterval(detectarColision,500); 
       }      
     tiempoDeJuego();
       } else {
-          swal("Debes elegir un personaje","","error");
+          swal("Debes elegir un personaje y un escenario","","error");
       }
        
   }
@@ -251,7 +277,7 @@ function detectarColision(){
     anillo.classList.add("anillo");
     obstaculo.classList.add("obstaculo");
     obstaculo2.classList.add("obstaculo2");
-    explicacion.classList.add("ocult");
+   // explicacion.classList.add("ocult");
   }
 
   // finaliza el juego
