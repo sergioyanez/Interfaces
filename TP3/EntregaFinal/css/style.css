@@ -13,13 +13,12 @@
 }
 .elijePersonaje{
   border-color: black;
-  /* background-color: whitesmoke; */
+  /* background-color: blue; */
   position: absolute;
-  top:15%;
-  left:1%;
-  bottom: 15%;
-  width: 40%;
-  height: 450px;
+  top:50%;
+  left: 75%;
+  width: 300px;
+  height: 200px;
   
 }
 .Sonic1{
@@ -39,7 +38,7 @@
   position: absolute;
   /* background-color: black; */
   top:50px;
-  left:25%;
+  left:40%;
   bottom: 15%;
   width:128px;
   height: 140px;
@@ -125,11 +124,11 @@
   color: black;
   background-color: whitesmoke;
   position: absolute;
-  font-size: 30px;
+  font-size: 20px;
   height: 550px;
-  width: 50%;
-  top:10%;
-  left:30%;
+  width: 35%;
+  top:15%;
+  right:2%;
   padding-left: 30px;
   padding-right: 30px;
   /*align-content: center;*/

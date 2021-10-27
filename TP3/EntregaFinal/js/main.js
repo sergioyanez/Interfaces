@@ -35,6 +35,7 @@ let elegirPersonaje = document.querySelector(".elijePersonaje");
 let personaje = null;
 
 
+
 function elegirAvatar1(){
     elegirPersonaje.setAttribute("class","ocult");
     personaje = "Sonic1";
@@ -44,6 +45,7 @@ function elegirAvatar2(){
     sonic.classList.remove("caminando");
     sonic.classList.add("caminando2");
     elegirPersonaje.setAttribute("class","ocult");
+   
 }
         
 
