@@ -33,7 +33,11 @@ let avatar2 =document.querySelector(".Sonic2");
     avatar2.addEventListener("click",elegirAvatar2);
 let elegirPersonaje = document.querySelector(".elijePersonaje");
 let personaje = null;
-
+let sonidoAnillo=document.getElementById("anilloSound");
+let sonidoVictoria=document.getElementById("victorySound");
+let sonidoJuego=document.getElementById("gameSound");
+let sonidoChoque = document.getElementById("chocaSound");
+let sonidoGameOver = document.getElementById("gameOverSound");
 
 //elije el avatar 1 sonic azul
 function elegirAvatar1(){
@@ -145,6 +149,7 @@ function detectarColision(){
             sonicWidht>=abejaPos.left && 
             sonicHeight>=abejaPos.top && 
             sonicPos.top <= abejaHeight  ){
+                sonidoChoque.play();
                 obstaculo2.classList.remove("obstaculo2");
                 morir= true;
                 cambiarClase2(morir);
@@ -158,6 +163,7 @@ function detectarColision(){
             sonicWidht>=pinchoPos.left && 
             sonicHeight>=pinchoPos.top && 
             sonicPos.top <= pinchoHeight  ){ 
+                sonidoChoque.play();
                 obstaculo.classList.remove("obstaculo");
                 morir= true;
                 cambiarClase2(morir);
@@ -173,8 +179,11 @@ function detectarColision(){
             sonicPos.top <= anilloHeight){
             anillo.classList.remove("anillo");      
             if(fin == false)
+                    sonidoAnillo.play();
                     sumarPuntos();
             if (puntos == 10){
+                sonidoJuego.pause();
+                sonidoVictoria.play();
                 swal('Ganaste el juego, GAME OVER... tu puntaje fue de: '+puntos, ' ', 'success'); 
                 finJuego();
             }         
@@ -209,6 +218,7 @@ function detectarColision(){
 
    // inicia el juego
   function iniciarJuego(){ 
+        sonidoJuego.play();
       if (personaje != null){
         jugando = true;
         if(jugando){

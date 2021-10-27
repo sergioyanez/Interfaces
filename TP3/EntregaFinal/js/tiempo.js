@@ -13,8 +13,10 @@ class Tiempo{
         //Si el tiempo finaliza, le informa a los jugadores 
         if(this.tiempo <= 0) {
          //   this.reloj.innerHTML = '   Perdiste!! Finalizó el tiempo';
-            swal('Finalizó el tiempo PERDISTE!!  GAME OVER..Tu puntaje fue de: '+puntos, ' ', 'error');
-            
+            sonidoJuego.pause();
+            sonidoGameOver.play();
+            swal('Finalizó el tiempo PERDISTE!!  GAME OVER..Tu puntaje fue de: '+puntos, ' ', 'error');          
+
          //    palabraTiempo.setAttribute("class","oculto");
             finJuego();
            
