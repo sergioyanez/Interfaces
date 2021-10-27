@@ -27,6 +27,24 @@ let btnReiniciar = document.querySelector(".reiniciar");
     btnReiniciar.addEventListener("click",reiniciar);
 let btnIniciar =  document.querySelector(".iniciar");
     btnIniciar.addEventListener("click",iniciarJuego);
+let avatar1 =document.querySelector(".Sonic1");
+let avatar2 =document.querySelector(".Sonic2");
+avatar1.addEventListener("click",elegirAvatar1);
+avatar2.addEventListener("click",elegirAvatar2);
+let elegirPersonaje = document.querySelector(".elijePersonaje");
+let personaje = null;
+
+
+function elegirAvatar1(){
+    elegirPersonaje.setAttribute("class","ocult");
+    personaje = "Sonic1";
+}
+function elegirAvatar2(){
+    personaje = "Sonic2";
+    sonic.classList.remove("caminando");
+    sonic.classList.add("caminando2");
+    elegirPersonaje.setAttribute("class","ocult");
+}
         
 
 
@@ -48,10 +66,18 @@ document.addEventListener("keydown", event =>{
 //Cambia sonic caminando por sonic saltando, hecho una bolita
 function cambiarClase(saltar){
     if(saltar){
-    sonic.setAttribute("class","saltando");
+        if (personaje =="Sonic1"){
+            sonic.setAttribute("class","saltando");
+        }else{
+            sonic.setAttribute("class","saltando2");
+        }
+   
     }
-    else
-    sonic.setAttribute("class","caminando");    
+    else  if (personaje =="Sonic1"){
+    sonic.setAttribute("class","caminando"); 
+    } else{
+        sonic.setAttribute("class","caminando2");
+    }   
 }
 // luego de que sonic salta hecho una bolita, vuelve a caminar
 sonic.addEventListener("animationend", function() { cambiarClase(false)})
@@ -181,13 +207,18 @@ function detectarColision(){
 
    // inicia el juego
   function iniciarJuego(){ 
-       jugando = true;
+      if (personaje != null){
+        jugando = true;
         if(jugando){
         reacomodarClases();
         //ejecuta la función detectarColisión cada 1000 milisegundos
         setInterval(detectarColision,500); 
       }      
     tiempoDeJuego();
+      } else {
+          swal("Debes elegir un personaje","","error");
+      }
+       
   }
 
 
@@ -199,7 +230,12 @@ function detectarColision(){
     anillo.classList.remove("ocult");
     obstaculo.classList.remove("ocult");
     obstaculo2.classList.remove("ocult");
-    sonic.classList.add("caminando");
+    if (personaje =="Sonic1"){
+        sonic.classList.add("caminando");
+    } else{
+        sonic.classList.add("caminando2");
+    }
+    
     anillo.classList.add("anillo");
     obstaculo.classList.add("obstaculo");
     obstaculo2.classList.add("obstaculo2");

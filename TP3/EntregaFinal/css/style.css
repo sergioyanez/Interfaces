@@ -11,6 +11,41 @@
   transition: background-color .5s ease-out;
   transition: color .5s ease-out;
 }
+.elijePersonaje{
+  border-color: black;
+  /* background-color: whitesmoke; */
+  position: absolute;
+  top:15%;
+  left:1%;
+  bottom: 15%;
+  width: 40%;
+  height: 450px;
+  
+}
+.Sonic1{
+  /* border-color: black; */
+  position: absolute;
+  /* background-color:blue; */
+  top:50px;
+  left:1%;
+  bottom: 15%;
+  width:128px;
+  height: 140px;
+  background: url(../images/avatarSonic1.png);
+  
+}
+.Sonic2{
+  /* border-color: black; */
+  position: absolute;
+  /* background-color: black; */
+  top:50px;
+  left:25%;
+  bottom: 15%;
+  width:128px;
+  height: 140px;
+  background: url(../images/avatarSonic2.png);
+}
+
 .iniciar:hover{
   background-color:rgb(134, 7, 86);
   color:white;
@@ -91,10 +126,10 @@
   background-color: whitesmoke;
   position: absolute;
   font-size: 30px;
-  height: 450px;
+  height: 550px;
   width: 50%;
-  top:15%;
-  left:25%;
+  top:10%;
+  left:30%;
   padding-left: 30px;
   padding-right: 30px;
   /*align-content: center;*/
@@ -152,13 +187,20 @@
   background: url(../images/sonic_camina.png) left center;
   animation:sonicCamina 0.8s steps(10) infinite;  
 }
+.caminando2{
+  background: url(../images/sonic_camina2.png) left center;
+  animation:sonicCamina 0.8s steps(10) infinite;  
+}
 
 .saltando{
   background: url(../images/bolita.png) left center no-repeat;
   animation:sonicSalta 2s steps(8) forwards;  
 }
 
-
+.saltando2{
+  background: url(../images/sonic2_gira.png) left center no-repeat;
+  animation:sonicSalta 2s steps(8) forwards;  
+}
 
 .morir {
  
