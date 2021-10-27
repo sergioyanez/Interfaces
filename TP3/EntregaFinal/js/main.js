@@ -51,6 +51,9 @@ let btnSonido = document.getElementById("sonido");
     function quitarSonido(){
         if(sonido ==true){
             sonido = false;
+            sonidoAnillo.pause();
+            sonidoVictoria.pause();
+            sonidoChoque.pause();
             sonidoJuego.pause();
             btnSonido.classList.remove("volumen");
             btnSonido.classList.add("enmudecer")
@@ -192,7 +195,13 @@ function detectarColision(){
             sonicWidht>=abejaPos.left && 
             sonicHeight>=abejaPos.top && 
             sonicPos.top <= abejaHeight  ){
-                sonidoChoque.play();
+                if(sonido==true){
+                    sonidoChoque.play();                    
+                }
+                else{
+                    sonidoChoque.pause();
+                }
+               
                 obstaculo2.classList.remove("obstaculo2");
                 morir= true;
                 cambiarClase2(morir);
@@ -206,7 +215,12 @@ function detectarColision(){
             sonicWidht>=pinchoPos.left && 
             sonicHeight>=pinchoPos.top && 
             sonicPos.top <= pinchoHeight  ){ 
-                sonidoChoque.play();
+                if(sonido==true){
+                    sonidoChoque.play();                    
+                }
+                else{
+                    sonidoChoque.pause();
+                }
                 obstaculo.classList.remove("obstaculo");
                 morir= true;
                 cambiarClase2(morir);
@@ -222,11 +236,21 @@ function detectarColision(){
             sonicPos.top <= anilloHeight){
             anillo.classList.remove("anillo");      
             if(fin == false)
-                    sonidoAnillo.play();
+            if(sonido==true){
+                sonidoAnillo.play();                    
+            }
+            else{
+                sonidoAnillo.pause();
+            }
                     sumarPuntos();
             if (puntos == 10){
                 sonidoJuego.pause();
-                sonidoVictoria.play();
+                if(sonido==true){
+                    sonidoVictoria.play();                    
+                }
+                else{
+                    sonidoVictoria.pause();
+                }
                 swal('Ganaste el juego, GAME OVER... tu puntaje fue de: '+puntos, ' ', 'success'); 
                 finJuego();
             }         

@@ -14,7 +14,12 @@ class Tiempo{
         if(this.tiempo <= 0) {
          //   this.reloj.innerHTML = '   Perdiste!! Finalizó el tiempo';
             sonidoJuego.pause();
-            sonidoGameOver.play();
+            if(sonido==true){
+                sonidoGameOver.play();                    
+            }
+            else{
+                sonidoGameOver.pause();
+            }
             swal('Finalizó el tiempo PERDISTE!!  GAME OVER..Tu puntaje fue de: '+puntos, ' ', 'error');          
 
          //    palabraTiempo.setAttribute("class","oculto");
