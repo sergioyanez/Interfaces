@@ -28,9 +28,9 @@ let btnReiniciar = document.querySelector(".reiniciar");
 let btnIniciar =  document.querySelector(".iniciar");
     btnIniciar.addEventListener("click",iniciarJuego);
 let avatar1 =document.querySelector(".Sonic1");
-let avatar2 =document.querySelector(".Sonic2");
-avatar1.addEventListener("click",elegirAvatar1);
-avatar2.addEventListener("click",elegirAvatar2);
+    avatar1.addEventListener("click",elegirAvatar1);
+let avatar2 =document.querySelector(".Sonic2");   
+    avatar2.addEventListener("click",elegirAvatar2);
 let elegirPersonaje = document.querySelector(".elijePersonaje");
 let personaje = null;
 
@@ -144,7 +144,6 @@ function detectarColision(){
             sonicWidht>=abejaPos.left && 
             sonicHeight>=abejaPos.top && 
             sonicPos.top <= abejaHeight  ){
-        
                 obstaculo2.classList.remove("obstaculo2");
                 morir= true;
                 cambiarClase2(morir);
