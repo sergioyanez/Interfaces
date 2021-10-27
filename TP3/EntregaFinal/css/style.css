@@ -13,7 +13,6 @@
 }
 .elijePersonaje{
   border-color: black;
-  /* background-color: blue; */
   position: absolute;
   top:50%;
   left: 75%;
@@ -22,9 +21,7 @@
   
 }
 .Sonic1{
-  /* border-color: black; */
   position: absolute;
-  /* background-color:blue; */
   top:50px;
   left:20%;
   bottom: 15%;
@@ -34,9 +31,7 @@
   
 }
 .Sonic2{
-  /* border-color: black; */
   position: absolute;
-  /* background-color: black; */
   top:50px;
   left:70%;
   bottom: 15%;
@@ -66,7 +61,7 @@
   transition: color .5s ease-out;
  
 }
-.reiniciar:hover{      /* .iniciar*/
+.reiniciar:hover{      
   background-color:rgb(5, 5, 116);
   color:white;
   transition: background-color .5s ease-in;
@@ -131,7 +126,6 @@
   right:2%;
   padding-left: 30px;
   padding-right: 30px;
-  /*align-content: center;*/
 }
 .oculto{
   visibility: hidden;
@@ -169,7 +163,6 @@
 
 
 #sonic{  
-/*  border: 2px rgb(14, 13, 13) solid;  */  
   width:119.75px;
   height: 139px; 
   position:absolute; 
@@ -248,7 +241,6 @@
 }
 
 .obstaculo{  
-/*  border: 2px rgb(14, 13, 13) solid;   */
   width:38px;
   height: 155px; 
   position:absolute; 
@@ -259,7 +251,6 @@
 }
 
 .obstaculo2{  
- /*  border: 2px rgb(14, 13, 13) solid;    */
    width:129px;
    height: 87px; 
    position:absolute; 
@@ -269,24 +260,8 @@
    overflow: visible;
  }
   
-/*
 
-#anillo{  
-
-   width:110px;
-   height: 100px; 
-   right:0%;
-   position:absolute; 
-   bottom: 55%;    
-   background-image:url(../images/anillos.png) ;    
-   animation: anillo 3s steps(8)  infinite;
-   overflow: visible;
-  
- }
-
-*/
  .anillo{  
-  /* border: 2px rgb(14, 13, 13) solid;    */
    width:110px;
    height: 100px; 
    right:0%;

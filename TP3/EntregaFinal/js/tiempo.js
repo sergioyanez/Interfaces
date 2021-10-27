@@ -34,18 +34,19 @@ class Tiempo{
         return this.tiempo;
         
     }
-
+// pone el cronñometro de color rojo para advertir que sólo falta un minuto
 cambiarReloj(){ 
          
             this.reloj.setAttribute("class","relojRojo"); 
             palabraTiempo.setAttribute ("class","colorRojo");           
     }
 
-
+// descuenta tiempo cuando sonic choca con algun obstaculo
 descontarTiempo(){
     this.tiempo-=60;
    
 }
+//cuando termina el juego se corta el cronómetro y aparece en su lugar Fin de juego
 detenerTiempo(){
     this.reloj.innerHTML = '   Fin de juego';
     palabraTiempo.setAttribute("class","oculto");

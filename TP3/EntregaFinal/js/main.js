@@ -35,19 +35,20 @@ let elegirPersonaje = document.querySelector(".elijePersonaje");
 let personaje = null;
 
 
-
+//elije el avatar 1 sonic azul
 function elegirAvatar1(){
     elegirPersonaje.setAttribute("class","ocult");
     personaje = "Sonic1";
 }
+
+// elije el avatar 2 sonic azul oscuro y rojo
 function elegirAvatar2(){
     personaje = "Sonic2";
     sonic.classList.remove("caminando");
     sonic.classList.add("caminando2");
     elegirPersonaje.setAttribute("class","ocult");
    
-}
-        
+}     
 
 
      
@@ -126,10 +127,10 @@ function detectarColision(){
     anillo.setAttribute("class","anillo");
     if (fin == false){
                 
-        let sonicPos = sonic.getBoundingClientRect();       
-        let pinchoPos =  obstaculo.getBoundingClientRect();
-        let abejaPos =  obstaculo2.getBoundingClientRect();
-        let anilloPos = anillo.getBoundingClientRect();
+        let sonicPos = sonic.getBoundingClientRect(); //tomo las coordenadas left,top,right,bottom (izquierda, arriba,derecha, abajo derecha) del div sonic      
+        let pinchoPos =  obstaculo.getBoundingClientRect();//tomo las coordenadas  left,top,right,bottom (izquierda, arriba,derecha, abajo derecha) del div obstaculo ( pincho ) 
+        let abejaPos =  obstaculo2.getBoundingClientRect();//tomo las coordenadas  left,top,right,bottom (izquierda, arriba,derecha, abajo derecha) del div obstaculo2 ( abeja )   
+        let anilloPos = anillo.getBoundingClientRect();//tomo las coordenadas  left,top,right,bottom (izquierda, arriba,derecha, abajo derecha) del div anillo  
         let abejaWidht = abejaPos.left + abejaPos.width;
         let abejaHeight = abejaPos.top + abejaPos.height;
         let sonicWidht = sonicPos.left + sonicPos.width;
@@ -152,7 +153,7 @@ function detectarColision(){
                 reloj.descontarTiempo(); 
         }
 
-        //si sonic colisiona con el pincho se descuenta tiempo
+        //si sonic colisiona con el pincho se descuenta tiempo y el pincho vuelve a la posicion inicial
         if( sonicPos.left<=pinchoWidht && 
             sonicWidht>=pinchoPos.left && 
             sonicHeight>=pinchoPos.top && 
