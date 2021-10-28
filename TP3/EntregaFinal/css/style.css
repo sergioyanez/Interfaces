@@ -1,18 +1,18 @@
-.iniciar{
+.iniciar {
   font-family: sans-serif;
-  opacity:1;
+  opacity: 1;
   position: absolute;
   width: 100px;
-  height: 40px; 
-  text-align: center ;
-  color:black;
+  height: 40px;
+  text-align: center;
+  color: black;
   font-size: 30px;
-  background-color:white;
+  background-color: white;
   transition: background-color .5s ease-out;
   transition: color .5s ease-out;
 }
 
-.volumen{
+.volumen {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -20,218 +20,250 @@
   background: url(../images/botonAudioSi.png)
 }
 
-.enmudecer{
+.enmudecer {
   position: absolute;
   width: 100px;
   height: 100px;
   right: 10%;
   background: url(../images/botonAudioNo.png)
 }
-.elijePersonaje{
+
+.elijePersonaje {
   border-color: black;
   position: absolute;
-  top:55%;
+  top: 55%;
   left: 60%;
   width: 550px;
   height: 200px;
-  
+
 }
-.Sonic1{
+
+.Sonic1 {
   position: absolute;
-  top:50px;
-  left:10%;
+  top: 50px;
+  left: 10%;
   bottom: 15%;
-  width:128px;
+  width: 128px;
   height: 140px;
   background: url(../images/avatarSonic1.png);
-  
+
 }
-.Sonic2{
+
+.Sonic2 {
   position: absolute;
-  top:50px;
-  left:40%;
+  top: 50px;
+  left: 40%;
   bottom: 15%;
-  width:128px;
+  width: 128px;
   height: 140px;
   background: url(../images/avatarSonic2.png);
 }
-.escenario1{
+
+.escenario1 {
   position: absolute;
-  top:50px;
+  top: 50px;
   left: 70%;
   bottom: 15%;
-  width:128px;
+  width: 128px;
   height: 140px;
   background: url(../images/escenariodia.png);
 }
-.escenario2{
+
+.escenario2 {
   position: absolute;
-  top:50px;
+  top: 50px;
   left: 99%;
   bottom: 15%;
-  width:128px;
+  width: 128px;
   height: 140px;
   background: url(../images/escenarionoche.png);
 }
 
-.iniciar:hover{
-  background-color:rgb(134, 7, 86);
-  color:white;
+.iniciar:hover {
+  background-color: rgb(134, 7, 86);
+  color: white;
   transition: background-color .5s ease-in;
   transition: color .5s ease-in;
 }
-.reiniciar{
+
+.reiniciar {
   font-family: sans-serif;
-  opacity:1;
+  opacity: 1;
   position: absolute;
   width: 160px;
   height: 40px;
-  top:10%;
-  text-align: center ;
-  color:black;
+  top: 10%;
+  text-align: center;
+  color: black;
   font-size: 30px;
-  background-color:white;
+  background-color: white;
   transition: background-color .5s ease-out;
   transition: color .5s ease-out;
- 
+
 }
-.reiniciar:hover{      
-  background-color:rgb(5, 5, 116);
-  color:white;
+
+.reiniciar:hover {
+  background-color: rgb(5, 5, 116);
+  color: white;
   transition: background-color .5s ease-in;
   transition: color .5s ease-in;
-  
-}
-.ocult{
-  opacity:0;
+
 }
 
-.desocultar{
-  opacity:1;
+.ocult {
+  opacity: 0;
 }
 
-.puntaje{
+.desocultar {
+  opacity: 1;
+}
+
+.puntaje {
   font-family: sans-serif;
   color: white;
   position: absolute;
   font-size: 30px;
   height: 70px;
   width: 200px;
-  left:15%;
+  left: 15%;
   align-content: left;
 }
 
 
-.colorRojo{
+.colorRojo {
   color: rgb(248, 12, 12);
 }
 
-.relojRojo{
+.relojRojo {
   color: rgb(248, 12, 12);
   position: absolute;
   font-size: 30px;
   height: 70px;
   width: 200px;
-  left:50%;
+  left: 50%;
   align-content: center;
 }
 
 
-.reloj{
+.reloj {
   font-family: sans-serif;
   color: white;
   position: absolute;
   font-size: 30px;
   height: 70px;
   width: 30%;
-  left:30%;
+  left: 30%;
   align-content: center;
 }
 
-.explicacion{
-  font-family:sans-serif;
+.explicacion {
+  font-family: sans-serif;
   color: black;
   background-color: whitesmoke;
   position: absolute;
   font-size: 20px;
   height: 550px;
   width: 35%;
-  top:15%;
-  right:2%;
+  top: 15%;
+  right: 2%;
   padding-left: 30px;
   padding-right: 30px;
 }
-.oculto{
+
+.oculto {
   visibility: hidden;
 }
 
-.desOculto{
+.desOculto {
   visibility: visible;
 }
-.cartel{
+
+.cartel {
   font-family: sans-serif;
-  left:20%;
+  left: 25%;
   height: 70px;
   width: 300px;
   position: absolute;
- 
+  color: red;
+  text-anchor: 10px;
+
   animation: apareceCartel 6s ease .2 forwards;
 }
 
-@keyframes apareceCartel{
-  0%{ opacity: 0;
-    font-size: 30px;
-    transform : translateX(10%)}
-  50%{ opacity: 1;
-    font-size: 40px;
-    transform : translateX(30%)}
-  60%{ opacity: 1;
-    font-size: 50px;
-    transform : translateX(60%)}
-  70%{ opacity: 1;
-    font-size: 40px;
-    transform : translateX(90%)}
-  100%{ opacity: 0;
-    font-size: 30px;}
+@keyframes apareceCartel {
+  0% {
+    opacity: 1;
+    font-size: 70px;
+    transform: translateX(10%)
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 80px;
+    transform: translateX(30%)
+  }
+
+  60% {
+    opacity: 1;
+    font-size: 100px;
+    transform: translateX(60%)
+  }
+
+  70% {
+    opacity: 1;
+    font-size: 80px;
+    transform: translateX(90%)
+  }
+
+  80% {
+    opacity: 1;
+    font-size: 70px;
+    transform: translateX(90%)
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 
-#sonic{  
-  width:119.75px;
-  height: 139px; 
-  position:absolute; 
+#sonic {
+  width: 119.75px;
+  height: 139px;
+  position: absolute;
   bottom: 35%;
   left: 200px;
   overflow: visible;
 }
 
-.stopAnimaciones{
+.stopAnimaciones {
   animation-play-state: paused;
 }
- 
-.caminando{
+
+.caminando {
   background: url(../images/sonic_camina.png) left center;
-  animation:sonicCamina 0.8s steps(10) infinite;  
+  animation: sonicCamina 0.8s steps(10) infinite;
 }
-.caminando2{
+
+.caminando2 {
   background: url(../images/sonic_camina2.png) left center;
-  animation:sonicCamina 0.8s steps(10) infinite;  
+  animation: sonicCamina 0.8s steps(10) infinite;
 }
 
-.saltando{
+.saltando {
   background: url(../images/bolita.png) left center no-repeat;
-  animation:sonicSalta 1s steps(8) forwards;  
+  animation: sonicSalta 1s steps(8) forwards;
 }
 
-.saltando2{
+.saltando2 {
   background: url(../images/sonic2_gira.png) left center no-repeat;
-  animation:sonicSalta 1s steps(8) forwards;  
+  animation: sonicSalta 1s steps(8) forwards;
 }
 
 .morir {
- 
+
   width: 90px !important;
-  background: url(../images/muere.png)  no-repeat; 
+  background: url(../images/muere.png) no-repeat;
   animation: sonicMuere 2s steps(12)forwards;
 }
 
@@ -246,16 +278,30 @@
 }
 
 
-@keyframes sonicSalta{
-  35%{bottom: 50%}
-  50%{  bottom: 55%}  
-  100%{  bottom: 35%; background-position: -960px;}
+@keyframes sonicSalta {
+  35% {
+    bottom: 50%
+  }
+
+  50% {
+    bottom: 55%
+  }
+
+  100% {
+    bottom: 35%;
+    background-position: -960px;
+  }
 }
 
 @keyframes sonicCamina {
-  0% {background-position: 0;}
-  100% {background-position: -1197.5px;}
-  
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -1197.5px;
+  }
+
 }
 
 .cielo {
@@ -266,90 +312,180 @@
   width: 100%;
   animation: movimientoCielo 30s linear infinite;
 }
-.cielo1{
-  background:url(../images/cielo.png) repeat-X;
-}
-.cielo2{
-  background:url(../images/cielonocturno.png) repeat-X;
+
+.cielo1 {
+  background: url(../images/cielo.png) repeat-X;
 }
 
-@keyframes movimientoCielo{
-  100%{
-      background-position-x: -2550px;
+.cielo2 {
+  background: url(../images/cielonocturno.png) repeat-X;
+}
+
+@keyframes movimientoCielo {
+  100% {
+    background-position-x: -2550px;
   }
 }
 
-.obstaculo{  
-  width:38px;
-  height: 155px; 
-  position:absolute; 
-  bottom: 35%;    
-  background-image:url(../images/pincho.png) ; 
-  animation: obstaculo 6s steps(15)  infinite;
+.obstaculo {
+  width: 38px;
+  height: 155px;
+  position: absolute;
+  bottom: 35%;
+  background-image: url(../images/pincho.png);
+  animation: obstaculo 6s steps(15) infinite;
   overflow: visible;
 }
 
-.obstaculo2{  
-   width:129px;
-   height: 87px; 
-   position:absolute; 
-   bottom: 60%;    
-   background-image:url(../images/abeja.png) ; 
-   animation: obstaculo2 12s steps(15)  infinite;
-   overflow: visible;
- }
-  
-
- .anillo{  
-   width:110px;
-   height: 100px; 
-   right:0%;
-   position:absolute; 
-   bottom: 55%;    
-   background-image:url(../images/anillos.png) ;    
-   animation: anillo 3s steps(8)  infinite;
-   overflow: visible;
-  
- }
+.obstaculo2 {
+  width: 129px;
+  height: 87px;
+  position: absolute;
+  bottom: 60%;
+  background-image: url(../images/abeja.png);
+  animation: obstaculo2 12s steps(15) infinite;
+  overflow: visible;
+}
 
 
+.anillo {
+  width: 110px;
+  height: 100px;
+  right: 0%;
+  position: absolute;
+  bottom: 55%;
+  background-image: url(../images/anillos.png);
+  animation: anillo 3s steps(8) infinite;
+  overflow: visible;
 
- @keyframes anillo {
- 
-  0%{right: 0% }
-  20%{right: 20% }
-  40%{right: 40% }
-  50%{right: 50% }
-  60%{right: 60% }
-  70%{right: 70% }
-  80%{right: 80% }
-  90%{right: 90% }
-  100%{right: 100%;background-position: -960px; }
+}
+
+
+
+@keyframes anillo {
+
+  0% {
+    right: 0%
+  }
+
+  20% {
+    right: 20%
+  }
+
+  40% {
+    right: 40%
+  }
+
+  50% {
+    right: 50%
+  }
+
+  60% {
+    right: 60%
+  }
+
+  70% {
+    right: 70%
+  }
+
+  80% {
+    right: 80%
+  }
+
+  90% {
+    right: 90%
+  }
+
+  100% {
+    right: 100%;
+    background-position: -960px;
+  }
 
 }
 
 @keyframes obstaculo2 {
-  0%{right: 0% ;top:0%}
-  20%{right: 20%;top:20% }
-  40%{right: 40%;top:30%  }
-  50%{right: 50%;top:40%  }
-  60%{right: 60%;top:45%  }
-  70%{right: 70%;top:40%  }
-  80%{right: 80%;top:30%  }
-  90%{right: 90%;top:20%  }
-  100%{right: 100%;top:0%  }
- }
+  0% {
+    right: 0%;
+    top: 0%
+  }
+
+  20% {
+    right: 20%;
+    top: 20%
+  }
+
+  40% {
+    right: 40%;
+    top: 30%
+  }
+
+  50% {
+    right: 50%;
+    top: 40%
+  }
+
+  60% {
+    right: 60%;
+    top: 45%
+  }
+
+  70% {
+    right: 70%;
+    top: 40%
+  }
+
+  80% {
+    right: 80%;
+    top: 30%
+  }
+
+  90% {
+    right: 90%;
+    top: 20%
+  }
+
+  100% {
+    right: 100%;
+    top: 0%
+  }
+}
 
 @keyframes obstaculo {
- 0%{right: 0% }
- 20%{right: 20% }
- 40%{right: 40% }
- 50%{right: 50% }
- 60%{right: 60% }
- 70%{right: 70% }
- 80%{right: 80% }
- 90%{right: 90% }
- 100%{right: 100% }
+  0% {
+    right: 0%
+  }
+
+  20% {
+    right: 20%
+  }
+
+  40% {
+    right: 40%
+  }
+
+  50% {
+    right: 50%
+  }
+
+  60% {
+    right: 60%
+  }
+
+  70% {
+    right: 70%
+  }
+
+  80% {
+    right: 80%
+  }
+
+  90% {
+    right: 90%
+  }
+
+  100% {
+    right: 100%
+  }
 }
 
 
@@ -359,39 +495,40 @@
   z-index: -40;
   height: 100%;
   width: 100%;
-  background:url(../images/islas.png) repeat-X;
+  background: url(../images/islas.png) repeat-X;
   animation: movimientoIslas 25s linear infinite;
 
 
 }
 
-@keyframes movimientoIslas{
-  100%{
-      background-position-x: -2550px;
+@keyframes movimientoIslas {
+  100% {
+    background-position-x: -2550px;
   }
 }
 
-#piso{
+#piso {
   position: absolute;
-  top:-10px;
+  top: -10px;
   z-index: -20;
   height: 100%;
   width: 100%;
-  background:url(../images/suelo.png) repeat-X;
+  background: url(../images/suelo.png) repeat-X;
   animation: movimientoPiso 15s linear infinite;
 }
-@keyframes movimientoPiso{
-  100%{
-      background-position-x: -2540px;
+
+@keyframes movimientoPiso {
+  100% {
+    background-position-x: -2540px;
   }
 }
 
-#container{
-    height: 100%;
-    width: 100%;
-    background-color: aqua;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: all;
+#container {
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: all;
 }

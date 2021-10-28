@@ -1,69 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<title>3er entregable</title>
-		
-	</head>
-	
 
-	<body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<title>3er entregable</title>
+
+</head>
+
+
+<body>
 
 	<div class="container">
 		<div>
-			<div id="iniciar" class="iniciar">Iniciar</div> 
+			<div id="iniciar" class="iniciar">Iniciar</div>
 			<div class="reiniciar ocult">Reiniciar</div>
 			<div class="reloj">
-				<span id="cartel2">Tiempo  <span id="tiempo"> 10:00</span>	</span>
-				<span id="cartel" class="oculto">Has perdido tiempo	</span>			
+				<span id="cartel2">Tiempo <span id="tiempo"> 10:00</span> </span>
+				<span id="cartel" class="oculto">Has perdido tiempo </span>
 			</div>
-			<div class = "puntaje" >Puntaje :<span id="puntaje"> 0</span></div>
+			<div class="puntaje">Puntaje :<span id="puntaje"> 0</span></div>
 		</div>
 		<div id="sonido" class="volumen ocult"></div>
-		<div class="cielo cielo1"></div>		
+		<div class="cielo cielo1"></div>
 		<div id="islas_y_mar"></div>
 
 		<div id="sonic" class="caminando ocult"></div>
 		<div id="obstaculo" class=" obstaculo ocult"></div>
 		<div id="obstaculo2" class="obstaculo2 ocult"></div>
 		<div id="anillo" class="anillo ocult"></div>
-	  	<div class ="explicacion">
+		<div class="explicacion">
 			<h3>Ayuda: </h3>
-			<p> Para GANAR el juego Sonic debe recolectar 10 monedas, 
+			<p> Para GANAR el juego Sonic debe recolectar 10 monedas,
 				para alcanzarlas debe saltar presionando la flecha arriba del teclado
 				pero CUIDADO! hay obstáculos que si no los esquivas, te restarán tiempo de juego</p>
 			<p>Elije tu personaje, el escenario y presiona Iniciar para comenzar</p>
 			<p>¡¡ A jugar !!</p>
 			<p>Animaciones sobre el avatar: sonic camina, gira cuando salta y explota cuando muere.</p>
 			<h3>Elije tu personaje y el escenario:</h3>
-			
-		  </div>
-				
-		  <div class="elijePersonaje"> 
-		  <div class= "Sonic1"></div>
-			<div class= "Sonic2"></div>
-			<div class= "escenario1"></div>
-			<div class= "escenario2"></div>
-		
-		</div>	
-		
+
+		</div>
+
+		<div class="elijePersonaje">
+			<div class="Sonic1"></div>
+			<div class="Sonic2"></div>
+			<div class="escenario1"></div>
+			<div class="escenario2"></div>
+
+		</div>
+
 		<div id="piso"></div>
 		<audio class="hidden" src="./images/sonicAnillos2.mp3" id="anilloSound"></audio>
-        <audio loop class="hidden" src="./images/sonic-sth.mp3" id="gameSound"></audio>
-        <audio class="hidden" src="./images/victory-sonic.mp3" id="victorySound"></audio>
+		<audio loop class="hidden" src="./images/sonic-sth.mp3" id="gameSound"></audio>
+		<audio class="hidden" src="./images/victory-sonic.mp3" id="victorySound"></audio>
 		<audio class="hidden" src="./images/gameover.mp3" id="gameOverSound"></audio>
 		<audio class="hidden" src="./images/choca.mp3" id="chocaSound"></audio>
-		
-	</div>
-	
-	
-			
 
-	</body>
-	<script src="js/tiempo.js"></script>
-     <script src="js/main.js"></script> 
+	</div>
+
+</body>
+<script src="js/tiempo.js"></script>
+<script src="js/main.js"></script>
 
 
 </html>
