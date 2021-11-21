@@ -1,0 +1,15 @@
+body {
+  /*  background-color: rgba(217, 121, 49, 1);*/
+    font-size: 2em;
+    color:white;
+
+    
+}
+a{
+   color: rgba(217, 121, 49, 1); 
+}
+.logo{
+    width: 987px;
+    height: 335px;
+    background: url(../images/logo.png);
+}

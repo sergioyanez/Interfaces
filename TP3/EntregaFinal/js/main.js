@@ -106,7 +106,7 @@ function reiniciar() {
 document.addEventListener("keydown", event => {
     if (event.code == "ArrowUp") {
         saltar = true;
-        cambiarClase(saltar)
+        cambiarClase(saltar);
     }
 });
 
