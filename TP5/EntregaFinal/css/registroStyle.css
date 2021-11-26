@@ -1,0 +1,580 @@
+.contenedorCrearCuenta {
+	/* Crear cuenta */
+	position: relative;
+	width: 1440px;
+	height: 1024px;
+	background: #edf0f5;
+}
+
+.fondoFormregistro {
+	/*Propiedades*/
+	height: 700px;
+	width: 400px;
+	left: 520px;
+	top: 104px;
+	border-radius: 15px;
+
+	/* fondoFormRegistro */
+	position: absolute;
+	width: 400px;
+	height: 700px;
+	left: 520px;
+	top: 104px;
+	background: #ffffff;
+	border-radius: 15px;
+}
+
+.formRegistro {
+	/*Propiedades*/
+	height: 679px;
+	width: 483px;
+	left: 478px;
+	top: 172px;
+	border-radius: 0px;
+
+	/* formRegistro */
+	position: absolute;
+	width: 483px;
+	height: 679px;
+	left: 478px;
+	top: 172px;
+}
+
+.fondoFormRegistro {
+	height: 679px;
+	width: 483px;
+	left: 0px;
+	top: 0px;
+	border-radius: 15px;
+	/* fondoFormRegistro */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #ffffff;
+	border-radius: 15px;
+}
+
+.grupo29 {
+	height: 679px;
+	width: 483px;
+	left: 0px;
+	top: 0px;
+	border-radius: [object Object]px;
+
+	/* Group 29 */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+}
+
+.btnVolver {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 89px;
+	top: 596px;
+	border-radius: 0px;
+
+	/* btnVolver */
+	position: absolute;
+	left: 18.43%;
+	right: 19.46%;
+	top: 87.78%;
+	bottom: 6.33%;
+}
+
+.botonVolver {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 15px;
+
+	/* botonVolver */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #8f8f8e;
+	border-radius: 15px;
+}
+
+.textoBotonVolver {
+	/*Propiedades*/
+	height: 18px;
+	width: 57px;
+	left: 121px;
+	top: 11px;
+	border-radius: 0px;
+
+	/* textoBotonVolver */
+	position: absolute;
+	left: 40.33%;
+	right: 40.67%;
+	top: 0%;
+	bottom: 27.5%;
+}
+
+.textoVolver {
+	/*Propiedades*/
+	height: 5px;
+	width: 55px;
+	left: 1px;
+	top: 0px;
+
+	/*Tipógrafia*/
+	font-family: Roboto;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: center;
+
+	/* textoVolver */
+	position: absolute;
+	left: 1.75%;
+	right: 1.75%;
+	top: 0%;
+	bottom: 0%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	/* identical to box height */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.btnRegistrarCuenta {
+	height: 40px;
+	width: 300px;
+	left: 89px;
+	top: 517px;
+	border-radius: 0px;
+
+	/* btnRegistrarCuenta */
+	position: absolute;
+	left: 18.43%;
+	right: 19.46%;
+	top: 76.14%;
+	bottom: 17.97%;
+}
+
+.btnRegistrar {
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 0px;
+
+	/* btnRegistrar */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+}
+
+.botonRegistrarCuenta {
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 15px;
+
+	/* botonRegistrarCuenta */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+
+	background: #4a4afa;
+	border-radius: 15px;
+}
+
+.textoBotonRegistrar {
+	height: 18px;
+	width: 157px;
+	left: 72px;
+	top: 11px;
+	border-radius: 0px;
+
+	/* textoBotonRegistrar */
+
+	position: absolute;
+	left: 17%;
+	right: 23.67%;
+	top: 0%;
+	bottom: 27.5%;
+}
+
+.textoRegistrarCuenta {
+	height: 5px;
+	width: 180px;
+	left: 0px;
+	top: 0px;
+
+	/*Tipografia*/
+	font-family: Roboto;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: center;
+
+	/* textoRegistrarCuenta */
+	position: absolute;
+	left: 5.1%;
+	right: 5.73%;
+	top: 0%;
+	bottom: 0%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 4px;
+	/* identical to box height */
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.textoContrasenia {
+	height: 18px;
+	width: 74px;
+	left: 90px;
+	top: 409px;
+	border-radius: nullpx;
+
+	font-family: IBM Plex Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+
+	/* textoContraseña */
+	position: absolute;
+	left: 18.83%;
+	right: 66.05%;
+	top: 58.24%;
+	bottom: 37.11%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+.contenedorContrasenia {
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 91px;
+	top: 427.18603515625px;
+	border-radius: 15px;
+
+	/* contenedorContraseña */
+	position: absolute;
+	left: 18.84%;
+	right: 19.05%;
+	top: 62.91%;
+	bottom: 31.13%;
+	opacity: 0.64;
+	border-radius: 15px;
+}
+.contrasenia {
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+
+	/* contraseña */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.textoCorreo {
+	/*Propiedades*/
+	height: 18px;
+	width: 119px;
+	left: 91px;
+	top: 321px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: IBM Plex Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+
+	/* textoCorreo */
+	position: absolute;
+	left: 18.84%;
+	right: 56.52%;
+	top: 45.28%;
+	bottom: 50.07%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	color: #a0a0a0;
+}
+.contenedorCorreo {
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 90px;
+	top: 339px;
+	border-radius: 15px;
+	/* contenedorCorreo */
+	position: absolute;
+	left: 18.63%;
+	right: 19.25%;
+	top: 49.93%;
+	bottom: 44.12%;
+	opacity: 0.64;
+	border-radius: 15px;
+}
+.correo {
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+	/* correo */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.textoApellido {
+	/*Propiedades*/
+	height: 18px;
+	width: 54px;
+	left: 91px;
+	top: 233px;
+	border-radius: nullpx;
+	/*Tipografia*/
+	font-family: IBM Plex Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+
+	/* textoApellido */
+	position: absolute;
+	left: 18.84%;
+	right: 69.98%;
+	top: 32.32%;
+	bottom: 63.03%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+.contenedorApellido {
+	/*Propiedades*/
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 91px;
+	top: 251px;
+	border-radius: 15px;
+
+	/* contenedorApellido */
+	position: absolute;
+	left: 18.84%;
+	right: 19.05%;
+	top: 36.97%;
+	bottom: 57.08%;
+	opacity: 0.64;
+	border-radius: 15px;
+}
+.apellido {
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+	/* apellido */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.textoNombre {
+	/*Propiedades*/
+	height: 18px;
+	width: 52px;
+	left: 88px;
+	top: 145px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: IBM Plex Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+	/* textoNombre */
+	position: absolute;
+	left: 18.22%;
+	right: 71.01%;
+	top: 19.35%;
+	bottom: 75.99%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+.contenedorNombre {
+	/*Propiedades*/
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 89px;
+	top: 163px;
+	border-radius: 15px;
+
+	/* contenedorNombre */
+	position: absolute;
+	left: 18.43%;
+	right: 19.46%;
+	top: 24.01%;
+	bottom: 70.04%;
+	opacity: 0.64;
+	border-radius: 15px;
+}
+.nombre {
+	/*Propiedades*/
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+	/* nombre */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.tituloFormRegistro {
+	/*Propiedades*/
+	height: 33px;
+	width: 237px;
+	left: 116px;
+	top: 100px;
+	border-radius: nullpx;
+	/*Tipografia*/
+	font-family: IBM Plex Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 33px;
+	letter-spacing: 0px;
+	text-align: right;
+
+	/* Registrate en NetVet */
+	position: absolute;
+	left: 28.02%;
+	right: 25.92%;
+	top: 11.73%;
+	bottom: 80.41%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 32px;
+	/* identical to box height */
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #000000;
+}
+
+.contenedorLogo {
+	/*Propiedades*/
+	height: 33px;
+	width: 30px;
+	left: 227px;
+	top: 40px;
+	border-radius: 0px;
+	/* LOGO */
+	position: absolute;
+	left: 47%;
+	right: 46.79%;
+	top: 5.89%;
+	bottom: 89.25%;
+}
+
+.logo {
+	/*Propiedades*/
+	height: 33px;
+	width: 30px;
+	left: 0px;
+	top: 0px;
+	border-radius: 0px;
+	/*3*/
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: url(.png);
+}

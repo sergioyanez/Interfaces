@@ -1,0 +1,28 @@
+.backgroundGral{
+    background:  #edf0f5 ;
+}
+
+.colorIconos{
+    background: #686767;
+
+}
+
+.fuenteInputs{
+font-family: Roboto;
+font-size: 13px;
+font-style: normal;
+font-weight: 300;
+line-height: 15px;
+letter-spacing: 0px;
+text-align: left;
+color:#131313 63%;
+
+}
+
+.colorFondoCards{
+    background: white;
+}
+
+.familiaFuenteGral{
+font-family: ;
+}

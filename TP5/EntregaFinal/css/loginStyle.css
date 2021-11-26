@@ -1,0 +1,603 @@
+.containerInicioSesion {
+	/* inicio sesion */
+	position: relative;
+	width: 1440px;
+	height: 1024px;
+	background: #edf0f5;
+}
+
+/*---------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------*/
+
+.contenedorLogo {
+	/* Inicio de sesión */
+	position: relative;
+	width: 1440px;
+	height: 1024px;
+}
+
+.contenedorPatita {
+	position: absolute;
+	left: 24.24%;
+	right: 71.42%;
+	top: 21.39%;
+	bottom: 71.83%;
+}
+
+.contenedorNetvet {
+	position: absolute;
+	left: 28.97%;
+	right: 58%;
+	top: 22.49%;
+	bottom: 72.55%;
+}
+
+/*---------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------*/
+
+.textoInicio {
+	/* NetVet tu red social pensada para la sanidad animal */
+
+	position: absolute;
+	width: 395px;
+	height: 78px;
+	left: 282px;
+	top: 311px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 39px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: #000000;
+}
+
+.contenedorFormLogin {
+	height: 550px;
+	width: 400px;
+	left: 759px;
+	top: 30px;
+	border-radius: 0px;
+
+	/* Formulario Inicio de sesión */
+
+	position: absolute;
+	width: 400px;
+	height: 550px;
+	left: 759px;
+	top: 30px;
+	background-color: white;
+}
+
+.textoInicioSesion {
+	/*Propiedades*/
+	height: 33px;
+	width: 154px;
+	left: 123px;
+	top: 64px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: Roboto;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 32.5px;
+	letter-spacing: 0px;
+	text-align: left;
+
+	/* Iniciar sesión */
+	position: absolute;
+	left: 30.75%;
+	right: 30.75%;
+	top: 11.64%;
+	bottom: 82.36%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 32px;
+	/* identical to box height */
+	display: flex;
+	align-items: center;
+	color: #000000;
+}
+
+.rectangulo203 {
+	height: 550px;
+	width: 400px;
+	left: 0px;
+	top: 0px;
+	border-radius: 15px;
+
+	/* rectangle 203 */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #ffffff;
+	border-radius: 15px;
+}
+
+.textoInput {
+	/*Propiedades*/
+	height: 16.656089782714844px;
+	width: 300px;
+	left: 50px;
+	top: 128px;
+	border-radius: 15px;
+
+	/* Texto input */
+	/* Auto Layout */
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	position: absolute;
+	left: 2.5%;
+	right: 12.5%;
+	top: 23.27%;
+	bottom: 73.7%;
+	border-radius: 15px;
+}
+
+.textoNombreUsuario {
+	/*Propiedades*/
+	height: 18px;
+	width: 253px;
+	left: 0px;
+	top: 0px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: Roboto;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: right;
+
+	/* TextoNombre */
+	position: static;
+	left: 0%;
+	right: 15.67%;
+	top: 0%;
+	bottom: -8.07%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	text-align: right;
+	color: #a0a0a0;
+	/* Inside Auto Layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 10px;
+}
+
+.inicioSesion {
+	/*Propiedades*/
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 50px;
+	top: 146.18603515625px;
+	border-radius: 15px;
+
+	/* inicio sesion */
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 26.58%;
+	bottom: 66.07%;
+	opacity: 0.64;
+	border-radius: 15px;
+}
+
+.rectangulo6 {
+	/*Propiedades*/
+	height: 40.41344451904297px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+
+	/* Rectangle 6 */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.inicioSesion2 {
+	/*Propiedades*/
+	height: 40.41343688964844px;
+	width: 300px;
+	left: 50px;
+	top: 235.81591796875px;
+	border-radius: 5px;
+
+	/* inicioSesion2 */
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 42.88%;
+	bottom: 49.78%;
+	opacity: 0.64;
+	border-radius: 5px;
+}
+
+.rectangulo6_bis {
+	/*Propiedades*/
+	height: 40.41343688964844px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+
+	/* Rectangle6_bis */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #e3e1e0;
+	border-radius: 5px;
+	border-color: #ffffff;
+}
+
+.textoInput2 {
+	/*Propiedades*/
+	height: 18px;
+	width: 92.34420013427734px;
+	left: 50px;
+	top: 218px;
+	border-radius: 15px;
+
+	/* Texto input2 */
+	/* Auto Layout */
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	position: absolute;
+	left: 10%;
+	right: 64.41%;
+	top: 39.64%;
+	bottom: 57.09%;
+	border-radius: 15px;
+}
+
+.textoContraseña {
+	/*Propiedades*/
+	height: 18px;
+	width: 350px;
+	left: 0px;
+	top: 0px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: Roboto;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+
+	/* TextoContraseña */
+	position: static;
+	left: 0%;
+	right: -279.02%;
+	top: 0%;
+	bottom: 0%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	color: #a0a0a0;
+	/* Inside Auto Layout */
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 10px;
+}
+
+.btnIniciarSesion {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 50px;
+	top: 307px;
+	border-radius: 0px;
+
+	/* btnIniciarSesion */
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 58.82%;
+	bottom: 36.91%;
+}
+
+.botonIniciar {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 0px;
+
+	/* botonIniciar */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+}
+.rectangulo1 {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+
+	/* Rectangle 1 */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #4a4afa;
+	border-radius: 15px;
+}
+
+.textoboton {
+	/*Propiedades*/
+	height: 28px;
+	width: 94.19998168945312px;
+	left: 103.02197265625px;
+	top: 5.833251953125px;
+	border-radius: 0px;
+
+	/* Textoboton */
+	position: absolute;
+	left: 34.34%;
+	right: 34.26%;
+	top: 6.58%;
+	bottom: 15.42%;
+}
+
+.textoBtn {
+	/*Propiedades*/
+	height: 0px;
+	width: 180px;
+	left: -14px;
+	top: px;
+
+	/*Tipògrafia*/
+	font-family: Roboto;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: center;
+
+	/* textoBtn */
+	position: absolute;
+	left: -14.86%;
+	right: -14.65%;
+	top: 0%;
+	bottom: 17.86%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	/* identical to box height */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.olvidasteContraseña {
+	/*Propiedades*/
+	height: 6.711273193359375px;
+	width: 189.91098022460938px;
+	left: 105px;
+	top: 378px;
+	border-radius: 15px;
+
+	/* ¿ Olvidaste la contraseña ? */
+	position: absolute;
+	left: 26.25%;
+	right: 26.27%;
+	top: 68.73%;
+	bottom: 30.05%;
+	border-radius: 15px;
+}
+
+.textoOlvidasteContraseña {
+	/*Propiedades*/
+	height: 16px;
+	width: 147px;
+	left: 21px;
+	top: -5px;
+	border-radius: nullpx;
+
+	/*Tipografia*/
+	font-family: IBM Plex Sans;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 0em;
+	text-align: center;
+
+	/* ¿ Olvidaste la contraseña ? */
+	position: absolute;
+	left: 11.06%;
+	right: 11.54%;
+	top: -74.5%;
+	bottom: -63.9%;
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	/* identical to box height */
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #5d5af3;
+}
+
+.lineaHorizontal {
+	/*Propiedades*/
+	height: 0px;
+	width: 300px;
+	left: 50px;
+	top: 416px;
+	border-radius: 15px;
+
+	/* lineaHorizontal */
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 75.64%;
+	bottom: 24.36%;
+	border-radius: 15px;
+}
+
+.linea1 {
+	/*Propiedades*/
+	height: 0px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+
+	/* Linea1 */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	border: 0.5px solid #a0a0a0;
+	background-color: #a0a0a0;
+	border-radius: 15px;
+}
+
+.btnCrearCuenta {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 50px;
+	top: 447px;
+	border-radius: 0px;
+
+	/* btnCrearCuenta */
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 81.27%;
+	bottom: 11.45%;
+}
+
+.botonCrearCuenta {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 0px;
+
+	/* botonCrearCuenta */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+}
+
+.botonCrear {
+	/*Propiedades*/
+	height: 40px;
+	width: 300px;
+	left: 0px;
+	top: 0px;
+	border-radius: 15px;
+
+	/* botonCrear */
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	background: #d97931;
+	border-radius: 15px;
+}
+
+.textoBotonCrearCuenta {
+	/*Propiedades*/
+	height: 28.000009536743164px;
+	width: 183.74998474121094px;
+	left: 58.5164794921875px;
+	top: 11.66668701171875px;
+	border-radius: 0px;
+
+	/* textoBotonCrearCuenta */
+	position: absolute;
+	left: 19.51%;
+	right: 19.24%;
+	top: 8.17%;
+	bottom: 0.83%;
+}
+
+.textoCrearCuenta {
+	/*Propiedades*/
+	height: 18px;
+	width: 180px;
+	left: 37px;
+	top: 0px;
+
+	/*Tipografia*/
+	font-family: Roboto;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: center;
+
+	/* textoCrearCuenta */
+	position: absolute;
+	left: 3%;
+	right: 21.09%;
+	top: 0%;
+	bottom: 35.71%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 0px;
+	/* identical to box height */
+	text-align: center;
+	text-transform: uppercase;
+	color: #fbfbfb;
+}
+
+/*--------------------------------------------------------------------------------*/
