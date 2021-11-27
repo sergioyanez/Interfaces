@@ -5,7 +5,7 @@
 	height: 1024px;
 	background: #edf0f5;
 }
-nav{
+/* nav{
 	height: 70px;
 	width: 1440px;
 	left: 0%;
@@ -106,8 +106,8 @@ background: url(../images/imagenPerfil1.svg);
 
 .NombrePerfil{
 height: 20px;
-width: 80px;
-right: 280px;
+width: 100px;
+right: 260px;
 top: 12px;
 position: absolute;
 
@@ -125,7 +125,7 @@ position: absolute;
 	text-align: left;
 	color:#101010A1;
 
-}
+} */
 
 .columnaSugeridos{
 height: 607px;
