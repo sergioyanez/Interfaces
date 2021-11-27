@@ -1,159 +1,158 @@
 .containerHome {
-	
+
 	position: relative;
 	width: 1440px;
 	height: 1024px;
 	background: #edf0f5;
 }
-/* nav{
-	height: 70px;
-	width: 1440px;
-	left: 0%;
-	top: 0%;
+
+.columnaSugeridos {
+	height: 607px;
+	width: 200px;
+	left: 280px;
+	top: 70px;
+	border-radius: 5px;
+	/* background: white; */
 	position: absolute;
-	width: 1440px;
-	height: 70px;
-
-	background: #FFFFFF; 
-}
-.logo{
-height: 42px;
-width: 38px;
-left: 280px;
-top: 5px;
-position: absolute;
-width: 38px;
-height: 42px;
-background: url(../images/logo.svg);
-
-}
-.inputBuscar{
-height: 28px;
-width: 230px;
-left: 30px;
-top: 0px;
-border-radius: 5px;
-position: absolute;
-outline:none;
-border-style:none;
-background: #F1EFEE;
-}
-input:focus{
-	outline: none;
 }
 
-.cuadroBusqueda{
-height: 30px;
-width: 200px;
-left: 330px;
-top: 15px;
-border-radius: 5px;
-position: absolute;
-background: #F1EFEE;
-}
-
-.iconoBusqueda{
-height: 12.5px;
-width: 11.5px;
-left: 10px;
-top: 9px;
-background: url(../images/Vectorbuscar.svg);
-position: absolute;
-
+.datosPerfil {
+	height: 193px;
+	width: 200px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+	background-color:teal;
+	position: absolute;
 
 }
+.blancoFotoPerfil{
+	position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 6px solid #FFFFFF;
+	left:55px;
+	top: 40px;
+	border-radius: 250px;
 
-.iconoHome{
-height: 24px;
-width: 24px;
-right: 665px;
-top: 20px;
+}
+.fotoPerfil{
+height: 70px;
+width: 70px;
+left: 60px;
+top:44px;
 border-radius: 0px;
 position: absolute;
-background: url(../images/home.svg);
-
-}
-
-.iconoNoticias{
-height: 24px;
-width: 24px;
-right: 565px;
-top: 20px;
-border-radius: 0px;
-position: absolute;
-background: url(../images/noticias.svg);
-}
-
-.iconoChat{
-height: 26px;
-width: 26px;
-right: 465px;
-top: 20px;
-border-radius: 0px;
-position: absolute;
-background: url(../images/chat.svg);
-}
-
-.imagenPerfil{
-height: 24px;
-width: 24.03927993774414px;
-right: 365px;
-top: 20px;
-position: absolute;
-background: url(../images/imagenPerfil1.svg);
-
-}
-
-.NombrePerfil{
-height: 20px;
-width: 100px;
-right: 260px;
-top: 12px;
-position: absolute;
 
 
 
 }
-
-.formatoPerfil{
-	font-family: Roboto;
-	font-size: 13px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 15px;
-	letter-spacing: 0px;
-	text-align: left;
-	color:#101010A1;
-
-} */
-
-.columnaSugeridos{
-height: 607px;
-width: 200px;
-left: 280px;
-top: 70px;
-border-radius: 5px;
-background: white;
-position: absolute;
-}
-
-.columnaNoticias{
-height: 875px;
-width: 391px;
-left: 500px;
-top: 70px;
-border-radius: 5px;
-background: white;
-position: absolute;
+.fotoPortada{
+	height: 82px;
+	width: 200px;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	border-radius: 5px;
 	
 }
 
-.columnaRecomyPubli{
-height: 549.2000122070312px;
-width: 290px;
-left: 911px;
-top: 70px;
-border-radius: 5px;
-background: white;
-position: absolute;
+
+.sugerenciasContactos {
+	height: 407px;
+	width: 200px;
+	left: 0px;
+	top: 199px;
+	border-radius: 5px;
+	background-color: brown;
+	position: absolute;
+
+
+}
+
+.columnaMuro {
+	height: 875px;
+	width: 371px;
+	left: 500px;
+	top: 70px;
+	border-radius: 5px;
+	/* background: white; */
+	position: absolute;
+
+}
+
+.nuevaPublicacion {
+	position: absolute;
+	width: 371px;
+	height: 120px;
+	left: 0px;
+	top: 0px;
+	background-color: crimson;
+	border-radius: 5px;
+
+}
+
+.publicacion1 {
+	position: absolute;
+	width: 371px;
+	height: 208px;
+	left: 0px;
+	top: 126px;
+	background-color: darkblue;
+	border-radius: 5px;
+
+
+}
+
+.publicacion2 {
+	position: absolute;
+	height: 400px;
+	width: 371px;
+	left: 0px;
+	top: 340px;
+	border-radius: 5px;
+	background-color: darkmagenta;
+
+}
+
+.publicacion3 {
+	position: absolute;
+	width: 371px;
+	height: 208px;
+	left: 0px;
+	top: 746px;
+	background-color: darkseagreen;
+	border-radius: 5px;
+}
+
+
+.columnaRecomyPubli {
+	height: 549.2000122070312px;
+	width: 270px;
+	right: 280px;
+	top: 70px;
+	border-radius: 5px;
+	/* background: white; */
+	position: absolute;
+}
+
+
+.sugerenciasGrupos {
+	position: absolute;
+	width: 270px;
+	height: 287px;
+	left: 0px;
+	top: 0px;
+	background-color: chartreuse;
+	border-radius: 5px;
+
+}
+
+.publicidad {
+	position: absolute;
+	width: 270px;
+	height: 255.2px;
+	left: 0px;
+	top: 284px;
+	border-radius: 5px;
 }
