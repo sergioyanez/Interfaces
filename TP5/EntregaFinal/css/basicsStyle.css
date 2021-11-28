@@ -208,6 +208,19 @@ input:focus {
 	color: #686767;
 }
 
+.salir:hover {
+	
+	color: #d97930;
+	transition: color .5s ease-in;  
+  }
+
+  
+.editar:hover {
+	color: #d97930;
+	transition: color .5s ease-in;  
+  
+  }
+
 .oculto {
 	opacity: 0;
   }

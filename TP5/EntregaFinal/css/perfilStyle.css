@@ -24,13 +24,17 @@
 	border-radius: 5px;
 }
 
-.imagenPerfil {
+.imagenPerfil1 {
 	position: absolute;
 	width: 193.44px;
 	height: 191.18px;
 	left: 50px;
 	top: 90px;
 	background: url(imagenperfil.png);
+}
+
+.deshabilitado{
+	opacity: 0.5;
 }
 
 .fondoBlancoImg {
