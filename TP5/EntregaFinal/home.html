@@ -12,27 +12,32 @@
     <body>
         <div class= "containerHome">
     <nav>
-       <div class="logo"></div>
+       <div id="logo"class="logo"></div>
+
        <div class="cuadroBusqueda">
            <div class="iconoBusqueda"></div>
            <input class="inputBuscar" type="text" placeholder="Buscar"> 
        </div>
-       <div class="iconoHome"></div>
-       <div class="iconoNoticias"></div>
-       <div class="iconoChat"></div>
-       <div class="imagenPerfil"></div>
-       <div class="NombrePerfil"><p class="formatoPerfil">Pedro Gomez</p></div>
-       <div class="desplegable oculto">
+       <div id="iconoHome" class="iconoHome"></div>       
+       <div  id="iconoNoticias" class="iconoNoticias"></div>
+       <div  id="iconoChat" class="iconoChat"></div>
+       <div  id="imagenPerfil" class="imagenPerfil"></div>
+
+       <div  id="NombrePerfil"class="NombrePerfil">
+           <p class="formatoPerfil">Pedro Gomez</p>
+        </div>
+
+       <div id="menuDesplegable"class="desplegable oculto">
         <div>
-            <div class="iconEditar"></div>
-            <p class="editar">Editar perfil</p>
+            <div id="iconEditar"class="iconEditar"></div>
+            <p id="editar"class="editar">Editar perfil</p>
         </div>
 
         <div>
-            <div class="iconSalir"></div>
-            <p class="salir">Salir</p>
+            <div id="iconSalir"class="iconSalir"></div>
+            <p id="salir"class="salir">Salir</p>
         </div>
-    </div>
+   
     </nav>
     <section class="columnaSugeridos">
         <div class="datosPerfil">
@@ -67,6 +72,7 @@
     </div>
 
     </body>
+    <script src="js/basicsJS.js"></script>
     <script src="js/home.js"></script>
     </html>
     

@@ -347,20 +347,14 @@
 	top: 0%;
 	bottom: 0%;
 }
-.rectangulo1 {
+.botonIniciaSesion {
 	/*Propiedades*/
 	height: 40px;
 	width: 300px;
-	left: 0px;
-	top: 0px;
+	left: 55px;
+	top: 320px;
 	border-radius: 5px;
-
-	/* Rectangle 1 */
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
 	background: #4a4afa;
 	border-radius: 15px;
 }
@@ -382,12 +376,7 @@
 }
 
 .textoBtn {
-	/*Propiedades*/
-	height: 0px;
 	width: 180px;
-	left: -14px;
-	top: px;
-
 	/*Tipògrafia*/
 	font-family: Roboto;
 	font-size: 15px;
@@ -401,7 +390,7 @@
 	position: absolute;
 	left: -14.86%;
 	right: -14.65%;
-	top: 0%;
+	top: 6%;
 	bottom: 17.86%;
 	font-family: Roboto;
 	font-style: normal;
@@ -501,52 +490,19 @@
 	border-radius: 15px;
 }
 
-.btnCrearCuenta {
-	/*Propiedades*/
-	height: 40px;
-	width: 300px;
-	left: 50px;
-	top: 447px;
-	border-radius: 0px;
 
-	/* btnCrearCuenta */
-	position: absolute;
-	left: 12.5%;
-	right: 12.5%;
-	top: 81.27%;
-	bottom: 11.45%;
-}
-
-.botonCrearCuenta {
-	/*Propiedades*/
-	height: 40px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
-	border-radius: 0px;
-
-	/* botonCrearCuenta */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-}
 
 .botonCrear {
 	/*Propiedades*/
 	height: 40px;
 	width: 300px;
-	left: 0px;
-	top: 0px;
+	left: 55px;
+	top: 455px;
 	border-radius: 15px;
 
 	/* botonCrear */
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
+
 	background: #d97931;
 	border-radius: 15px;
 }

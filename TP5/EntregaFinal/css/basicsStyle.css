@@ -207,11 +207,15 @@ input:focus {
 
 	color: #686767;
 }
-/*
+
 .oculto {
-	display: none;
-}
-*/
+	opacity: 0;
+  }
+  
+  .desocultar {
+	opacity: 1;
+  }
+
 
 .colorNaranja {
 	color: #d97930;

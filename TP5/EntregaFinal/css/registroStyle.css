@@ -56,51 +56,15 @@
 	border-radius: 15px;
 }
 
-.grupo29 {
-	height: 679px;
-	width: 483px;
-	left: 0px;
-	top: 0px;
-	border-radius: [object Object]px;
-
-	/* Group 29 */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-}
-
-.btnVolver {
+.botonVolver {
 	/*Propiedades*/
 	height: 40px;
 	width: 300px;
 	left: 89px;
 	top: 596px;
-	border-radius: 0px;
-
-	/* btnVolver */
-	position: absolute;
-	left: 18.43%;
-	right: 19.46%;
-	top: 87.78%;
-	bottom: 6.33%;
-}
-
-.botonVolver {
-	/*Propiedades*/
-	height: 40px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
 	border-radius: 15px;
-
 	/* botonVolver */
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
 	background: #8f8f8e;
 	border-radius: 15px;
 }
@@ -156,67 +120,26 @@
 	color: #ffffff;
 }
 
-.btnRegistrarCuenta {
-	height: 40px;
-	width: 300px;
-	left: 89px;
-	top: 517px;
-	border-radius: 0px;
 
-	/* btnRegistrarCuenta */
-	position: absolute;
-	left: 18.43%;
-	right: 19.46%;
-	top: 76.14%;
-	bottom: 17.97%;
-}
-
-.btnRegistrar {
-	height: 40px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
-	border-radius: 0px;
-
-	/* btnRegistrar */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-}
 
 .botonRegistrarCuenta {
 	height: 40px;
 	width: 300px;
-	left: 0px;
-	top: 0px;
-	border-radius: 15px;
-
-	/* botonRegistrarCuenta */
+	left: 90px;
+	top: 520px;
+	border-radius: 15px;	
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-
 	background: #4a4afa;
 	border-radius: 15px;
 }
 
 .textoBotonRegistrar {
 	height: 18px;
-	width: 157px;
-	left: 72px;
-	top: 11px;
-	border-radius: 0px;
-
-	/* textoBotonRegistrar */
-
+	width: 157px;	
 	position: absolute;
 	left: 17%;
 	right: 23.67%;
-	top: 0%;
+	top: 10%;
 	bottom: 27.5%;
 }
 
@@ -548,33 +471,17 @@
 	color: #000000;
 }
 
-.contenedorLogo {
-	/*Propiedades*/
+
+.logo {
 	height: 33px;
 	width: 30px;
 	left: 227px;
 	top: 40px;
-	border-radius: 0px;
-	/* LOGO */
-	position: absolute;
-	left: 47%;
-	right: 46.79%;
-	top: 5.89%;
-	bottom: 89.25%;
-}
-
-.logo {
 	/*Propiedades*/
 	height: 33px;
 	width: 30px;
-	left: 0px;
-	top: 0px;
-	border-radius: 0px;
+
 	/*3*/
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-	background: url(.png);
+	
 }
