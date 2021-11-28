@@ -91,7 +91,7 @@ line-height : 5px;
 
 
 .sugerenciasContactos {
-	height: 407px;
+	height: 370px;
 	width: 200px;
 	left: 0px;
 	top: 199px;
@@ -195,22 +195,23 @@ margin: 0%;
 	width: 30px;
 	height: 30px;
 	left: 1em;
-	top: 5px;
+	top: 10px;
 }
 .inputNuevaPublicacion{
 	position: absolute;
-	width: 300px;
+	width: 295px;
 	height: 20px;
 	left: 50px;
-	top: 8px;
+	top: 1em;
 	border-radius: 5px;
 }
+/* Barra herramientas nueva publicacion */
 .barraHerramientas{
 	position: absolute;
 	width: 371px;
 	height: 50px;
 	left: 0px;
-	top: 40px;
+	top: 50px;
 	/* background-color:teal; */
 	border-radius: 5px;
 }
@@ -239,7 +240,7 @@ top:0px;
 	position: absolute;
 width: 21px;
 height: 21px;
-left: 8em;
+left: 155px;
 top: 9px;
 }
 .textoaddVideo{
@@ -251,17 +252,17 @@ top: 9px;
 	position: absolute;
 	width: 34.09px;
 	height: 15.52px;
-	left:12em;
+	left:180px;
 	top: 0px;
 	
 	
 }
 
 .publicar{
-	position: absolute;
+position: absolute;
 width: 19.05px;
 height: 19.66px;
-left: 15em;
+right: 65px;
 top: 10px;
 }
 .textoEnviar{
@@ -273,22 +274,75 @@ padding: 0px;
 position: absolute;
 width: 49.13px;
 height: 17.59px;
-left: 20em;
+right: 1em;
 top: 0px;
 
 
 }
-
-.publicacion1 {
+/*-----------------------*/
+.cardPublicacion{
 	position: absolute;
 	width: 371px;
 	height: 208px;
 	left: 0px;
-	top: 126px;
-	background-color: darkblue;
+	background-color: white;
 	border-radius: 5px;
+}
+.publicacion1 {
+	top: 126px;
+}
+
+.fotoContacto{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 1em;
+	top: 20px;
+
+}
+.nombrePubli{
+	position: absolute;
+	width: 200px;
+	height: 16px;
+	left: 50px;
+	top: 6px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	
+	color: #252525;
+}
+.textoDetalle{
+position: absolute;
+left: 13.65%;
+right: 78.01%;
+top: 12.79%;
+bottom: 75%;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 150%;
+color: #252525;
 
 
+}
+.textoMensaje{
+position: absolute;
+left: 4.70%;
+right: 6.39%;
+top: 26.25%;
+bottom: 22.6%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 150%;
+
+color: #000000;
 }
 
 .publicacion2 {
@@ -298,7 +352,7 @@ top: 0px;
 	left: 0px;
 	top: 340px;
 	border-radius: 5px;
-	background-color: darkmagenta;
+	background-color: white;
 
 }
 
@@ -308,8 +362,22 @@ top: 0px;
 	height: 208px;
 	left: 0px;
 	top: 746px;
-	background-color: darkseagreen;
+	background-color: white;
 	border-radius: 5px;
+}
+.galeria{
+position: absolute;
+left: 4.70%;
+right: 6.39%;
+top: 21.25%;
+bottom: 22.6%;
+height: 263px;
+width: 320px;
+
+border-radius: 5px;
+
+
+
 }
 
 
@@ -346,7 +414,7 @@ top: 0px;
 /* estilo de cards contactos*/
 
 .cardContacto{
-	position: absolute;
+position: absolute;
 width: 180px;
 height: 60px;
 left: 1em;
@@ -400,3 +468,81 @@ background-color: white;
 		line-height: 17px;
 		color: #686767;
 		}
+
+/* Barra reacciones */
+
+.barraReacciones{
+	position: absolute;
+	width: 371px;
+	height: 45px;
+	left: 0px;
+	bottom: 0px;
+	border-radius: 5px;
+		}
+		
+		.meGusta{
+			position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 1em;
+		top: 10px;
+		
+		
+		}
+		.textoMeGusta{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 0px;
+		
+		position: absolute;
+		width: 27.07px;
+		height: 16.55px;
+		left:3em;
+		top:0px;
+		}
+		.comentarios{
+			position: absolute;
+		width: 21px;
+		height: 21px;
+		left: 155px;
+		top: 9px;
+		}
+		.textoComentario{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			padding: 0px;
+			
+			position: absolute;
+			width: 34.09px;
+			height: 15.52px;
+			left:180px;
+			top: 0px;
+			
+			
+		}
+		
+		.compartir{
+		position: absolute;
+		width: 19.05px;
+		height: 19.66px;
+		right: 80px;
+		top: 10px;
+		}
+		.textoCompartir{
+			display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 0px;
+		
+		position: absolute;
+		width: 49.13px;
+		height: 17.59px;
+		right: 2em;
+		top: 0px;
+		
+		
+		}
+   
+
