@@ -1,39 +1,32 @@
-.backgroundGral{
-    background:  #edf0f5 ;
+.backgroundGral {
+	background: #edf0f5;
 }
 
-.colorIconos{
-    background: #686767;
-
+.colorIconos {
+	background: #686767;
 }
 
-.fuenteInputs{
-font-family: Roboto;
-font-size: 13px;
-font-style: normal;
-font-weight: 300;
-line-height: 15px;
-letter-spacing: 0px;
-text-align: left;
-color:#131313 63%;
-
+.fuenteInputs {
+	font-family: Roboto;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 15px;
+	letter-spacing: 0px;
+	text-align: left;
+	color: #131313 63%;
 }
 
-.fuenteGeneral{
-	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.colorFondoCards {
+	background: white;
 }
 
-
-.colorFondoCards{
-    background: white;
-}
-
-.familiaFuenteGral{
-font-family: roboto;
+.familiaFuenteGral {
+	font-family: roboto;
 }
 
 /* Barra de Navegación */
-nav{
+nav {
 	height: 70px;
 	width: 1440px;
 	left: 0%;
@@ -42,108 +35,100 @@ nav{
 	width: 1440px;
 	height: 70px;
 
-	background: #FFFFFF; 
+	background: #ffffff;
 }
-.logo{
-height: 42px;
-width: 38px;
-left: 280px;
-top: 5px;
-position: absolute;
-width: 38px;
-height: 42px;
-background: url(../images/logo.svg);
-
+.logo {
+	height: 42px;
+	width: 38px;
+	left: 280px;
+	top: 5px;
+	position: absolute;
+	width: 38px;
+	height: 42px;
+	background: url(../images/logo.svg);
 }
-.inputBuscar{
-height: 28px;
-width: 230px;
-left: 30px;
-top: 0px;
-border-radius: 5px;
-position: absolute;
-outline:none;
-border-style:none;
-background: #F1EFEE;
+.inputBuscar {
+	height: 28px;
+	width: 230px;
+	left: 30px;
+	top: 0px;
+	border-radius: 5px;
+	position: absolute;
+	outline: none;
+	border-style: none;
+	background: #f1efee;
 }
-input:focus{
+input:focus {
 	outline: none;
 }
 
-.cuadroBusqueda{
-height: 30px;
-width: 200px;
-left: 330px;
-top: 15px;
-border-radius: 5px;
-position: absolute;
-background: #F1EFEE;
+.cuadroBusqueda {
+	height: 30px;
+	width: 200px;
+	left: 330px;
+	top: 15px;
+	border-radius: 5px;
+	position: absolute;
+	background: #f1efee;
 }
 
-.iconoBusqueda{
-height: 12.5px;
-width: 11.5px;
-left: 10px;
-top: 9px;
-background: url(../images/Vectorbuscar.svg);
-position: absolute;
-
-
+.iconoBusqueda {
+	height: 12.5px;
+	width: 11.5px;
+	left: 10px;
+	top: 9px;
+	background: url(../images/Vectorbuscar.svg);
+	position: absolute;
 }
 
-.iconoHome{
-height: 24px;
-width: 24px;
-right: 665px;
-top: 20px;
-border-radius: 0px;
-position: absolute;
-background: url(../images/home.svg);
-
+.iconoHome {
+	height: 24px;
+	width: 24px;
+	right: 665px;
+	top: 20px;
+	border-radius: 0px;
+	position: absolute;
+	background: url(../images/home.svg);
 }
 
-.iconoNoticias{
-height: 24px;
-width: 24px;
-right: 565px;
-top: 20px;
-border-radius: 0px;
-position: absolute;
-background: url(../images/noticias.svg);
+.iconoNoticias {
+	height: 24px;
+	width: 24px;
+	right: 565px;
+	top: 20px;
+	border-radius: 0px;
+	position: absolute;
+	background: url(../images/noticias.svg);
 }
 
-.iconoChat{
-height: 26px;
-width: 26px;
-right: 465px;
-top: 20px;
-border-radius: 0px;
-position: absolute;
-background: url(../images/chat.svg);
+.iconoChat {
+	height: 26px;
+	width: 26px;
+	right: 465px;
+	top: 20px;
+	border-radius: 0px;
+	position: absolute;
+	background: url(../images/chat.svg);
 }
 
-.imagenPerfil{
-height: 24px;
-width: 24.03927993774414px;
-right: 365px;
-top: 20px;
-position: absolute;
-background: url(../images/imagenPerfil1.svg);
-
+.imagenPerfil {
+	height: 24px;
+	width: 24.03927993774414px;
+	right: 365px;
+	top: 20px;
+	position: absolute;
+	background: url(../images/imagenPerfil1.svg);
 }
 
-.NombrePerfil{
-height: 20px;
-width: 100px;
-right: 260px;
-top: 12px;
-position: absolute;
-
-
-
+.NombrePerfil {
+	height: 20px;
+	width: 100px;
+	right: 260px;
+	top: 12px;
+	position: absolute;
 }
 
-.formatoPerfil{
+.formatoPerfil {
 	font-family: Roboto;
 	font-size: 13px;
 	font-style: normal;
@@ -151,63 +136,143 @@ position: absolute;
 	line-height: 15px;
 	letter-spacing: 0px;
 	text-align: left;
-	color:#101010A1;
-
+	color: #101010A1;
 }
-/* estilo de cards contactos*/
 
-.cardContacto{
+.desplegable {
 	position: absolute;
-width: 180px;
-height: 60px;
-left: 1em;
-background-color: white;
+	height: 90px;
+	width: 150px;
+	right: 215px;
+	top: 50px;
+	background-color: #ffffff;
+	z-index: 1;
+	border-radius: 5px;
 }
-.fotoPerfilContacto{
+
+.iconEditar {
 	position: absolute;
-	width: 40px;
-	height: 40px;
-	left: 0px;
-	top: 8px;
-	border-radius: 26px;
-	}
-	.nombreContacto{
+	height: 25px;
+	width: 25px;
+	left: 5px;
+	top: 14px;
+	background: url(../images/editar.svg);
+	background-repeat: no-repeat;
+}
+
+.editar {
 	position: absolute;
-	width: 200px;
-	height: 16px;
-	left: 50px;
+	height: 20px;
+	width: 100px;
+	left: 45px;
 	top: 0px;
-	
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 14px;
-	line-height: 16px;
-	
-	color: #252525;
-	
-	}
-	.profesion{
-	position: absolute;
-	width: 107px;
-	height: 15px;
-	left: 50px;
-	top: 20px;
-	
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 10px;
-	line-height: 150%;
-	
-	color: #252525;
-	}
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
 
-	.textosReacciones{
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: 500;
-		font-size: 13px;
-		line-height: 17px;
-		color: #686767;
-		}
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+
+	color: #686767;
+}
+
+.iconSalir {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	left: 5px;
+	top: 54px;
+	background: url(../images/salir.svg);
+}
+
+.salir {
+	position: absolute;
+	height: 20px;
+	width: 100px;
+	left: 45px;
+	top: 40px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+
+	color: #686767;
+}
+/*
+.oculto {
+	display: none;
+}
+*/
+
+.colorNaranja {
+	color: #d97930;
+}
+
+.iconEditarNaranja {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	left: 5px;
+	top: 14px;
+	background: url(../images/editarNaranja.svg);
+	background-repeat: no-repeat;
+}
+
+.editarNaranja {
+	position: absolute;
+	height: 20px;
+	width: 100px;
+	left: 45px;
+	top: 0px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+
+	color: rgba(217, 121, 48, 1);
+}
+
+.iconSalirNaranja {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	left: 5px;
+	top: 54px;
+	background: url(../images/salirNaranja.svg);
+}
+
+.salirNaranja {
+	position: absolute;
+	height: 20px;
+	width: 100px;
+	left: 45px;
+	top: 40px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 18px;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+
+	color: rgba(217, 121, 48, 1);
+}
