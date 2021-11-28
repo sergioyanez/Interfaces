@@ -15,38 +15,6 @@
 	/* background: white; */
 	position: absolute;
 }
-
-.datosPerfil {
-	height: 193px;
-	width: 200px;
-	left: 0px;
-	top: 0px;
-	border-radius: 5px;
-	background-color:teal;
-	position: absolute;
-
-}
-.blancoFotoPerfil{
-	position: absolute;
-    width: 64px;
-    height: 64px;
-    border: 6px solid #FFFFFF;
-	left:55px;
-	top: 40px;
-	border-radius: 250px;
-
-}
-.fotoPerfil{
-height: 70px;
-width: 70px;
-left: 60px;
-top:44px;
-border-radius: 0px;
-position: absolute;
-
-
-
-}
 .fotoPortada{
 	height: 82px;
 	width: 200px;
@@ -57,6 +25,70 @@ position: absolute;
 	
 }
 
+.datosPerfil {
+	height: 193px;
+	width: 200px;
+	left: 0px;
+	top: 0px;
+	border-radius: 5px;
+	background-color:white;
+	position: absolute;
+
+}
+.blancoFotoPerfil{
+	position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 6px solid #FFFFFF;
+	left:60px;
+	top: 40px;
+	border-radius: 250px;
+
+}
+.fotoPerfil{
+height: 70px;
+width: 70px;
+left: 65px;
+top:44px;
+border-radius: 0px;
+position: absolute;
+
+}
+
+.textosPerfil{
+position: absolute;
+text-align: center;
+width: 200px;
+height: 100px;
+left: 0px;
+top: 110px;
+
+
+
+
+}
+.nombre{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 16px;
+	color: #252525;
+}
+.titulo{
+	font-family: Roboto;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 15px;
+letter-spacing: 0em;
+text-align: center;
+color: #252525;
+line-height : 5px;
+
+}
+
+
 
 .sugerenciasContactos {
 	height: 407px;
@@ -64,12 +96,45 @@ position: absolute;
 	left: 0px;
 	top: 199px;
 	border-radius: 5px;
-	background-color: brown;
+	background-color:white;
 	position: absolute;
 
 
 }
+.tituloSugerencias{
+height: 14px;
+width: 200px;
+left: 0px;
+top: 280px;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: center;
+color: #252525;
 
+}
+.contactoSugerido1{
+top: 40px;
+}
+
+.contactoSugerido2{
+
+top: 100px;
+
+
+}
+.contactoSugerido3{
+	top: 160px;
+}
+.contactoSugerido4{
+	top:220px;
+}
+.contactoSugerido5{
+	top:280px;
+}
 .columnaMuro {
 	height: 875px;
 	width: 371px;
@@ -87,8 +152,130 @@ position: absolute;
 	height: 120px;
 	left: 0px;
 	top: 0px;
-	background-color: crimson;
+	background-color: white;
 	border-radius: 5px;
+
+}
+.tituloPublicacion{
+	
+position: absolute;
+width: 371px;
+height: 30px;
+left: 0px;
+top: 0px;
+background: #D97930;
+border-radius: 5px;
+
+}
+.textoTituloPublicacion{
+position: absolute;
+width: 300px;
+height: 30px;
+left: 1em;
+top: 5px;
+font-style: bold;
+font-weight: bold;
+font-size: 16px;
+font-family: roboto;
+color: #FFFFFF;
+margin: 0%;
+
+}
+.cuerpoPublicacion{
+	position: absolute;
+	width: 371px;
+	height: 90px;
+	left: 0px;
+	top: 30px;
+	background-color: white;
+	border-radius: 5px;
+}
+.foto{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 1em;
+	top: 5px;
+}
+.inputNuevaPublicacion{
+	position: absolute;
+	width: 300px;
+	height: 20px;
+	left: 50px;
+	top: 8px;
+	border-radius: 5px;
+}
+.barraHerramientas{
+	position: absolute;
+	width: 371px;
+	height: 50px;
+	left: 0px;
+	top: 40px;
+	/* background-color:teal; */
+	border-radius: 5px;
+}
+.addFoto{
+	position: absolute;
+width: 20px;
+height: 20px;
+left: 1em;
+top: 10px;
+
+
+}
+.textoaddFoto{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 27.07px;
+height: 16.55px;
+left:3em;
+top:0px;
+}
+.addVideo{
+	position: absolute;
+width: 21px;
+height: 21px;
+left: 8em;
+top: 9px;
+}
+.textoaddVideo{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	
+	position: absolute;
+	width: 34.09px;
+	height: 15.52px;
+	left:12em;
+	top: 0px;
+	
+	
+}
+
+.publicar{
+	position: absolute;
+width: 19.05px;
+height: 19.66px;
+left: 15em;
+top: 10px;
+}
+.textoEnviar{
+	display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 49.13px;
+height: 17.59px;
+left: 20em;
+top: 0px;
+
 
 }
 
@@ -156,3 +343,60 @@ position: absolute;
 	top: 284px;
 	border-radius: 5px;
 }
+/* estilo de cards contactos*/
+
+.cardContacto{
+	position: absolute;
+width: 180px;
+height: 60px;
+left: 1em;
+background-color: white;
+}
+.fotoPerfilContacto{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 0px;
+	top: 8px;
+	border-radius: 26px;
+	}
+	.nombreContacto{
+	position: absolute;
+	width: 200px;
+	height: 16px;
+	left: 50px;
+	top: 0px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	
+	color: #252525;
+	
+	}
+	.profesion{
+	position: absolute;
+	width: 107px;
+	height: 15px;
+	left: 50px;
+	top: 20px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 150%;
+	
+	color: #252525;
+	}
+
+	.textosReacciones{
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 17px;
+		color: #686767;
+		}
