@@ -146,7 +146,7 @@ input:focus {
 	right: 215px;
 	top: 50px;
 	background-color: #ffffff;
-	z-index: 1;
+	z-index: 3;
 	border-radius: 5px;
 }
 
@@ -223,10 +223,12 @@ input:focus {
 
 .oculto {
 	opacity: 0;
+	z-index: -2;
   }
   
   .desocultar {
 	opacity: 1;
+	z-index: 2;
   }
 
 
@@ -292,4 +294,201 @@ input:focus {
 	align-items: center;
 
 	color: rgba(217, 121, 48, 1);
+}
+
+.cuadroDeChats{
+	position: absolute;
+width: 272px;
+height: 446px;
+left: 889px;
+top: 70px;
+background-color: white;
+z-index: 1;
+
+}
+
+.chatPersonal{
+	position: absolute;
+	width: 272px;
+	height: 290px;
+	left: 889px;
+	top: 70px;
+	background-color: rgb(243, 243, 243);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.videollamada{
+	position: absolute;
+	width: 20px;
+	height: 15px;
+	left: 180px;
+	top:30px;
+
+
+}
+
+.cerrar{
+	position: absolute;
+	width: 20px;
+	height: 15px;
+	left: 230px;
+	top:27px;
+}
+
+.lineaChat{
+	position: absolute;
+	width: 272px;
+	height: 0.1px;	
+	top: 55px;
+	background-color: #928e8e;
+}
+
+.fotoChat{
+	position: absolute;
+	width: 37px;
+	height: 39px;
+	left: 13px;
+	top: 85px;
+}
+
+.fraseAmigo{
+	position: absolute;
+	width: 150px;
+	height: 25px;
+	left: 60px;
+	top: 80px;
+	background-color: #dddcdc;
+	color: #151414;
+	border-radius: 5px;
+
+}
+
+.fraseMia{
+	position: absolute;
+	width: 90px;
+	height: 25px;
+	right: 13px;
+	top: 150px;
+	background-color: rgba(244, 191, 110, 0.5);
+	color: #151414;
+	border-radius: 5px;
+}
+
+.inputMensajeChat{
+	position: absolute;
+	width: 260px;
+	height: 25px;
+	left: 5px;
+	bottom: 10px;
+	outline: none;
+	border-style: none;
+	background: #dddcdc;
+	border-radius: 5px;
+
+}
+
+.iconEnviar{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 15px;
+	bottom: 15px;
+	color: #d97930;
+}
+
+.cardAmigo{
+	position: absolute;
+width: 37px;
+height: 39px;
+left: 13px;
+top: 11px;
+}
+
+.nombreAmigo{
+	position: absolute;
+	width: 200px;
+	height: 16px;
+	left: 50px;
+	top: 0px;
+	
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	
+	color: #252525;
+	
+	}
+
+	.estado{
+		position: absolute;
+		width: 107px;
+		height: 15px;
+		left: 50px;
+		top: 20px;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 150%;
+		
+		color: #252525;
+	}
+
+	.amigo1{
+		top: 40px;
+	}
+	.amigo2{
+		top: 100px;
+	}
+
+	.amigo3{
+		top: 160px;
+	}
+	.amigo4{
+		top: 220px;
+	}
+	.amigo5{
+		top: 280px;
+	}
+	.amigo6{
+		top: 340px;
+	}
+
+	.cuadroBusquedaChat{
+		left: 13px;
+		height: 30px;
+		width: 200px;
+		border-radius: 5px;
+		position: absolute;
+		background: #f1efee;
+	}
+
+	.iconoBusquedaChat{		
+		position: absolute;
+		width: 18px;
+		height: 20px;
+		left: 10px;
+		top: 8px;
+		z-index: 1;
+		background: url(../images/Vectorbuscar.svg);
+		background-repeat: no-repeat;
+	position: absolute;
+	}
+
+.inputBuscarChat{	
+	width: 200px;
+	height: 28px;
+	position: absolute;
+	left: 15.42%;
+	right: 4.42%;
+	top: 0.26%;
+	bottom: 87.67%;
+	background: #E3E1E0;
+	border-radius: 5px;
+	outline: none;
+	border-style: none;
+	background: #f1efee;
 }

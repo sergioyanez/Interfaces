@@ -1,4 +1,5 @@
 'use strict'
+
 let control=true;
 let iconoChat = document.getElementById("iconoChat");
     iconoChat.addEventListener("click",ir_a_Chats);
