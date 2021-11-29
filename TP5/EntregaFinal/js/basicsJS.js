@@ -42,6 +42,17 @@ let desplegableChat =document.getElementById("chatPersonal");
 
 let cerrar = document.getElementById("cerrar");
 cerrar.addEventListener("click",cerrarChatPersonal);
+
+let videoLlamada= document.getElementById("videoLlamada");
+videoLlamada.addEventListener("click", iniciarVideoLlamada);
+
+let pantallaVideo=document.getElementById("pantallaVideo");
+
+let colgar = document.getElementById("colgar");
+colgar.addEventListener("click",cortarVideoLlamada);
+
+let salirChats=document.getElementById("salirChats");
+salirChats.addEventListener("click", cerrarVentanaChats);
     
 
 function ir_a_Home(){
@@ -95,4 +106,19 @@ function cerrarChatPersonal(){
     desplegableChat.classList.add("oculto");
     desplegableChat.classList.remove("desocultar");
     controldesplegableChat=true;
+}
+
+function iniciarVideoLlamada(){
+    pantallaVideo.classList.remove("oculto");
+    pantallaVideo.classList.add("desocultar");
+}
+
+function cortarVideoLlamada(){
+    pantallaVideo.classList.add("oculto");
+    pantallaVideo.classList.remove("desocultar");
+}
+
+function cerrarVentanaChats(){  
+    cuadroChats.classList.add("oculto");
+    cuadroChats.classList.remove("desocultar");
 }
