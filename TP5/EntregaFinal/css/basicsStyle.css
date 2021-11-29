@@ -76,7 +76,7 @@ input:focus {
 	height: 12.5px;
 	width: 11.5px;
 	left: 10px;
-	top: 9px;
+	top: 8px;
 	background: url(../images/Vectorbuscar.svg);
 	position: absolute;
 }
@@ -623,4 +623,64 @@ top: 11px;
 	opacity: 0.6;
 	top:0px;
 		
+}
+
+.formularioEditar{
+	position: absolute;
+	width: 452px;
+	height: 812px;
+	top: 106px;
+	left: 494px;	
+	background-color: white;
+	z-index: 1;
+}
+/* footer*/
+footer{
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 8px;
+top: 972px;
+bottom: 0px;
+background-color: white;
+}
+
+.logoyDesarroll{
+position: absolute;
+left: 39.58%;
+right: 57.78%;
+top: 20%;
+bottom: 20%;
+height: 40px;
+width: 300px;
+}
+.logoFooter{
+height: 38px;
+width: 34px;
+position: absolute;
+left: 0%;
+right: 57.78%;
+top: 10%;
+bottom: 10%;
+}
+.textoDesarrolladores{
+height: 15px;
+width: 243px;
+position: absolute;
+left: 18.54%;
+right: 39.58%;
+top: 41%;
+bottom: 41%;
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+color: #252525;
+
+
+
+
 }
