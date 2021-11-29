@@ -612,3 +612,23 @@ top: 11px;
 	top: 92.3%;
 	bottom: 87.67%;
 }
+
+.containerPerfilFiltro{
+	position: absolute;
+	width: 1440px;
+	height: 1024px;
+	background: #4b4b4b;
+	opacity: 0.6;
+	top:0px;
+		
+}
+
+.formularioEditar{
+	position: absolute;
+	width: 452px;
+	height: 812px;
+	top: 106px;
+	left: 494px;	
+	background-color: white;
+	z-index: 1;
+}
