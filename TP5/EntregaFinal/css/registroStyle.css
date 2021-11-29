@@ -238,6 +238,7 @@
 	background: #e3e1e0;
 	border-radius: 5px;
 	border-color: #ffffff;
+	border-style: none;
 }
 
 .textoCorreo {
@@ -302,6 +303,7 @@
 	background: #e3e1e0;
 	border-radius: 5px;
 	border-color: #ffffff;
+	border-style: none;
 }
 
 .textoApellido {
@@ -368,6 +370,7 @@
 	background: #e3e1e0;
 	border-radius: 5px;
 	border-color: #ffffff;
+	border-style: none;
 }
 
 .textoNombre {
@@ -435,6 +438,7 @@
 	background: #e3e1e0;
 	border-radius: 5px;
 	border-color: #ffffff;
+	border-style: none;
 }
 
 .tituloFormRegistro {

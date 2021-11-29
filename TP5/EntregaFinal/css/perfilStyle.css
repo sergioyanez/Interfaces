@@ -405,4 +405,329 @@
 }
 
 
+.formularioEditar{
+	position: absolute;
+	width: 452px;
+	height: 812px;
+	top: 106px;
+	left: 494px;	
+	background-color: white;
+	z-index: 1;
+	border-radius: 10px;
+}
 
+.editarInfoGeneral{
+	position: absolute;
+	width: 300px;
+	height: 240px;
+	left: 75px;
+	top: 42px;
+
+}
+
+
+.informacionPersonal{
+	height: 20px;
+	width: 150px;
+	left: 75px;
+	top: -15px;
+	position: absolute;
+	font-family:Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #000000;
+	font-weight:bold;
+}
+
+
+.textoEditNombre{
+	position: absolute;
+	height: 18px;
+	width: 52px;
+	left: 0px;	
+	top: 30px;	
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+
+.EditarNombre{
+	height: 20px;
+	width: 290px;
+	left: 0px;
+	top: 60px;
+	border-radius: 15px;
+	position: absolute;	
+	border-radius: 5px;
+	background: #e3e1e0;
+	border-style: none;
+}
+
+.textoEditado{
+	position: absolute;
+	height: 20px;
+	width: 290px;
+	left: 10px;	
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #2b2a2a;
+}
+.textoNombreEditado{
+	top: 46px;
+}
+
+.textoApellidoEditado{
+	top: 101px;
+}
+.textoProfesionEditado{
+	top: 157px;
+}
+.textoCorreoEditado{
+	top: 212px;
+}
+
+
+.textoEditApellido{
+	position: absolute;
+	height: 18px;
+	width: 52px;
+	left: 0px;	
+	top: 85px;	
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+
+
+
+.EditarApellido{
+	height: 20px;
+	width: 290px;
+	left: 0px;
+	top: 115px;
+	border-radius: 15px;
+	position: absolute;	
+	border-radius: 5px;
+	background: #e3e1e0;
+	border-style: none;
+}
+
+.textoEditProfesion{
+	position: absolute;
+	height: 18px;
+	width: 52px;
+	left: 0px;	
+	top: 140px;	
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+
+
+.EditarProfesion{
+	height: 20px;
+	width: 290px;
+	left: 0px;
+	top: 170px;
+	border-radius: 15px;
+	position: absolute;	
+	border-radius: 5px;
+	background: #e3e1e0;
+	border-style: none;
+}
+
+.textoEditCorreo{
+	position: absolute;
+	height: 18px;
+	width: 150px;
+	left: 0px;	
+	top: 195px;	
+	font-family: IBM Plex Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+
+.EditarCorreo{
+	height: 20px;
+	width: 290px;
+	left: 0px;
+	top: 225px;
+	border-radius: 15px;
+	position: absolute;	
+	border-radius: 5px;
+	background: #e3e1e0;
+	border-style: none;
+}
+
+
+.editarIntereses{
+	position: absolute;
+	width: 300px;
+	height: 122px;
+	left: 75px;
+	top: 355px;
+	
+
+}
+
+.editIntereses{
+	height: 20px;
+	width: 60px;
+	left: 117px;
+	top: -15px;
+	position: absolute;
+	font-family:Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;	
+	text-align: right;
+	color: #000000;
+	font-weight:bold;
+}
+
+
+.imagenEdit{
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	left:0px;
+	
+}
+
+.organizacionEdit{
+	position: absolute;
+	height: 25px;
+	width: 180px;
+	left:30px;	
+	font-family: Roboto;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 18px;
+	display: flex;
+	text-align: right;
+}
+.img1{
+	top: 30px;
+}
+
+.org1{
+	top: 22px;
+}
+
+.img2{
+	top: 60px;
+}
+
+.org2{
+	top: 52px;
+}
+
+.img3{
+	top: 90px;
+}
+
+.org3{
+	top: 82px;
+}
+
+
+.editarGrupos{
+	position: absolute;
+	width: 300px;
+	height: 122px;
+	left: 75px;
+	top: 550px;
+}
+
+.iconSalirEdit {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	right: 10px;	
+	background: url(../images/salir.svg);
+}
+.iconEdit1{
+	top: 30px;
+}
+.iconEdit2{
+	top: 60px;
+}
+.iconEdit3{
+	top: 90px;
+}
+
+
+.botones{
+	position: absolute;
+	width: 300px;
+	height: 50px;
+	left: 75px;
+	bottom: 42px;
+	z-index: -1;
+
+}
+
+.btnVolver{
+	position: absolute;
+	width: 100px;
+	height: 25px;
+	left: 0px;
+	top: 15px;
+	background-color: rgba(143, 143, 142, 1);
+	border-radius: 15px;
+}
+
+.btnEditar{
+	position: absolute;
+	width: 100px;
+	height: 25px;
+	right: 0px;
+	top: 15px;	
+	background-color: rgba(74, 74, 250, 1);	
+	border-radius: 15px;
+}
+
+.botonCentrado{
+	position: absolute;	
+	color: white;
+	top: 4px;
+	left: 20px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}

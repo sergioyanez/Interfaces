@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/basicsStyle.css" />
         <link rel="stylesheet" type="text/css" href="css/perfilStyle.css" />
+      
         <title>Enregable TP 5</title>
         
     </head>
@@ -35,7 +36,7 @@
                  </div>
          
                  <div>
-                     <div id="iconSalir"class="iconSalir"></div>
+                     <div class="iconSalir"></div>
                      <p id="salir"class="salir">Salir</p>
                  </div>
             
@@ -100,15 +101,79 @@
         </div>         
         <div class="formularioEditar">
 
+            <div class="editarInfoGeneral">
+
+                <h1 class="informacionPersonal">Información personal</h1>
+
+                <h3 class="textoEditNombre">Nombre </h3>
+                <input class="EditarNombre"type="text">
+                <p class="textoEditado textoNombreEditado">Pedro</p>                
+
+                <h3 class="textoEditApellido">Apellido </h3>               
+                <input class="EditarApellido"type="text"> 
+                <p class="textoEditado textoApellidoEditado">Gómez</p>                    
+
+                <h3 class="textoEditProfesion">Profesión </h3>               
+                <input class="EditarProfesion"type="text"> 
+                <p class="textoEditado textoProfesionEditado">Médico Veterinario</p>                 
+
+                <h3 class="textoEditCorreo">Correo electrónico </h3>               
+                <input class="EditarCorreo"type="text">
+                <p class="textoEditado textoCorreoEditado">pedroveterinario@gmail.com</p> 
+            </div>
+
+
+            <div class="editarIntereses">
+                <h1 class="editIntereses">Interéses</h1>
+             
+                    <img  class="imagenEdit img1"src="./images/vacas.svg">
+                    <p class="organizacionEdit org1">Asistencia Técnica en Sanidad Animal</p>
+                    <div class="iconSalirEdit iconEdit1"></div>
+
+                    <img  class="imagenEdit img2"src="./images/vacas.svg">
+                    <p class="organizacionEdit org2">Sanidad y Bienestar Animal</p>
+                    <div class="iconSalirEdit iconEdit2"></div>
+
+                    <img  class="imagenEdit img3"src="./images/vacas.svg">
+                    <p class="organizacionEdit org3">Principios del Bienestar Animal</p>  
+                    <div class="iconSalirEdit iconEdit3"></div>            
+
+            </div>
+            <div class="editarGrupos">
+                <h1 class="editIntereses">Grupos</h1>
+             
+                    <img  class="imagenEdit img1"src="./images/vacas.svg">
+                    <p class="organizacionEdit org1">SCIF Sanidad Animal</p>
+                    <div class="iconSalirEdit iconEdit1"></div>
+
+                    <img  class="imagenEdit img2"src="./images/vacas.svg">
+                    <p class="organizacionEdit org2">Mundo Animal</p>
+                    <div class="iconSalirEdit iconEdit2"></div>                   
+
+                    <img  class="imagenEdit img3"src="./images/vacas.svg">
+                    <p class="organizacionEdit org3">Sociedad Protectora de Animales</p>
+                    <div class="iconSalirEdit iconEdit3"></div>     
+            </div> 
             
+            <div class="botones">
+
+                <div class="btnVolver">
+                    <div id="volver"class="botonCentrado">VOLVER</div>
+                </div>
+
+                <div class="btnEditar">
+                    <div id="botonEditar"class="botonCentrado">EDITAR</div>
+                </div>
+
+            </div>
         </div>
         <div class= "containerPerfilFiltro"></div>
            
         </div>
        
     </body>
-    <script src="js/basicsJS.js"></script>
-    <script src="js/perfil.js"></script>
+   
+    <script src="js/editarPerfil.js"></script>
     </html>
     
 
