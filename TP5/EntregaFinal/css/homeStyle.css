@@ -291,59 +291,67 @@ top: 0px;
 .publicacion1 {
 	top: 126px;
 }
+/* estilo card contacto publicaciones */
+
+.cardContactoPubli{
+	position: absolute;
+    left: 1em;
+	top: 20px;
+    width:135px;
+	height: 30px;
+	
+}
 
 .fotoContacto{
 	position: absolute;
 	width: 30px;
 	height: 30px;
-	left: 1em;
-	top: 20px;
+	left: 0px;
+	top: 0px;
 
 }
 .nombrePubli{
 	position: absolute;
 	width: 200px;
 	height: 16px;
-	left: 50px;
-	top: 6px;
+	left: 35px;
+	bottom: -2px;
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 14px;
-	line-height: 16px;
-	
 	color: #252525;
 }
 .textoDetalle{
 position: absolute;
-left: 13.65%;
-right: 78.01%;
-top: 12.79%;
-bottom: 75%;
+left: 35px;
+top: 6px;
+
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
 font-size: 10px;
 line-height: 150%;
 color: #252525;
-
-
 }
+
 .textoMensaje{
 position: absolute;
 left: 4.70%;
 right: 6.39%;
-top: 26.25%;
-bottom: 22.6%;
 
+bottom: 22.6%;
+top: 26.25%;
 font-family: Roboto;
 font-style: normal;
 font-weight: 500;
 font-size: 12px;
 line-height: 150%;
-
 color: #000000;
 }
+
+
+/*-----------*/
 
 .publicacion2 {
 	position: absolute;
@@ -369,10 +377,10 @@ color: #000000;
 position: absolute;
 left: 4.70%;
 right: 6.39%;
-top: 21.25%;
+top: 17.25%;
 bottom: 22.6%;
-height: 263px;
-width: 320px;
+height: 275px;
+width: 333px;
 
 border-radius: 5px;
 
@@ -398,9 +406,24 @@ border-radius: 5px;
 	height: 287px;
 	left: 0px;
 	top: 0px;
-	background-color: chartreuse;
+	background-color: white;
 	border-radius: 5px;
 
+}
+.tituloGruposRecomendados{
+	position: absolute;
+width: 270px;
+height: 14px;
+left: 0px;
+top: 1em;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+color: #252525;
 }
 
 .publicidad {
@@ -545,4 +568,61 @@ background-color: white;
 		
 		}
    
+/*---- Estilo de Card Grupo---*/
 
+.cardGrupo{
+position: absolute;
+width: 250px;
+height: 52px;
+left: 1em;
+
+}
+.recomendado1{
+top: 50px;
+}
+.recomendado2{
+	top:130px;
+}
+.recomendado3{
+	top:210px;
+}
+
+.fotoGrupo{
+position: absolute;
+width: 80px;
+height: 52px;
+left: 0px;
+top: 0px;
+border-radius: 5px;
+}
+.nombreGrupo{
+position: absolute;
+width: 150px;
+height: 18px;
+left: 90px;
+top: 0px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 125%;
+
+color: #252525;
+}
+.detallesGrupo{
+position: absolute;
+width: 76px;
+height: 15px;
+left: 90px;
+top: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 150%;
+color: #252525;
+
+
+}
