@@ -12,24 +12,37 @@
 .contenedorLogo {
 	/* Inicio de sesión */
 	position: relative;
-	width: 1440px;
+	width: 720px;
 	height: 1024px;
+	left:0px;
+	top:0px;
+	align-items: center;
+}
+.logoCompleto{
+	position:absolute;
+	width: 270px;
+	height: 70px;
+	left:32%;
+	top:20%;
+	
 }
 
 .contenedorPatita {
 	position: absolute;
-	left: 24.24%;
+	left: 0%;
 	right: 71.42%;
-	top: 21.39%;
+	top: 0%;
 	bottom: 71.83%;
+	
 }
 
 .contenedorNetvet {
 	position: absolute;
-	left: 28.97%;
+	left: 35%;
 	right: 58%;
 	top: 22.49%;
 	bottom: 72.55%;
+	
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -41,8 +54,8 @@
 	position: absolute;
 	width: 395px;
 	height: 78px;
-	left: 282px;
-	top: 311px;
+	left: 25%;
+	top: 28%;
 
 	font-family: Roboto;
 	font-style: normal;
@@ -52,8 +65,7 @@
 	display: flex;
 	align-items: center;
 	text-align: center;
-
-	color: #000000;
+	color: #252525;
 }
 
 .contenedorFormLogin {
@@ -63,6 +75,7 @@
 	top: 30px;
 	border-radius: 0px;
 	display: flex;
+	
 	/* Formulario Inicio de sesión */
 
 	position: absolute;
@@ -70,23 +83,17 @@
 	height: 550px;
 	left: 759px;
 	top: 30px;
-	background-color: white;
+	
 }
 
 .textoInicioSesion {
 	/*Propiedades*/
 	height: 33px;
 	width: 154px;
-	left: 123px;
-	top: 64px;
-	border-radius: nullpx;
+		
 
 	/*Tipografia*/
-	font-family: Roboto;
-	font-size: 25px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 32.5px;
+	
 	letter-spacing: 0px;
 	text-align: left;
 
@@ -94,7 +101,7 @@
 	position: absolute;
 	left: 30.75%;
 	right: 30.75%;
-	top: 11.64%;
+	top: 1em;
 	bottom: 82.36%;
 	font-family: Roboto;
 	font-style: normal;
@@ -110,9 +117,7 @@
 .rectangulo203 {
 	height: 550px;
 	width: 400px;
-	left: 0px;
-	top: 0px;
-	border-radius: 15px;
+	border-radius: 5px;
 
 	/* rectangle 203 */
 	position: absolute;
@@ -121,7 +126,7 @@
 	top: 0%;
 	bottom: 0%;
 	background: #ffffff;
-	border-radius: 15px;
+
 }
 
 .textoInput {
@@ -150,21 +155,9 @@
 	/*Propiedades*/
 	height: 18px;
 	width: 253px;
-	left: 0px;
-	top: 0px;
-	border-radius: nullpx;
-
-	/*Tipografia*/
-	font-family: Roboto;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
-	text-align: right;
-
+	
 	/* TextoNombre */
-	position: static;
+	position: absolute;
 	left: 0%;
 	right: 15.67%;
 	top: 0%;
@@ -205,8 +198,7 @@
 	/*Propiedades*/
 	height: 40.41344451904297px;
 	width: 300px;
-	left: 0px;
-	top: 0px;
+	
 
 	/* Rectangle 6 */
 	position: absolute;
@@ -337,7 +329,7 @@
 .botonIniciar {
 	/*Propiedades*/
 	height: 40px;
-	width: 300px;
+	width: 304px;
 	left: 0px;
 	top: 0px;
 	border-radius: 0px;
@@ -352,8 +344,8 @@
 .botonIniciaSesion {
 	/*Propiedades*/
 	height: 40px;
-	width: 300px;
-	left: 55px;
+	width: 306px;
+	left: 50px;
 	top: 320px;
 	border-radius: 5px;
 	position: absolute;
@@ -396,7 +388,7 @@
 	bottom: 17.86%;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 15px;
 	line-height: 18px;
 	/* identical to box height */
@@ -488,8 +480,8 @@
 .botonCrear {
 	/*Propiedades*/
 	height: 40px;
-	width: 300px;
-	left: 55px;
+	width: 306px;
+	left: 50px;
 	top: 455px;
 	border-radius: 15px;
 
@@ -497,14 +489,14 @@
 	position: absolute;
 
 	background: #d97931;
-	border-radius: 15px;
+	
 }
 
 .textoBotonCrearCuenta {
 	position: absolute;
 	left: 19.51%;
 	right: 19.24%;
-	top: 8.17%;
+	top: 9.17%;
 	bottom: 0.83%;
 }
 
@@ -522,7 +514,7 @@
 	font-weight: 500;
 	line-height: 0px;
 	letter-spacing: 0em;
-	text-align: center;
+	
 
 	/* textoCrearCuenta */
 	position: absolute;
@@ -530,6 +522,12 @@
 	
 	bottom: 35.71%;
 
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 0px;
+	/* identical to box height */
 	text-align: center;
 	text-transform: uppercase;
 	color: #fbfbfb;
