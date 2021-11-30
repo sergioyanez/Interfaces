@@ -59,10 +59,10 @@
 .botonVolver {
 	/*Propiedades*/
 	height: 40px;
-	width: 300px;
+	width: 306px;
 	left: 89px;
 	top: 596px;
-	border-radius: 15px;
+	
 	/* botonVolver */
 	position: absolute;
 	background: #8f8f8e;
@@ -89,18 +89,8 @@
 	/*Propiedades*/
 	height: 5px;
 	width: 55px;
-	left: 1px;
-	top: 0px;
-
-	/*Tipógrafia*/
-	font-family: Roboto;
-	font-size: 15px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
 	letter-spacing: 0em;
-	text-align: center;
-
+	
 	/* textoVolver */
 	position: absolute;
 	left: 1.75%;
@@ -109,7 +99,7 @@
 	bottom: 0%;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 15px;
 	line-height: 18px;
 	/* identical to box height */
@@ -124,18 +114,19 @@
 
 .botonRegistrarCuenta {
 	height: 40px;
-	width: 300px;
+	width: 306px;
 	left: 90px;
 	top: 520px;
 	border-radius: 15px;	
 	position: absolute;
 	background: #4a4afa;
-	border-radius: 15px;
+	
 }
 
 .textoBotonRegistrar {
 	height: 18px;
 	width: 157px;	
+	
 	position: absolute;
 	left: 17%;
 	right: 23.67%;
@@ -146,18 +137,8 @@
 .textoRegistrarCuenta {
 	height: 5px;
 	width: 180px;
-	left: 0px;
-	top: 0px;
-
-	/*Tipografia*/
-	font-family: Roboto;
-	font-size: 15px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
 	letter-spacing: 0em;
-	text-align: center;
-
+	
 	/* textoRegistrarCuenta */
 	position: absolute;
 	left: 5.1%;
@@ -166,7 +147,7 @@
 	bottom: 0%;
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 15px;
 	line-height: 4px;
 	/* identical to box height */

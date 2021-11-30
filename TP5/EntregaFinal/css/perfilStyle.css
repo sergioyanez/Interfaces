@@ -88,9 +88,9 @@
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 18px;
-	text-align: center;
+	text-align: left;
 	text-transform: uppercase;
 	color: #686767;
 }
@@ -102,7 +102,7 @@
 	left: 560px;
 	top: 280px;
 	background: #d97930;
-	border-radius: 5px;
+	border-radius: 15px;
 	border-color: white;
 }
 
@@ -125,7 +125,7 @@
 .informacion {
 	position: absolute;
 	width: 780px;
-	height: 299px;
+	height: 320px;
 	left: 330px;
 	top: 437px;
 	background-color: white;
@@ -135,7 +135,7 @@
 .menuEditar {
 	position: absolute;
 	width: 780px;
-	height: 299px;
+	height: 320px;
 	left: 0px;
 	top: 0px;
 }
@@ -235,9 +235,9 @@
 .linea {
 	position: absolute;
 	width: 0.2px;
-	height: 295px;
+	height: 319px;
 	left: 20em;
-	top: -5px;
+	top: -8px;
 	background-color: #928e8e;
 }
 
@@ -761,13 +761,14 @@
 
 .loading {
 	position: absolute;
-	height: 80px;
-	width: 80px;
+	height: 77px;
+	width: 77px;
 	left: 170px;
 	top: 300px;
 	background-color: #4a4afa;
-	background: url(../images/loading.png) left center no-repeat;
-	animation: loading 1.5s steps(10) forwards;
+	/* background: url(../images/loading.png) left center no-repeat; */
+	background: url(../images/loading2.png);
+	animation: loading 1.5s steps(12) forwards;
   }
 
   @keyframes loading {
@@ -781,6 +782,6 @@
   
 	100% {
 		top: 300px;
-	  background-position: -960px;
+	  background-position: -875px;
 	}
   }
