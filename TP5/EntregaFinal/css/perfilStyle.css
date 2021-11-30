@@ -731,3 +731,30 @@
 	font-family: Arial, Helvetica, sans-serif;
 	
 }
+
+
+.loading {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	left: 170px;
+	top: 300px;
+	background-color: #4a4afa;
+	background: url(../images/loading.png) left center no-repeat;
+	animation: loading 1.5s steps(10) forwards;
+  }
+
+  @keyframes loading {
+	35% {
+		top: 300px;
+	}
+  
+	50% {
+		top: 300px;
+	}
+  
+	100% {
+		top: 300px;
+	  background-position: -960px;
+	}
+  }

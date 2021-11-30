@@ -62,7 +62,7 @@
 	left: 759px;
 	top: 30px;
 	border-radius: 0px;
-
+	display: flex;
 	/* Formulario Inicio de sesión */
 
 	position: absolute;
@@ -215,6 +215,7 @@
 	top: 0%;
 	bottom: 0%;
 	background: #e3e1e0;
+	border-style: none;
 	border-radius: 5px;
 	border-color: #ffffff;
 }
@@ -252,6 +253,7 @@
 	top: 0%;
 	bottom: 0%;
 	background: #e3e1e0;
+	border-style: none;
 	border-radius: 5px;
 	border-color: #ffffff;
 }
@@ -426,9 +428,9 @@
 	/*Propiedades*/
 	height: 16px;
 	width: 147px;
-	left: 21px;
+	left: 33px;
 	top: -5px;
-	border-radius: nullpx;
+	
 
 	/*Tipografia*/
 	font-family: IBM Plex Sans;
@@ -441,16 +443,7 @@
 
 	/* ¿ Olvidaste la contraseña ? */
 	position: absolute;
-	left: 11.06%;
-	right: 11.54%;
-	top: -74.5%;
-	bottom: -63.9%;
-	font-family: IBM Plex Sans;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
-	/* identical to box height */
+	
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -508,14 +501,6 @@
 }
 
 .textoBotonCrearCuenta {
-	/*Propiedades*/
-	height: 28.000009536743164px;
-	width: 183.74998474121094px;
-	left: 58.5164794921875px;
-	top: 11.66668701171875px;
-	border-radius: 0px;
-
-	/* textoBotonCrearCuenta */
 	position: absolute;
 	left: 19.51%;
 	right: 19.24%;
@@ -527,7 +512,7 @@
 	/*Propiedades*/
 	height: 18px;
 	width: 180px;
-	left: 37px;
+	left: 6px;
 	top: 0px;
 
 	/*Tipografia*/
@@ -535,25 +520,38 @@
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 500;
-	line-height: 18px;
+	line-height: 0px;
 	letter-spacing: 0em;
 	text-align: center;
 
 	/* textoCrearCuenta */
 	position: absolute;
-	left: 3%;
-	right: 21.09%;
-	top: 0%;
+	
+	
 	bottom: 35.71%;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 15px;
-	line-height: 0px;
-	/* identical to box height */
+
 	text-align: center;
 	text-transform: uppercase;
 	color: #fbfbfb;
 }
 
 /*--------------------------------------------------------------------------------*/
+@media only screen and (max-width: 360px) {
+	.contenedorLogo{
+		width: 360px;
+		height: 200px;
+		top:10px
+	}
+	.contenedorFormLogin{
+		width: 360px;
+		height: 410px;
+		top: 230px;
+		margin:auto auto;
+
+	}
+  }
+
+ 
+  
+  
+
