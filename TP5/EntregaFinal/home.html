@@ -14,8 +14,8 @@
             <nav>
             <div id="logo"class="logo"></div>
 
-            <div class="cuadroBusqueda">
-                <div class="iconoBusqueda"></div>
+            <div  class="cuadroBusqueda">
+                <div id="busquedaAvanzada"class="iconoBusqueda"></div>
                 <input class="inputBuscar" type="text" placeholder="Buscar"> 
             </div>
             <div id="iconoHome" class="iconoHome"></div>       
@@ -39,6 +39,58 @@
                 </div>
         
             </nav>
+            <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto">
+
+                <div class="busqueda busque1">
+                    <label class="labelBuscar ">Nombre</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque2">
+                    <label class="labelBuscar ">Apellido</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque3">
+                    <label class="labelBuscar ">Profesión</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque4">
+                    <label class="labelBuscar ">Localidad</label>
+                    <input class="inputBusquedaAvanzada" type="text"> 
+                </div>
+
+                <div class="busqueda busque5">
+                    <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
+                </div>
+                <hr class="lineaBusquedaAvanzada ">
+        <div id="hoverBus"class="hoverBus oculto">
+                <div class="cardBuscada buscado1">
+                    <img class="fotoPerfilBuscado" src="./images/avatar11.svg">
+                    <p class="nombreBuscado">Julian </p>
+                    <p class="apellidoBuscado">Casstrol</p>
+                    <p class="profesionBuscado">Medico veterinario</p>
+                    <p class="localidadBuscado">Tandil</p>
+                </div>
+
+                <div class="cardBuscada buscado2">
+                    <img class="fotoPerfilBuscado" src="./images/avatar10.svg">
+                    <p class="nombreBuscado">Juan </p>
+                    <p class="apellidoBuscado">Crespi</p>
+                    <p class="profesionBuscado">Medico veterinario</p>
+                    <p class="localidadBuscado">Rauch</p>
+                </div>
+
+                <div class="cardBuscada buscado3">
+                    <img class="fotoPerfilBuscado" src="./images/avatar9.svg">
+                    <p class="nombreBuscado">Andrés </p>
+                    <p class="apellidoBuscado">Cavalaro</p>
+                    <p class="profesionBuscado">Medico veterinario</p>
+                    <p class="localidadBuscado">Lobería</p>
+                </div>
+        </div>
+            </div>
 
             <div id="cuadroDeChats"class="cuadroDeChats oculto">
 
@@ -256,10 +308,7 @@
                     
                         
                             <img class="compartir" src="./images/compartir.svg">
-                            <p class="textosReacciones textoCompartir">Compartir</p>
-                    
-                    
-                    
+                            <p class="textosReacciones textoCompartir">Compartir</p>   
                     </div>
 
 
@@ -327,8 +376,7 @@
             <div class="textoDesarrolladores">DESARROLLADO POR KEHLER-YAÑEZ</div>
         </div>
     </footer>
-    <script src="js/basicsJS.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/basicsJS.js"></script> 
     
     </html>
     

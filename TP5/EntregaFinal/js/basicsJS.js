@@ -24,7 +24,8 @@ let menuDesplegable = document.getElementById("menuDesplegable");
 
 let iconEditarPerfil = document.getElementById("iconEditar");
     iconEditarPerfil.addEventListener("click",ir_a_EditarPerfil);
-
+    
+let editarDatos=document.getElementById("btnEditar");
 
 let editar = document.getElementById("editar");
     editar.addEventListener("click",ir_a_EditarPerfil);
@@ -38,6 +39,7 @@ let salir = document.getElementById("salir");
 
 let fotoChat = document.getElementById("amigo1");
     fotoChat.addEventListener("click", mostrarDesplegableDeChat);
+
 let desplegableChat =document.getElementById("chatPersonal");
 
 let cerrar = document.getElementById("cerrar");
@@ -83,6 +85,9 @@ function mostrarDesplegable(){
         menuDesplegable.classList.remove("oculto");
         menuDesplegable.classList.add("desocultar");
         controldesplegable=false;
+        cerrarChatPersonal();
+        cortarVideoLlamada();
+        cerrarVentanaChats();
     }
     else{
         menuDesplegable.classList.add("oculto");
@@ -93,11 +98,13 @@ function mostrarDesplegable(){
 }
 
 function mostrarDesplegableDeChat(){
-    if(controldesplegableChat){
-        
+    if(controldesplegableChat){        
         desplegableChat.classList.remove("oculto");
         desplegableChat.classList.add("desocultar");
         controldesplegableChat=false;
+       
+        editarDatos.classList.add("oculto");
+
     }
    
 }
@@ -121,4 +128,55 @@ function cortarVideoLlamada(){
 function cerrarVentanaChats(){  
     cuadroChats.classList.add("oculto");
     cuadroChats.classList.remove("desocultar");
+}
+
+let control=true;
+let iconoChat = document.getElementById("iconoChat");
+    iconoChat.addEventListener("click",ir_a_Chats);
+let chatDesplegable = document.getElementById("cuadroDeChats");
+
+function ir_a_Chats(){
+    if(control){
+        chatDesplegable.classList.remove("oculto");
+        chatDesplegable.classList.add("desocultar");
+        control=false;
+    }
+    else{
+        chatDesplegable.classList.add("oculto");
+        chatDesplegable.classList.remove("desocultar");
+        control=true;
+    }
+   
+}
+let controlBusqueda=true;
+let busquedas=document.getElementById("cuadroDeBusquedas")
+let cuadroBusqueda=document.getElementById("busquedaAvanzada");
+    cuadroBusqueda.addEventListener("click",abrirCuadroDeBusqueda);
+
+function abrirCuadroDeBusqueda(){
+    if(controlBusqueda){
+        busquedas.classList.remove("oculto");
+        busquedas.classList.add("desocultar");
+        controlBusqueda=false;
+        if(hoverBus.classList.contains("desocultar")){
+            hoverBus.classList.add("oculto");
+            hoverBus.classList.remove("desocultar");
+        }
+    }
+    else{
+        busquedas.classList.add("oculto");
+        busquedas.classList.remove("desocultar");
+        controlBusqueda=true;
+    }
+       
+    
+}
+
+let btnBuscarAvanzado=document.getElementById("btnBuscarAvanzado");
+btnBuscarAvanzado.addEventListener("click",desocultaBusqueda);
+let hoverBus=document.getElementById("hoverBus");
+
+function desocultaBusqueda(){
+hoverBus.classList.remove("oculto");
+hoverBus.classList.add("desocultar");
 }

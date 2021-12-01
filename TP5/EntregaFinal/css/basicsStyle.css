@@ -297,13 +297,25 @@ input:focus {
 }
 
 .cuadroDeChats{
-	position: absolute;
+position: absolute;
 width: 272px;
 height: 446px;
 left: 889px;
 top: 70px;
 background-color: rgb(255, 255, 255);
+
+
+}
+
+.cuadroDeBusquedas{
+position: absolute;
+width: 592px;
+height: 446px;
+left:280px;
+top: 70px;
+background-color:#e8e2cd;
 z-index: 1;
+border-radius: 5px;
 
 }
 
@@ -316,6 +328,7 @@ z-index: 1;
 	background-color: rgb(240, 238, 218);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	
 }
 
 .videollamada{
@@ -324,8 +337,6 @@ z-index: 1;
 	height: 15px;
 	left: 180px;
 	top:30px;
-
-
 }
 
 .cerrar{
@@ -342,8 +353,7 @@ z-index: 1;
 	height: 600px;
 	left: 280px;
 	top:200px;
-	background-color: #252525;
-	
+	background-color: #252525;	
 	border-radius: 10px;
 }
 .fondoBlancoVideo1{
@@ -493,6 +503,175 @@ z-index: 1;
 	bottom: 15px;
 	color: #d97930;
 }
+.busqueda{
+	position: absolute;
+	width: 50px;
+	height: 14px;
+	left: 10px;
+	top: 15px;
+	
+}
+.busque1{
+	left: 10px;
+}
+
+.busque2{
+	left: 130px;
+}
+
+.busque3{	
+	left: 250px;
+}
+
+.busque4{	
+	left: 370px;
+}
+
+.busque5{
+	left: 520px;
+}
+
+.cardBuscada{
+	position: absolute;
+	width: 592px;
+	height: 40px;
+	top: 10px;
+	background-color: #e6e6e6;
+}
+
+.fotoPerfilBuscado{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 0px;
+	top: 0px;
+
+}
+
+.hoverBus :hover{
+	background-color: #c2c2c2;
+	
+}
+
+.nombreBuscado{
+	position: absolute;
+	width: 80px;
+	height: 12px;	
+	left: 80px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;	
+	color: #252525;
+}
+
+.apellidoBuscado{
+	position: absolute;
+	width: 80px;
+	height: 12px;	
+	left: 180px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;	
+	color: #252525;
+}
+
+.profesionBuscado{
+	position: absolute;
+	width: 100px;
+	height: 12px;
+	left: 280px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;	
+	color: #252525;
+}
+
+.localidadBuscado{
+	position: absolute;
+	width: 80px;
+	height: 12px;
+	left: 450px;
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;	
+	color: #252525;
+}
+.buscado1{
+	top: 50px;	
+}
+
+.buscado2{
+	top: 100px;
+	border-bottom: #252525;
+}
+
+.buscado3{
+	top: 150px;
+	border-bottom: #252525;
+}
+
+.labelBuscar{
+	
+	width: 50px;
+	height: 14px;
+	top: 5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 10px;
+	line-height: 16px;	
+	color: #5f5f5f;
+	
+}
+
+
+.inputBusquedaAvanzada{
+	width: 70px;
+	height: 15px;
+	top: 3px;
+	position: absolute;
+	background: #ffffff;
+	border-radius: 3px;
+	outline: none;
+	border-style: none;
+	margin-left: 3px;
+	font-size: 10px;
+}
+
+
+
+.botonBuscarAvanzado{
+	position: absolute;
+	width: 50px;
+	height: 17px;
+	top: 3px;
+	right: -10px;
+	background-color: rgba(217, 121, 48, 1);	
+	border-radius: 15px;
+	font-size: 10px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.lineaBusquedaAvanzada{
+	width: 590px;
+	height: 0.4px;
+	position: absolute;
+	top: 45px;
+	background-color:#5f5f5f;
+}
 
 .cardAmigo{
 	position: absolute;
@@ -513,8 +692,7 @@ top: 11px;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 14px;
-	line-height: 16px;
-	
+	line-height: 16px;	
 	color: #252525;
 	
 	}

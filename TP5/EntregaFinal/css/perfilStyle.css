@@ -104,13 +104,15 @@
 	background: #d97930;
 	border-radius: 15px;
 	border-color: white;
+	z-index: 1;
+	
 }
 
 .textoEditar {
 	position: absolute;
-	width: 178px;
-	height: 40px;
-	left: 0px;
+	width: 30px;
+	height: 18px;
+	left: 54px;
 	top: -10px;
 	font-family: roboto;
 	font-size: 18px;
@@ -764,9 +766,7 @@
 	height: 77px;
 	width: 77px;
 	left: 170px;
-	top: 300px;
-	background-color: #4a4afa;
-	/* background: url(../images/loading.png) left center no-repeat; */
+	top: 300px;	
 	background: url(../images/loading2.png);
 	animation: loading 1.5s steps(12) forwards;
   }
