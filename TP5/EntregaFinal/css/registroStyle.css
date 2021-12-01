@@ -7,29 +7,18 @@
 }
 
 .fondoFormregistro {
-	/*Propiedades*/
-	height: 700px;
-	width: 400px;
-	left: 520px;
-	top: 104px;
-	border-radius: 15px;
-
-	/* fondoFormRegistro */
+	
 	position: absolute;
 	width: 400px;
-	height: 700px;
+	height: 750px;
 	left: 520px;
-	top: 104px;
+	top: 80px;
 	background: #ffffff;
 	border-radius: 15px;
 }
 
 .formRegistro {
 	/*Propiedades*/
-	height: 679px;
-	width: 483px;
-	left: 478px;
-	top: 172px;
 	border-radius: 0px;
 
 	/* formRegistro */
@@ -37,16 +26,14 @@
 	width: 483px;
 	height: 679px;
 	left: 478px;
-	top: 172px;
+	top: 80px;
+	
 }
 
 .fondoFormRegistro {
-	height: 679px;
+	height: 770px;
 	width: 483px;
-	left: 0px;
-	top: 0px;
-	border-radius: 15px;
-	/* fondoFormRegistro */
+	
 	position: absolute;
 	left: 0%;
 	right: 0%;
@@ -54,6 +41,7 @@
 	bottom: 0%;
 	background: #ffffff;
 	border-radius: 15px;
+	/* z-index:2; */
 }
 
 .botonVolver {
@@ -61,7 +49,7 @@
 	height: 40px;
 	width: 306px;
 	left: 89px;
-	top: 596px;
+	top: 676px;
 	
 	/* botonVolver */
 	position: absolute;
@@ -95,7 +83,7 @@
 	position: absolute;
 	left: 1.75%;
 	right: 1.75%;
-	top: 0%;
+	top: 9%;
 	bottom: 0%;
 	font-family: Roboto;
 	font-style: normal;
@@ -116,7 +104,7 @@
 	height: 40px;
 	width: 306px;
 	left: 90px;
-	top: 520px;
+	top: 600px;
 	border-radius: 15px;	
 	position: absolute;
 	background: #4a4afa;
@@ -143,7 +131,7 @@
 	position: absolute;
 	left: 5.1%;
 	right: 5.73%;
-	top: 0%;
+	top: -3%;
 	bottom: 0%;
 	font-family: Roboto;
 	font-style: normal;
@@ -220,6 +208,40 @@
 	border-radius: 5px;
 	border-color: #ffffff;
 	border-style: none;
+}
+.textoRepetirContrasenia{
+	height: 18px;
+	width: 120px;
+	letter-spacing: 0px;
+	
+	/* textoContraseña */
+	position: absolute;
+	left: 18.83%;
+	right: 66.05%;
+	top: 71.24%;
+	bottom: 37.11%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	color: #a0a0a0;
+}
+.contenedorRepetirContrasenia{
+	height: 40.41344451904297px;
+	width: 300px;
+	
+	/* contenedorContraseña */
+	position: absolute;
+	left: 18.84%;
+	right: 19.05%;
+	top: 76%;
+	bottom: 31.13%;
+	opacity: 0.64;
+	border-radius: 15px;
 }
 
 .textoCorreo {
