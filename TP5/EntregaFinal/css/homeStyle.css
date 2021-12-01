@@ -440,6 +440,16 @@ color: #252525;
 	top: 284px;
 	border-radius: 5px;
 }
+
+.publicidadAnimada{
+	position: absolute;
+	width: 270px;
+	height: 150px;
+	left: 0px;
+	top: 537.2px;
+	border-radius: 5px;
+	background-color: #ffffff;
+}
 /* estilo de cards contactos*/
 
 .cardContacto{

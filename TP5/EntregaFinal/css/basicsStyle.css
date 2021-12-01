@@ -468,6 +468,7 @@ border-radius: 5px;
 	background-color: #dddcdc;
 	color: #151414;
 	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
 
 }
 
@@ -480,6 +481,7 @@ border-radius: 5px;
 	background-color: rgba(244, 191, 110, 0.5);
 	color: #151414;
 	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
 }
 
 .inputMensajeChat{
@@ -769,7 +771,7 @@ top: 11px;
 }
 
 .cerrarChats{
-	width: 272px;
+	width: 269px;
 	height: 28px;
 	position: absolute;
 	left: 0%;
