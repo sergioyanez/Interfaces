@@ -25,7 +25,13 @@
 .familiaFuenteGral {
 	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+head{
+	height: 70px;
+	width: 1440px;
+}
+body{
+	background: #f5f2ed;
+}
 /* Barra de Navegación */
 nav {
 	height: 70px;
@@ -159,28 +165,35 @@ input:focus {
 	position: absolute;
 	height: 90px;
 	width: 150px;
-	right: 215px;
+	right: 10%;
 	top: 50px;
 	background-color: #ffffff;
-	z-index: 3;
 	border-radius: 5px;
+}
+
+.contenedorEditarPerfil{
+	position: absolute;
+	height: 34px;
+	width: 150px;
+	right: 0%;
+	top: 0%;
 }
 
 .iconEditar {
 	position: absolute;
-	height: 25px;
-	width: 25px;
-	left: 5px;
+	height: 20px;
+	width: 20px;
+	left: 1em;
 	top: 14px;
-	background: url(../images/editar.svg);
-	background-repeat: no-repeat;
+	/* background: url(../images/editar.svg);
+	background-repeat: no-repeat; */
 }
 
 .editar {
 	position: absolute;
 	height: 20px;
 	width: 100px;
-	left: 45px;
+	left: 28%;
 	top: 5px;
 	/* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', */
 		/* 'Helvetica Neue', sans-serif; */
@@ -196,22 +209,35 @@ input:focus {
 
 	color: #686767;
 }
+.contenedorSalir{
+	position: absolute;
+	height: 35px;
+	width: 150px;
+	right: 0%;
+	top: 50%;
+	
+}
+/* .contenedorSalir:hover{
+	color:black;
+	background-color: #afacac;
+	
+} */
 
 .iconSalir {
 	position: absolute;
-	height: 25px;
-	width: 25px;
-	left: 5px;
-	top: 54px;
-	background: url(../images/salir.svg);
+	height: 20px;
+	width: 20px;
+	left: 1em;
+	top: 0%;
+	/* background: url(../images/salir.svg); */
 }
 
 .salir {
 	position: absolute;
 	height: 20px;
 	width: 100px;
-	left: 45px;
-	top: 45px;
+	left: 28%;
+	top: -8px;
 	/* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		'Helvetica Neue', sans-serif; */
 	font-style: normal;

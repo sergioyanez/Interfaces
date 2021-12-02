@@ -1,16 +1,18 @@
+
 .containerHome {
 
-	position: relative;
+	position: absolute;
 	width: 1440px;
-	height: 1024px;
-	background: #f5f2ed;
+	height: 954px;
+	/* background: #f5f2ed; */
+	top:10%;
 }
 
 .columnaSugeridos {
 	height: 607px;
 	width: 200px;
 	left: 280px;
-	top: 70px;
+	top: 0.5%;
 	border-radius: 5px;
 	/* background: white; */
 	position: absolute;
@@ -140,7 +142,7 @@ top: 100px;
 	height: 875px;
 	width: 371px;
 	left: 500px;
-	top: 70px;
+	top: 0.5%;
 	border-radius: 5px;
 	/* background: white; */
 	position: absolute;
@@ -398,7 +400,7 @@ border-radius: 5px;
 	height: 549.2000122070312px;
 	width: 270px;
 	right: 280px;
-	top: 70px;
+	top: 0.5%;
 	border-radius: 5px;
 	/* background: white; */
 	position: absolute;
@@ -414,6 +416,8 @@ border-radius: 5px;
 	top: 0px;
 	background-color: white;
 	border-radius: 5px;
+	z-index:-1;
+	
 
 }
 .tituloGruposRecomendados{

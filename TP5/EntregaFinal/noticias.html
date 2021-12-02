@@ -11,95 +11,70 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <title>Enregable TP 5</title>
+        <nav>
+            <div id="logo"class="logo"></div>
+
+            <div  class="cuadroBusqueda">
+                <div class="iconoBusqueda"></div>
+                <input class="inputBuscar" type="text" placeholder="Buscar"> 
+            </div>
+            <div id="busquedaAvanzada"class="iconoBusquedaAvanzada"></div>
+            <div id="iconoHome" class="iconoHome"></div>       
+            <div  id="iconoNoticias" class="iconoNoticias"></div>
+            <div  id="iconoChat" class="iconoChat"></div>
+
+            <div  id="imagenPerfil" class="imagenPerfil"></div>
+            <div  id="NombrePerfil"class="NombrePerfil">
+                <p class="formatoPerfil">Pedro Gomez</p>
+                </div>
+
+                
+               
+        
+            </nav>
+            <div id="menuDesplegable"class="desplegable oculto bordeContenedores">
+                <div class="contenedorEditarPerfil">
+                    <img id="iconEditar"class="iconEditar" src="./images/editar.svg">
+                    <p id="editar"class="editar">Editar perfil</p>
+                </div>
+            
+                <div class="contenedorSalir">
+                    <img id="iconSalir"class="iconSalir" src="./images/salir.svg">
+                    <p id="salir"class="salir">Salir</p>
+                </div>
+            </div>
+            <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto bordeContenedores">
+
+                <div class="busqueda busque1">
+                    <label class="labelBuscar ">Apellido</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque2">
+                    <label class="labelBuscar ">Publicaciones</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque3">
+                    <label class="labelBuscar ">Especialidad</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque4">
+                    <label class="labelBuscar ">Localidad</label>
+                    <input class="inputBusquedaAvanzada" type="text"> 
+                </div>
+
+                <div class="busqueda busque5">
+                    <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
+                </div>
+                <hr class="lineaBusquedaAvanzada ">
+            </div>  
         
     </head>
     <body>
         <div class= "containerHome">
-            <nav>
-                <div id="logo"class="logo"></div>
-    
-                <div  class="cuadroBusqueda">
-                    <div class="iconoBusqueda"></div>
-                    <input class="inputBuscar" type="text" placeholder="Buscar"> 
-                </div>
-                <div id="busquedaAvanzada"class="iconoBusquedaAvanzada"></div>
-                <div id="iconoHome" class="iconoHome"></div>       
-                <div  id="iconoNoticias" class="iconoNoticias"></div>
-                <div  id="iconoChat" class="iconoChat"></div>
-    
-                <div  id="imagenPerfil" class="imagenPerfil"></div>
-                <div  id="NombrePerfil"class="NombrePerfil">
-                    <p class="formatoPerfil">Pedro Gomez</p>
-                    </div>
-    
-                <div id="menuDesplegable"class="desplegable oculto">
-                    <div>
-                        <div id="iconEditar"class="iconEditar"></div>
-                        <p id="editar"class="editar">Editar perfil</p>
-                    </div>
-    
-                    <div>
-                        <div id="iconSalir"class="iconSalir"></div>
-                        <p id="salir"class="salir">Salir</p>
-                    </div>
             
-                </nav>
-                <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto">
-    
-                    <div class="busqueda busque1">
-                        <label class="labelBuscar ">Apellido</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque2">
-                        <label class="labelBuscar ">Publicaciones</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque3">
-                        <label class="labelBuscar ">Especialidad</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque4">
-                        <label class="labelBuscar ">Localidad</label>
-                        <input class="inputBusquedaAvanzada" type="text"> 
-                    </div>
-    
-                    <div class="busqueda busque5">
-                        <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
-                    </div>
-                    <hr class="lineaBusquedaAvanzada ">
-                </div>    
-            <div id="hoverBus"class="hoverBus oculto">
-                           
-                    <div class="cardBuscada buscado1">
-                        <img class="fotoPerfilBuscado" src="./images/avatar11.svg">
-                        <p class="nombreBuscado">Julian </p>
-                        <p class="apellidoBuscado">Casstrol</p>
-                        <p class="profesionBuscado">Medico veterinario</p>
-                        <p class="localidadBuscado">Tandil</p>
-                    </div>
-    
-                    <div class="cardBuscada buscado2">
-                        <img class="fotoPerfilBuscado" src="./images/avatar10.svg">
-                        <p class="nombreBuscado">Juan </p>
-                        <p class="apellidoBuscado">Crespi</p>
-                        <p class="profesionBuscado">Medico veterinario</p>
-                        <p class="localidadBuscado">Rauch</p>
-                    </div>
-    
-                    <div class="cardBuscada buscado3">
-                        <img class="fotoPerfilBuscado" src="./images/avatar9.svg">
-                        <p class="nombreBuscado">Andrés </p>
-                        <p class="apellidoBuscado">Cavalaro</p>
-                        <p class="profesionBuscado">Medico veterinario</p>
-                        <p class="localidadBuscado">Lobería</p>
-                    </div>
-                    <div >
-                        <button id="btnCerrarAvanzado" class="botonCerrarAvanzado ">Cerrar</button>                  
-                    </div>                
-            </div>
         
             <div id="cuadroDeChats"class="cuadroDeChats oculto">
 
@@ -198,7 +173,7 @@
 
             </div>
         
-            <div id="pantallaVideo" class="pantallaVideo oculto">
+            <div id="pantallaVideo" class="pantallaVideo oculto ">
                     <div class="fondoBlancoVideo1"></div>
                     <img class="imagenUsuario" src="./images/usuarioEnVideo.svg"> 
                     <p class="nombreUsuarioVideo">Pedro Gomez</p>
@@ -211,7 +186,7 @@
                     <img id="colgar"class="colgar" src="./images/colgar.svg"> 
             </div>
             <section class="columnaSugeridos">
-                <div class="datosPerfil">
+                <div class="datosPerfil bordeContenedores">
                     <img class="fotoPortada" src="./images/fotofondoperfil.svg">
                     <div class="blancoFotoPerfil"> </div>
                     <img class="fotoPerfil" src="./images/imagenPerfil1.svg">
@@ -224,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sugerenciasContactos">
+                <div class="sugerenciasContactos bordeContenedores">
                     <p class="tituloSugerencias">AMPLIA TU RED DE CONTACTOS</p>
                     <div class="cardContacto contactoSugerido1">
                         <img class="fotoPerfilContacto" src="./images/avatar1.svg">
@@ -263,7 +238,7 @@
                     <div class="tituloPublicacion">
                         <p class="textoTituloPublicacion">Videos</p>
                     </div>
-                    <div class="noticia noticia1">
+                    <div class="noticia noticia1 bordeContenedores">
                         <img class="imagenNoticias" src="./images/video1.svg">
                         <div class="tituloNoticia">Denuncian serias irregularidades en Sanidad Animal en Bariloche</div>
                         <div class="detalleNoticia detalleNoticia1">
@@ -280,7 +255,7 @@
                         </div>
                 
                 </div>
-                <div class="noticia noticia2">
+                <div class="noticia noticia2 bordeContenedores">
                     <img class="imagenNoticias" src="./images/video_2.svg">
                     <div class="tituloNoticia">La gripe aviar se extiende por Europa y Asia</div>
                     <div class="detalleNoticia detalleNoticia2">
@@ -297,7 +272,7 @@
                     </div>
             
             </div>
-            <div class="noticia noticia3">
+            <div class="noticia noticia3 bordeContenedores">
                 <img class="imagenNoticias" src="./images/video3.svg">
                 <div class="tituloNoticia">Brigada de Salud Animal</div>
                 <div class="detalleNoticia detalleNoticia3">
@@ -319,7 +294,7 @@
                     <div class="tituloVideos">
                         <p class="textoTituloPublicacion">Articulos</p>
                     </div>
-                    <div class="noticia articulo1">
+                    <div class="noticia articulo1 bordeContenedores">
                         <img class="imagenNoticias" src="./images/articulo1.svg">
                         <div class="tituloNoticia">Organización Mundial de Sanidad Animal reevalua estatus sanitario</div>
                         <div class="detalleNoticia detalleNoticia1">
@@ -357,7 +332,7 @@
             </section>
                 
                     <aside class="columnaRecomyPubli">
-                <aside class="sugerenciasGrupos">
+                <aside class="sugerenciasGrupos bordeContenedores">
                     <div class= "tituloGruposRecomendados">GRUPOS RECOMENDADOS PARA TI</div>
                     <div class= "recomendado1 cardGrupo">
                         <img class="fotoGrupo" src="./images/Photo1.svg">
@@ -375,9 +350,9 @@
                         <p class="detallesGrupo">170 miembros</p>
                     </div>
                 </aside>
-               <img class="publicidad" src="./images/banner1.svg">
+               <img class="publicidad bordeContenedores" src="./images/banner1.svg">
 
-               <div class=contenedorPublicidadAnimada> 
+               <div class="contenedorPublicidadAnimada bordeContenedores"> 
                 <div class="publicidadAnimada2"></div> 
             </div>
                
@@ -386,7 +361,7 @@
 
 </div>
         </body>
-        <footer>
+        <footer class="bordeContenedores">
             <div class="logoyDesarroll">
                 <img class="logoFooter" src="./images/logo.svg">
                 <div class="textoDesarrolladores">DESARROLLADO POR KEHLER-YAÑEZ</div>

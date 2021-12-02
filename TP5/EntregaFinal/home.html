@@ -10,11 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <title>Enregable TP 5</title>
-        
-    </head>
-    <body>
-        <div class= "containerHome">
-            <nav>
+        <nav>
             <div id="logo"class="logo"></div>
 
             <div  class="cuadroBusqueda">
@@ -31,18 +27,21 @@
                 <p class="formatoPerfil">Pedro Gomez</p>
                 </div>
 
-            <div id="menuDesplegable"class="desplegable oculto">
-                <div>
-                    <div id="iconEditar"class="iconEditar"></div>
-                    <p id="editar"class="editar">Editar perfil</p>
-                </div>
-
-                <div>
-                    <div id="iconSalir"class="iconSalir"></div>
-                    <p id="salir"class="salir">Salir</p>
-                </div>
+                
+               
         
             </nav>
+            <div id="menuDesplegable"class="desplegable oculto bordeContenedores">
+                <div class="contenedorEditarPerfil">
+                    <img id="iconEditar"class="iconEditar" src="./images/editar.svg">
+                    <p id="editar"class="editar">Editar perfil</p>
+                </div>
+            
+                <div class="contenedorSalir">
+                    <img id="iconSalir"class="iconSalir" src="./images/salir.svg">
+                    <p id="salir"class="salir">Salir</p>
+                </div>
+            </div>
             <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto bordeContenedores">
 
                 <div class="busqueda busque1">
@@ -69,7 +68,12 @@
                     <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
                 </div>
                 <hr class="lineaBusquedaAvanzada ">
-            </div>    
+            </div>  
+    </head>
+    <body>
+        <div class= "containerHome">
+            
+             
         <div id="hoverBus"class="hoverBus oculto">
 
                 <div class="cardBuscada buscado1">
@@ -396,8 +400,8 @@
 
     
     </body>
-    <footer>
-        <div class="logoyDesarroll">
+    <footer class="bordeContenedores">
+        <div class="logoyDesarroll ">
             <img class="logoFooter" src="./images/logo.svg">
             <div class="textoDesarrolladores">DESARROLLADO POR KEHLER-YAÑEZ</div>
         </div>
