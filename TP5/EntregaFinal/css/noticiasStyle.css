@@ -126,3 +126,39 @@ color: rgba(104, 103, 103, 0.6);
 .articulo2{
     top: 216px;
 }
+
+.publicidadAnimada2{
+	position: absolute;
+	width: 225px;
+	height: 225px;
+	left: 22.5px;
+	top: 537.2px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	
+	animation: banner2 15s steps(45)  infinite   ;
+}
+
+
+@keyframes banner2 { 
+	0%{
+		background: url(../images/sanidad1.jpg) repeat-x;
+	}
+
+	
+
+	50%{
+		background: url(../images/sanidad2.jpg) repeat-x;
+	}
+
+	75%{
+		background: url(../images/sanidad3.jpg) repeat-x;
+	}
+
+	
+
+	100% {		
+		background: url(../images/sanidad4.jpg) repeat-x;
+	  
+	}
+}

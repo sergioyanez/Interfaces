@@ -97,7 +97,7 @@
 
 .botonEditar {
 	position: absolute;
-	width: 178px;
+	width: 180px;
 	height: 40px;
 	left: 660px;
 	top: 280px;
@@ -108,14 +108,22 @@
 	
 }
 
+.botonEditar:hover{
+	background-color: #d97930;
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
 .textoEditar {
 	position: absolute;
 	width: 30px;
 	height: 18px;
-	left: 54px;
+	left: 55px;
 	top: -10px;
 	font-family: roboto;
-	font-size: 18px;
+	font-size: 20px;
 	font-style: normal;
 	font-weight: bold;
 	line-height: 21px;
@@ -728,6 +736,14 @@
 	border-radius: 15px;
 }
 
+.btnVolver:hover{
+	background-color: rgba(143, 143, 142, 1);
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
 .btnEditar{
 	position: absolute;
 	width: 140px;
@@ -738,23 +754,32 @@
 	border-radius: 15px;
 	
 }
+.btnEditar:hover{
+	background-color:  rgba(74, 74, 250, 1);
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
+}
 
 .botonCentrado{
 	position: absolute;	
 	color: white;
-	top: 20%;
-	left: 25%;
+	top: 15%;
+	left: 30%;
 	text-align: center;
 	font-family: Roboto;
 	font-weight: 600;
 	
 	
 }
+
+
 .botonCentrado2{
 	position: absolute;	
 	color: white;
-	top: 20%;
-	left: 20%;
+	top: 15%;
+	left: 25%;
 	text-align: center;
 	font-family: Roboto;
 	font-weight: 600;

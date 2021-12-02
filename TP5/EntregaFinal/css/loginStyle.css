@@ -10,40 +10,58 @@
 -----------------------------------------------------------------------------------------------*/
 
 .contenedorLogo {
-	/* Inicio de sesión */
-	position: relative;
-	width: 720px;
-	height: 1024px;
-	left:0px;
-	top:0px;
-	align-items: center;
+ height: 100vmin; 
+  overflow: hidden;
+  position: absolute;
+  width: 100vmin;
+  opacity:0.7;
+  z-index:2;
+  
 }
+
+
 .logoCompleto{
-	position:absolute;
-	width: 270px;
-	height: 70px;
-	left:32%;
-	top:20%;
+	display: block;
+	height: 110vmin;
+	left: -5vmin;
+	position: absolute;
+	top: -5 vmin;
+	width: 110vmin;
 	
 }
 
+.logoRed {
+	opacity: 1;
+  }
+  .logoBlue {
+	opacity: .7;
+  }
+
 .contenedorPatita {
 	position: absolute;
-	left: 0%;
+	left: 35%;
 	right: 71.42%;
-	top: 0%;
+	top: 20%;
 	bottom: 71.83%;
 	
 }
 
 .contenedorNetvet {
 	position: absolute;
-	left: 35%;
+	left: 45%;
 	right: 58%;
 	top: 22.49%;
 	bottom: 72.55%;
 	
 }
+
+.circuloGradiente {
+	position: absolute;
+	z-index:0;
+	top: 0; right: 0; bottom: 0px; left: 0;
+	background: radial-gradient(circle at var(--x, 50%) var(--y, 30%), hsl(31, 80%, 80%) 20%, #edf0f5 30%);
+	
+  }
 
 /*---------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------*/
@@ -352,6 +370,14 @@
 	border-radius: 15px;
 }
 
+.botonIniciaSesion:hover{
+	background-color:#4a4afa;
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
+}
+
 .textoboton {
 	/*Propiedades*/
 	height: 28px;
@@ -483,13 +509,20 @@
 	left: 50px;
 	top: 455px;
 	border-radius: 15px;
-
 	/* botonCrear */
 	position: absolute;
-
 	background: #d97931;
 	
 }
+
+.botonCrear:hover {
+	background-color: #d97930;
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
+  
+  }
 
 .textoBotonCrearCuenta {
 	position: absolute;

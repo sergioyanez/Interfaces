@@ -49,12 +49,19 @@
 	height: 40px;
 	width: 306px;
 	left: 89px;
-	top: 676px;
-	
+	top: 676px;	
 	/* botonVolver */
 	position: absolute;
 	background: #8f8f8e;
 	border-radius: 15px;
+}
+
+.botonVolver:hover{
+	background-color: #8F8F8E;
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
 }
 
 .textoBotonVolver {
@@ -109,6 +116,14 @@
 	position: absolute;
 	background: #4a4afa;
 	
+}
+
+.botonRegistrarCuenta:hover{
+	background-color: #4a4afa;
+	opacity: 0.7;
+	color: white;
+	transition: background-color .5s ease-in;
+	transition: color .5s ease-in;
 }
 
 .textoBotonRegistrar {
@@ -449,10 +464,10 @@
 	height: 33px;
 	width: 237px;
 	left: 116px;
-	top: 100px;
+	top: 80px;
 	border-radius: nullpx;
 	/*Tipografia*/
-	font-family: IBM Plex Sans;
+	
 	font-size: 25px;
 	font-style: normal;
 	font-weight: 500;
@@ -462,11 +477,8 @@
 
 	/* Registrate en NetVet */
 	position: absolute;
-	left: 28.02%;
-	right: 25.92%;
-	top: 11.73%;
-	bottom: 80.41%;
-	font-family: IBM Plex Sans;
+
+
 	font-style: normal;
 	font-weight: 500;
 	font-size: 25px;

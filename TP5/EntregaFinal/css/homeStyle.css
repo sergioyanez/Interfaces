@@ -443,12 +443,38 @@ color: #252525;
 
 .publicidadAnimada{
 	position: absolute;
-	width: 270px;
-	height: 150px;
-	left: 0px;
+	width: 225px;
+	height: 225px;
+	left: 22.5px;
 	top: 537.2px;
 	border-radius: 5px;
 	background-color: #ffffff;
+	
+	animation: banner 15s steps(45)  infinite   ;
+}
+
+
+@keyframes banner { 
+	0%{
+		background: url(../images/publicidad1.jfif) repeat-x;
+	}
+
+	
+
+	50%{
+		background: url(../images/publicidad5.jfif) repeat-x;
+	}
+
+	75%{
+		background: url(../images/publicidad6.jfif) repeat-x;
+	}
+
+	
+
+	100% {		
+		background: url(../images/publicidad7.jpg) repeat-x;
+	  
+	}
 }
 /* estilo de cards contactos*/
 
