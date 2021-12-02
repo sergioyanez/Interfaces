@@ -3,7 +3,7 @@
 	position: relative;
 	width: 1440px;
 	height: 1024px;
-	background: #edf0f5;
+	background: #f5f2ed;
 }
 
 .columnaSugeridos {
@@ -435,18 +435,27 @@ color: #252525;
 .publicidad {
 	position: absolute;
 	width: 270px;
-	height: 255.2px;
+	height: 238px;
 	left: 0px;
-	top: 284px;
+	top: 292px;
 	border-radius: 5px;
+}
+.contenedorPublicidadAnimada{
+	position: absolute;
+	width: 270px;
+	height: 240px;
+	left: 0px;
+	top: 537.2px;
+	border-radius: 5px;
+	background-color: #ffffff;
 }
 
 .publicidadAnimada{
 	position: absolute;
 	width: 225px;
 	height: 225px;
-	left: 22.5px;
-	top: 537.2px;
+	left: 8%;
+	top: 0%;
 	border-radius: 5px;
 	background-color: #ffffff;
 	

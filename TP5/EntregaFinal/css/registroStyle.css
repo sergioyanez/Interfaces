@@ -3,7 +3,9 @@
 	position: relative;
 	width: 1440px;
 	height: 1024px;
-	background: #edf0f5;
+	background: #f5f2ed;
+	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
 }
 
 .fondoFormregistro {
@@ -92,7 +94,7 @@
 	right: 1.75%;
 	top: 9%;
 	bottom: 0%;
-	font-family: Roboto;
+	/* font-family: Roboto; */
 	font-style: normal;
 	font-weight: 600;
 	font-size: 15px;
@@ -148,7 +150,7 @@
 	right: 5.73%;
 	top: -3%;
 	bottom: 0%;
-	font-family: Roboto;
+	/* font-family: Roboto; */
 	font-style: normal;
 	font-weight: 600;
 	font-size: 15px;
@@ -166,7 +168,7 @@
 	top: 409px;
 	border-radius: nullpx;
 
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
@@ -180,7 +182,7 @@
 	right: 66.05%;
 	top: 58.24%;
 	bottom: 37.11%;
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -235,7 +237,7 @@
 	right: 66.05%;
 	top: 71.24%;
 	bottom: 37.11%;
-	font-family: Roboto;
+	/* font-family: Roboto; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -268,7 +270,7 @@
 	border-radius: nullpx;
 
 	/*Tipografia*/
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
@@ -282,7 +284,7 @@
 	right: 56.52%;
 	top: 45.28%;
 	bottom: 50.07%;
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -332,7 +334,7 @@
 	top: 233px;
 	border-radius: nullpx;
 	/*Tipografia*/
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
@@ -346,7 +348,7 @@
 	right: 69.98%;
 	top: 32.32%;
 	bottom: 63.03%;
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -400,7 +402,7 @@
 	border-radius: nullpx;
 
 	/*Tipografia*/
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
@@ -413,7 +415,7 @@
 	right: 71.01%;
 	top: 19.35%;
 	bottom: 75.99%;
-	font-family: IBM Plex Sans;
+	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
@@ -463,22 +465,10 @@
 	/*Propiedades*/
 	height: 33px;
 	width: 237px;
-	left: 116px;
+	left: 125px;
 	top: 80px;
-	border-radius: nullpx;
-	/*Tipografia*/
-	
-	font-size: 25px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 33px;
 	letter-spacing: 0px;
-	text-align: right;
-
-	/* Registrate en NetVet */
 	position: absolute;
-
-
 	font-style: normal;
 	font-weight: 500;
 	font-size: 25px;

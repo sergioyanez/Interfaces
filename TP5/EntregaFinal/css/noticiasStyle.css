@@ -40,6 +40,7 @@ left: 0px;
     
     background: #FFFFFF;
     border-radius: 5px;
+    
 }
 .noticia1{
     top: 30px;
@@ -126,13 +127,21 @@ color: rgba(104, 103, 103, 0.6);
 .articulo2{
     top: 216px;
 }
-
+.contenedorPublicidadAnimada{
+	position: absolute;
+	width: 270px;
+	height: 240px;
+	left: 0px;
+	top: 537.2px;
+	border-radius: 5px;
+	background-color: #ffffff;
+}
 .publicidadAnimada2{
 	position: absolute;
-	width: 225px;
+    width: 225px;
 	height: 225px;
-	left: 22.5px;
-	top: 537.2px;
+	left: 8%;
+	top: 3%;
 	border-radius: 5px;
 	background-color: #ffffff;
 	
