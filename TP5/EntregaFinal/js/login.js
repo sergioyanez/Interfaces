@@ -16,15 +16,15 @@ function crearCuenta(){
     document.location.href ="registro.html";
 }
 
-const svg = document.getElementById('logoCompleto'),
+const logoCompleto = document.getElementById('logoCompleto'),
       logos = document.getElementById('.imagen1'),
       image = document.getElementById('imagen2');
 
 function move(x, y) {
   let dx = (x - window.innerWidth) / window.innerWidth * 10,
       dy = (y - window.innerHeight) / window.innerHeight * 10;
-  svg.style.left = `${dx}vmin`;
-  svg.style.top = `${dy}vmin`;
+      logoCompleto.style.left = `${dx}vmin`;
+      logoCompleto.style.top = `${dy}vmin`;
   dx += 5;
   dy += 5 + 10;
   logos.forEach((logo) => {
