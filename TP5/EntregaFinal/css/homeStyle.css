@@ -424,8 +424,8 @@ left: 0px;
 top: 1em;
 
 font-family: Roboto;
-font-style: normal;
-font-weight: 500;
+font-style:normal;
+font-weight: bold;
 font-size: 12px;
 line-height: 14px;
 text-align: center;
@@ -612,6 +612,7 @@ left: 0px;
 top: 0px;
 border-radius: 5px;
 }
+
 .nombreGrupo{
 position: absolute;
 width: 150px;
@@ -621,7 +622,7 @@ top: 0px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: bold;
+font-weight:normal;
 font-size: 14px;
 line-height: 125%;
 

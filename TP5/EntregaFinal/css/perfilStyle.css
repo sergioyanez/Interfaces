@@ -9,9 +9,9 @@
 
 .datosPrincipales {
 	position: absolute;
-	width: 780px;
+	width: 880px;
 	height: 360px;
-	left: 330px;
+	left: 280px;
 	top: 70px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 5px;
@@ -30,7 +30,7 @@
 	position: absolute;
 	width: 193.44px;
 	height: 191.18px;
-	left: 50px;
+	left: 100px;
 	top: 90px;
 	/* background: url(imagenperfil.png); */
 }
@@ -99,11 +99,11 @@
 	position: absolute;
 	width: 178px;
 	height: 40px;
-	left: 560px;
+	left: 660px;
 	top: 280px;
 	background: #d97930;
 	border-radius: 15px;
-	border-color: white;
+	border: none;
 	z-index: 1;
 	
 }
@@ -126,9 +126,9 @@
 
 .informacion {
 	position: absolute;
-	width: 780px;
+	width: 880px;
 	height: 320px;
-	left: 330px;
+	left: 280px;
 	top: 437px;
 	background-color: white;
 	border-radius: 5px;

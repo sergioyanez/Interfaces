@@ -167,6 +167,7 @@ function abrirCuadroDeBusqueda(){
         busquedas.classList.add("oculto");
         busquedas.classList.remove("desocultar");
         controlBusqueda=true;
+        cerrarBusquedas();
     }
        
     
@@ -179,4 +180,13 @@ let hoverBus=document.getElementById("hoverBus");
 function desocultaBusqueda(){
 hoverBus.classList.remove("oculto");
 hoverBus.classList.add("desocultar");
+}
+
+let btnCerrarBusquedas=document.getElementById("btnCerrarAvanzado");
+btnCerrarBusquedas.addEventListener("click", cerrarBusquedas);
+
+function cerrarBusquedas(){
+    hoverBus.classList.remove("desocultar");
+    hoverBus.classList.add("oculto");
+   
 }

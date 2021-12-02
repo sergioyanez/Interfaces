@@ -18,9 +18,10 @@
             <div id="logo"class="logo"></div>
 
             <div  class="cuadroBusqueda">
-                <div id="busquedaAvanzada"class="iconoBusqueda"></div>
+                <div class="iconoBusqueda"></div>
                 <input class="inputBuscar" type="text" placeholder="Buscar"> 
             </div>
+            <div id="busquedaAvanzada"class="iconoBusquedaAvanzada"></div>
             <div id="iconoHome" class="iconoHome"></div>       
             <div  id="iconoNoticias" class="iconoNoticias"></div>
             <div  id="iconoChat" class="iconoChat"></div>
@@ -45,17 +46,17 @@
             <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto">
 
                 <div class="busqueda busque1">
-                    <label class="labelBuscar ">Nombre</label>
-                    <input class="inputBusquedaAvanzada" type="text" > 
-                </div>
-
-                <div class="busqueda busque2">
                     <label class="labelBuscar ">Apellido</label>
                     <input class="inputBusquedaAvanzada" type="text" > 
                 </div>
 
+                <div class="busqueda busque2">
+                    <label class="labelBuscar ">Publicaciones</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
                 <div class="busqueda busque3">
-                    <label class="labelBuscar ">Profesión</label>
+                    <label class="labelBuscar ">Especialidad</label>
                     <input class="inputBusquedaAvanzada" type="text" > 
                 </div>
 
@@ -68,7 +69,9 @@
                     <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
                 </div>
                 <hr class="lineaBusquedaAvanzada ">
+            </div>    
         <div id="hoverBus"class="hoverBus oculto">
+                       
                 <div class="cardBuscada buscado1">
                     <img class="fotoPerfilBuscado" src="./images/avatar11.svg">
                     <p class="nombreBuscado">Julian </p>
@@ -92,8 +95,11 @@
                     <p class="profesionBuscado">Medico veterinario</p>
                     <p class="localidadBuscado">Lobería</p>
                 </div>
+                <div >
+                    <button id="btnCerrarAvanzado" class="botonCerrarAvanzado ">Cerrar</button>                  
+                </div>                
         </div>
-            </div>
+            
 
             <div id="cuadroDeChats"class="cuadroDeChats oculto">
 
@@ -140,6 +146,12 @@
                     <p class="estado">Disponible</p>
                 </div>
 
+                <div class="cardAmigo amigo7">
+                    <img class="fotoPerfilContacto" src="./images/avatar12.svg">
+                    <p class="nombreAmigo">Carlos Greedy</p>
+                    <p class="estado">Disponible</p>
+                </div>
+
                 <div>            
                     <input class="cerrarChats" type="text" placeholder="Mensajes">
                     <img id="salirChats"class="salirChats" src="./images/salirChats.svg"> 
@@ -162,12 +174,21 @@
                 <hr class="lineaChat">
 
                 <div>
-                    <img class="fotoChat" src="./images/avatar6.svg">
-                    <p class="fraseAmigo">¿ Hola cómo estas ?</p>
+                    <img class="fotoChat chat1 " src="./images/avatar6.svg">
+                    <p class="fraseAmigo chat2 ">¿ Hola cómo estas ?</p>
                 </div>
 
                 <div>
-                    <p class="fraseMia"> Bien, y vos ?</p>
+                    <p class="fraseMia chat3"> Bien, y vos ?</p>
+                </div>
+
+                <div>
+                    <img class="fotoChat chat4 " src="./images/avatar6.svg">
+                    <p class="fraseAmigo chat5 ">¿ Nos juntamos hoy ?</p>
+                </div>
+
+                <div >
+                    <p class="fraseMia chat6"> Si estaría bueno</p>
                 </div>
 
                 <div>            
