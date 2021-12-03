@@ -3,7 +3,7 @@
 	width: 1440px;
 	height: 954px;
 	/* background: #f5f2ed; */
-	top:10%;
+	top:76px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -17,6 +17,7 @@
 	top: 0.5%;
 	background-color: rgb(255, 255, 255);
 	border-radius: 5px;
+	
 }
 
 .imagenFondo {
@@ -27,6 +28,8 @@
 	left:0px;
 	top: 0px;
 	border-radius: 5px;
+	background-image: url(../images/imagenCampo.svg);
+	background-size: cover;
 }
 
 .imagenPerfil1 {
@@ -203,7 +206,7 @@
 	width: 164px;
 	height: 164px;
 	left: 1em;
-	top: 110px;
+	top: 115px;
 
 	/* font-family: roboto; */
 	font-size: 18px;
@@ -226,7 +229,7 @@
 	width: 164px;
 	height: 164px;
 	left: 1em;
-	top: 140px;
+	top: 148px;
 
 	/* font-family: roboto; */
 	font-size: 18px;
@@ -290,7 +293,7 @@
 	margin:0px;
 }
 
-.icon2 {
+/* .icon2 {
 	position: absolute;
 	width: 20px;
 	height: 20px;
@@ -298,7 +301,7 @@
 	top: 63.75px;
 	background: url(../images/phone.svg);
 	background-repeat: no-repeat;
-}
+} */
 
 .telefono {
 	/* font-family: roboto; */
@@ -315,7 +318,7 @@
 	top: 45px;
 }
 
-.icon3 {
+/* .icon3 {
 	position: absolute;
 	width: 20px;
 	height: 20px;
@@ -323,7 +326,7 @@
 	top: 107.5px;
 	background: url(../images/portafolio.svg);
 	background-repeat: no-repeat;
-}
+} */
 
 .profesion {
 	/* font-family: roboto; */
@@ -341,7 +344,7 @@
 	top: 91.5px;
 }
 
-.icon4 {
+/* .icon4 {
 	position: absolute;
 	width: 20px;
 	height: 20px;
@@ -349,7 +352,7 @@
 	top: 151.25px;
 	background: url(../images/graduado.svg);
 	background-repeat: no-repeat;
-}
+} */
 
 .universidad {
 	/* font-family: roboto; */
@@ -367,7 +370,7 @@
 	top: 135.25px;
 }
 
-.icon5 {
+/* .icon5 {
 	position: absolute;
 	width: 20px;
 	height: 20px;
@@ -375,7 +378,7 @@
 	top: 195px;
 	background: url(../images/document.svg);
 	background-repeat: no-repeat;
-}
+} */
 
 .ocupacion {
 	/* font-family: roboto; */
@@ -393,7 +396,7 @@
 	top: 179px;
 }
 
-.icon6 {
+/* .icon6 {
 	position: absolute;
 	width: 20px;
 	height: 20px;
@@ -401,7 +404,7 @@
 	top: 238.75px;
 	background: url(../images/location.svg);
 	background-repeat: no-repeat;
-}
+} */
 
 .localidad {
 	/* font-family: roboto; */
@@ -423,8 +426,8 @@
 .formularioEditar{
 	position: absolute;
 	width: 452px;
-	height: 812px;
-	top: 106px;
+	height: 790px;
+	top: 30px;
 	left: 494px;	
 	background-color: white;
 	z-index: 1;
@@ -613,7 +616,7 @@
 	width: 300px;
 	height: 100px;
 	left: 0px;
-	top: 20px;
+	top: 10px;
 }
 
 
@@ -648,7 +651,7 @@
 	width: 300px;
 	height: 130px;
 	left: 0px;
-	top: 30px;
+	top: 10px;
 }
 .imagenEdit{
 	position: absolute;
@@ -736,7 +739,7 @@
 	width: 140px;
 	height: 30px;
 	left: 0px;
-	top: 15px;
+	top: 7px;
 	background-color: rgba(143, 143, 142, 1);
 	border-radius: 15px;
 }
@@ -754,7 +757,7 @@
 	width: 140px;
 	height: 30px;
 	right: 0px;
-	top: 15px;	
+	top: 7px;	
 	background-color: rgba(74, 74, 250, 1);	
 	border-radius: 15px;
 	
@@ -770,7 +773,7 @@
 .botonCentrado{
 	position: absolute;	
 	color: white;
-	top: 15%;
+	top: 6px;
 	left: 30%;
 	text-align: center;
 	/* font-family: Roboto; */
@@ -783,7 +786,7 @@
 .botonCentrado2{
 	position: absolute;	
 	color: white;
-	top: 15%;
+	top: 6px;
 	left: 25%;
 	text-align: center;
 	/* font-family: Roboto; */
