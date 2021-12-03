@@ -69,7 +69,7 @@ left: 55.24%;
 right: 1em;
 top: 20px;
 
-font-family: Roboto;
+/* font-family: Roboto; */
 font-style: normal;
 font-weight: 600;
 font-size: 12px;
@@ -83,7 +83,7 @@ position: absolute;
 left: 55.24%;
 
 
-font-family: Roboto;
+/* font-family: Roboto; */
 font-style: normal;
 font-weight: normal;
 font-size: 10px;

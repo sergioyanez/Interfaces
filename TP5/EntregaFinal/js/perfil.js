@@ -34,7 +34,7 @@ let menuDesplegable = document.getElementById("menuDesplegable");
 let iconEditarPerfil = document.getElementById("iconEditar");
     iconEditarPerfil.addEventListener("click",ir_a_EditarPerfil);
     
-let editarDatos=document.getElementById("btnEditar");
+// let editarDatos=document.getElementById("btnEditar");
 
 let editar = document.getElementById("editar");
     editar.addEventListener("click",ir_a_EditarPerfil);

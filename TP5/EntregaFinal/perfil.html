@@ -11,67 +11,73 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <title>Enregable TP 5</title>
+        <nav>
+            <div id="logo"class="logo"></div>
+
+            <div  class="cuadroBusqueda">
+                <div class="iconoBusqueda"></div>
+                <input class="inputBuscar" type="text" placeholder="Buscar"> 
+            </div>
+            <img id="busquedaAvanzada"class="iconoBusquedaAvanzada" src="./images/iconBusquedaAvanzada.svg">
+            <div id="iconoHome" class="iconoHome"></div>       
+            <div  id="iconoNoticias" class="iconoNoticias"></div>
+            <div  id="iconoChat" class="iconoChat"></div>
+
+            <div  id="imagenPerfil" class="imagenPerfil"></div>
+            <div  id="NombrePerfil"class="NombrePerfil">
+                <p class="formatoPerfil">Pedro Gomez</p>
+                </div>
         
+            </nav>
+
+            <!--DESPLEGABLE EDITAR PERFIL/SALIR-->
+
+            <div id="menuDesplegable"class="desplegable oculto bordeContenedores">
+                <div class="contenedorEditarPerfil">
+                    <img id="iconEditar"class="iconEditar" src="./images/editar.svg">
+                    <p id="editar"class="editar">Editar perfil</p>
+                </div>
+            
+                <div class="contenedorSalir">
+                    <img id="iconSalir"class="iconSalir" src="./images/salir.svg">
+                    <p id="salir"class="salir">Salir</p>
+                </div>
+            </div>
+
+            <!--DESPLEGABLE BUSQUEDA AVANZADA-->
+
+            <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto bordeContenedores">
+
+                <div class="busqueda busque1">
+                    <label class="labelBuscar ">Apellido</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque2">
+                    <label class="labelBuscar ">Publicaciones</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque3">
+                    <label class="labelBuscar ">Especialidad</label>
+                    <input class="inputBusquedaAvanzada" type="text" > 
+                </div>
+
+                <div class="busqueda busque4">
+                    <label class="labelBuscar ">Localidad</label>
+                    <input class="inputBusquedaAvanzada" type="text"> 
+                </div>
+
+                <div class="busqueda busque5">
+                    <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
+                </div>
+                <hr class="lineaBusquedaAvanzada ">
+            </div>  
     </head>
     <body>
         <div class= "containerPerfil">
-            <nav>
-                <div id="logo"class="logo"></div>
-    
-                <div  class="cuadroBusqueda">
-                    <div class="iconoBusqueda"></div>
-                    <input class="inputBuscar" type="text" placeholder="Buscar"> 
-                </div>
-                <div id="busquedaAvanzada"class="iconoBusquedaAvanzada"></div>
-                <div id="iconoHome" class="iconoHome"></div>       
-                <div  id="iconoNoticias" class="iconoNoticias"></div>
-                <div  id="iconoChat" class="iconoChat"></div>
-    
-                <div  id="imagenPerfil" class="imagenPerfil"></div>
-                <div  id="NombrePerfil"class="NombrePerfil">
-                    <p class="formatoPerfil">Pedro Gomez</p>
-                    </div>
-    
-                <div id="menuDesplegable"class="desplegable oculto">
-                    <div>
-                        <div id="iconEditar"class="iconEditar"></div>
-                        <p id="editar"class="editar">Editar perfil</p>
-                    </div>
-    
-                    <div>
-                        <div id="iconSalir"class="iconSalir"></div>
-                        <p id="salir"class="salir">Salir</p>
-                    </div>            
-            </nav>
-
-                <div id="cuadroDeBusquedas" class="cuadroDeBusquedas oculto">
-    
-                    <div class="busqueda busque1">
-                        <label class="labelBuscar ">Apellido</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque2">
-                        <label class="labelBuscar ">Publicaciones</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque3">
-                        <label class="labelBuscar ">Especialidad</label>
-                        <input class="inputBusquedaAvanzada" type="text" > 
-                    </div>
-    
-                    <div class="busqueda busque4">
-                        <label class="labelBuscar ">Localidad</label>
-                        <input class="inputBusquedaAvanzada" type="text"> 
-                    </div>
-    
-                    <div class="busqueda busque5">
-                        <button id="btnBuscarAvanzado" class="botonBuscarAvanzado ">Buscar</button>                  
-                    </div>
-                    <hr class="lineaBusquedaAvanzada ">
-                </div>    
-                <div id="hoverBus"class="hoverBus oculto">
+             
+            <div id="hoverBus"class="hoverBus oculto">
                            
                     <div class="cardBuscada buscado1">
                         <img class="fotoPerfilBuscado" src="./images/avatar11.svg">
@@ -101,103 +107,117 @@
                     </div>                
                 </div>
 
-                <div id="cuadroDeChats"class="cuadroDeChats oculto">
+               <!--DESPLEGABLE MENSAJERIA-->
 
-                    <div class="cuadroBusquedaChat">
-                        <div class="iconoBusquedaChat"></div>
-                        <input class="inputBuscarChat" type="text" placeholder="Buscar"> 
-                    </div>
-
-
-                    <div class="cardAmigo amigo1">
-                        <img id="amigo1"class="fotoPerfilContacto" src="./images/avatar6.svg">
-                        <p class="nombreAmigo">Lucy Lee</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div class="cardAmigo amigo2">
-                        <img class="fotoPerfilContacto" src="./images/avatar7.svg">
-                        <p class="nombreAmigo">Cristian Romero</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-
-                    <div class="cardAmigo amigo3">
-                        <img class="fotoPerfilContacto" src="./images/avatar8.svg">
-                        <p class="nombreAmigo">Carmen Giusto</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div class="cardAmigo amigo4">
-                        <img class="fotoPerfilContacto" src="./images/avatar9.svg">
-                        <p class="nombreAmigo">Andrés Cavalaro</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div class="cardAmigo amigo5">
-                        <img class="fotoPerfilContacto" src="./images/avatar10.svg">
-                        <p class="nombreAmigo">Juan Crespi</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div class="cardAmigo amigo6">
-                        <img class="fotoPerfilContacto" src="./images/avatar11.svg">
-                        <p class="nombreAmigo">Julian Casstrol</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div class="cardAmigo amigo7">
-                        <img class="fotoPerfilContacto" src="./images/avatar12.svg">
-                        <p class="nombreAmigo">Carlos Greedy</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-
-                    <div>            
-                        <input class="cerrarChats" type="text" placeholder="Mensajes">
-                        <img id="salirChats"class="salirChats" src="./images/salirChats.svg"> 
-                    </div>
+            <div id="cuadroDeChats"class="cuadroDeChats familiaFuenteGral oculto">
+                <div class="tituloChat tituloGruposRecomendados">MENSAJERIA</div>
+                <div class="cuadroBusquedaChat">
+                    <div class="iconoBusquedaChat"></div>
+                    <input class="inputBuscarChat" type="text" placeholder="Buscar"> 
                 </div>
 
-                <div id="chatPersonal" class="chatPersonal oculto">
-                    
-                    <div class="cardAmigo ">
-                        <img class="fotoPerfilContacto" src="./images/avatar6.svg">
-                        <p class="nombreAmigo">Lucy Lee</p>
-                        <p class="estado">Disponible</p>
-                    </div>
-                    <div id="videoLlamada" class="videollamada">
-                        <img class="iconoVideoLlamada" src="images/videollamada.svg">
-                    </div>
-                    <div class="cerrar">
-                        <img id="cerrar" class="iconoCerrar" src="./images/cerrar.svg">
-                    </div>
-                    <hr class="lineaChat">
 
-                    <div>
-                        <img class="fotoChat chat1 " src="./images/avatar6.svg">
-                        <p class="fraseAmigo chat2 ">¿ Hola cómo estas ?</p>
-                    </div>
-
-                    <div>
-                        <p class="fraseMia chat3"> Bien, y vos ?</p>
-                    </div>
-
-                    <div>
-                        <img class="fotoChat chat4 " src="./images/avatar6.svg">
-                        <p class="fraseAmigo chat5 ">¿ Nos juntamos hoy ?</p>
-                    </div>
-
-                    <div >
-                        <p class="fraseMia chat6"> Si estaría bueno</p>
-                    </div>
-
-                    <div>            
-                        <input class="inputMensajeChat" type="text" placeholder="Escribe tu mensaje">
-                        <img class="iconEnviar" src="./images/enviarNaranja.svg"> 
-                    </div>
-
+                <div class="cardAmigo amigo1">
+                    <img id="amigo1"class="fotoPerfilContacto" src="./images/avatar6.svg">
+                    <p class="nombreAmigo">Lucy Lee</p>
+                    <p class="estado">Disponible</p>
                 </div>
 
+                <div class="cardAmigo amigo2">
+                    <img class="fotoPerfilContacto" src="./images/avatar7.svg">
+                    <p class="nombreAmigo">Cristian Romero</p>
+                    <p class="estado">Disponible</p>
+                </div>
+
+
+                <div class="cardAmigo amigo3">
+                    <img class="fotoPerfilContacto" src="./images/avatar8.svg">
+                    <p class="nombreAmigo">Carmen Giusto</p>
+                    <p class="estado">Disponible</p>
+                </div>
+
+                <div class="cardAmigo amigo4">
+                    <img class="fotoPerfilContacto" src="./images/avatar9.svg">
+                    <p class="nombreAmigo">Andrés Cavalaro</p>
+                    <p class="estado">Disponible</p>
+                </div>
+
+                <div class="cardAmigo amigo5">
+                    <img class="fotoPerfilContacto" src="./images/avatar10.svg">
+                    <p class="nombreAmigo">Juan Crespi</p>
+                    <p class="estado">Disponible</p>
+                </div>
+
+                <div class="cardAmigo amigo6">
+                    <img class="fotoPerfilContacto" src="./images/avatar11.svg">
+                    <p class="nombreAmigo">Julian Casstrol</p>
+                    <p class="estado">Disponible</p>
+                </div>
+<!-- 
+                <div class="cardAmigo amigo7">
+                    <img class="fotoPerfilContacto" src="./images/avatar12.svg">
+                    <p class="nombreAmigo">Carlos Greedy</p>
+                    <p class="estado">Disponible</p>
+                </div> -->
+
+                <div class="contenedorCerrar">            
+                    <p class="cerrarChats">Cerrar</p>
+                    <img id="salirChats"class="salirChats" src="./images/salirChats.svg"> 
+                </div>
+            </div>
+                <!--VENTANA EMERGENTE DE CHAT 1 a 1-->
+
+            <div id="chatPersonal" class="chatPersonal oculto">
+                
+                <div class="cardAmigo ">
+                    <img class="fotoPerfilContacto" src="./images/avatar6.svg">
+                    <p class="nombreAmigo">Lucy Lee</p>
+                    <p class="estado">Disponible</p>
+                </div>
+                <div id="videoLlamada" class="videollamada">
+                    <img class="iconoVideoLlamada" src="images/videollamada.svg">
+                </div>
+                <div class="cerrar">
+                    <img id="cerrar" class="iconoCerrar" src="./images/cerrar.svg">
+                </div>
+                <hr class="lineaChat">
+                
+                <div class ="mensajeAmigo mensaje1">
+                    <img class="fotoChat" src="./images/avatar6.svg">
+                    <div class="fraseAmigo">
+                        <p class="textoMensAmigo">¿Hola cómo estás?</p>
+
+                    </div>
+                </div> 
+
+                <div class ="mensajeAmigo mensaje2">
+                   <div class="fraseMia">
+                        <p class="textoMensyo">Bien, y vos?</p>
+                    </div>
+                </div> 
+
+                <div class ="mensajeAmigo mensaje3">
+                    <img class="fotoChat" src="./images/avatar6.svg">
+                    <div class="fraseAmigo">
+                        <p class="textoMensAmigo">¿Nos juntamos hoy?</p>
+
+                    </div>
+                </div> 
+
+                <div class ="mensajeAmigo mensaje4">
+                    <div class="fraseMia">
+                         <p class="textoMensyo">Si estaría bueno</p>
+                     </div>
+                 </div> 
+
+            
+                <div>            
+                    <input class="inputMensajeChat" type="text" placeholder="Escribe tu mensaje">
+                    <img class="iconEnviar" src="./images/enviarNaranja.svg"> 
+                </div>
+
+            </div>
+            <!--VENTANA EMERGENTE VIDEOLLAMADA-->
                 <div id="pantallaVideo" class="pantallaVideo oculto">
                     <div class="fondoBlancoVideo1"></div>
                     <img class="imagenUsuario" src="./images/usuarioEnVideo.svg"> 
@@ -232,8 +252,35 @@
             </div>
 
             <hr class="linea">
+
             <div class="datosMostrados">
-                <div>
+                <div class="contenedorInformacion info1">
+                    <img class="icon" src="./images/mail.svg">
+                    <p class="mail">pedroveterinario@gmail.com</p>
+                </div>
+                <div class="contenedorInformacion info2">
+                    <img class="icon" src="./images/phone.svg">
+                    <p class="mail">0249-15-454-2587</p>
+                </div>
+                <div class="contenedorInformacion info3">
+                    <img class="icon" src="./images/portafolio.svg">
+                    <p class="mail">Médico Veterinario</p>
+                </div>
+                <div class="contenedorInformacion info4">
+                    <img class="icon" src="./images/graduado.svg">
+                    <p class="mail">Estudió en la UNICEN</p>
+                </div>
+                <div class="contenedorInformacion info5">
+                    <img class="icon" src="./images/document.svg">
+                    <p class="mail">Se desempeña en Sanidad Animal</p>
+                </div>
+                <div class="contenedorInformacion info6">
+                    <img class="icon" src="./images/location.svg">
+                    <p class="mail">Vive en la ciudad de Rauch</p>
+                </div>
+
+            </div>
+                <!-- <div>
                     <div class="icon1"></div>
                     <p class="mail">pedroveterinario@gmail.com</p>
                 </div>
@@ -263,7 +310,7 @@
                 <div>
                     <div class="icon6"></div>
                     <p class="localidad">Vive en la ciudad de Rauch</p>
-                </div>
+                </div> -->
    
             </div>
         </div>
