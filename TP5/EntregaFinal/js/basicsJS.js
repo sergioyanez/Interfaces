@@ -1,6 +1,9 @@
 'use strict'
+
+let control=true;
 let controldesplegable=true;
 let controldesplegableChat=true;
+let controlBusqueda=true;
 let logo = document.getElementById("logo");
     logo.addEventListener("click",ir_a_Home);
 
@@ -55,7 +58,25 @@ colgar.addEventListener("click",cortarVideoLlamada);
 
 let salirChats=document.getElementById("salirChats");
 salirChats.addEventListener("click", cerrarVentanaChats);
+
+let iconoChat = document.getElementById("iconoChat");
+    iconoChat.addEventListener("click",ir_a_Chats);
+
+let chatDesplegable = document.getElementById("cuadroDeChats");
+
+let cuadroBusqueda=document.getElementById("busquedaAvanzada");
+    cuadroBusqueda.addEventListener("click",abrirCuadroDeBusqueda);
+
+let busquedas=document.getElementById("cuadroDeBusquedas");
+
+let btnBuscarAvanzado=document.getElementById("btnBuscarAvanzado");
+    btnBuscarAvanzado.addEventListener("click",desocultaBusquedas);
+
+let hoverBus=document.getElementById("hoverBus");
     
+let btnCerrarBusquedas=document.getElementById("btnCerrarAvanzado");
+    btnCerrarBusquedas.addEventListener("click", ocultaBusquedas);
+
 
 function ir_a_Home(){
         document.location.href ="home.html";
@@ -88,6 +109,7 @@ function mostrarDesplegable(){
         cerrarChatPersonal();
         cortarVideoLlamada();
         cerrarVentanaChats();
+        cerrarCuadroDeBusqueda();      
     }
     else{
         menuDesplegable.classList.add("oculto");
@@ -102,11 +124,22 @@ function mostrarDesplegableDeChat(){
         desplegableChat.classList.remove("oculto");
         desplegableChat.classList.add("desocultar");
         controldesplegableChat=false;
-       
-        editarDatos.classList.add("oculto");
+        cerrarDesplegable();
+        cortarVideoLlamada();
+        
+    }   
+}
 
-    }
-   
+function cerrarDesplegableChats(){
+    desplegableChat.classList.add("oculto");
+    desplegableChat.classList.remove("desocultar");
+    controldesplegableChat=true;
+}
+
+function cerrarDesplegable(){
+    menuDesplegable.classList.add("oculto");
+    menuDesplegable.classList.remove("desocultar");
+    controldesplegable=true;
 }
 
 function cerrarChatPersonal(){
@@ -118,6 +151,10 @@ function cerrarChatPersonal(){
 function iniciarVideoLlamada(){
     pantallaVideo.classList.remove("oculto");
     pantallaVideo.classList.add("desocultar");
+    cerrarDesplegable();
+    cerrarChatPersonal();
+    cerrarVentanaChats();
+    cerrarDesplegableChat();
 }
 
 function cortarVideoLlamada(){
@@ -130,16 +167,16 @@ function cerrarVentanaChats(){
     cuadroChats.classList.remove("desocultar");
 }
 
-let control=true;
-let iconoChat = document.getElementById("iconoChat");
-    iconoChat.addEventListener("click",ir_a_Chats);
-let chatDesplegable = document.getElementById("cuadroDeChats");
+
 
 function ir_a_Chats(){
     if(control){
         chatDesplegable.classList.remove("oculto");
         chatDesplegable.classList.add("desocultar");
         control=false;
+        cerrarDesplegable();
+        cerrarChatPersonal();
+        cerrarCuadroDeBusqueda();        
     }
     else{
         chatDesplegable.classList.add("oculto");
@@ -148,44 +185,43 @@ function ir_a_Chats(){
     }
    
 }
-let controlBusqueda=true;
-let busquedas=document.getElementById("cuadroDeBusquedas")
-let cuadroBusqueda=document.getElementById("busquedaAvanzada");
-    cuadroBusqueda.addEventListener("click",abrirCuadroDeBusqueda);
+
 
 function abrirCuadroDeBusqueda(){
     if(controlBusqueda){
         busquedas.classList.remove("oculto");
         busquedas.classList.add("desocultar");
         controlBusqueda=false;
+        cerrarDesplegableChats();
+        cerrarDesplegable();
+        cerrarVentanaChats();
         if(hoverBus.classList.contains("desocultar")){
-            hoverBus.classList.add("oculto");
-            hoverBus.classList.remove("desocultar");
+            ocultaBusquedas()();
         }
     }
     else{
         busquedas.classList.add("oculto");
         busquedas.classList.remove("desocultar");
         controlBusqueda=true;
-        cerrarBusquedas();
+        ocultaBusquedas();
     }
-       
-    
+}     
+
+
+function cerrarCuadroDeBusqueda(){
+     busquedas.classList.add("oculto");
+    busquedas.classList.remove("desocultar");
+    controlBusqueda=true;
+    ocultaBusquedas();
 }
 
-let btnBuscarAvanzado=document.getElementById("btnBuscarAvanzado");
-btnBuscarAvanzado.addEventListener("click",desocultaBusqueda);
-let hoverBus=document.getElementById("hoverBus");
-
-function desocultaBusqueda(){
-hoverBus.classList.remove("oculto");
-hoverBus.classList.add("desocultar");
+function desocultaBusquedas(){
+    hoverBus.classList.remove("oculto");
+    hoverBus.classList.add("desocultar");
 }
 
-let btnCerrarBusquedas=document.getElementById("btnCerrarAvanzado");
-btnCerrarBusquedas.addEventListener("click", cerrarBusquedas);
 
-function cerrarBusquedas(){
+function ocultaBusquedas(){
     hoverBus.classList.remove("desocultar");
     hoverBus.classList.add("oculto");
    

@@ -19,6 +19,8 @@
 	border-radius: 5px;
 }
 
+
+
 .imagenFondo {
 	position: absolute;
 	width: 880px;
@@ -54,14 +56,13 @@
 
 .nombrePerfil {
 	position: absolute;
-	width: 170px;
-	height: 33px;
+	width: 250px;
+	height: 30px;
 	left: calc(50% - 170px/2 - 42px);
 	top: 160px;
-
 	font-style: normal;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 30px;
 	line-height: 33px;
 	/* identical to box height */
 	color: #181818;
@@ -70,10 +71,10 @@
 .especialidad {
 	position: absolute;
 	width: 500px;
-	height: 30px;
+	height: 20px;
 	left: calc(50% - 500px/2 + 123px);
-	top: 200px;
-	/* font-family: Roboto; */
+	top: 205px;
+	font-family: Roboto; 
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -87,8 +88,8 @@
 	width: 116px;
 	height: 20px;
 	left: calc(50% - 116px/2 - 69px);
-	top: 237px;
-	/* font-family: Roboto; */
+	top: 250px;
+	font-family: Roboto; 
 	font-style: normal;
 	font-weight: 500;
 	font-size: 13px;
@@ -633,7 +634,7 @@
 	left: 0%;
 	top: 0px;
 	position: absolute;
-	/* font-family:Roboto; */
+font-family:Roboto; 
 	font-style: normal;
 	font-weight: 500;
 	font-size: 23px;	
@@ -660,10 +661,10 @@
 
 .organizacionEdit{
 	position: absolute;
-	height: 25px;
-	width: 220px;
+	height: 15px;
+	width: 250px;
 	left:30px;	
-	/* font-family: Roboto; */
+	font-family: Roboto; 
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 18px;
@@ -705,19 +706,20 @@
 
 .iconSalirEdit {
 	position: absolute;
-	height: 25px;
-	width: 25px;
-	right: 10px;	
+	width: 15px;
+	height:15px;	
+	right: 0px;	
 	background: url(../images/salir.svg);
+	background-size: contain;
 }
 .iconEdit1{
-	top: 30px;
+	top: 40px;
 }
 .iconEdit2{
-	top: 60px;
+	top: 70px;
 }
 .iconEdit3{
-	top: 90px;
+	top: 100px;
 }
 
 
@@ -839,3 +841,4 @@
 .info6{
 	top:200px;
 }
+
