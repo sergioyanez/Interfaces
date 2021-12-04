@@ -567,18 +567,33 @@
 }
 
 /*--------------------------------------------------------------------------------*/
-@media only screen and (max-width: 360px) {
-	.contenedorLogo{
-		width: 360px;
-		height: 200px;
-		top:10px
-	}
-	.contenedorFormLogin{
-		width: 360px;
-		height: 410px;
-		top: 230px;
-		margin:auto auto;
 
+
+  
+  @media screen and (max-width: 360px) {
+	.containerInicioSesion{
+		width: 360px;
+		height: 640px;
+	}
+
+	.contenedorFormLogin {
+		height: 640px;
+		width: 100%;
+		left: 759px;
+		top: 30px;
+		border-radius: 0px;
+		display: flex;		
+		/* Formulario Inicio de sesión */	
+		position: absolute;
+		width: 360px;
+		height: 640px;
+		left: 0px;
+		top: 400px;
+		
+	}
+
+	.textoInicio{
+		display: none;
 	}
   }
 

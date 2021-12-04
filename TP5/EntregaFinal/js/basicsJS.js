@@ -226,3 +226,30 @@ function ocultaBusquedas(){
     hoverBus.classList.add("oculto");
    
 }
+
+
+
+
+const logoFooter = document.getElementById("logoyDesarroll"),
+      logos = document.getElementById("imagenFooter"),
+      image = document.getElementById("textoDesarrolladores");
+
+function move(x, y) {
+  let dx = (x - window.innerWidth) / window.innerWidth * 10,
+      dy = (2*y - window.innerHeight) / window.innerHeight * 10;
+      logoFooter.style.top = `${dy}px`;
+      logoFooter.style.right = `${dx}px`;
+  dx += 10;
+  dy = 5;
+  logos.forEach((logo) => {
+    logo.setAttribute('transform', `translate(${dx} ${dy})`);
+  });
+  image.setAttribute('x', 0);
+}
+
+document.addEventListener('mousemove', (e) => {
+  move(e.pageX, e.pageY);
+});
+document.addEventListener('touchmove', (e) => {
+  move(e.touches[0].pageX, e.touches[0].pageY);
+});
