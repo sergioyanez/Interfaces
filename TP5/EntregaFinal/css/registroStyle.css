@@ -34,8 +34,7 @@
 
 .fondoFormRegistro {
 	height: 770px;
-	width: 483px;
-	
+	width: 483px;	
 	position: absolute;
 	left: 0%;
 	right: 0%;
@@ -67,12 +66,6 @@
 }
 
 .textoBotonVolver {
-	/*Propiedades*/
-	height: 18px;
-	width: 57px;
-	left: 121px;
-	top: 11px;
-	border-radius: 0px;
 
 	/* textoBotonVolver */
 	position: absolute;
@@ -83,10 +76,6 @@
 }
 
 .textoVolver {
-	/*Propiedades*/
-	height: 5px;
-	width: 55px;
-	letter-spacing: 0em;
 	
 	/* textoVolver */
 	position: absolute;

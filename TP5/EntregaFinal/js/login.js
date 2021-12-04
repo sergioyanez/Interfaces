@@ -16,9 +16,8 @@ function crearCuenta(){
     document.location.href ="registro.html";
 }
 
-const logoCompleto = document.getElementById('logoCompleto'),
-      logos = document.getElementById('.imagen1'),
-      image = document.getElementById('imagen2');
+const logoCompleto = document.getElementById('logoCompleto');
+  
 
 function move(x, y) {
   let dx = (x - window.innerWidth) / window.innerWidth * 10,
@@ -26,11 +25,7 @@ function move(x, y) {
       logoCompleto.style.left = `${dx}vmin`;
       logoCompleto.style.top = `${dy}vmin`;
   dx += 5;
-  dy += 5 + 10;
-  logos.forEach((logo) => {
-    logo.setAttribute('transform', `translate(${dx} ${dy})`);
-  });
-  image.setAttribute('x', 0);
+  dy += 5 + 10; 
 }
 
 document.addEventListener('mousemove', (e) => {

@@ -179,7 +179,7 @@
 	position: absolute;
 	left: 8%;
 	right: 15.67%;
-	top: 0%;
+	top: -3px;
 	bottom: -8.07%;
 	/* font-family: Roboto; */
 	font-style: normal;
@@ -259,10 +259,7 @@
 
 	/* Rectangle6_bis */
 	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
+
 	background: #e3e1e0;
 	border-style: none;
 	border-radius: 5px;
@@ -296,31 +293,18 @@
 	height: 18px;
 	width: 350px;
 	left: 0px;
-	top: 0px;
-	border-radius: nullpx;
-
-	/*Tipografia*/
-	/* font-family: Roboto; */
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
+	top: -3px;
 	text-align: left;
-
 	/* TextoContraseña */
-	position: static;
+	position: absolute;
 	left: 0%;
-	right: -279.02%;
-	top: 0%;
-	bottom: 0%;
-	font-family: Roboto;
+	
+	/* font-family: Roboto; */
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 18px;
-	display: flex;
-	align-items: center;
+	text-align: left;
 	color: #a0a0a0;
 	/* Inside Auto Layout */
 	flex: none;
@@ -448,10 +432,7 @@
 	width: 147px;
 	left: 33px;
 	top: -5px;
-	
 
-	/*Tipografia*/
-	/* font-family: IBM Plex Sans; */
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 500;
@@ -539,28 +520,13 @@
 	width: 180px;
 	left: 6px;
 	top: 0px;
-
 	/*Tipografia*/
-	/* font-family: Roboto; */
+	 font-family: Roboto; 
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 0px;
-	letter-spacing: 0em;
-	
-
-	/* textoCrearCuenta */
 	position: absolute;
-	
-	
-	bottom: 35.71%;
-
-	/* font-family: Roboto; */
-	font-style: normal;
-	font-weight: 600;
-	font-size: 15px;
-	line-height: 0px;
-	/* identical to box height */
 	text-align: center;
 	text-transform: uppercase;
 	color: #fbfbfb;
