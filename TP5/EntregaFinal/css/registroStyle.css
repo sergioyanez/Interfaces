@@ -113,7 +113,7 @@
 	height: 40px;
 	width: 306px;
 	left: 90px;
-	top: 600px;
+	top: 610px;
 	border-radius: 15px;	
 	position: absolute;
 	background: #4a4afa;
@@ -161,305 +161,96 @@
 	color: #ffffff;
 }
 
-.textoContrasenia {
-	height: 18px;
-	width: 74px;
-	left: 90px;
-	top: 409px;
-	border-radius: nullpx;
 
-	/* font-family: IBM Plex Sans; */
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
-	text-align: right;
-
-	/* textoContraseña */
+.texto{
 	position: absolute;
-	left: 18.83%;
-	right: 66.05%;
-	top: 58.24%;
-	bottom: 37.11%;
-	/* font-family: IBM Plex Sans; */
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
-	text-align: right;
-	color: #a0a0a0;
-}
-.contenedorContrasenia {
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 91px;
-	top: 427.18603515625px;
-	border-radius: 15px;
-
-	/* contenedorContraseña */
-	position: absolute;
-	left: 18.84%;
-	right: 19.05%;
-	top: 62.91%;
-	bottom: 31.13%;
-	opacity: 0.64;
-	border-radius: 15px;
-}
-.contrasenia {
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
-	border-radius: 5px;
-
-	/* contraseña */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-	background: #e3e1e0;
-	border-radius: 5px;
-	border-color: #ffffff;
-	border-style: none;
-}
-.textoRepetirContrasenia{
-	height: 18px;
+	height: 15px;
 	width: 120px;
-	letter-spacing: 0px;
-	
-	/* textoContraseña */
-	position: absolute;
-	left: 18.83%;
-	right: 66.05%;
-	top: 71.24%;
-	bottom: 37.11%;
-	/* font-family: Roboto; */
+	left: 28px;
+	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
+	line-height: 18px;	
 	text-align: right;
 	color: #a0a0a0;
 }
-.contenedorRepetirContrasenia{
-	height: 40.41344451904297px;
-	width: 300px;
-	
-	/* contenedorContraseña */
-	position: absolute;
-	left: 18.84%;
-	right: 19.05%;
-	top: 76%;
-	bottom: 31.13%;
-	opacity: 0.64;
-	border-radius: 15px;
-}
 
-.textoCorreo {
-	/*Propiedades*/
-	height: 18px;
-	width: 119px;
+.contenedor{
+	position: absolute;
+	height: 40px;
+	width: 300px;
+	border-radius: 15px;
+	opacity: 0.64;
 	left: 91px;
-	top: 321px;
-	border-radius: nullpx;
-
-	/*Tipografia*/
-	/* font-family: IBM Plex Sans; */
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
-	text-align: left;
-
-	/* textoCorreo */
-	position: absolute;
-	left: 18.84%;
-	right: 56.52%;
-	top: 45.28%;
-	bottom: 50.07%;
-	/* font-family: IBM Plex Sans; */
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
-	color: #a0a0a0;
 }
-.contenedorCorreo {
-	height: 40.41344451904297px;
+
+.input{
+	height: 40px;
 	width: 300px;
-	left: 90px;
-	top: 339px;
-	border-radius: 15px;
-	/* contenedorCorreo */
-	position: absolute;
-	left: 18.63%;
-	right: 19.25%;
-	top: 49.93%;
-	bottom: 44.12%;
-	opacity: 0.64;
-	border-radius: 15px;
-}
-.correo {
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
 	border-radius: 5px;
-	/* correo */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
+	left: 0px;
 	background: #e3e1e0;
 	border-radius: 5px;
 	border-color: #ffffff;
 	border-style: none;
 }
 
-.textoApellido {
-	/*Propiedades*/
-	height: 18px;
-	width: 54px;
-	left: 91px;
-	top: 233px;
-	border-radius: nullpx;
-	/*Tipografia*/
-	/* font-family: IBM Plex Sans; */
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
-	text-align: right;
-
-	/* textoApellido */
-	position: absolute;
-	left: 18.84%;
-	right: 69.98%;
-	top: 32.32%;
-	bottom: 63.03%;
-	/* font-family: IBM Plex Sans; */
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
-	text-align: right;
-	color: #a0a0a0;
-}
-.contenedorApellido {
-	/*Propiedades*/
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 91px;
-	top: 251px;
-	border-radius: 15px;
-
-	/* contenedorApellido */
-	position: absolute;
-	left: 18.84%;
-	right: 19.05%;
-	top: 36.97%;
-	bottom: 57.08%;
-	opacity: 0.64;
-	border-radius: 15px;
-}
-.apellido {
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 0px;
-	top: 0px;
-	border-radius: 5px;
-	/* apellido */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-	background: #e3e1e0;
-	border-radius: 5px;
-	border-color: #ffffff;
-	border-style: none;
-}
-
-.textoNombre {
-	/*Propiedades*/
-	height: 18px;
-	width: 52px;
-	left: 88px;
+.tNombre{
 	top: 145px;
-	border-radius: nullpx;
-
-	/*Tipografia*/
-	/* font-family: IBM Plex Sans; */
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 18px;
-	letter-spacing: 0px;
-	text-align: right;
-	/* textoNombre */
-	position: absolute;
-	left: 18.22%;
-	right: 71.01%;
-	top: 19.35%;
-	bottom: 75.99%;
-	/* font-family: IBM Plex Sans; */
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
-	text-align: right;
-	color: #a0a0a0;
 }
-.contenedorNombre {
-	/*Propiedades*/
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 89px;
-	top: 163px;
-	border-radius: 15px;
 
-	/* contenedorNombre */
-	position: absolute;
-	left: 18.43%;
-	right: 19.46%;
-	top: 24.01%;
-	bottom: 70.04%;
-	opacity: 0.64;
-	border-radius: 15px;
+.cNombre{
+	top: 180px;
 }
-.nombre {
-	/*Propiedades*/
-	height: 40.41344451904297px;
-	width: 300px;
-	left: 0px;
+
+
+
+.tApellido{
+	top: 233px;
+}
+
+.cApellido{
+	top: 268px;
+}
+
+
+
+.tCorreo{
+	top: 321px;
+	left: 90px;
+}
+
+.cCorreo{
+	top: 356px;
+}
+
+
+.tContrasenia{
+	top: 409px;
+	left: 45px;
+}
+
+.cContrasenia{
+	top: 444px;
+}
+
+.iContrasenia{
+
+}
+
+.tRepetirContrasenia{
+	top: 497px;
+	left: 91px;
+}
+
+.cRepetirContrasenia{
+	top: 532px;
+}
+
+.iRepetirContrasenia{
 	top: 0px;
-	border-radius: 5px;
-	/* nombre */
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: 0%;
-	background: #e3e1e0;
-	border-radius: 5px;
-	border-color: #ffffff;
-	border-style: none;
 }
+
 
 .tituloFormRegistro {
 	/*Propiedades*/
@@ -493,5 +284,35 @@
 	/*3*/
 	position: absolute;
 	
+}
+
+
+@media screen and (max-width: 360px) {
+	.contenedorCrearCuenta{
+		width: 360px;
+		height: 640px;
+		overflow-x: hidden;
+		flex-direction: column;
+		left: 0%;
+		background-color: #ffffff;
+		margin-bottom: auto;
+	}
+
+	.formRegistro {		
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: auto;
+		max-height: 640px;	
+		border-radius: 0px;
+		top: 0px;
+
+	/* formRegistro */
+	position: absolute;
+	width: 483px;
+	height: 679px;
+	left: -80px;
+	
+		
+	}
 }
 

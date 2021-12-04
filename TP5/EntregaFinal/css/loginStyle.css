@@ -567,18 +567,22 @@
 }
 
 /*--------------------------------------------------------------------------------*/
-
-
   
   @media screen and (max-width: 360px) {
 	.containerInicioSesion{
 		width: 360px;
 		height: 640px;
+		overflow-x: hidden;
+		flex-direction: column;
+		left: 0%;
+		background-color: #ffffff;
+	
 	}
 
 	.contenedorFormLogin {
-		height: 640px;
-		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-height: 540px;	
 		left: 759px;
 		top: 30px;
 		border-radius: 0px;
@@ -587,11 +591,26 @@
 		position: absolute;
 		width: 360px;
 		height: 640px;
-		left: 0px;
-		top: 400px;
+		left: -25px;
+		top: 200px;
+		width: 100%;
+		border: none;
+		border-radius: none;
+		margin-bottom: 0;
 		
 	}
+	.circuloGradiente{
+		background: radial-gradient(circle at var(--x, 50%) var(--y, 30%), hsl(0, 0%, 100%) 20%, #ffffff 30%);
+	}
 
+	.contenedorLogo{
+		top: 50px;
+		left: -50px;
+	}
+
+	body{
+		background-color: #ffffff;
+	}
 	.textoInicio{
 		display: none;
 	}

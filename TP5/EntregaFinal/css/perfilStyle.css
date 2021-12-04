@@ -844,4 +844,6 @@ font-family:Roboto;
 .info6{
 	top:200px;
 }
-
+div {
+    cursor:pointer;
+}

@@ -1085,3 +1085,12 @@ color: #252525;
 	
 	border-color: #e9e5de;
 }
+
+
+img {
+    cursor:pointer;
+}
+
+button {
+    cursor:pointer;
+}
