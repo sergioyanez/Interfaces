@@ -241,10 +241,7 @@ function move(x, y) {
       logoFooter.style.right = `${dx}px`;
   dx += 10;
   dy = 5;
-  logos.forEach((logo) => {
-    logo.setAttribute('transform', `translate(${dx} ${dy})`);
-  });
-  image.setAttribute('x', 0);
+ 
 }
 
 document.addEventListener('mousemove', (e) => {
@@ -252,4 +249,24 @@ document.addEventListener('mousemove', (e) => {
 });
 document.addEventListener('touchmove', (e) => {
   move(e.touches[0].pageX, e.touches[0].pageY);
+});
+
+
+
+document.addEventListener("keydown", event => {   
+    if ( event.code =="KeyB" && event.ctrlKey) {
+        abrirCuadroDeBusqueda();
+    }
+});
+
+document.addEventListener("keydown", event => {   
+    if ( event.code =="KeyX" && event.ctrlKey) {
+        ir_a_Login();
+    }
+});
+
+document.addEventListener("keydown", event => {   
+    if ( event.code =="KeyM" && event.ctrlKey) {
+        ir_a_Chats();
+    }
 });
