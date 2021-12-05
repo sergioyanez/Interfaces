@@ -145,22 +145,22 @@ color: rgba(104, 103, 103, 0.6);
 	border-radius: 5px;
 	background-color: #ffffff;
 	
-	animation: banner2 15s steps(45)  infinite   ;
+	animation: banner2 15s   infinite   ;
 }
 
 
 @keyframes banner2 { 
 	0%{
-		background: url(../images/sanidad1.jpg) repeat-x;
+		background: url(../images/sanidad4.jpg) repeat-x;
 	}
 
 	
 
-	50%{
+	35%{
 		background: url(../images/sanidad2.jpg) repeat-x;
 	}
 
-	75%{
+	70%{
 		background: url(../images/sanidad3.jpg) repeat-x;
 	}
 
