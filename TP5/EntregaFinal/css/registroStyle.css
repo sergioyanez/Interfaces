@@ -330,3 +330,28 @@
 input.error {
 	border: #EC3C3C solid 4px;
 }
+
+.loading {
+	position: absolute;
+	height: 77px;
+	width: 77px;
+	left: 670px;
+	top: 300px;	
+	background: url(../images/loading2.png);
+	animation: loading 1.5s steps(12) forwards;
+  }
+
+  @keyframes loading {
+	35% {
+		top: 300px;
+	}
+  
+	50% {
+		top: 300px;
+	}
+  
+	100% {
+		top: 300px;
+	  background-position: -875px;
+	}
+  }

@@ -78,13 +78,13 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
       email.classList.add("error");
       mensajeError1.classList.remove("mensajeInputOculto");
       mensajeError1.classList.add("mensajeInput");
-      mensajeError1.innerHTML = "Campo vacío. Por favor completelo";
+      mensajeError1.innerHTML = "* Campo vacío. Por favor completelo";
   } else {
       //Usuario invalido, modifico las clases y creo el mensaje de error
       email.classList.add("error");
       mensajeError1.classList.remove("mensajeInputOculto");
       mensajeError1.classList.add("mensajeInput");
-      mensajeError1.innerHTML = "Por favor insertar email tipo @gmail o @hotmail";
+      mensajeError1.innerHTML = "* Por favor insertar email tipo @gmail o @hotmail";
   }
   //Chequeo si el usuario es valido
   if((userApellido.value == "yanez" && userName.value == "sergio")|| (userApellido.value == "kehler" && userName.value == "elva")){
@@ -92,13 +92,13 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
       userName.classList.add("error");
       mensajeError2.classList.remove("mensajeInputOculto");
       mensajeError2.classList.add("mensajeInput");
-      mensajeError2.innerHTML = "Nombre de usuario ya existente. Por favor ingrese otro";
+      mensajeError2.innerHTML = "* Nombre de usuario ya existente. Por favor ingrese otro";
   } else if (userName.value.length == 0) {
       //Usuario invalido, modifico las clases y creo el mensaje de error
       userName.classList.add("error");
       mensajeError2.classList.remove("mensajeInputOculto");
       mensajeError2.classList.add("mensajeInput");
-      mensajeError2.innerHTML = "Campo vacío. Por favor completelo";
+      mensajeError2.innerHTML = "* Campo vacío. Por favor completelo";
   } else {
       //Usuario valido, modifico las clases y seteo el booleano en true
       userName.classList.remove("error");
@@ -113,13 +113,13 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
     userApellido.classList.add("error");
     mensajeError5.classList.remove("mensajeInputOculto");
     mensajeError5.classList.add("mensajeInput");
-    mensajeError5.innerHTML = "Nombre de usuario ya existente. Por favor ingrese otro";
+    mensajeError5.innerHTML = "* Nombre de usuario ya existente. Por favor ingrese otro";
 } else if (userApellido.value.length == 0) {
     //Usuario invalido, modifico las clases y creo el mensaje de error
     userApellido.classList.add("error");
     mensajeError5.classList.remove("mensajeInputOculto");
     mensajeError5.classList.add("mensajeInput");
-    mensajeError5.innerHTML = "Campo vacío. Por favor completelo";
+    mensajeError5.innerHTML = "* Campo vacío. Por favor completelo";
 } else {
     //Usuario valido, modifico las clases y seteo el booleano en true
     userApellido.classList.remove("error");
@@ -139,13 +139,13 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
       contraseñaValida.classList.add("error");
       mensajeError3.classList.remove("mensajeInputOculto");
       mensajeError3.classList.add("mensajeInput");
-      mensajeError3.innerHTML = "Campo vacío. Por favor completelo";
+      mensajeError3.innerHTML = "* Campo vacío. Por favor completelo";
   } else {
       //Contraseña invalida, modifico las clases y creo un mensaje de error
       contraseñaValida.classList.add("error");
       mensajeError3.classList.remove("mensajeInputOculto");
       mensajeError3.classList.add("mensajeInput");
-      mensajeError3.innerHTML = "Debe tener un caracter especial y una mayuscula";
+      mensajeError3.innerHTML = "* Debe tener un caracter especial y una mayuscula";
   }
   //Chequeo si la contraseña repetida es valida
   if(contraseñaRepetida.value !== contraseñaValida.value){
@@ -153,13 +153,13 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
       contraseñaRepetida.classList.add("error");
       mensajeError4.classList.remove("mensajeInputOculto");
       mensajeError4.classList.add("mensajeInput");
-      mensajeError4.innerHTML = "Las contraseñas no coinciden";
+      mensajeError4.innerHTML = "* Las contraseñas no coinciden";
   } else if (contraseñaRepetida.value.length == 0) {
       //Contraseña invalida, modifico las clases y creo un mensaje de error
       contraseñaRepetida.classList.add("error");
       mensajeError4.classList.remove("mensajeInputOculto");
       mensajeError4.classList.add("mensajeInput");
-      mensajeError4.innerHTML = "Campo vacío. Por favor completelo";
+      mensajeError4.innerHTML = "* Campo vacío. Por favor completelo";
   } else {
       //Contraseña valida, modifico las clases y seteo el booleano en true
       contraseñaRepetida.classList.remove("error");
@@ -169,6 +169,16 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
   }
   //Si el usuario y contraseña son validos redirijo al home
   if(isEmail && isUserName && isContraseñaValida && isContraseñaRepetida) {
-    registrarCuenta();
+    realizarLoading();
   }
 });
+
+
+
+let loader=document.getElementById("loader"); 
+
+function realizarLoading(){
+  loader.classList.remove("oculto");
+  loader.classList.add("loading");
+  setTimeout(registrarCuenta,1500);
+  }
