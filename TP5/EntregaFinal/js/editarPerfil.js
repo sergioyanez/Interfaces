@@ -3,7 +3,7 @@
 
 let btnVolver = document.getElementById("volver");
 btnVolver.addEventListener("click",volverAPerfil);
-let loader=document.getElementById("loader");
+let loader=document.getElementById("loader2");
 
 
 let btnEditar = document.getElementById("botonEditar");
@@ -15,8 +15,8 @@ function volverAPerfil(){
 
 function realizarLoading(){
 loader.classList.remove("oculto");
-loader.classList.add("loading");
-setTimeout(volverAPerfil,1500);
+// loader.classList.add("loading");
+ setTimeout(volverAPerfil,1500);
 }
 
 

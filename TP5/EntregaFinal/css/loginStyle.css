@@ -72,7 +72,7 @@
 	position: absolute;
 	width: 395px;
 	height: 78px;
-	left: 25%;
+	left: 29%;
 	top: 28%;
 
 	/* font-family: Roboto; */
@@ -176,7 +176,7 @@
 	
 	/* TextoNombre */
 	position: absolute;
-	left: 6%;
+	left: 9%;
 	right: 15.67%;
 	top: -3px;
 	bottom: -8.07%;
@@ -185,7 +185,7 @@
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 18px;
-	text-align: right;
+	text-align: left;
 	color: #a0a0a0;
 	/* Inside Auto Layout */
 	flex: none;
@@ -523,7 +523,7 @@
 	 font-family: Roboto; 
 	font-size: 15px;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 0px;
 	position: absolute;
 	text-align: center;

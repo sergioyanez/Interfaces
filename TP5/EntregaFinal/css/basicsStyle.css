@@ -1094,3 +1094,6 @@ img {
 button {
     cursor:pointer;
 }
+.pagActual{
+	border-bottom: coral solid 6px;
+}

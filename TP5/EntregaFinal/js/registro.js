@@ -61,10 +61,10 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
   let mensajeError5 = document.getElementById("mError5");
 
 
-  let format1 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-  function hasUpperCase(str) {
-      return (/[A-Z]/.test(str));
-  }
+//   let format1 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+//   function hasUpperCase(str) {
+//       return (/[A-Z]/.test(str));
+//   }
 
   //Chequeo si el email es valido
   if(email.value.includes("@gmail.com") || email.value.includes("@hotmail.com")){
@@ -128,25 +128,29 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
     isUserApellido = true;
 }
   //Chequeo si la contraseña es valida
-  if(format1.test(contraseñaValida.value) && hasUpperCase(contraseñaValida.value)){
-      //Contraseña valida, modifico las clases y seteo el booleano en true
-      contraseñaValida.classList.remove("error");
-      mensajeError3.classList.add("mensajeInputOculto");
-      mensajeError3.classList.remove("mensajeInput");
-      isContraseñaValida = true;
-  } else if (contraseñaValida.value.length == 0) {
+//   if(format1.test(contraseñaValida.value) && hasUpperCase(contraseñaValida.value)){
+//       //Contraseña valida, modifico las clases y seteo el booleano en true
+//       contraseñaValida.classList.remove("error");
+//       mensajeError3.classList.add("mensajeInputOculto");
+//       mensajeError3.classList.remove("mensajeInput");
+//       isContraseñaValida = true;
+//   } else 
+   if (contraseñaValida.value.length == 0) {
       //Contraseña invalida, modifico las clases y creo un mensaje de error
       contraseñaValida.classList.add("error");
       mensajeError3.classList.remove("mensajeInputOculto");
       mensajeError3.classList.add("mensajeInput");
       mensajeError3.innerHTML = "* Campo vacío. Por favor completelo";
-  } else {
-      //Contraseña invalida, modifico las clases y creo un mensaje de error
-      contraseñaValida.classList.add("error");
-      mensajeError3.classList.remove("mensajeInputOculto");
-      mensajeError3.classList.add("mensajeInput");
-      mensajeError3.innerHTML = "* Debe tener un caracter especial y una mayuscula";
-  }
+   } else{
+    isContraseñaValida = true;
+   }
+   //else {
+//       //Contraseña invalida, modifico las clases y creo un mensaje de error
+//       contraseñaValida.classList.add("error");
+//       mensajeError3.classList.remove("mensajeInputOculto");
+//       mensajeError3.classList.add("mensajeInput");
+//       mensajeError3.innerHTML = "* Debe tener un caracter especial y una mayuscula";
+//   }
   //Chequeo si la contraseña repetida es valida
   if(contraseñaRepetida.value !== contraseñaValida.value){
       //Contraseña invalida, modifico las clases y creo un mensaje de error
@@ -175,10 +179,10 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
 
 
 
-let loader=document.getElementById("loader"); 
+let loader=document.getElementById("loader2"); 
 
 function realizarLoading(){
   loader.classList.remove("oculto");
-  loader.classList.add("loading");
+  // loader.classList.add("loading");
   setTimeout(registrarCuenta,1500);
   }
