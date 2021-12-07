@@ -555,6 +555,14 @@
 		
 	
 	}
+	.contenedorPatita{
+		left: 50px;
+		top:15%;
+	}
+	.contenedorNetvet{
+		left:140px;
+	}
+	
 
 	.rectangulo203 {
 	height: 85vh;
@@ -562,6 +570,15 @@
 	
 
     }
+	.capa1{
+		display:none;
+	}
+	.capa2{
+		display:none;
+	}
+	.capa3{
+		display:none;
+	}
 
 	.contenedorFormLogin {
 		z-index:2;		
@@ -572,6 +589,7 @@
 		width: 100%;
 		
 	}
+	
 	/* .circuloGradiente{		
 		top: 0%;
 		align-items:center;
@@ -603,6 +621,7 @@
 
 
   }
+  /*------------------------------*/
 
   /*Mensajes error*/
 .mensajeInputOculto {
@@ -672,7 +691,34 @@ input.error {
 	  }
 	   
 	
-
+	  .loader2 {
+		position: absolute;
+		border: 16px solid #b9b3a9;
+		border-radius: 50%;
+		border-top: 16px solid #db9334;
+		width: 50px;
+		height: 50px;
+		left: 47%;
+		top: 35%;	
+		z-index: 1;
+		-webkit-animation: spin 2s linear infinite; /* Safari */
+		animation: spin 2s linear infinite;
+	  }
+	  
+	  /* Safari */
+	  @-webkit-keyframes spin {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+	  }
+	  
+	  @keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	  }
+	  .oculto {
+		opacity: 0;
+		z-index: -2;
+	  }
 
  
   

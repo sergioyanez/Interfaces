@@ -3,7 +3,8 @@
 
 
 function iniciarSesion(){
-    document.location.href ="home.html";
+    realizarLoading();
+    // document.location.href ="home.html";
 }
 
 
@@ -96,4 +97,15 @@ document.addEventListener('touchmove', (e) => {
     iniciarSesion();
   }
 });
+let loader=document.getElementById("loader2"); 
 
+
+function realizarLoading(){
+  loader.classList.remove("oculto");
+  // loader.classList.add("loading");
+  setTimeout(irHome,1500);
+  }
+
+  function irHome(){
+    document.location.href ="home.html";
+}
