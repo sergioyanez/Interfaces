@@ -555,6 +555,14 @@
 		
 	
 	}
+	.contenedorPatita{
+		left: 50px;
+		top:15%;
+	}
+	.contenedorNetvet{
+		left:140px;
+	}
+	
 
 	.rectangulo203 {
 	height: 85vh;
@@ -562,6 +570,15 @@
 	
 
     }
+	.capa1{
+		display:none;
+	}
+	.capa2{
+		display:none;
+	}
+	.capa3{
+		display:none;
+	}
 
 	.contenedorFormLogin {
 		z-index:2;		
@@ -572,6 +589,7 @@
 		width: 100%;
 		
 	}
+	
 	/* .circuloGradiente{		
 		top: 0%;
 		align-items:center;
@@ -603,6 +621,7 @@
 
 
   }
+  /*------------------------------*/
 
   /*Mensajes error*/
 .mensajeInputOculto {
