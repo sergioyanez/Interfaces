@@ -54,7 +54,7 @@
 	/* botonVolver */
 	position: absolute;
 	background: #8f8f8e;
-	border-radius: 15px;
+	border-radius: 25px;
 }
 
 .botonVolver:hover{
@@ -103,7 +103,7 @@
 	width: 306px;
 	left: 90px;
 	top: 625px;
-	border-radius: 15px;	
+	border-radius: 25px;	
 	position: absolute;
 	background: #4a4afa;
 	

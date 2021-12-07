@@ -111,7 +111,7 @@
 	left: 660px;
 	top: 280px;
 	background: #d97930;
-	border-radius: 5px;
+	border-radius: 25px;
 	border: none;
 	z-index: 1;
 	
@@ -745,7 +745,7 @@ font-family:Roboto;
 	left: 0px;
 	top: 7px;
 	background-color: rgba(143, 143, 142, 1);
-	border-radius: 5px;
+	border-radius: 25px;
 }
 
 .btnVolver:hover{
@@ -763,7 +763,7 @@ font-family:Roboto;
 	right: 0px;
 	top: 7px;	
 	background-color: rgba(74, 74, 250, 1);	
-	border-radius: 5px;
+	border-radius: 25px;
 	
 }
 .btnEditar:hover{

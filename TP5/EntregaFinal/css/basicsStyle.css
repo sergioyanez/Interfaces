@@ -833,7 +833,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	top: 50px;
 	right: 65px;
 	background-color: rgba(217, 121, 48, 1);	
-	border-radius: 5px;
+	border-radius: 25px;
 	font-size: 12px;
 	font-weight: 600;
 	text-align: center;
@@ -847,7 +847,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	top: 15px;
 	left: 200px;
 	background-color:	white;
-	border-radius: 5px;
+	border-radius: 25px;
 	font-size: 12px;
 	font-weight: 600;
 	text-align: center;
@@ -877,7 +877,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	bottom: 15px;;
 	right: 10px;
 	background-color: rgba(217, 121, 48, 1);	
-	border-radius: 5px;
+	border-radius: 25px;
 	font-size: 12px;
 	font-weight: 600;
 	text-align: center;
