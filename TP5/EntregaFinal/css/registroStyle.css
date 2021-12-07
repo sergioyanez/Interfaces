@@ -50,7 +50,7 @@
 	height: 40px;
 	width: 306px;
 	left: 89px;
-	top: 676px;	
+	top: 685px;	
 	/* botonVolver */
 	position: absolute;
 	background: #8f8f8e;
@@ -102,7 +102,7 @@
 	height: 40px;
 	width: 306px;
 	left: 90px;
-	top: 610px;
+	top: 625px;
 	border-radius: 15px;	
 	position: absolute;
 	background: #4a4afa;
@@ -185,58 +185,63 @@
 }
 
 .tNombre{
-	top: 145px;
+	top: 90px;
 }
 
 .cNombre{
-	top: 180px;
+	top: 125px;
 }
 
 
 
 .tApellido{
-	top: 233px;
+	top: 178px;
 }
 
 .cApellido{
-	top: 268px;
+	top: 213px;
+}
+
+.tMatricula{
+	top: 266px;
+	left: 50px;
+}
+
+.cMatricula{
+	top: 301px;
 }
 
 
-
 .tCorreo{
-	top: 321px;
+	top: 354px;
 	left: 87px;
 }
 
 .cCorreo{
-	top: 356px;
+	top: 389px;
 }
 
 
 .tContrasenia{
-	top: 409px;
+	top: 442px;
 	left: 44px;
 }
 
 .cContrasenia{
-	top: 444px;
+	top: 477px;
 }
 
 
 
 .tRepetirContrasenia{
-	top: 497px;
+	top: 530px;
 	left: 90px;
 }
 
 .cRepetirContrasenia{
-	top: 532px;
+	top: 565px;
 }
 
-.iRepetirContrasenia{
-	top: 0px;
-}
 
 
 .tituloFormRegistro {
@@ -244,7 +249,7 @@
 	height: 33px;
 	width: 237px;
 	left: 125px;
-	top: 80px;
+	top: 25px;
 	letter-spacing: 0px;
 	position: absolute;
 	font-style: normal;
@@ -262,8 +267,8 @@
 .logo {
 	height: 33px;
 	width: 30px;
-	left: 227px;
-	top: 40px;
+	left: 80px;
+	top: 0px;
 	/*Propiedades*/
 	height: 33px;
 	width: 30px;

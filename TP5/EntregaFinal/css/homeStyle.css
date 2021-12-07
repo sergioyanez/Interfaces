@@ -564,7 +564,7 @@ background-color: white;
 			position: absolute;
 		width: 20px;
 		height: 20px;
-		left: 1em;
+		left: 16px;
 		top: 10px;
 		
 		
@@ -581,23 +581,44 @@ background-color: white;
 		left:3em;
 		top:0px;
 		}
-		.comentarios{
+
+		.noMeGusta{
 			position: absolute;
-		width: 20px;
-		height: 20px;
-		left: 155px;
-		top: 9px;
+			width: 20px;
+			height: 20px;
+			left: 101px;
+			top: 12px;
 		}
-		.textoComentario{
+
+		.textoNoMeGusta{
 			display: flex;
 			flex-direction: row;
 			align-items: flex-start;
 			padding: 0px;
 			
 			position: absolute;
+			width: 27.07px;
+			height: 16.55px;
+			left:125px;
+			top:0px;
+			}
+
+		.comentarios{
+			position: absolute;
+		width: 20px;
+		height: 20px;
+		right: 160px;
+		top: 12px;
+		}
+		.textoComentario{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			padding: 0px;			
+			position: absolute;
 			width: 34.09px;
 			height: 15.52px;
-			left:180px;
+			right:120px;
 			top: 0px;
 			
 			
@@ -619,7 +640,7 @@ background-color: white;
 		position: absolute;
 		width: 49.13px;
 		height: 17.59px;
-		right: 2em;
+		right: 25px;
 		top: 0px;
 		
 		

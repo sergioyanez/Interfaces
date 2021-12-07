@@ -47,18 +47,21 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
   let isUserApellido = false;
   let isContraseñaValida = false;
   let isContraseñaRepetida = false;
+  let isUserMatricula = false;
   //Obtengo los inputs y mensajes de error
   let email = document.getElementById("correo");
   let userName = document.getElementById("nombre"); 
   let contraseñaValida = document.getElementById("contrasenia");
   let contraseñaRepetida = document.getElementById("repContrasenia");
   let userApellido = document.getElementById("apellido");
+  let userMatricula = document.getElementById("matricula");
 
   let mensajeError1 = document.getElementById("mError1");
   let mensajeError2 = document.getElementById("mError2");
   let mensajeError3 = document.getElementById("mError3");
   let mensajeError4 = document.getElementById("mError4");
   let mensajeError5 = document.getElementById("mError5");
+  let mensajeError6 = document.getElementById("mError6");
 
 
 //   let format1 = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
@@ -127,6 +130,27 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
     mensajeError5.classList.add("mensajeInputOculto");
     isUserApellido = true;
 }
+ //Chequeo si la matricula es valido
+ if(userMatricula.value == "123456" ){
+  //Usuario invalido, modifico las clases y creo el mensaje de error
+  userMatricula.classList.add("error");
+  mensajeError6.classList.remove("mensajeInputOculto");
+  mensajeError6.classList.add("mensajeInput");
+  mensajeError6.innerHTML = "* Nombre de usuario ya existente. Por favor ingrese otro";
+} else if (userApellido.value.length == 0) {
+  //Usuario invalido, modifico las clases y creo el mensaje de error
+  userMatricula.classList.add("error");
+  mensajeError6.classList.remove("mensajeInputOculto");
+  mensajeError6.classList.add("mensajeInput");
+  mensajeError6.innerHTML = "* Campo vacío. Por favor completelo";
+} else {
+  //Usuario valido, modifico las clases y seteo el booleano en true
+  userMatricula.classList.remove("error");
+  mensajeError6.classList.remove("mensajeInput");
+  mensajeError6.classList.add("mensajeInputOculto");
+  isUserMatricula = true;
+}
+
   //Chequeo si la contraseña es valida
 //   if(format1.test(contraseñaValida.value) && hasUpperCase(contraseñaValida.value)){
 //       //Contraseña valida, modifico las clases y seteo el booleano en true
@@ -172,7 +196,7 @@ document.getElementById("registrarCta").addEventListener("click", ()=> {
       isContraseñaRepetida = true;
   }
   //Si el usuario y contraseña son validos redirijo al home
-  if(isEmail && isUserName && isContraseñaValida && isContraseñaRepetida) {
+  if(isEmail && isUserName && isContraseñaValida && isContraseñaRepetida && isUserMatricula) {
     realizarLoading();
   }
 });
