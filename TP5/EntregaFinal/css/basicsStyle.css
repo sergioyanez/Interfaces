@@ -703,13 +703,29 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	font-weight: bold;
 }
 
-.lineaBusqueda{
+.veterinarias{
 	position: absolute;
 	width: 535px;
 	height: 0.5px;
-	color: #686767;
-	top: 215px;
+	color: #1c1b1b;
+	top: 245px;
+	left:40px;
+	font-size: 15px;
+	font-family: Roboto;
+	font-weight: bold;
 	
+}
+
+.eventos{
+	position: absolute;
+	width: 535px;
+	height: 0.5px;
+	color: #1c1b1b;
+	top: 355px;
+	left:40px;
+	font-size: 15px;
+	font-family: Roboto;
+	font-weight: bold;
 }
 
 .fotoPerfilBuscado{
@@ -725,7 +741,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 .hoverBus{
 	position: absolute;
 	width: 535px;
-	height: 410px;
+	height: 480px;
 	left:282px;
 	top: 95px;
 	background-color: white;
@@ -814,11 +830,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 }
 
 .buscado4{
-	top: 220px;
+	top: 265px;
 }
 
 .buscado5{
-	top: 285px;
+	top: 375px;
 }
 
 .radius{
