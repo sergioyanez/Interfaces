@@ -692,6 +692,25 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	left:20px;
 	/* background-color: #e6e6e6; */
 }
+.personas{
+	position: absolute;
+	width: 535px;
+	height: 40px;
+	top: 10px;
+	left:40px;
+	font-size: 15px;
+	font-family: Roboto;
+	font-weight: bold;
+}
+
+.lineaBusqueda{
+	position: absolute;
+	width: 535px;
+	height: 0.5px;
+	color: #686767;
+	top: 215px;
+	
+}
 
 .fotoPerfilBuscado{
 	position: absolute;
@@ -699,13 +718,14 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	height: 30px;
 	left: 15px;
 	top: 12px;
+	border: blue;
 
 }
 
 .hoverBus{
 	position: absolute;
 	width: 535px;
-	height: 210px;
+	height: 410px;
 	left:282px;
 	top: 95px;
 	background-color: white;
@@ -780,17 +800,29 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 	color: #686767;
 }
 .buscado1{
-	top: 10px;	
+	top: 35px;	
 }
 
 .buscado2{
-	top: 70px;
+	top: 95px;
 	border-bottom: #252525;
 }
 
 .buscado3{
-	top: 130px;
+	top: 155px;
 	border-bottom: #252525;
+}
+
+.buscado4{
+	top: 220px;
+}
+
+.buscado5{
+	top: 285px;
+}
+
+.radius{
+	border-radius: 80px;
 }
 
 .labelBuscar{

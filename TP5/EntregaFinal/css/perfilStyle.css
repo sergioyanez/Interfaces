@@ -332,30 +332,24 @@
 } */
 
 .profesion {
-	/* font-family: roboto; */
-	font-size: 16px;
-	font-style: normal;
-	/* font-weight: 700; */
-	line-height: 19px;
-	letter-spacing: 0em;
-	text-align: left;
-
-	position: absolute;
-	width: 290px;
-	height: 209px;
-	left: 3em;
-	top: 91.5px;
+	
+		position: absolute;
+		width: 107px;
+		height: 15px;
+		left: 50px;
+		top: 20px;
+		
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 150%;
+		
+		color: #252525;
+		
 }
 
-/* .icon4 {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	left: 1em;
-	top: 151.25px;
-	background: url(../images/graduado.svg);
-	background-repeat: no-repeat;
-} */
+
 
 .universidad {
 	/* font-family: roboto; */
@@ -373,15 +367,6 @@
 	top: 135.25px;
 }
 
-/* .icon5 {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	left: 1em;
-	top: 195px;
-	background: url(../images/document.svg);
-	background-repeat: no-repeat;
-} */
 
 .ocupacion {
 	/* font-family: roboto; */
