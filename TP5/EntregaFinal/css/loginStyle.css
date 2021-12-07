@@ -609,6 +609,25 @@ input.error {
 	border: #EC3C3C solid 1px;
 }
 
+ .capa1{
+	
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		animation: movimientoFondo 30s linear infinite;
+		background: url(../images/capa1Completo.png) repeat-X;
+	  }
+	  
+	   
+	  @keyframes movimientoCFondo {
+		100% {
+		  background-position-x: -2550px;
+		}
+	  }
+
+
  
   
   
