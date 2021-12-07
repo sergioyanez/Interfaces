@@ -777,7 +777,7 @@ font-family:Roboto;
 .botonCentrado{
 	position: absolute;	
 	color: white;
-	top: 6px;
+	top: 3px;
 	left: 28%;
 	text-align: center;
 	/* font-family: Roboto; */
@@ -790,7 +790,7 @@ font-family:Roboto;
 .botonCentrado2{
 	position: absolute;	
 	color: white;
-	top: 6px;
+	top: 3px;
 	left: 25%;
 	text-align: center;
 	/* font-family: Roboto; */

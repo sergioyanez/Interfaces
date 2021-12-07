@@ -363,7 +363,7 @@
 	top: 320px;
 	position: absolute;
 	background: #4a4afa;
-	border-radius: 25px;
+	border-radius: 15px;
 }
 
 .botonIniciaSesion:hover{
@@ -501,7 +501,7 @@
 	width: 306px;
 	left: 50px;
 	top: 455px;
-	border-radius: 25px;
+	border-radius: 15px;
 	/* botonCrear */
 	position: absolute;
 	background: #d97931;
@@ -578,12 +578,6 @@
 	}
 	.capa3{
 		display:none;
-	}
-	.fondoTransparente{
-		display:none;
-	}
-	.textoInicioSesion{
-		left:130px;
 	}
 
 	.contenedorFormLogin {
