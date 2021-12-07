@@ -93,6 +93,7 @@
 	top: 30px;
 	border-radius: 0px;
 	display: flex;
+	z-index:20;
 	
 	/* Formulario Inicio de sesión */
 
@@ -560,14 +561,15 @@
 		width: 100%;
 		
 	}
-	.circuloGradiente{		
+	/* .circuloGradiente{		
 		top: 0%;
 		align-items:center;
 		background: radial-gradient(circle at var(--x, 50%) var(--y, 30%), hsl(0, 0%, 100%) 20%, #ffffff 30%);
-	}
+	} */
 
 	.contenedorLogo{	
-		height:40vh;	
+		height:40vh;
+		z-index:20;	
 	}
 
 	.textoInicio{
