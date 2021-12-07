@@ -1,7 +1,9 @@
 .containerPerfil {
 	position: absolute;
-	width: 1440px;
-	height: 954px;
+	width: 100%;
+	height: 100%;
+	/* width: 1440px;
+	height: 954px; */
 	/* background: #f5f2ed; */
 	top:76px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -109,7 +111,7 @@
 	left: 660px;
 	top: 280px;
 	background: #d97930;
-	border-radius: 15px;
+	border-radius: 5px;
 	border: none;
 	z-index: 1;
 	
@@ -281,7 +283,7 @@
 	position: absolute;
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -308,7 +310,7 @@
 	/* font-family: roboto; */
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -333,7 +335,7 @@
 	/* font-family: roboto; */
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -359,7 +361,7 @@
 	/* font-family: roboto; */
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -385,7 +387,7 @@
 	/* font-family: roboto; */
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -411,7 +413,7 @@
 	/* font-family: roboto; */
 	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 19px;
 	letter-spacing: 0em;
 	text-align: left;
@@ -469,7 +471,7 @@
 	height: 18px;
 	width: 52px;
 	left: 0px;	
-	top: 30px;	
+	top: 28px;	
 	/* font-family: Roboto; */
 	font-style: normal;
 	font-weight: 500;
@@ -528,7 +530,7 @@
 	height: 18px;
 	width: 52px;
 	left: 0px;	
-	top: 85px;	
+	top: 83px;	
 	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
@@ -559,7 +561,7 @@
 	height: 18px;
 	width: 52px;
 	left: 0px;	
-	top: 140px;	
+	top: 138px;	
 	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
@@ -589,7 +591,7 @@
 	height: 18px;
 	width: 150px;
 	left: 0px;	
-	top: 195px;	
+	top: 193px;	
 	/* font-family: IBM Plex Sans; */
 	font-style: normal;
 	font-weight: 500;
@@ -743,7 +745,7 @@ font-family:Roboto;
 	left: 0px;
 	top: 7px;
 	background-color: rgba(143, 143, 142, 1);
-	border-radius: 15px;
+	border-radius: 5px;
 }
 
 .btnVolver:hover{
@@ -761,7 +763,7 @@ font-family:Roboto;
 	right: 0px;
 	top: 7px;	
 	background-color: rgba(74, 74, 250, 1);	
-	border-radius: 15px;
+	border-radius: 5px;
 	
 }
 .btnEditar:hover{
