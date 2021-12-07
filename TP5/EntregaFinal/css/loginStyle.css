@@ -621,11 +621,44 @@ input.error {
 	  }
 	  
 	   
-	  @keyframes movimientoCFondo {
+	  @keyframes movimientoFondo {
 		100% {
 		  background-position-x: -2550px;
 		}
 	  }
+	  .capa2{
+	
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		animation: movimientoFondo2 35s linear infinite;
+		background: url(../images/capa2Completo.png) repeat-X;
+	  }
+	  @keyframes movimientoFondo2 {
+		100% {
+		  background-position-x: -2550px;
+		}
+	  }
+	  
+	  .capa3{
+	
+		position: absolute;
+		top: 0;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		animation: movimientoFondo3 40s linear infinite;
+		background: url(../images/capa3Completo.png) repeat-X;
+	  }
+	  @keyframes movimientoFondo3 {
+		100% {
+		  background-position-x: -2550px;
+		}
+	  }
+	   
+	
 
 
  
