@@ -590,6 +590,10 @@
 		
 	}
 	
+
+	.fondoTransparente{
+		opacity: 0;
+	}
 	/* .circuloGradiente{		
 		top: 0%;
 		align-items:center;
