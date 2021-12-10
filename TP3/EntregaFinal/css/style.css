@@ -242,12 +242,12 @@
 
 .caminando {
   background: url(../images/sonic_camina.png) left center;
-  animation: sonicCamina 0.8s steps(10) infinite;
+  animation: sonicCamina 0.5s steps(10) infinite;
 }
 
 .caminando2 {
   background: url(../images/sonic_camina2.png) left center;
-  animation: sonicCamina 0.8s steps(10) infinite;
+  animation: sonicCamina 0.5s steps(10) infinite;
 }
 
 .saltando {
@@ -310,7 +310,7 @@
   z-index: -50;
   height: 50%;
   width: 100%;
-  animation: movimientoCielo 30s linear infinite;
+  animation: movimientoCielo 400s linear infinite;
 }
 
 .cielo1 {
@@ -496,7 +496,7 @@
   height: 100%;
   width: 100%;
   background: url(../images/islas.png) repeat-X;
-  animation: movimientoIslas 25s linear infinite;
+  animation: movimientoIslas 200s linear infinite;
 
 
 }
@@ -514,7 +514,7 @@
   height: 100%;
   width: 100%;
   background: url(../images/suelo.png) repeat-X;
-  animation: movimientoPiso 15s linear infinite;
+  animation: movimientoPiso 8s linear infinite;
 }
 
 @keyframes movimientoPiso {
